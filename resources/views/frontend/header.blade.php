@@ -39,7 +39,7 @@
     </style>
 </head>
 
-<body class="font-[Battambang] p-0 m-0">
+<body class="font-[Battambang] overflow-hidden p-0 m-0">
 
     <!-- HERO SECTION -->
     <section class="relative w-full max-w-full">
