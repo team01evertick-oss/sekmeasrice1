@@ -39,7 +39,7 @@
     </style>
 </head>
 
-<body class="font-[Battambang] overflow-hidden p-0 m-0">
+<body class="font-[Battambang] overflow-y-hidden p-0 m-0">
 
     <!-- HERO SECTION -->
     <section class="relative w-full max-w-full">
@@ -47,7 +47,7 @@
         <!-- Background Image -->
         <div class="absolute inset-0 w-full">
             <img src="@yield('background-image')" alt="Background"
-                class="w-full h-full max-w-full object-cover object-center max-w-full">
+                class="w-full h-full object-cover object-center max-w-full">
         </div>
         @if(View::hasSection('background-career'))
             <div class="absolute inset-0 w-full -z-20">
