@@ -1,8 +1,8 @@
-<section class="contents relative w-full">
+<section class="contents relative w-full z-50">
 
     <!-- Main Footer -->
     <footer
-        class="relative sm:top-[150px] xl:top-[-5px] lg:top-[-5phpx] bg-white text-black w-full flex items-center justify-center py-16 px-6 md:px-10 lg:px-24">
+        class="relative z-50 sm:top-[150px] xl:top-[-5px] lg:top-[-5px] bg-white text-black w-full flex items-center justify-center py-16 px-6 md:px-10 lg:px-24">
         <div class="relative top-[10px] left-[10px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-7xl">
 
             <!-- Column 1: About -->
@@ -25,9 +25,6 @@
                     </a>
                     <a href="#" class="hover:scale-110 transition-transform">
                         <img src="{{ asset('frontend/assets/icon/ch.png') }}" alt="WhatsApp" class="w-6 h-6">
-                    </a>
-                    <a href="#" class="hover:scale-110 transition-transform">
-                        <img src="{{ asset('frontend/assets/icon/ig.png') }}" alt="Instagram" class="w-6 h-6">
                     </a>
                 </div>
             </div>

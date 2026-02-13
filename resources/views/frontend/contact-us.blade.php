@@ -9,5 +9,7 @@
 
 @section('section_content')
 
-   @include('frontend.footer-career-contact')
+   <div class="">
+    @include('frontend.footer-career-contact')
+   </div>
 @endsection

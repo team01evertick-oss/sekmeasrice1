@@ -42,7 +42,7 @@
 <body class="font-[Battambang] overflow-hidden p-0 m-0">
 
     <!-- HERO SECTION -->
-    <section class="relative w-full max-w-full z-30">
+    <section class="relative w-full max-w-full z-10">
 
         <!-- Background Image -->
         <div class="absolute inset-0 w-full">
@@ -386,7 +386,7 @@
             </div>
             <!-- Background rice texture -->
             {{-- <img src="@yield('rice-background')" alt="" class="relative w-full h-auto object-cover block"> --}}
-            <img src="@yield('img-background-contact')" alt="" class="w-full h-auto object-cover block">
+            <img src="@yield('img-background-contact')" alt="" class="w-full h-auto object-cover relative -z-40">
 
             <!-- Center rice picture overlay -->
             {{-- <img src="@yield('picture-rice')" alt=""
