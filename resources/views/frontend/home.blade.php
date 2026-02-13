@@ -83,7 +83,7 @@
             <script src="//unpkg.com/alpinejs" defer></script>
 
             <!-- ONE Alpine root wrapping grid + modal -->
-            <div x-data="{ openOrderModal: false, selectedProduct: { name:'', type:'', capacity:'', price: 0 }, quantity: 1 }"
+            <div x-data="{ openOrderModal: false, selectedProduct: { name:'', type:'', capacity:'', price: 0, image: '' }, quantity: 1 }"
                 x-cloak>
 
                 <div class="flex justify-center">
@@ -131,7 +131,15 @@
 
                                         {{-- @auth('customer') --}}
                                         <button
-                                            @click="openOrderModal = true; selectedProduct = {                                                                                                                                                                                                                             }; quantity = 1"
+                                            @click="openOrderModal = true;
+                                                selectedProduct = {
+                                                    name: '{{ $items->name }}',
+                                                    type: '{{ $items->type }}',
+                                                    capacity: '{{ $items->capacity }}',
+                                                    price: {{ $items->price }},
+                                                    image: '{{ asset('storage/local_product/' . $items->image_local) }}'
+                                                };
+                                                quantity = 1;"
                                             class="mt-3 hover:scale-110 transition-transform">
                                             <img src="{{ asset('frontend/assets/imges/btn-buy.png') }}" alt="Buy Now Button"
                                                 class="w-[140px] h-auto">
@@ -224,7 +232,7 @@
                                         Total: $
                                         <span
                                             x-text="((Number(selectedProduct.price)||0) * (quantity||1))
-                                                                                                                    .toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })">
+                                            .toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })">
                                         </span>
                                     </p>
                                 </div>
@@ -232,63 +240,63 @@
 
                                 <!-- Checkout Button -->
                                 <button type="button" @click="
-                                                                                                                        const form = document.getElementById('checkoutForm');
-                                                                                                                        const data = new FormData(form);
-                                                                                                                        if (!data.get('customer_name') || !data.get('customer_phone') || !data.get('customer_address')) {
-                                                                                                                            Swal.fire({
-                                                                                                                                icon: 'warning',
-                                                                                                                                title: 'Missing Info',
-                                                                                                                                text: 'Please fill in all customer information.',
-                                                                                                                                confirmButtonColor: '#B8A34E'
-                                                                                                                            });
-                                                                                                                            return;
-                                                                                                                        }
+                                        const form = document.getElementById('checkoutForm');
+                                        const data = new FormData(form);
+                                        if (!data.get('customer_name') || !data.get('customer_phone') || !data.get('customer_address')) {
+                                            Swal.fire({
+                                                icon: 'warning',
+                                                title: 'Missing Info',
+                                                text: 'Please fill in all customer information.',
+                                                confirmButtonColor: '#B8A34E'
+                                            });
+                                            return;
+                                        }
 
-                                                                                                                        const message = 
-                                                                                                                            '🛍 *New Order Received!*%0A%0A' +
-                                                                                                                            '*Customer Name:* ' + data.get('customer_name') + '%0A' +
-                                                                                                                            '*Phone:* ' + data.get('customer_phone') + '%0A' +
-                                                                                                                            '*Address:* ' + data.get('customer_address') + '%0A%0A' +
-                                                                                                                            '*Product:* ' + selectedProduct.name + '%0A' +
-                                                                                                                            '*Type:* ' + selectedProduct.type + '%0A' +
-                                                                                                                            '*Packing-Size:* ' + selectedProduct.capacity + '%0A' +
-                                                                                                                            '*Price:* $' + (Number(selectedProduct.price) || 0).toFixed(2) + '%0A' +
-                                                                                                                            '*Quantity:* ' + (quantity || 1) + '%0A' +
-                                                                                                                            '*Total:* $' + (((Number(selectedProduct.price)||0) * (quantity||1)).toFixed(2));
+                                        const message = 
+                                            '🛍 *New Order Received!*%0A%0A' +
+                                            '*Customer Name:* ' + data.get('customer_name') + '%0A' +
+                                            '*Phone:* ' + data.get('customer_phone') + '%0A' +
+                                            '*Address:* ' + data.get('customer_address') + '%0A%0A' +
+                                            '*Product:* ' + selectedProduct.name + '%0A' +
+                                            '*Type:* ' + selectedProduct.type + '%0A' +
+                                            '*Packing-Size:* ' + selectedProduct.capacity + '%0A' +
+                                            '*Price:* $' + (Number(selectedProduct.price) || 0).toFixed(2) + '%0A' +
+                                            '*Quantity:* ' + (quantity || 1) + '%0A' +
+                                            '*Total:* $' + (((Number(selectedProduct.price)||0) * (quantity||1)).toFixed(2));
 
-                                                                                                                        fetch('{{ route('telegram.notify') }}', {
-                                                                                                                            method: 'POST',
-                                                                                                                            headers: {
-                                                                                                                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                                                                                                                                'Content-Type': 'application/x-www-form-urlencoded',
-                                                                                                                                'Accept': 'application/json'
-                                                                                                                            },
-                                                                                                                            body: new URLSearchParams({ message: decodeURIComponent(message.replace(/%0A/g, '\n')) })
-                                                                                                                        })
-                                                                                                                        .then(res => res.json())
-                                                                                                                        .then(() => {
-                                                                                                                            Swal.fire({
-                                                                                                                                title: 'Thank You!',
-                                                                                                                                html: '<p>Your order has been sent successfully.<br>We’ll contact you soon!</p>',
-                                                                                                                                imageUrl: 'frontend/assets/icon/1.png',
-                                                                                                                                imageWidth: 120,
-                                                                                                                                imageHeight: 120,
-                                                                                                                                confirmButtonText: 'Close',
-                                                                                                                                confirmButtonColor: '#B8A34E'
-                                                                                                                            }).then(() => {
-                                                                                                                                openOrderModal = false;
-                                                                                                                            });
-                                                                                                                        })
-                                                                                                                        .catch((err) => {
-                                                                                                                            console.error(err);
-                                                                                                                            Swal.fire({
-                                                                                                                                icon: 'error',
-                                                                                                                                title: 'Oops...',
-                                                                                                                                text: 'Something went wrong. Please try again.',
-                                                                                                                                confirmButtonColor: '#B8A34E'
-                                                                                                                            });
-                                                                                                                        });
-                                                                                                                    "
+                                        fetch('{{ route('telegram.notify') }}', {
+                                            method: 'POST',
+                                            headers: {
+                                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                                'Content-Type': 'application/x-www-form-urlencoded',
+                                                'Accept': 'application/json'
+                                            },
+                                            body: new URLSearchParams({ message: decodeURIComponent(message.replace(/%0A/g, '\n')) })
+                                        })
+                                        .then(res => res.json())
+                                        .then(() => {
+                                            Swal.fire({
+                                                title: 'Thank You!',
+                                                html: '<p>Your order has been sent successfully.<br>We’ll contact you soon!</p>',
+                                                imageUrl: 'frontend/assets/icon/1.png',
+                                                imageWidth: 120,
+                                                imageHeight: 120,
+                                                confirmButtonText: 'Close',
+                                                confirmButtonColor: '#B8A34E'
+                                            }).then(() => {
+                                                openOrderModal = false;
+                                            });
+                                        })
+                                        .catch((err) => {
+                                            console.error(err);
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Oops...',
+                                                text: 'Something went wrong. Please try again.',
+                                                confirmButtonColor: '#B8A34E'
+                                            });
+                                        });
+                                    "
                                     class="flex justify-center relative left-[60px] top-[25px] mx-auto items-center w-[80%] h-[45px] bg-gradient-to-r from-[#DDCC81] to-[#B8A34E] text-[#324A0A] font-bold py-3 rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-200">
                                     Confirm Checkout
                                 </button>

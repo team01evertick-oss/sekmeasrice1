@@ -50,7 +50,7 @@
                 class="w-full h-full max-w-full object-cover object-center max-w-full">
         </div>
         @if(View::hasSection('background-career'))
-            <div class="absolute inset-0 w-full">
+            <div class="absolute inset-0 w-full -z-20">
                 <img src="@yield('background-career')" alt="Career" class="w-full h-full max-w-full object-cover">
             </div>
         @endif
@@ -177,7 +177,7 @@
                 <div class="relative w-[65%] h-[130px] top-[-65px] lg:top-[-30px] flex justify-center items-center overflow-hidden z-10"
                     style="
                     background-image: url('{{ asset('frontend/assets/imges/header-white.png') }}'); 
-                    background-size: 100%; background-repeat: 
+                    background-size: 100% 100%; background-repeat: 
                     no-repeat;background-position: center;">
 
                     <!--  Mobile Menu Button (LEFT SIDE) -->
@@ -309,7 +309,7 @@
         </div>
         {{-- Text Home, Export, About Us, Activity, and Contact Us --}}
         <div
-            class="absolute inset-0 flex flex-col justify-center items-center text-center lg:top-[-200px] sm:top-[20px] top-[30px]" data-aos="fade-up" data-aos-duration="1500">
+            class="absolute inset-0 flex flex-col justify-center items-center text-center lg:top-[-200px] sm:top-[20px] z-10 top-[30px]" data-aos="fade-up" data-aos-duration="1500">
             <div class="bg-white/3">
                 <h4 class="text-3xl sm:text-4xl text-[#1E3E0F] font-semibold tracking-wide">
                     @yield('welcome')
@@ -343,7 +343,7 @@
             </div>
         </div>
         <!-- FULL-WIDTH RICE IMAGE AT BOTTOM -->
-        <div class="relative w-full z-10 overflow-hidden top-[80px] sm:top-[100px] md:top-[120px]">
+        <div class="relative w-full overflow-hidden top-[80px] sm:top-[100px] md:top-[120px]">
             <div class="relative w-full sm:top-[-30px]">
                 <!-- Background image -->
                 <img src="@yield('rice-background')" alt="" class="relative top-[-70px] md:top-[-90px] w-full h-auto object-cover block">
