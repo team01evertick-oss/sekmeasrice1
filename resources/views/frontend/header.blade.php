@@ -177,7 +177,7 @@
                 <div class="relative w-[65%] h-[130px] top-[-65px] lg:top-[-30px] flex justify-center items-center overflow-hidden z-10"
                     style="
                     background-image: url('{{ asset('frontend/assets/imges/header-white.png') }}'); 
-                    background-size: 100% 100%; background-repeat: 
+                    background-size: 100%; background-repeat: 
                     no-repeat;background-position: center;">
 
                     <!--  Mobile Menu Button (LEFT SIDE) -->
@@ -216,7 +216,7 @@
 
                         <!--  Mobile Slide Menu -->
                         <div id="mobileMenu"
-                            class="fixed mt-[65px] h-screen left-0 w-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-9999 p-6 lg:hidden">
+                            class="fixed mt-[65px] h-[100vh] left-0 w-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-9999 p-6 lg:hidden">
                             <ul
                                 class="relative left-[30px] top-[30px] flex flex-col gap-6 text-green-700 font-medium text-base">
                                 <li><a href="{{ route('home') }}" class="hover:text-yellow-600 transition">Home</a></li>
