@@ -181,7 +181,7 @@
                     no-repeat;background-position: center;">
 
                     <!--  Mobile Menu Button (LEFT SIDE) -->
-                    <div class="absolute left-[20px] top-[90px] -translate-y-1/2 block lg:hidden z-50">
+                    <div class="absolute left-[20px] top-[90px] -translate-y-1/2 block lg:hidden z-99999">
                         <button id="menuButton"
                             class="text-[#1E3E0F] text-3xl focus:outline-none w-[50px] h-[50px] flex items-center justify-center">
                             <!-- Menu Icon -->
@@ -216,7 +216,7 @@
 
                         <!--  Mobile Slide Menu -->
                         <div id="mobileMenu"
-                            class="fixed mt-[65px] h-screen left-0 w-[70%] max-w-[300px] bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-40 p-6 lg:hidden">
+                            class="fixed mt-[65px] h-screen left-0 w-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-999 p-6 lg:hidden">
                             <ul
                                 class="relative left-[30px] top-[30px] flex flex-col gap-6 text-green-700 font-medium text-base">
                                 <li><a href="{{ route('home') }}" class="hover:text-yellow-600 transition">Home</a></li>
