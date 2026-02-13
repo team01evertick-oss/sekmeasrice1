@@ -122,7 +122,7 @@
     </footer>
 
     <!-- Bottom Green Bar + Banner Image -->
-    <div class="relative w-full mt-10 sm:top-[200px] xl:top-[40px]">
+    <div class="relative w-full mt-10 sm:top-[200px] xl:top-[40px] z-50 md:top-0 top-8">
         <!-- Green Background -->
         <div class="absolute inset-0 h-[80px] bg-[#4DA358]"></div>
 
