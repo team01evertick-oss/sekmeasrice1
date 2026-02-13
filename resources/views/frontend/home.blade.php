@@ -363,7 +363,7 @@
         class="relative bg-[#4DA358] w-full h-[500px] flex flex-col items-center justify-between py-10 sm:py-14 md:py-16 lg:py-20 mt-5 md:mt-10">
         <!-- Title -->
         <div class="flex justify-center mb-8 sm:mb-10">
-            <h1 class="relative top-[30px] text-white text-center text-2xl sm:text-3xl md:text-4xl font-bold">Why Us</h1>
+            <h1 class="relative top-[30px] text-white text-center text-2xl sm:text-3xl md:text-4xl font-bold">Why Choose Our Products?</h1>
         </div>
 
         <!-- Certificate Icons -->
