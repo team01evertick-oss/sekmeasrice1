@@ -46,9 +46,6 @@
                         <a href="#" class="hover:scale-110 transition-transform">
                             <img src="{{ asset('frontend/assets/icon/ch.png') }}" alt="WhatsApp" class="w-6 h-6">
                         </a>
-                        <a href="#" class="hover:scale-110 transition-transform">
-                            <img src="{{ asset('frontend/assets/icon/ig.png') }}" alt="Instagram" class="w-6 h-6">
-                        </a>
                     </div>
                 </div>
 
