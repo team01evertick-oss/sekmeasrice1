@@ -28,6 +28,7 @@
         </div>
     </div>
     {{-- Product Card for Selling--}}
+    {{-- Product Card for Selling--}}
     <div class="relative w-[250px] h-[500px] text-center group">
         <!-- Background -->
         <img src="{{ asset('frontend/assets/imges/card-product.png') }}" alt="Product Background"
