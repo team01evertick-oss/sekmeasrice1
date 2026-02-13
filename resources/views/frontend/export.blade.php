@@ -12,7 +12,7 @@
     {{-- Section prodcut for selling --}}
     <section class="section-product relative top-[50px]">
         <div class="inset-0 flex flex-col justify-center items-center text-center px-6">
-            <h2 class="text-3xl md:text-5xl font-extrabold text-[#4DA358] mb-6 tracking-wide drop-shadow-lg">
+            <h2 class="relative top-0 md:-top-14 md:py-0 py-4 text-3xl md:text-5xl font-extrabold text-[#4DA358] mb-6 tracking-wide drop-shadow-lg">
                 For Export
             </h2>
         </div>

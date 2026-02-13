@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 class ClientContrller extends Controller
 {
     public function index(){
-        $showProducrLocal = DB::table("local_sales")->limit(12)->get();
+        $showProducrLocal = DB::table("local_sales")->get();
         $showWining = DB::table("award_wining")->limit(8)->get();
         $showCredibility = DB::table("credibility_certificate")->limit(5)->get();
         $showComment = DB::table('comments')->limit(15)->get();
@@ -37,7 +37,7 @@ class ClientContrller extends Controller
     // ]);
     // }
     public function export(){
-        $showExport = DB::table("for_export")->limit(12)->get();
+        $showExport = DB::table("for_export")->get();
         return view("frontend.export", compact("showExport"));
     }
     public function aboutUs(){

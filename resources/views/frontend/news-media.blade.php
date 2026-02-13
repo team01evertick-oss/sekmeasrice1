@@ -12,7 +12,7 @@
         {{-- Section: Media --}}
         <section class="section-media relative h-auto bg-[#FFFFFF] py-16 mt-24">
             <div class="flex flex-col justify-center items-center text-center px-6 mb-12">
-                <h2 class="text-3xl md:text-5xl font-extrabold text-[#4DA358] tracking-wide">
+                <h2 class="py-12 text-3xl md:text-5xl font-extrabold text-[#4DA358] tracking-wide">
                     Media
                 </h2>
             </div>

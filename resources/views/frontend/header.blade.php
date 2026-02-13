@@ -42,7 +42,7 @@
 <body class="font-[Battambang] overflow-hidden p-0 m-0">
 
     <!-- HERO SECTION -->
-    <section class="relative w-full max-w-full z-10">
+    <section class="relative w-full max-w-full">
 
         <!-- Background Image -->
         <div class="absolute inset-0 w-full">
@@ -97,14 +97,14 @@
                     <!-- Right: Social Icons -->
                     <div class="relative -left-10 flex items-center gap-2">
                         <div class="hidden md:flex gap-3">
-                            <a href="#" class="hover:scale-110 transition-transform"> <svg width="21" height="21"
+                            <a href="https://www.facebook.com/sekmeasrice" class="hover:scale-110 transition-transform" target="_blank"> <svg width="21" height="21"
                                     viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M10.3559 0C4.64566 0 0 4.64566 0 10.3559C0 16.0656 4.64566 20.7117 10.3559 20.7117C16.0656 20.7117 20.7117 16.0656 20.7117 10.3559C20.7117 4.64566 16.0665 0 10.3559 0ZM12.9313 10.7204H11.2465V16.7256H8.74988C8.74988 16.7256 8.74988 13.4443 8.74988 10.7204H7.56312V8.59804H8.74988V7.22524C8.74988 6.24205 9.21708 4.70573 11.2694 4.70573L13.1194 4.71282V6.77306C13.1194 6.77306 11.9952 6.77306 11.7766 6.77306C11.5581 6.77306 11.2473 6.88235 11.2473 7.35122V8.59846H13.1494L12.9313 10.7204Z"
                                         fill="#007BFF" />
                                 </svg>
                             </a>
-                            <a href="#" class="hover:scale-110 transition-transform"> <svg width="22" height="21"
+                            <a href="https://t.me/Sekmeas88" class="hover:scale-110 transition-transform" target="_blank"> <svg width="22" height="21"
                                     viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M11.1513 20.7117C16.8706 20.7117 21.5071 16.0752 21.5071 10.3559C21.5071 4.63648 16.8706 0 11.1513 0C5.43189 0 0.79541 4.63648 0.79541 10.3559C0.79541 16.0752 5.43189 20.7117 11.1513 20.7117Z"
@@ -114,7 +114,7 @@
                                         fill="white" />
                                 </svg>
                             </a>
-                            <a href="#" class="hover:scale-110 transition-transform"> <svg width="22" height="21"
+                            <a href="https://wa.me/85587686768?text=Hello%20I%20want%20more%20information" target="_blank" class="hover:scale-110 transition-transform"> <svg width="22" height="21"
                                     viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M10.9468 20.7117C16.6662 20.7117 21.3027 16.0752 21.3027 10.3559C21.3027 4.63648 16.6662 0 10.9468 0C5.22742 0 0.590942 4.63648 0.590942 10.3559C0.590942 16.0752 5.22742 20.7117 10.9468 20.7117Z"
@@ -246,7 +246,7 @@
                                     </span>
                                 </li>
                                 <li class="relative top-[50px] flex gap-4">
-                                    <a href="#" class="hover:scale-110 transition-transform"> <svg width="21"
+                                    <a href="https://www.facebook.com/sekmeasrice" class="hover:scale-110 transition-transform" target="_blank"> <svg width="21"
                                             height="21" viewBox="0 0 21 21" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -254,7 +254,7 @@
                                                 fill="#007BFF" />
                                         </svg>
                                     </a>
-                                    <a href="#" class="hover:scale-110 transition-transform"> <svg width="22"
+                                    <a href="https://t.me/Sekmeas88" class="hover:scale-110 transition-transform" target="_blank"> <svg width="22"
                                             height="21" viewBox="0 0 22 21" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -265,7 +265,7 @@
                                                 fill="white" />
                                         </svg>
                                     </a>
-                                    <a href="#" class="hover:scale-110 transition-transform"> <svg width="22"
+                                    <a href="https://wa.me/85587686768?text=Hello%20I%20want%20more%20information" target="_blank" class="hover:scale-110 transition-transform"> <svg width="22"
                                             height="21" viewBox="0 0 22 21" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -279,11 +279,7 @@
                                                 fill="white" />
                                         </svg>
                                     </a>
-                                    <a href="#"
-                                        class="hover:scale-110 transition-transform inline-flex items-center justify-center min-w-[24px] min-h-[24px]">
-                                        <img src="{{ asset('frontend/assets/icon/ig.png') }}" alt="instagram"
-                                            class="w-[22px] h-[22px]">
-                                    </a>
+                                    
                                 </li>
                             </ul>
                         </div>

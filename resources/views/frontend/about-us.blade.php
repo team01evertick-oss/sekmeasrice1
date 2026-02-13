@@ -15,17 +15,17 @@
         <img src="{{ asset('frontend/assets/imges/about__us.png') }}" alt="About Us Background" class="w-full object-cover">
         <div
             class="absolute xl:top-[-50px] sm:top-[-30px] inset-0 flex flex-col justify-center items-center text-center px-6">
-            <div class="relative top-[-35px] md:top-[-90px] lg:top-[-100px] px-4 sm:px-6 md:px-10 py-8 sm:py-10 max-w-7xl">
+            <div class="relative top-[-35px] md:top-[-90px] lg:top-[-100px] px-4 sm:px-6 md:px-10 py-8 sm:py-10 w-full md:max-w-7xl">
                 <h2
-                    class="text-[25px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg">
+                    class="relative top-0 xl:-top-14 md:py-0 py-4 text-[25px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg">
                     About Us
                 </h2>
 
                 <p
-                    class="text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl xl:text-[22px] leading-relaxed text-[#000000] text-left">
+                    class="text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl xl:text-[22px] leading-relaxed text-[#000000] text-left px-2">
                     Lor Eak Heng Sek Meas Rice Co., Ltd is one of the leading rice mill production factories and rice
                     exporters
-                    in Cambodia. We have operated this business since 1995, starting from a small rice mill using
+                    in Cambodia. We have operated this business since 1994, starting from a small rice mill using
                     traditional
                     rice machines to a state-of-the-art production line with a two-processing-line system capable of
                     producing
@@ -33,7 +33,7 @@
                 </p>
 
                 <p
-                    class="mt-4 text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl xl:text-[22px] leading-relaxed text-[#000000] text-left">
+                    class="mt-4 text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl xl:text-[22px] leading-relaxed text-[#000000] text-left px-2">
                     With this advanced technology, our production capacity has significantly increased, allowing us to
                     export
                     high-quality rice to more than 16 countries across the European Union, Africa, and the ASEAN region.
@@ -52,7 +52,7 @@
 
                     <!-- Vision -->
                     <div class="bg-[#4DA358] hover:bg-[#F1C119] transition-colors duration-500 ease-in-out 
-                                                w-[350px] sm:w-[530px] md:w-[600px] max-w-[600px] md:h-[500px] h-[380px] rounded-tl-[80px] rounded-br-[80px] 
+                                                w-[350px] sm:w-[530px] md:w-[600px] max-w-[600px] md:h-[500px] h-[200px] rounded-tl-[80px] rounded-br-[80px] 
                                                 flex flex-col justify-start items-center">
                         <div
                             class="relative top-[50px] left-[50px] w-full max-w-[450px] flex flex-col gap-4 pt-[40px] pl-[40px] pr-8 pb-8">

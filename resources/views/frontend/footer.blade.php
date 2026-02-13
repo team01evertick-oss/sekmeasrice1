@@ -29,7 +29,7 @@
                     <h4 class="font-bold text-sm mb-1">Lor Eak Heng Sek Meas Rice Co., Ltd</h4>
                     <p class="text-sm leading-relaxed">
                         Lor Eak Heng Sek Meas Rice Co., Ltd is one of the leading rice mill production factories
-                        and rice exporters in Cambodia. We have operated this business since 1995, from a small
+                        and rice exporters in Cambodia. We have operated this business since 1994, from a small
                         rice mill with a traditional rice machine to a state-of-the-art rice production system.
                         This technology enables exports to over 16 countries globally.
                     </p>
@@ -37,13 +37,13 @@
                     <h5 class="font-bold mt-5 mb-2 text-sm">Follow Us</h5>
                     <div class="flex items-center gap-4 mt-2">
                         <!-- Social Icons -->
-                        <a href="#" class="hover:scale-110 transition-transform">
+                        <a href="https://www.facebook.com/sekmeasrice" class="hover:scale-110 transition-transform" target="_blank">
                             <img src="{{ asset('frontend/assets/icon/f.png') }}" alt="Facebook" class="w-6 h-6">
                         </a>
-                        <a href="#" class="hover:scale-110 transition-transform">
-                            <img src="{{ asset('frontend/assets/icon/t.png') }}" alt="Twitter" class="w-6 h-6">
+                        <a href="https://t.me/Sekmeas88" class="hover:scale-110 transition-transform" target="_blank">
+                            <img src="{{ asset('frontend/assets/icon/t.png') }}" alt="Twitter"  class="w-6 h-6">
                         </a>
-                        <a href="#" class="hover:scale-110 transition-transform">
+                        <a href="https://wa.me/85587686768?text=Hello%20I%20want%20more%20information" target="_blank" class="hover:scale-110 transition-transform">
                             <img src="{{ asset('frontend/assets/icon/ch.png') }}" alt="WhatsApp" class="w-6 h-6">
                         </a>
                     </div>
