@@ -385,7 +385,8 @@
             </div>
             <!-- Background rice texture -->
             {{-- <img src="@yield('rice-background')" alt="" class="relative w-full h-auto object-cover block"> --}}
-            <img src="@yield('img-background-contact')" alt="" class="w-full h-[140vh] lg:h-auto object-cover relative -z-10">
+            <img src="@yield('img-background-contact')" alt="" class="w-full object-cover relative -z-10
+            {{ Route::is('contact') ? 'h-[140vh] lg:h-auto' : 'h-auto' }}">
 
             <!-- Center rice picture overlay -->
             {{-- <img src="@yield('picture-rice')" alt=""
