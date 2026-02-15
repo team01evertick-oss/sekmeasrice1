@@ -11,7 +11,7 @@
 
     {{-- Section prodcut for selling --}}
     <section class="section-product relative top-[50px]">
-        <div class="inset-0 flex flex-col justify-center items-center text-center px-6">
+        <div class="inset-0 flex flex-col justify-center items-center text-center px-6" data-aos="fade-right" data-aos-duration="1500">
             <h2 class="relative top-0 md:-top-14 md:py-0 py-4 text-3xl md:text-5xl font-extrabold text-[#4DA358] mb-6 tracking-wide drop-shadow-lg">
                 For Export
             </h2>
@@ -24,7 +24,7 @@
         <div x-data="{ openOrderModal: false, selectedProduct: { name:'', type:'', capacity:'', price: 0 }, quantity: 1 }"
             x-cloak>
 
-            <div class="relative top-[30px] flex justify-center">
+            <div class="relative top-[30px] flex justify-center" data-aos="fade-left" data-aos-duration="1500">
                 <div
                     class="grid grid-cols-1 gap-y-15 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center items-start ">
                     @foreach ($showExport as $items)
@@ -88,14 +88,14 @@
     </section>
     <div class="grid grid-cols-1 gap-y-15">
         {{-- Section: International Destination--}}
-        <section class="relative w-full xl:hidden block">
+        <section class="relative w-full xl:hidden block" data-aos="fade-left" data-aos-duration="1500">
             <!-- Background Image -->
             <div class="relative w-full h-full">
                 <img src="{{ asset('frontend/assets/imges/international.png') }}" alt="Background Image"
                     class="w-full h-full object-cover">
             </div>
         </section>
-        <section class="relative w-full xl:block hidden">
+        <section class="relative w-full xl:block hidden" data-aos="fade-left" data-aos-duration="1500">
             <!-- Background Image -->
             <div class="relative w-full h-full">
                 <img src="{{ asset('assets/image/bg-national.svg') }}" alt="Background Image"
@@ -106,7 +106,7 @@
 
                     <!-- Destination Details -->
                     <div
-                        class="relative right-[450px] top-[200px] max-w-4xl space-y-2 mb-10 text-left justify-start items-start">
+                        class="relative right-[450px] top-[200px] max-w-4xl space-y-2 mb-10 text-left justify-start items-start" data-aos="fade-right" data-aos-duration="1500">
                         <p class="text-[#D6B157] text-[14px] font-semibold">International Destination</p>
 
                         <p>
@@ -135,7 +135,7 @@
                     </div>
 
                     <!-- Why Partner With Us -->
-                    <div class="relative top-64 max-w-6xl mx-auto w-full">
+                    <div class="relative top-64 max-w-6xl mx-auto w-full" data-aos="fade-left" data-aos-duration="1500">
                         <h2 class="text-3xl font-bold mb-6 text-[#4DA358]">Why Partner With Us?</h2>
 
                        <div class="relative top-32 text-left">
@@ -210,7 +210,7 @@
         </section>
 
         {{-- Section: Input Information --}}
-        <section class="flex justify-center bg-white py-[70px] px-4" id="section-products">
+        <section class="flex justify-center bg-white py-[70px] px-4" id="section-products" data-aos="fade-left" data-aos-duration="1500">
             <div class="flex flex-col lg:flex-row justify-between w-full max-w-[1200px] h-auto gap-8 lg:gap-4 pt-10 pb-10"
                 style="padding-left: 70px; padding-right: 70px;">
                 <div class="w-full lg:w-[25%] flex flex-col items-center p-4">

@@ -12,7 +12,7 @@
     {{-- Section: Media --}}
     <section class="section-media relative h-auto bg-[#FFFFFF] py-24 mt-24" x-data="lightbox()">
 
-        <div class="flex flex-col justify-center items-center text-center px-6 mb-12 py-12" style="padding-bottom: 25px;">
+        <div class="flex flex-col justify-center items-center text-center px-6 mb-12 py-12" style="padding-bottom: 25px;" data-aos="fade-right" data-aos-duration="1500">
             <h2 class="text-3xl md:text-5xl font-extrabold text-[#4DA358] tracking-wide">
                 Latest News
             </h2>
@@ -20,7 +20,7 @@
 
         <div class="flex flex-col justify-center items-center px-4 sm:px-10 md:px-20 py-12">
             <div class="max-w-7xl w-full">
-                <div class="grid grid-cols-1 gap-x-20 gap-y-16">
+                <div class="grid grid-cols-1 gap-x-20 gap-y-16" data-aos="fade-left" data-aos-duration="1500">
                     @foreach($showMedia as $media)
                         <div class="flex flex-col md:flex-row items-center gap-10 justify-center
                                     {{ $loop->iteration % 2 == 0 ? 'md:flex-row-reverse' : '' }}">

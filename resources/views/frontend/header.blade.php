@@ -328,9 +328,9 @@
         {{-- Text Career --}}
         <div
             class="absolute xl:top-[-180px] left-[20px] lg:top-[-100px] inset-0 flex justify-start items-center pl-10 md:pl-20 lg:pl-32 ">
-            <div class="">
+            <div class="" >
                 <!-- Title -->
-                <h1
+                <h1 data-aos="fade-right" data-aos-duration="1500"
                     class="text-3xl sm:text-3xl md:text-5xl lg:text-[100px] font-extrabold text-white leading-tight mb-6">
                     @yield('title-career')
                 </h1>

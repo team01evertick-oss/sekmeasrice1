@@ -16,12 +16,12 @@
         <div
             class="absolute xl:top-[-50px] sm:top-[-30px] inset-0 flex flex-col justify-center items-center text-center px-6">
             <div class="relative top-[-35px] md:top-[-90px] lg:top-[-100px] px-4 sm:px-6 md:px-10 py-8 sm:py-10 w-full md:max-w-7xl">
-                <h2
+                <h2 data-aos="fade-right" data-aos-duration="1500"
                     class="relative top-0 xl:-top-14 md:py-0 py-4 text-[25px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg">
                     About Us
                 </h2>
 
-                <p
+                <p data-aos="fade-left" data-aos-duration="1500"
                     class="text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl xl:text-[22px] leading-relaxed text-[#000000] text-left px-2">
                     Lor Eak Heng Sek Meas Rice Co., Ltd is one of the leading rice mill production factories and rice
                     exporters
@@ -32,7 +32,7 @@
                     20 tons per hour.
                 </p>
 
-                <p
+                <p data-aos="fade-left" data-aos-duration="1500"
                     class="mt-4 text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl xl:text-[22px] leading-relaxed text-[#000000] text-left px-2">
                     With this advanced technology, our production capacity has significantly increased, allowing us to
                     export
@@ -53,7 +53,7 @@
                     <!-- Vision -->
                     <div class="bg-[#4DA358] hover:bg-[#F1C119] transition-colors duration-500 ease-in-out 
                                                 w-[350px] sm:w-[530px] md:w-[600px] max-w-[600px] md:h-[500px] h-[200px] rounded-tl-[80px] rounded-br-[80px] 
-                                                flex flex-col justify-start items-center">
+                                                flex flex-col justify-start items-center" data-aos="fade-right" data-aos-duration="1500">
                         <div
                             class="relative top-[50px] left-[50px] w-full max-w-[450px] flex flex-col gap-4 pt-[40px] pl-[40px] pr-8 pb-8">
                             <h1 class="text-2xl sm:text-3xl font-bold text-black">Vision</h1>
@@ -67,7 +67,7 @@
                     <!-- Mission -->
                     <div class="bg-[#4DA358] hover:bg-[#F1C119] transition-colors duration-500 ease-in-out 
                                                                 w-[350px] sm:w-[530px] md:w-[600px] max-w-[600px] md:h-[500px] h-[380px] rounded-tr-[80px] rounded-bl-[80px] 
-                                                                flex flex-col justify-start items-center p-8">
+                                                                flex flex-col justify-start items-center p-8" data-aos="fade-left" data-aos-duration="1500">
                         <div class="relative top-[50px] left-[50px] w-full max-w-[500px] flex flex-col gap-4">
                             <h1 class="text-2xl sm:text-3xl font-bold text-black">Mission</h1>
                             <p class="text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl text-[#1A1A1A] leading-relaxed">
@@ -90,18 +90,18 @@
             </div>
 
             <!-- Centered Bottom Image -->
-            <div class="flex justify-center items-center mt-10">
+            <div class="flex justify-center items-center mt-10" data-aos="fade-up" data-aos-duration="1500">
                 <img src="{{ asset('frontend/assets/imges/Vector.png') }}" alt="Divider"
                     class="w-[80px] sm:w-[100px] h-auto">
             </div>
         </section>
          {{-- History of Sek Meas --}}
         <section class="w-full py-16 bg-white px-8">
-            <div class="text-center text-[#4DA358] font-bold mb-12">
+            <div class="text-center text-[#4DA358] font-bold mb-12" data-aos="fade-right" data-aos-duration="1500">
                 <h1 class="text-2xl sm:text-3xl md:text-4xl">History of Rice Milling Production</h1>
             </div>
 
-            <div class="relative w-full mx-auto px-4">
+            <div class="relative w-full mx-auto px-4" data-aos="fade-left" data-aos-duration="1500">
                 <!-- Vertical line on mobile -->
                 {{-- <div class="md:hidden absolute left-1/2 top-0 bottom-0 w-1 bg-yellow-300 transform -translate-x-1/2"></div> --}}
 
@@ -142,10 +142,10 @@
         </section>
        
         {{-- Section: Inoformation of SEO in Sek Meas Rice --}}
-        <section class="relative w-full xl:hidden block">
+        <section class="relative w-full xl:hidden block" data-aos="fade-right" data-aos-duration="1500">
             <img src="{{ asset('frontend/assets/imges/infor-seo.png') }}" alt="" class="w-full h-full object-cover">
         </section>
-        <section class="relative w-full xl:block hidden">
+        <section class="relative w-full xl:block hidden" data-aos="fade-up" data-aos-duration="1500">
             <img src="{{ asset('assets/image/bg-ms.svg') }}" alt="" class="w-full h-full object-cover">
 
             <div class="absolute inset-0 -top-12 flex flex-col justify-center items-center text-center px-6 text-white">
@@ -182,11 +182,11 @@
     {{-- Section: Business Registration --}}
     <section id="business" class="relative px-4 py-12 md:px-10 lg:px-20">
         <div class="grid grid-cols-1 gap-10 business">
-            <div class="text-center text-[#4DA358] font-bold mb-8">
+            <div class="text-center text-[#4DA358] font-bold mb-8" data-aos="fade-right" data-aos-duration="1500">
                 <h1 class="text-2xl sm:text-3xl md:text-4xl">Business Registration Certificates</h1>
             </div>
 
-            <div class="flex flex-col md:flex-row flex-wrap justify-center gap-6 m-10">
+            <div class="flex flex-col md:flex-row flex-wrap justify-center gap-6 m-10" data-aos="fade-left" data-aos-duration="1500">
                 @foreach ($showAboutBusiness as $items)
                     <div
                         class="mx-auto transform transition-transform duration-300 hover:scale-110
@@ -204,13 +204,13 @@
         <div class="grid grid-cols-1 gap-10">
             <!-- Section Title -->
             <div class="text-center text-[#4DA358] font-bold mb-8">
-                <h1 class="relative top-[10px] text-2xl sm:text-3xl md:text-4xl">
+                <h1 class="relative top-[10px] text-2xl sm:text-3xl md:text-4xl" data-aos="fade-right" data-aos-duration="1500">
                     FDA Approved Certificate
                 </h1>
             </div>
 
             <!-- Image Container -->
-            <div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-y-6 md:gap-x-6 m-10">
+            <div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-y-6 md:gap-x-6 m-10" data-aos="fade-left" data-aos-duration="1500">
                 @foreach ($showAboutApproved as $items)
                     <div class="w-full sm:w-[80%] md:w-[45%] lg:w-[30%] flex justify-center">
                         <img src="../../storage/local_product/{{ $items->thumbnail }}" alt="Certificate"

@@ -8,9 +8,9 @@
 {{-- @section('text-title', 'Contact Us') --}}
 @section('text-title')
     <div class="relative -top-4 lg:top-40 xl:top-14 z-50 text-lg font-normal">
-        <h1 class="text-2xl md:text-4xl text-[#ffffff] text-center font-bold">Contect Form</h1>
+        <h1 class="text-2xl md:text-4xl text-[#ffffff] text-center font-bold" data-aos="fade-right" data-aos-duration="1500">Contect Form</h1>
         <form action="">
-            <div class="max-w-7xl mx-auto flex md:flex-row flex-col justify-center space-x-4">
+            <div class="max-w-7xl mx-auto flex md:flex-row flex-col justify-center space-x-4" data-aos="fade-left" data-aos-duration="1500">
                 <div class="space-y-4 md:w-[50%] w-full" style="margin: 10px; padding: 10px;">
                     <input type="text" placeholder="Name" name="name"
                         class="w-[90%] h-[55px] px-5 rounded-full text-[#1a8f4a] placeholder-[#1a8f4a] bg-[#ffffff] focus:outline-none focus:ring-2 focus:ring-yellow-400" style="padding: 10px; margin: 10px;" />
@@ -411,7 +411,7 @@
                 
                 </div>
             </div>
-            <div class="relative -top-10 md:top-4 pt-12 flex justify-center py-12">
+            <div class="relative -top-10 md:top-4 pt-12 flex justify-center py-12" data-aos="fade-up" data-aos-duration="1500">
                 <button type="submit"
                     class="w-64 px-16 h-12 py-5 font-bold text-white bg-[#53A557] rounded-2xl hover:bg-[#468e4a] hover:shadow-xl hover:shadow-green-200 transition-all duration-300">
                     Submit

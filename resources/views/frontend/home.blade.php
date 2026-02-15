@@ -15,14 +15,14 @@
     <section class="about-use relative top-[40px] md:top-[60px]">
         {{-- <img src="{{ asset('frontend/assets/imges/about-text.png') }}" alt="About Us Background"
             class="w-full object-cover"> --}}
-        <img src="{{ asset('frontend/assets/imges/about__us.png') }}" alt="About Us Background" class="w-full object-cover">
+        <img src="{{ asset('frontend/assets/imges/about__us.png') }}" alt="About Us Background" class="w-full object-cover" data-aos="fade-right" data-aos-duration="1500">
         {{-- <div class="relative w-full mt-[50px]"> --}}
             <!-- Background image -->
 
 
             <!-- Overlay text -->
             <div
-                class="absolute xl:top-[-50px] sm:top-[90px] inset-0 flex flex-col justify-center items-center text-center px-6">
+                class="absolute xl:top-[-50px] sm:top-[90px] inset-0 flex flex-col justify-center items-center text-center px-6" data-aos="fade-left" data-aos-duration="1500">
                 {{-- <div class="p-8 md:p-10 max-w-3xl">
                     <h2
                         class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg">
@@ -75,7 +75,7 @@
         <section class="section-products relative top-[20px] grid grid-cols-1 gap-10" id="section-products">
             <div class="relative inset-0 flex flex-col justify-center items-center text-center px-6">
                 <h2
-                    class="text-[10px] sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg">
+                    class="text-[10px] sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg" data-aos="fade-right" data-aos-duration="1500">
                     For Local Sale
                 </h2>
             </div>
@@ -86,7 +86,7 @@
             <div x-data="{ openOrderModal: false, selectedProduct: { name:'', type:'', capacity:'', price: 0, image: '' }, quantity: 1 }"
                 x-cloak>
 
-                <div class="flex justify-center">
+                <div class="flex justify-center" data-aos="fade-left" data-aos-duration="1500">
                     <div
                         class="grid grid-cols-1 gap-y-15 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center items-start ">
                         @foreach ($showProducrLocal as $items)
@@ -307,13 +307,13 @@ class="flex justify-center relative left-[60px] top-[25px] mx-auto items-center 
                         <!-- Awards Section -->
                         <div
                             class="mb-10 sm:mb-14 md:mb-16 relative top-[-20px] sm:top-[-30px] flex flex-col items-center gap-y-10">
-                            <h1 class="text-[#D6B157] font-bold text-2xl sm:text-3xl md:text-4xl drop-shadow-lg">
+                            <h1 class="text-[#D6B157] font-bold text-2xl sm:text-3xl md:text-4xl drop-shadow-lg" data-aos="fade-right" data-aos-duration="1500">
                                 Awards Winning
                             </h1>
 
                             <!-- Responsive grid layout -->
                             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 
-                                                                gap-4 sm:gap-6 md:gap-8 justify-items-center items-end">
+                                                                gap-4 sm:gap-6 md:gap-8 justify-items-center items-end" data-aos="fade-left" data-aos-duration="1500">
                                 @foreach ($showWining as $items)
                                     <img src="../../storage/local_product/{{ $items->thumbnail }}"
                                         class="w-[100px] sm:w-[120px] md:w-[140px] lg:w-[160px] xl:w-[180px]
@@ -326,13 +326,13 @@ class="flex justify-center relative left-[60px] top-[25px] mx-auto items-center 
                         <!-- Certificates Section -->
                         <div class="relative flex flex-col items-center text-center gap-y-10 mb-10 sm:mb-14 md:mb-16">
                             <!-- Title -->
-                            <h1 class="text-[#D6B157] font-bold text-2xl sm:text-3xl md:text-4xl drop-shadow-lg">
+                            <h1 class="text-[#D6B157] font-bold text-2xl sm:text-3xl md:text-4xl drop-shadow-lg" data-aos="fade-right" data-aos-duration="1500">
                                 Credibility Certificates
                             </h1>
 
                             <!-- Responsive Images Grid -->
                             <div
-                                class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 justify-items-center items-start">
+                                class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 justify-items-center items-start" data-aos="fade-left" data-aos-duration="1500">
                                 @foreach ($showCredibility as $items)
                                     <img src="../../storage/local_product/{{ $items->thumbnail }}"
                                         class="w-[140px] sm:w-[180px] md:w-[200px] lg:w-[220px] h-[200px] sm:h-[240px] md:h-[260px] lg:h-[300px] 
@@ -352,11 +352,11 @@ class="flex justify-center relative left-[60px] top-[25px] mx-auto items-center 
         class="relative bg-[#4DA358] w-full h-[500px] flex flex-col items-center justify-between py-10 sm:py-14 md:py-16 lg:py-20 mt-5 md:mt-10">
         <!-- Title -->
         <div class="flex justify-center mb-8 sm:mb-10">
-            <h1 class="relative top-[30px] text-white text-center text-2xl sm:text-3xl md:text-4xl font-bold">Why Choose Our Products?</h1>
+            <h1 class="relative top-[30px] text-white text-center text-2xl sm:text-3xl md:text-4xl font-bold" data-aos="fade-right" data-aos-duration="1500">Why Choose Our Products?</h1>
         </div>
 
         <!-- Certificate Icons -->
-        <div class="w-full flex justify-center">
+        <div class="w-full flex justify-center" data-aos="fade-left" data-aos-duration="1500">
             <div
                 class="grid grid-cols-2 sm:grid-cols-4 gap-10 sm:gap-8 px-6 sm:px-10 lg:px-20 w-full max-w-6xl relative top-[40px]">
                 <!-- Item 1 -->
