@@ -88,22 +88,21 @@
     </section>
     <div class="grid grid-cols-1 gap-y-15">
         {{-- Section: International Destination--}}
-        <section class="relative w-full">
+        <section class="relative w-full xl:hidden block">
             <!-- Background Image -->
             <div class="relative w-full h-full">
                 <img src="{{ asset('frontend/assets/imges/international.png') }}" alt="Background Image"
                     class="w-full h-full object-cover">
-
+            </div>
+        </section>
+        <section class="relative w-full xl:block hidden">
+            <!-- Background Image -->
+            <div class="relative w-full h-full">
+                <img src="{{ asset('assets/image/bg-national.svg') }}" alt="Background Image"
+                    class="w-full h-full object-cover">
                 <!-- Overlay Content -->
-                {{-- <div
+                <div
                     class="absolute inset-0 flex flex-col justify-center items-center text-white px-6 overflow-y-auto text-center">
-
-                    <!-- Title -->
-                    <div class="mb-6">
-                        <p class="relative top-[-80px] text-[#D6B157] text-xl md:text-xl font-bold leading-tight">
-                            International <br> Destination
-                        </p>
-                    </div>
 
                     <!-- Destination Details -->
                     <div
@@ -136,56 +135,76 @@
                     </div>
 
                     <!-- Why Partner With Us -->
-                    <div class="max-w-5xl w-full">
+                    <div class="relative top-64 max-w-6xl mx-auto w-full">
                         <h2 class="text-3xl font-bold mb-6 text-[#4DA358]">Why Partner With Us?</h2>
 
-                        <!-- Icon Block 1 -->
-                        <div class="flex flex-wrap justify-center items-start gap-10 mb-10">
-                            <div class="w-60">
-                                <img src="{{ asset('frontend/assets/icon/f.png') }}" class="mx-auto mb-3" alt="">
-                                <h2 class="text-xl font-semibold text-[#324A0A]">Letter of Credit</h2>
+                       <div class="relative top-32 text-left">
+                         <!-- Icon Block 1 -->
+                        <div class=" flex flex-wrap justify-center items-start gap-10 mb-10">
+                            <div class="w-80">
+                                <div class="flex justify-center">
+                                    <img src="{{ asset('assets/image/icon/1.svg') }}" class="mx-auto mb-3" alt="">
+                                </div>
+                                <h2 class="text-xl font-semibold text-[#324A0A]">Letter of Credit (LC) Expertise</h2>
                                 <span class="text-sm block mt-2 text-[#1E1E1E]">
-                                    We offer a full range of accounting, tax, and business advisory services.
+                                    With decades of export experience, we handle LC transactions with accuracy 
+                                    and efficiency—ensuring smooth documentation, full compliance, and timely shipments.
                                 </span>
                             </div>
 
-                            <div class="w-60">
-                                <img src="{{ asset('frontend/assets/icon/f.png') }}" class="mx-auto mb-3" alt="">
-                                <h2 class="text-xl font-semibold text-[#324A0A]">Lower Tariff Export</h2>
+                            <div class="w-80">
+                                <div class="flex justify-center">
+                                     <img src="{{ asset('assets/image/icon/2.svg') }}" class="mx-auto mb-3" alt="">
+                                </div>
+                               
+                                <h2 class="text-xl font-semibold text-[#324A0A]">Lower Tariff Export Advantage</h2>
                                 <span class="text-sm block mt-2 text-[#1E1E1E]">
-                                    Competitive export advantages with lower tariff fees.
+                                    We help partners access lower or preferential export tariffs, 
+                                    reducing costs and strengthening your competitiveness in Cambodia and regional markets.
                                 </span>
                             </div>
 
-                            <div class="w-60">
-                                <img src="{{ asset('frontend/assets/icon/f.png') }}" class="mx-auto mb-3" alt="">
-                                <h2 class="text-xl font-semibold text-[#324A0A]">Decades of Experience</h2>
+                            <div class="w-80">
+                                <div class="flex justify-center">
+                                    <img src="{{ asset('assets/image/icon/3.svg') }}" class="mx-auto mb-3" alt="">
+                                </div>
+                                
+                                <h2 class="text-xl font-semibold text-[#324A0A]">Decades of Export Experience</h2>
                                 <span class="text-sm block mt-2 text-[#1E1E1E]">
-                                    Professional global operations with years of experience.
+                                    With over 30 years of experience since 1995, we offer deep industry expertise and a proven track record of 
+                                    exporting to Europe and global markets—ensuring reliability, stability, and professional service.
                                 </span>
                             </div>
                         </div>
 
                         <!-- Icon Block 2 -->
-                        <div class="flex flex-wrap justify-center items-start gap-10">
-                            <div class="w-60">
-                                <img src="{{ asset('frontend/assets/icon/f.png') }}" alt="">
+                        <div class="relative top-12 flex flex-wrap justify-center items-start gap-10">
+                            <div class="w-80">
+                                <div class="flex justify-center">
+                                    <img src="{{ asset('assets/image/icon/4.svg') }}" alt="">
+                                </div>
+                                
                                 <h2 class="text-xl font-semibold text-[#324A0A]">Capable Production Output</h2>
                                 <span class="text-sm block mt-2 text-[#1E1E1E]">
-                                    Strong production capacity for high-volume supply.
+                                    With advanced machinery, we can meet any production volume—scaling smoothly from small batches to large orders.
                                 </span>
                             </div>
 
-                            <div class="w-60">
-                                <img src="{{ asset('frontend/assets/icon/f.png') }}" class="mx-auto mb-3" alt="">
-                                <h2 class="text-xl font-semibold text-[#324A0A]">FDA Certified Quality</h2>
+                            <div class="w-80">
+                                <div class="flex justify-center">
+                                    <img src="{{ asset('assets/image/icon/5.svg') }}" class="mx-auto mb-3" alt="">
+                                </div>
+                                
+                                <h2 class="text-xl font-semibold text-[#324A0A]">FDA Approval & Certified Quality</h2>
                                 <span class="text-sm block mt-2 text-[#1E1E1E]">
-                                    Consistent quality under FDA standards.
+                                    Our rice is FDA-approved and certified to 
+                                    international standards, ensuring trusted quality, safety, and compliance in every shipment.
                                 </span>
                             </div>
                         </div>
+                       </div>
                     </div>
-                </div> --}}
+                </div> 
 
             </div>
         </section>

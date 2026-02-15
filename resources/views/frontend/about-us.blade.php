@@ -142,8 +142,41 @@
         </section>
        
         {{-- Section: Inoformation of SEO in Sek Meas Rice --}}
-        <section class="relative w-full">
+        <section class="relative w-full xl:hidden block">
             <img src="{{ asset('frontend/assets/imges/infor-seo.png') }}" alt="" class="w-full h-full object-cover">
+        </section>
+        <section class="relative w-full xl:block hidden">
+            <img src="{{ asset('assets/image/bg-ms.svg') }}" alt="" class="w-full h-full object-cover">
+
+            <div class="absolute inset-0 -top-12 flex flex-col justify-center items-center text-center px-6 text-white">
+                <h1 class="text-[#4DA358] text-3xl py-6">Messages From CEO</h1>
+                <div class="text-black max-w-7xl mx-auto text-left text-md space-y-2">
+                    <p>
+                    Rice is an important factor in daily life for both the local and international markets. Rice consumption has been the most important choice for rice-consuming customers. We have selected the best rice variety from the original source of supply in Cambodia to deliver the most component rice variety. The agricultural factor played an important role in the government's standard of living improvement strategy. By 2025, 
+                    the target of 1 million tons of exports is strategized by the government, aiming to improve the overall Cambodia Standard.
+                    </p>
+                    <p>
+                        We have selected the rice variety based on standard parameters and sources for growing paddy that provide with 
+                        good and genuine origin of paddy. Continuously, we have improved our standard from time to time to match 
+                        the market developments, by now our capacity has reached to international standard with state-of-the-art technology. 
+                        Plus, our human capital has put a lot of inputs for development to improve the product quality and standard of the work.
+                        We have developed our system from handicraft production to a state-of-the-art production line in order to support 
+                        increasing market demands. Furthermore, SEK MEAS has been certified for Good Hygiene Practice (GHP) and Hazard 
+                        Analysis on Critical Control Points (HACCP) in order to offer very standardized and hygienized products to consumers.
+                        "We care for your eating and that's why we continue to develop and innovate more standards 
+                        for achieving good ones for you all", added Mrs. LOR SENG LEAP. We hope to serve you fresher and healthier rice.
+                    </p>
+                    <p>
+                        We are also working with farmer groups and the community to plant the best rice seeds, 
+                        and in parallel with markets and such momentum has been noticed in the company. Farmers grow, and we grow together.
+                    </p>
+                    <p>
+                        By 2023, SEK MEAS will have increased its capital investment to around 20 million USD for rice 
+                        production and processing of rice to serve the demand from customers in both international markets. With innovative technology and human capital, 
+                        we hope that customers will continue consuming our rice, and we are <br> growing together with you all.
+                    </p>
+                </div>
+            </div>
         </section>
     </div>
     {{-- Section: Business Registration --}}
