@@ -44,19 +44,22 @@
 
             <!-- Column 3: Contact -->
             <div class="grid grid-cols-1 gap-2">
-                <h4 class="font-bold text-sm mb-1 text-[#499D56]">Lor Eak Heng Sek Meas Company</h4>
+                <h4 class="font-bold text-sm mb-1 text-[#499D56]">Lor Eak Heng Sek Meas Rice Co., Ltd</h4>
 
                 <!-- Factory Location -->
-                <p class="text-sm leading-relaxed flex items-start gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6 mt-[2px] flex-shrink-0 text-[#000000]">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M12 2.25c4.556 0 8.25 3.694 8.25 8.25 0 3.713-2.528 7.56-7.456 11.366a.75.75 0 0 1-.838 0C6.278 18.06 3.75 14.213 3.75 10.5 3.75 5.944 7.444 2.25 12 2.25z" />
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M12 12.75a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5z" />
-                    </svg>
-                    Our Factory is located in Kompong Cham Province
-                </p>
+                <div class="text-sm leading-relaxed flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 mt-[2px] flex-shrink-0 text-[#000000]">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 2.25c4.556 0 8.25 3.694 8.25 8.25 0 3.713-2.528 7.56-7.456 11.366a.75.75 0 0 1-.838 0C6.278 18.06 3.75 14.213 3.75 10.5 3.75 5.944 7.444 2.25 12 2.25z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 12.75a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5z" />
+                        </svg>
+                        <div>
+                            <h1 class="font-semibold">Factory Address: </h1> <br>
+                            <span class="relative -top-4">National Road 6, Skun Village, Sotep Commune, Cheung Prey District, Kompong Cham Province Our Factory is located in Kompong Cham Province.</span>
+                        </div>
+                    </div>
 
                 <!-- Office Address -->
                 <p class="text-sm leading-relaxed flex items-start gap-2">
@@ -106,7 +109,7 @@
             <!-- Column 4: Working Time -->
             <div class="relative xl:top-0 top-[-30px]">
                 <h4 class="font-bold text-sm text-[#499D56] mb-2">Working Time</h4>
-                <p class="text-sm mb-1">Monday – Sunday</p>
+                <p class="text-sm mb-1">Monday - Friday</p>
                 <p class="text-sm mb-4">8am – 5pm</p>
 
                 <h4 class="font-bold text-sm text-[#499D56] mb-2">Map</h4>

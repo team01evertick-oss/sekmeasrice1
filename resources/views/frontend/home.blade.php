@@ -240,66 +240,47 @@
 
                                 <!-- Checkout Button -->
                                 <button type="button" @click="
-                                        const form = document.getElementById('checkoutForm');
-                                        const data = new FormData(form);
-                                        if (!data.get('customer_name') || !data.get('customer_phone') || !data.get('customer_address')) {
-                                            Swal.fire({
-                                                icon: 'warning',
-                                                title: 'Missing Info',
-                                                text: 'Please fill in all customer information.',
-                                                confirmButtonColor: '#B8A34E'
-                                            });
-                                            return;
-                                        }
+    const form = document.getElementById('checkoutForm');
+    const data = new FormData(form);
+    if (!data.get('customer_name') || !data.get('customer_phone') || !data.get('customer_address')) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Missing Info',
+            text: 'Please fill in all customer information.',
+            confirmButtonColor: '#B8A34E'
+        });
+        return;
+    }
 
-                                        const message = 
-                                            '🛍 *New Order Received!*%0A%0A' +
-                                            '*Customer Name:* ' + data.get('customer_name') + '%0A' +
-                                            '*Phone:* ' + data.get('customer_phone') + '%0A' +
-                                            '*Address:* ' + data.get('customer_address') + '%0A%0A' +
-                                            '*Product:* ' + selectedProduct.name + '%0A' +
-                                            '*Type:* ' + selectedProduct.type + '%0A' +
-                                            '*Packing-Size:* ' + selectedProduct.capacity + '%0A' +
-                                            '*Price:* $' + (Number(selectedProduct.price) || 0).toFixed(2) + '%0A' +
-                                            '*Quantity:* ' + (quantity || 1) + '%0A' +
-                                            '*Total:* $' + (((Number(selectedProduct.price)||0) * (quantity||1)).toFixed(2));
+    const message = 
+        '🛍 New Order Received!%0A%0A' +
+        'Customer Name: ' + data.get('customer_name') + '%0A' +
+        'Phone: ' + data.get('customer_phone') + '%0A' +
+        'Address: ' + data.get('customer_address') + '%0A%0A' +
+        'Product: ' + selectedProduct.name + '%0A' +
+        'Type: ' + selectedProduct.type + '%0A' +
+        'Packing-Size: ' + selectedProduct.capacity + '%0A' +
+        'Price: $' + (Number(selectedProduct.price) || 0).toFixed(2) + '%0A' +
+        'Quantity: ' + (quantity || 1) + '%0A' +
+        'Total: $' + (((Number(selectedProduct.price)||0) * (quantity||1)).toFixed(2));
 
-                                        fetch('{{ route('telegram.notify') }}', {
-                                            method: 'POST',
-                                            headers: {
-                                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                                                'Content-Type': 'application/x-www-form-urlencoded',
-                                                'Accept': 'application/json'
-                                            },
-                                            body: new URLSearchParams({ message: decodeURIComponent(message.replace(/%0A/g, '\n')) })
-                                        })
-                                        .then(res => res.json())
-                                        .then(() => {
-                                            Swal.fire({
-                                                title: 'Thank You!',
-                                                html: '<p>Your order has been sent successfully.<br>We’ll contact you soon!</p>',
-                                                imageUrl: 'frontend/assets/icon/1.png',
-                                                imageWidth: 120,
-                                                imageHeight: 120,
-                                                confirmButtonText: 'Close',
-                                                confirmButtonColor: '#B8A34E'
-                                            }).then(() => {
-                                                openOrderModal = false;
-                                            });
-                                        })
-                                        .catch((err) => {
-                                            console.error(err);
-                                            Swal.fire({
-                                                icon: 'error',
-                                                title: 'Oops...',
-                                                text: 'Something went wrong. Please try again.',
-                                                confirmButtonColor: '#B8A34E'
-                                            });
-                                        });
-                                    "
-                                    class="flex justify-center relative left-[60px] top-[25px] mx-auto items-center w-[80%] h-[45px] bg-gradient-to-r from-[#DDCC81] to-[#B8A34E] text-[#324A0A] font-bold py-3 rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-200">
-                                    Confirm Checkout
-                                </button>
+    // Replace 'yourusername' with your Telegram username (NOT phone)
+    window.open('https://t.me/+85587686768?text=' + message, '_blank');
+
+    Swal.fire({
+        title: 'Thank You!',
+        html: '<p>Your order is ready to send via Telegram.<br>Click SEND in Telegram to finish.</p>',
+        imageUrl: 'frontend/assets/icon/1.png',
+        imageWidth: 120,
+        imageHeight: 120,
+        confirmButtonText: 'Close',
+        confirmButtonColor: '#B8A34E'
+    });
+"
+class="flex justify-center relative left-[60px] top-[25px] mx-auto items-center w-[80%] h-[45px] bg-gradient-to-r from-[#DDCC81] to-[#B8A34E] text-[#324A0A] font-bold py-3 rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-200">
+    Confirm Checkout
+</button>
+
                             </form>
                         </div>
                     </div>

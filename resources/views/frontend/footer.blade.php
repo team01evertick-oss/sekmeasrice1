@@ -68,10 +68,10 @@
 
                 <!-- Column 3: Contact -->
                 <div class="relative left-[10px] grid grid-cols-1 gap-2 text-[#1E1E1E]">
-                    <h4 class="font-bold text-sm mb-1">Lor Eak Heng Sek Meas Company</h4>
+                    <h4 class="font-bold text-sm mb-1">Lor Eak Heng Sek Meas Co.,Ltd </h4>
 
                     <!-- Factory Location -->
-                    <p class="text-sm leading-relaxed flex items-start gap-2">
+                    <div class="text-sm leading-relaxed flex items-start gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6 mt-[2px] flex-shrink-0 text-[#000000]">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -79,8 +79,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 12.75a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5z" />
                         </svg>
-                        Our Factory is located in Kompong Cham Province
-                    </p>
+                        <div>
+                            <h1 class="font-semibold">Factory Address: </h1> <br>
+                            <span class="relative -top-4">National Road 6, Skun Village, Sotep Commune, Cheung Prey District, Kompong Cham Province Our Factory is located in Kompong Cham Province.</span>
+                        </div>
+                    </div>
 
                     <!-- Office Address -->
                     <p class="text-sm leading-relaxed flex items-start gap-2">
@@ -130,8 +133,8 @@
 
                 <!-- Column 4: Working Time -->
                 <div class="relative left-[10px] grid grid-cols-1 gap-2">
-                    <h4 class="font-bold text-sm mb-2">Working Time</h4>
-                    <p class="text-sm">Monday – Sunday</p>
+                    <h4 class="font-bold text-sm mb-2">Working Time: </h4>
+                    <p class="text-sm">Monday - Friday</p>
                     <p class="text-sm mb-3">8am – 5pm</p>
 
                     <h4 class="font-bold text-sm mb-2">Map</h4>

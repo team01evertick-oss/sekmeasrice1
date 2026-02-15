@@ -180,7 +180,7 @@
           <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon tf-icons bx bx-photo-album text-xl"></i>
-              <div data-i18n="Layouts">Media</div>
+              <div data-i18n="Layouts">Latest News</div>
             </a>
             <ul class="menu-sub">
               <li class="menu-item"><a href="{{ route('view.media') }}" class="menu-link">
@@ -193,7 +193,7 @@
           </li>
 
           <!-- News Blog -->
-          <li class="menu-item">
+          <li class="menu-item d-none">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon tf-icons bx bx-news text-xl"></i>
               <div data-i18n="Layouts">News Blog</div>
@@ -207,6 +207,7 @@
                 </a></li>
             </ul>
           </li>
+
           <!-- Profile -->
           <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">

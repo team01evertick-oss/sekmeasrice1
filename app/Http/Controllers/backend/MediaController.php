@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class MediaController extends Controller
 {
@@ -20,6 +21,7 @@ class MediaController extends Controller
             'title'        => 'required|string|max:255',
             'description'  => 'required|string|max:5000',
             'image_media'  => 'required|image|mimes:jpg,jpeg,png,gif,webp|max:20480',
+            'images.*' => 'image|mimes:jpg,jpeg,png,webp|max:10240',
         ]);
 
          // Handle file upload image
@@ -28,11 +30,22 @@ class MediaController extends Controller
         $image = time() . '-' . $image_media->getClientOriginalName();
         $image_media->move(public_path($path), $image);
 
+        $images = [];
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $file) {
+                $name = time().'_'.uniqid().'.'.$file->getClientOriginalExtension();
+                $file->move(public_path('assets/image_details'), $name);
+                $images[] = 'assets/image_details/'.$name;
+            }
+        }
+        
         // Insert into database
         $result = DB::table('media')->insert([
             'title'     => $request->title,
             'description'        => $request->description,
             'image_media' => $image,
+            'images' => json_encode($images)
         ]);
 
         if ($result) {
@@ -52,6 +65,7 @@ class MediaController extends Controller
         'update_description' => 'required|string|max:5000',
         'update_image_media' => 'nullable|image|mimes:jpg,jpeg,png,gif,webp|max:20480',
         'old_image_media'    => 'nullable|string|max:255',
+        'edit_images.*' => 'image|mimes:jpg,jpeg,png,webp|max:10240',
         ]);
 
         $update_id = $request->input('update_id');
@@ -65,11 +79,36 @@ class MediaController extends Controller
         }elseif($old_image_media){
             $image = $old_image_media;
         }
+
+        // Get the list of old images that the user wants to keep
+        $keepImages = $request->input('keep_old_images', []); // array of paths
+
+        // Delete removed old images from storage
+        $oldImages = $customer->images ?? [];
+        foreach ($oldImages as $oldImage) {
+            if (! in_array($oldImage, $keepImages) && File::exists(public_path($oldImage))) {
+                File::delete(public_path($oldImage));
+            }
+        }
+
+        $newImages = $keepImages; // start with kept old images
+
+        // Add newly uploaded images
+        if ($request->hasFile('edit_images')) {
+            foreach ($request->file('edit_images') as $file) {
+                $name = time().'_'.uniqid().'.'.$file->getClientOriginalExtension();
+                $file->move(public_path('assets/image_details'), $name);
+                $newImages[] = 'assets/image_details/'.$name;
+            }
+        }
+
+
         // Update database
         $result = DB::table('media')->where('id', $update_id)->update([
             'title'        => $request->update_title,
             'description'  => $request->update_description,
             'image_media'  => $image,
+            'images' => json_encode($newImages),
             'updated_at'   => now(),
         ]);
 

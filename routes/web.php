@@ -14,6 +14,8 @@ use App\Http\Controllers\backend\NewsController;
 use App\Http\Controllers\backend\ProductForExportController;
 use App\Http\Controllers\frontend\ClientContrller;
 use App\Http\Controllers\frontend\TelegramController;
+use App\Http\Controllers\Send\ApplicationController;
+use App\Http\Controllers\Send\EnquiryController;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
@@ -54,6 +56,8 @@ Route::get('/test-telegram', function () {
     return $response->json();
 });
 
+Route::post('/application-send', [ApplicationController::class, 'send'])->name('application.send');
+
 Route::get("/",[ClientContrller::class,"index"])->name("home");
 Route::get("/export",[ClientContrller::class,'export'])->name('export');
 Route::get("/about",[ClientContrller::class,'aboutUs'])->name('about');
@@ -61,6 +65,7 @@ Route::get('/news',[ClientContrller::class,'newsMedia'])->name('news');
 Route::get('/career',[ClientContrller::class,'career'])->name('career');
 Route::get('/contact',[ClientContrller::class,'contact'])->name('contact');
 
+Route::post('/send-enquiry', [EnquiryController::class, 'send']);
 
 // Add comment of user or Customer
 // Route::get('/comments', [ClientContrller::class, 'showComments'])->name('comments.show');
@@ -179,4 +184,5 @@ Route::middleware(['auth:web'])->group(function () {
     
     // Remove comment
     Route::post('/remove/comment', [CommentController::class,'submitToRemoveComment'])->name('submit.remove.comment');
+    
 });

@@ -46,7 +46,7 @@ class ClientContrller extends Controller
         return view("frontend.about-us", compact("showAboutBusiness", "showAboutApproved"));
     }
     public function newsMedia(){
-        $showMedia = DB::table("media")->limit(4)->get();
+        $showMedia = DB::table("media")->get();
         $showNews = DB::table("news")->limit(4)->get();
         return view("frontend.news-media", compact("showMedia","showNews"));
     }
@@ -54,6 +54,7 @@ class ClientContrller extends Controller
         return view("frontend.career");
     }
     public function contact(){
-        return view("frontend.contact-us");
+         $showExport = DB::table("for_export")->get();
+        return view("frontend.contact-us", compact('showExport'));
     }
 }

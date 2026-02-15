@@ -198,15 +198,214 @@
                     <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Enquiry Form</h2>
                     <form class="flex flex-col gap-4 items-center w-full">
                         <input type="text" placeholder="Name"
-                            class="w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                            class="w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
                         <input type="text" placeholder="Company Name "
-                            class="w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                            class="w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
                         <input type="text" placeholder="Email"
-                            class="w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
-                        <input type="text" placeholder="Address"
-                            class="w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
-                        <input type="text" placeholder="Contact Person"
-                            class="w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                            class="w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                        <div class="relative custom-select-container">
+                                <input id="customer-country" list="country-list" name="country" placeholder="Country" required
+                                class="w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                                <datalist id="country-list" name="country" required
+                                        class="w-full h-14 px-6 pr-12 rounded-full bg-[#F1F1F1] text-[#03254B] outline-none appearance-none">
+                                        {{-- <option>Country of Origin</option> --}}
+                                        <option value="Afghanistan">Afghanistan</option>
+                                        <option value="Albania">Albania</option>
+                                        <option value="Algeria">Algeria</option>
+                                        <option value="Andorra">Andorra</option>
+                                        <option value="Angola">Angola</option>
+                                        <option value="Argentina">Argentina</option>
+                                        <option value="Armenia">Armenia</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="Austria">Austria</option>
+                                        <option value="Azerbaijan">Azerbaijan</option>
+                                        <option value="Bahamas">Bahamas</option>
+                                        <option value="Bahrain">Bahrain</option>
+                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option value="Barbados">Barbados</option>
+                                        <option value="Belarus">Belarus</option>
+                                        <option value="Belgium">Belgium</option>
+                                        <option value="Belize">Belize</option>
+                                        <option value="Benin">Benin</option>
+                                        <option value="Bhutan">Bhutan</option>
+                                        <option value="Bhutan">Bhutan</option>
+                                        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                                        <option value="Botswana">Botswana</option>
+                                        <option value="Brazil">Brazil</option>
+                                        <option value="Brunei">Brunei</option>
+                                        <option value="Bulgaria">Bulgaria</option>
+                                        <option value="Burkina Faso">Burkina Faso</option>
+                                        <option value="Burundi">Burundi</option>
+                                        <option value="Cambodia">Cambodia</option>
+                                        <option value="Cameroon">Cameroon</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="Cape Verde">Cape Verde</option>
+                                        <option value="Central African Republic">Central African Republic</option>
+                                        <option value="Chad">Chad</option>
+                                        <option value="Chile">Chile</option>
+                                        <option value="China">China</option>
+                                        <option value="Colombia">Colombia</option>
+                                        <option value="Comoros">Comoros</option>
+                                        <option value="Congo">Congo</option>
+                                        <option value="Costa Rica">Costa Rica</option>
+                                        <option value="Croatia">Croatia</option>
+                                        <option value="Cuba">Cuba</option>
+                                        <option value="Cyprus">Cyprus</option>
+                                        <option value="Czech Republic">Czech Republic</option>
+                                        <option value="Denmark">Denmark</option>
+                                        <option value="Djibouti">Djibouti</option>
+                                        <option value="Dominica">Dominica</option>
+                                        <option value="Dominican Republic">Dominican Republic</option>
+                                        <option value="Ecuador">Ecuador</option>
+                                        <option value="Egypt">Egypt</option>
+                                        <option value="El Salvador">El Salvador</option>
+                                        <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                        <option value="Eritrea">Eritrea</option>
+                                        <option value="Estonia">Estonia</option>
+                                        <option value="Ethiopia">Ethiopia</option>
+                                        <option value="Fiji">Fiji</option>
+                                        <option value="Finland">Finland</option>
+                                        <option value="France">France</option>
+                                        <option value="Gabon">Gabon</option>
+                                        <option value="Gambia">Gambia</option>
+                                        <option value="Georgia">Georgia</option>
+                                        <option value="Germany">Germany</option>
+                                        <option value="Ghana">Ghana</option>
+                                        <option value="Greece">Greece</option>
+                                        <option value="Grenada">Grenada</option>
+                                        <option value="Guatemala">Guatemala</option>
+                                        <option value="Guinea">Guinea</option>
+                                        <option value="Guinea-Bissau">Guinea-Bissau</option>
+                                        <option value="Guyana">Guyana</option>
+                                        <option value="Haiti">Haiti</option>
+                                        <option value="Honduras">Honduras</option>
+                                        <option value="Hungary">Hungary</option>
+                                        <option value="Iceland">Iceland</option>
+                                        <option value="India">India</option>
+                                        <option value="Indonesia">Indonesia</option>
+                                        <option value="Iran">Iran</option>
+                                        <option value="Iraq">Iraq</option>
+                                        <option value="Ireland">Ireland</option>
+                                        <option value="Israel">Israel</option>
+                                        <option value="Italy">Italy</option>
+                                        <option value="Jamaica">Jamaica</option>
+                                        <option value="Japan">Japan</option>
+                                        <option value="Jordan">Jordan</option>
+                                        <option value="Kazakhstan">Kazakhstan</option>
+                                        <option value="Kenya">Kenya</option>
+                                        <option value="Kiribati">Kiribati</option>
+                                        <option value="North Korea">North Korea</option>
+                                        <option value="South Korea">South Korea</option>
+                                        <option value="Kuwait">Kuwait</option>
+                                        <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                        <option value="Laos">Laos</option>
+                                        <option value="Latvia">Latvia</option>
+                                        <option value="Lebanon">Lebanon</option>
+                                        <option value="Lesotho">Lesotho</option>
+                                        <option value="Liberia">Liberia</option>
+                                        <option value="Libya">Libya</option>
+                                        <option value="Liechtenstein">Liechtenstein</option>
+                                        <option value="Lithuania">Lithuania</option>
+                                        <option value="Luxembourg">Luxembourg</option>
+                                        <option value="Madagascar">Madagascar</option>
+                                        <option value="Malawi">Malawi</option>
+                                        <option value="Malaysia">Malaysia</option>
+                                        <option value="Maldives">Maldives</option>
+                                        <option value="Mali">Mali</option>
+                                        <option value="Malta">Malta</option>
+                                        <option value="Marshall Islands">Marshall Islands</option>
+                                        <option value="Mauritania">Mauritania</option>
+                                        <option value="Mauritius">Mauritius</option>
+                                        <option value="Mexico">Mexico</option>
+                                        <option value="Micronesia">Micronesia</option>
+                                        <option value="Moldova">Moldova</option>
+                                        <option value="Monaco">Monaco</option>
+                                        <option value="Mongolia">Mongolia</option>
+                                        <option value="Montenegro">Montenegro</option>
+                                        <option value="Morocco">Morocco</option>
+                                        <option value="Mozambique">Mozambique</option>
+                                        <option value="Myanmar">Myanmar</option>
+                                        <option value="Namibia">Namibia</option>
+                                        <option value="Nauru">Nauru</option>
+                                        <option value="Nepal">Nepal</option>
+                                        <option value="Netherlands">Netherlands</option>
+                                        <option value="New Zealand">New Zealand</option>
+                                        <option value="Nicaragua">Nicaragua</option>
+                                        <option value="Niger">Niger</option>
+                                        <option value="Nigeria">Nigeria</option>
+                                        <option value="Norway">Norway</option>
+                                        <option value="Oman">Oman</option>
+                                        <option value="Pakistan">Pakistan</option>
+                                        <option value="Palau">Palau</option>
+                                        <option value="Panama">Panama</option>
+                                        <option value="Papua New Guinea">Papua New Guinea</option>
+                                        <option value="Paraguay">Paraguay</option>
+                                        <option value="Peru">Peru</option>
+                                        <option value="Philippines">Philippines</option>
+                                        <option value="Poland">Poland</option>
+                                        <option value="Portugal">Portugal</option>
+                                        <option value="Qatar">Qatar</option>
+                                        <option value="Romania">Romania</option>
+                                        <option value="Russia">Russia</option>
+                                        <option value="Rwanda">Rwanda</option>
+                                        <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                        <option value="Saint Lucia">Saint Lucia</option>
+                                        <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+                                        <option value="Samoa">Samoa</option>
+                                        <option value="San Marino">San Marino</option>
+                                        <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                        <option value="Saudi Arabia">Saudi Arabia</option>
+                                        <option value="Senegal">Senegal</option>
+                                        <option value="Serbia">Serbia</option>
+                                        <option value="Seychelles">Seychelles</option>
+                                        <option value="Sierra Leone">Sierra Leone</option>
+                                        <option value="Singapore">Singapore</option>
+                                        <option value="Slovakia">Slovakia</option>
+                                        <option value="Slovenia">Slovenia</option>
+                                        <option value="Solomon Islands">Solomon Islands</option>
+                                        <option value="Somalia">Somalia</option>
+                                        <option value="South Africa">South Africa</option>
+                                        <option value="Spain">Spain</option>
+                                        <option value="Sri Lanka">Sri Lanka</option>
+                                        <option value="Sudan">Sudan</option>
+                                        <option value="Suriname">Suriname</option>
+                                        <option value="Swaziland">Swaziland</option>
+                                        <option value="Sweden">Sweden</option>
+                                        <option value="Switzerland">Switzerland</option>
+                                        <option value="Syria">Syria</option>
+                                        <option value="Taiwan">Taiwan</option>
+                                        <option value="Tajikistan">Tajikistan</option>
+                                        <option value="Tanzania">Tanzania</option>
+                                        <option value="Thailand">Thailand</option>
+                                        <option value="Togo">Togo</option>
+                                        <option value="Tonga">Tonga</option>
+                                        <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                        <option value="Tunisia">Tunisia</option>
+                                        <option value="Turkey">Turkey</option>
+                                        <option value="Turkmenistan">Turkmenistan</option>
+                                        <option value="Tuvalu">Tuvalu</option>
+                                        <option value="Uganda">Uganda</option>
+                                        <option value="Ukraine">Ukraine</option>
+                                        <option value="United Arab Emirates">United Arab Emirates</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="USA">USA</option>
+                                        <option value="Uruguay">Uruguay</option>
+                                        <option value="Uzbekistan">Uzbekistan</option>
+                                        <option value="Vanuatu">Vanuatu</option>
+                                        <option value="Venezuela">Venezuela</option>
+                                        <option value="Vietnam">Vietnam</option>
+                                        <option value="Yemen">Yemen</option>
+                                        <option value="Zambia">Zambia</option>
+                                        <option value="Zimbabwe">Zimbabwe</option>
+                                </datalist>
+                                <span class="absolute right-6 top-1/2 -translate-y-1/2">
+                                    <svg width="12" height="13" viewBox="0 0 12 13" fill="none">
+                                        <path
+                                            d="M10.5 4.60096C11.8333 5.37076 11.8333 7.29526 10.5 8.06506L3 12.3952C1.66666 13.165 0 12.2027 0 10.6631L0 2.00288C0 0.463276 1.66667 -0.498971 3 0.27083L10.5 4.60096Z"
+                                            fill="#cb9f10" />
+                                    </svg>
+                                </span>                     
+                        </div>
                     </form>
                 </div>
 
@@ -214,10 +413,10 @@
                     <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Product Enquiry</h2>
                     <form class="flex flex-col gap-4 items-center w-full">
                         <input type="text" id="input-name" placeholder="Name Product"
-                            class="form-input w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                            class="hidden form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                             readonly />
                         <!-- Product Multi Select -->
-                        <div x-data="{ open:false, selected: [] }" class="relative w-[90%]">
+                        <div x-data="{ open:false, selected: [] }" class="relative w-80 lg:w-[90%]">
 
                             <!-- Dropdown Button -->
                             <div @click="open = !open" class="bg-[#FFF9E6] px-3 py-2 h-auto min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
@@ -226,7 +425,7 @@
                                 <!-- Tags or Placeholder -->
                                 <div class="flex flex-wrap items-center gap-1 flex-1">
                                     <template x-if="selected.length === 0">
-                                        <span class="text-gray-500">More Product</span>
+                                        <span class="text-gray-500">Products</span>
                                     </template>
 
                                     <template x-for="(item, index) in selected" :key="index">
@@ -271,28 +470,25 @@
                             </div>
 
                             <!-- Hidden input to submit -->
-                            <input type="hidden" name="products" :value="selected.join(', ')">
+                            <input type="hidden" class="form-input" id="input-name" name="products" :value="selected.join(', ')">
 
                         </div>
 
-                        <input type="text" id="input-capacity" placeholder="Packing Size"
-                            class="form-input w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                        <input type="text" id="input-capacity" placeholder="Quantity(KG)"
+                            class="form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                             readonly />
 
-                        <input type="number" id="input-quantity" placeholder="Quantity(Package)"
-                            class="form-input w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                        <input type="number" id="input-quantity" placeholder="Quantity(KG)"
+                            class="hidden form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
 
                         <input type="text" id="input-price" placeholder="Price"
-                            class="form-input w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                            class="form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                             readonly />
 
-                        <input type="text" id="input-total" placeholder="Total"
-                            class="form-input w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                        <input type="text" id="input-grand-total" placeholder="Total"
+                            class="form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                             readonly />
-                    </form>
-                </div>
-
-                <div class="w-full lg:w-[35%] flex flex-col justify-between items-center p-4">
+                          <div class="block lg:hidden w-80 flex flex-col justify-between items-center p-4">
 
                    <div x-data="{
                         open: false,
@@ -376,7 +572,9 @@
 
 
 
-                    <div class="w-full flex justify-center mt-6">
+                    
+                </div>
+                        <div class="w-full flex justify-center mt-6">
                         <button id="btn-send-telegram" class="w-[90%] h-[55px] bg-gradient-to-r from-[#DDCC81] to-[#B8A34E] 
                                     text-[#324A0A] font-bold rounded-lg shadow-md 
                                     hover:shadow-lg hover:scale-105 transition-all duration-300">
@@ -384,6 +582,94 @@
                         </button>
                     </div>
 
+                    </form>
+                </div>
+
+                <div class="lg:block hidden w-full lg:w-[35%] flex flex-col justify-between items-center p-4">
+
+                   <div x-data="{
+                        open: false,
+                        items: ['Plastic Bag', 'Laminated PP', 'BOPP', 'Normal PP'],
+                        selected: []
+                    }" class="relative w-full">
+
+                    <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Bag Type</h2>
+
+                    <!-- Dropdown Button -->
+                    <div @click="open = !open"
+                        class="bg-[#FFF9E6] px-3 py-2 min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
+                            flex flex-wrap items-center gap-2 justify-between">
+
+                        <!-- Tags or Placeholder -->
+                        <div class="flex flex-wrap items-center gap-1 flex-1">
+
+                            <!-- Placeholder -->
+                            <template x-if="selected.length === 0">
+                                <span class="text-gray-500">Select Bag Types</span>
+                            </template>
+
+                            <!-- Selected Tags -->
+                            <template x-for="(item, index) in selected" :key="index">
+                                <div class="flex items-center bg-[#DDCC81] text-[#324A0A] px-2 py-1 rounded-full text-sm">
+                                    <span x-text="item"></span>
+
+                                    <!-- X Button -->
+                                    <button type="button" class="ml-1"
+                                            @click.stop="selected.splice(index, 1)">
+                                        <svg class="w-3 h-3 text-[#324A0A]" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </template>
+                        </div>
+
+                        <!-- Dropdown Icon -->
+                        <svg x-bind:class="open ? 'rotate-180' : ''"
+                            class="w-5 h-5 text-gray-600 transition-transform duration-300 ml-2"
+                            fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+
+                    <!-- Dropdown List -->
+                    <div x-show="open" @click.outside="open = false"
+                        class="absolute z-50 bg-white border rounded-md w-full mt-1 max-h-48 overflow-y-auto shadow">
+
+                        <template x-for="(item, index) in items" :key="index">
+                            <label class="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100">
+
+                                <!-- Checkbox -->
+                                <input type="checkbox"
+                                    :value="item"
+                                    @change="
+                                            if ($event.target.checked) {
+                                                selected.push(item)
+                                            } else {
+                                                selected = selected.filter(v => v !== item)
+                                            }
+                                            open = false
+                                    "
+                                    :checked="selected.includes(item)">
+
+                                <span x-text="item"></span>
+                            </label>
+                        </template>
+                    </div>
+
+                    <!-- Hidden input for form submit -->
+                    <input type="hidden" name="bag_types" :value="selected.join(',')">
+                </div>
+
+
+                <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+
+
+                    
                 </div>
 
             </div>
@@ -395,165 +681,210 @@
             </section>
         @endsection
     </div>
-    <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
 
-    document.querySelectorAll('.btn-buy-now').forEach(button => {
-        button.addEventListener('click', function () {
+    const priceInput      = document.getElementById("input-price");
+    const totalInput      = document.getElementById("input-total");
+    const qtyInput        = document.getElementById("input-quantity");
+    const hiddenProducts  = document.querySelector("input[name='products']");
+    const grandTotalInput = document.getElementById("input-grand-total");
 
-            // Scroll to Enquiry Form
+    // ===============================
+    // BUY NOW BUTTON
+    // ===============================
+    document.querySelectorAll('.btn-buy-now').forEach(button => {
+
+        button.addEventListener('click', () => {
+
             document.getElementById('section-products')
                 .scrollIntoView({ behavior: 'smooth' });
 
-            // Extract product data
-            const name = this.dataset.name;
-            const price = parseFloat(this.dataset.price);
-            const capacity = this.dataset.capacity;
+            const name     = button.dataset.name;
+            const price    = parseFloat(button.dataset.price) || 0;
+            const capacity = button.dataset.capacity;
 
-            // SET MAIN PRODUCT VALUES
-            document.getElementById('input-name').value = name;
+            document.getElementById('input-name').value     = name;
             document.getElementById('input-capacity').value = capacity;
-            document.getElementById('input-price').value = "$" + formatNumber(price);
 
-            // Automatically add to multi-product dropdown list
-            const multiSelect = document.querySelector("[x-data] input[type='hidden'][name='products']");
-            addSelectedProduct(name, capacity, multiSelect);
+            priceInput.value = "$" + formatNumber(price);
+            qtyInput.value   = 1;
+
+            updateSingleTotal(price, 1);
+
+            addOrUpdateProduct(name, capacity, price, 1);
+            updateGrandTotal();
         });
+
+    });
+
+    // ===============================
+    // QUANTITY CHANGE
+    // ===============================
+    qtyInput.addEventListener("input", () => {
+
+        const qty   = parseFloat(qtyInput.value) || 0;
+        const price = getCleanPrice(priceInput.value);
+
+        updateSingleTotal(price, qty);
+
+        const name     = document.getElementById('input-name').value;
+        const capacity = document.getElementById('input-capacity').value;
+
+        updateHiddenQuantity(name, capacity, qty);
+        updateGrandTotal();
+    });
+
+    // ===============================
+    // TELEGRAM SEND
+    // ===============================
+    document.getElementById("btn-send-telegram").addEventListener("click", () => {
+
+        const customerName  = document.querySelector("input[placeholder='Name']").value.trim();
+        const companyName   = document.querySelector("input[placeholder='Company Name']").value.trim();
+        const email         = document.querySelector("input[placeholder='Email']").value.trim();
+        const contactPerson = document.querySelector("input[placeholder='Country']").value.trim();
+        const bagTypes      = document.querySelector("input[name='bag_types']").value.trim();
+
+        if (!hiddenProducts.value.trim()) {
+            alert("❗ Please select at least one product");
+            return;
+        }
+
+        let message = `📦 *New Export Enquiry*\n\n`;
+        message += `👤 *Customer Info:*\n`;
+        message += `• Name: ${customerName}\n`;
+        message += `• Company: ${companyName}\n`;
+        message += `• Email: ${email}\n`;
+        message += `• Contact: ${contactPerson}\n\n`;
+        message += `🛒 *Products Selected:*\n`;
+
+        hiddenProducts.value.split(",").forEach(item => {
+
+            const [name, capacity] = item.split("-");
+            const price = parseFloat(document.getElementById(makePriceId(name, capacity))?.value || 0);
+            const qty   = parseFloat(document.getElementById(makeQtyId(name, capacity))?.value || 0);
+            const total = price * qty;
+
+            message += `• ${name} - ${capacity} | Qty: ${qty} | Price: $${formatNumber(price)} | Total: $${formatNumber(total)}\n`;
+        });
+
+        const grandTotal = calculateGrandTotal();
+
+        message += `\n💰 *Grand Total:* $${formatNumber(grandTotal)}`;
+        message += `\n🛍 Bag Types: ${bagTypes || "None"}`;
+
+        const telegramLink = `https://t.me/+85587686768?text=${encodeURIComponent(message)}`;
+        window.open(telegramLink, "_blank");
     });
 
 });
 
-// ADD product to Alpine multi-product dropdown
-function addSelectedProduct(name, capacity, hiddenInput) {
+
+// =====================================
+// PRODUCT MANAGEMENT
+// =====================================
+
+function addOrUpdateProduct(name, capacity, price, qty) {
+
+    const hiddenInput = document.querySelector("input[name='products']");
     const value = `${name}-${capacity}`;
+
     let selected = hiddenInput.value ? hiddenInput.value.split(",") : [];
 
     if (!selected.includes(value)) {
         selected.push(value);
         hiddenInput.value = selected.join(",");
     }
+
+    createHiddenInput(makePriceId(name, capacity), price);
+    createHiddenInput(makeQtyId(name, capacity), qty);
 }
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
 
-    const qtyInput = document.getElementById("input-quantity");
-    const priceInput = document.getElementById("input-price");
+function removeProduct(name, capacity) {
+
+    const hiddenInput = document.querySelector("input[name='products']");
+    const value = `${name}-${capacity}`;
+
+    let selected = hiddenInput.value ? hiddenInput.value.split(",") : [];
+    selected = selected.filter(item => item !== value);
+    hiddenInput.value = selected.join(",");
+
+    document.getElementById(makePriceId(name, capacity))?.remove();
+    document.getElementById(makeQtyId(name, capacity))?.remove();
+
+    updateGrandTotal();
+}
+
+function updateHiddenQuantity(name, capacity, qty) {
+    const qtyEl = document.getElementById(makeQtyId(name, capacity));
+    if (qtyEl) qtyEl.value = qty;
+}
+
+function createHiddenInput(id, value) {
+    if (!document.getElementById(id)) {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.id   = id;
+        input.value = value;
+        document.body.appendChild(input);
+    }
+}
+
+
+// =====================================
+// TOTAL CALCULATIONS
+// =====================================
+
+function updateSingleTotal(price, qty) {
     const totalInput = document.getElementById("input-total");
+    if (totalInput) {
+        totalInput.value = "$" + formatNumber(price * qty);
+    }
+}
 
-    qtyInput.addEventListener("input", () => {
-        const qty = parseFloat(qtyInput.value) || 0;
-        const price = parseFloat(priceInput.value.replace("$", "")) || 0;
+function updateGrandTotal() {
+    const grandTotalInput = document.getElementById("input-grand-total");
+    if (grandTotalInput) {
+        grandTotalInput.value = "$" + formatNumber(calculateGrandTotal());
+    }
+}
 
-        totalInput.value = "$" + formatNumber(qty * price);
+function calculateGrandTotal() {
+
+    const hiddenInput = document.querySelector("input[name='products']");
+    let total = 0;
+
+    if (!hiddenInput.value.trim()) return 0;
+
+    hiddenInput.value.split(",").forEach(item => {
+
+        const [name, capacity] = item.split("-");
+        const price = parseFloat(document.getElementById(makePriceId(name, capacity))?.value || 0);
+        const qty   = parseFloat(document.getElementById(makeQtyId(name, capacity))?.value || 0);
+
+        total += price * qty;
     });
 
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-    document.getElementById("btn-send-telegram").addEventListener("click", function () {
-
-        // Customer Info
-        const customerName = document.querySelector("input[placeholder='Name']").value.trim();
-        const companyName = document.querySelector("input[placeholder='Company Name ']").value.trim();
-        const email = document.querySelector("input[placeholder='Email']").value.trim();
-        const address = document.querySelector("input[placeholder='Address']").value.trim();
-        const contactPerson = document.querySelector("input[placeholder='Contact Person']").value.trim();
-
-        // Main Product
-        const name = document.getElementById("input-name").value.trim();
-        const capacity = document.getElementById("input-capacity").value.trim();
-        const qty = document.getElementById("input-quantity").value.trim();
-        const price = document.getElementById("input-price").value.trim();
-        const total = document.getElementById("input-total").value.trim();
-        // Format values
-        const formattedPrice = price; // already formatted earlier
-        const numericTotal = parseFloat(total.replace("$", "").replace(/,/g, "")) || 0;
-        const formattedTotal = "$" + formatNumber(numericTotal);
-
-        // Multi products
-        const multiProducts = document.querySelector("input[name='products']").value.trim();
-
-        // Bag types
-        const bagTypes = document.querySelector("input[name='bag_types']").value.trim();
+    return total;
+}
 
 
-        // ============================
-        // VALIDATION
-        // ============================
+// =====================================
+// HELPERS
+// =====================================
 
-        if (!customerName || !email || !name || !qty || !price) {
-            alert("❗ Please fill out all required fields.");
-            return;
-        }
+function makePriceId(name, capacity) {
+    return `product-price-${name.replace(/\s/g,"")}-${capacity}`;
+}
 
-        if (!bagTypes) {
-            alert("❗ Please select at least one Bag Type.");
-            return;
-        }
+function makeQtyId(name, capacity) {
+    return `product-qty-${name.replace(/\s/g,"")}-${capacity}`;
+}
 
-
-        // ============================
-        // Build Telegram Message
-        // ============================
-
-        let message = `📦 *New Export Enquiry*\n\n`;
-
-        message += `👤 *Customer Information:*\n`;
-        message += `• Name: ${customerName}\n`;
-        message += `• Company: ${companyName}\n`;
-        message += `• Email: ${email}\n`;
-        message += `• Address: ${address}\n`;
-        message += `• Contact: ${contactPerson}\n\n`;
-
-        message += `🛒 *Main Product:*\n`;
-        message += `• Product: ${name}\n`;
-        message += `• Packaging Size: ${capacity} \n`;
-        message += `• Quantity Needed: ${qty} KG\n`;
-        message += `• Price per KG: ${formattedPrice}\n`;
-        message += `• Total Price: ${formattedTotal}\n\n`;
-
-        message += `📦 *More Products:*\n`;
-        message += (multiProducts ? multiProducts : "None") + "\n\n";
-
-        message += `🛍 *Bag Types:* ${bagTypes}\n`;
-
-
-        // ============================
-        // Telegram API Send
-        // ============================
-        fetch(`https://api.telegram.org/bot7587916418:AAEzLlsLWCnIYlo0TPEPm0TRIRpcaP0VEyg/sendMessage`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                chat_id: "-4819861863",
-                text: message,
-                parse_mode: "Markdown"
-            })
-        })
-            .then(() => {
-                alert("✔ Enquiry Sent Successfully!");
-
-                // ============================
-                // CLEAR FORM AFTER SEND
-                // ============================
-                document.querySelectorAll("input").forEach(input => input.value = "");
-                
-                // Reset Alpine.js dropdowns
-                document.querySelectorAll("[x-data]").forEach(el => {
-                    if (el.__x) {
-                        if (el.__x.$data.selected) el.__x.$data.selected = [];
-                        if (el.__x.$data.open) el.__x.$data.open = false;
-                    }
-                });
-
-            })
-            .catch(() => alert("❌ Failed to Send!"));
-    });
-
-});
+function getCleanPrice(value) {
+    return parseFloat(value.replace("$","").replace(/,/g,"")) || 0;
+}
 
 function formatNumber(num) {
     return num.toLocaleString("en-US", {
@@ -563,4 +894,14 @@ function formatNumber(num) {
 }
 </script>
 
+
+
+<script>
+    const countrySelect = new Choices('#country-select', {
+    searchEnabled: true,      // Allows user to input text
+    itemSelectText: '',       // Removes the "Press to select" text
+    shouldSort: true,         // Automatically sorts A to Z
+    searchPlaceholderValue: "Type a country...",
+});
+</script>
 @endsection

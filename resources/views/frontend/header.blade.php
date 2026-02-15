@@ -50,7 +50,7 @@
                 class="w-full h-full object-cover object-center max-w-full">
         </div>
         @if(View::hasSection('background-career'))
-            <div class="absolute inset-0 w-full -z-20">
+            <div class="absolute inset-0 w-full">
                 <img src="@yield('background-career')" alt="Career" class="w-full h-full max-w-full object-cover">
             </div>
         @endif
@@ -198,21 +198,53 @@
                         <ul
                             class="relative top-[20px] sm:top-[25px] lg:top-[30px] flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 text-green-700 font-medium text-sm sm:text-base mt-4 sm:mt-8">
 
-                            <!-- Desktop Menu -->
                             <div class="hidden lg:flex gap-6">
-                                <li><a href="{{ route('home') }}" class="hover:text-yellow-600 transition">Home</a></li>
-                                <li><a href="{{ route('export') }}" class="hover:text-yellow-600 transition">Export</a>
+
+                                <li>
+                                    <a href="{{ route('home') }}"
+                                    class="{{ request()->routeIs('home') ? 'text-yellow-600 border-b-2 border-yellow-600' : 'hover:text-yellow-600' }} transition pb-1">
+                                        Home
+                                    </a>
                                 </li>
-                                <li><a href="{{ route('about') }}" class="hover:text-yellow-600 transition">About Us</a>
+
+                                <li>
+                                    <a href="{{ route('export') }}"
+                                    class="{{ request()->routeIs('export') ? 'text-yellow-600 border-b-2 border-yellow-600' : 'hover:text-yellow-600' }} transition pb-1">
+                                        Export
+                                    </a>
                                 </li>
-                                <li><a href="{{ route('news') }}"
-                                        class="hover:text-yellow-600 transition">Activities</a></li>
-                                <li><a href="{{ route('career') }}" class="hover:text-yellow-600 transition">Career</a>
+
+                                <li>
+                                    <a href="{{ route('about') }}"
+                                    class="{{ request()->routeIs('about') ? 'text-yellow-600 border-b-2 border-yellow-600' : 'hover:text-yellow-600' }} transition pb-1">
+                                        About Us
+                                    </a>
                                 </li>
-                                <li><a href="{{ route('contact') }}" class="hover:text-yellow-600 transition">Contact
-                                        Us</a></li>
+
+                                <li>
+                                    <a href="{{ route('news') }}"
+                                    class="{{ request()->routeIs('news') ? 'text-yellow-600 border-b-2 border-yellow-600' : 'hover:text-yellow-600' }} transition pb-1">
+                                        Latest News
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('career') }}"
+                                    class="{{ request()->routeIs('career') ? 'text-yellow-600 border-b-2 border-yellow-600' : 'hover:text-yellow-600' }} transition pb-1">
+                                        Career
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('contact') }}"
+                                    class="{{ request()->routeIs('contact') ? 'text-yellow-600 border-b-2 border-yellow-600' : 'hover:text-yellow-600' }} transition pb-1">
+                                        Contact Us
+                                    </a>
+                                </li>
+
                             </div>
                         </ul>
+
 
                         <!--  Mobile Slide Menu -->
                         <div id="mobileMenu"
@@ -225,7 +257,7 @@
                                 <li><a href="{{ route('about') }}" class="hover:text-yellow-600 transition">About Us</a>
                                 </li>
                                 <li><a href="{{ route('news') }}"
-                                        class="hover:text-yellow-600 transition">Activities</a></li>
+                                        class="hover:text-yellow-600 transition">Latest News</a></li>
                                 <li><a href="{{ route('career') }}" class="hover:text-yellow-600 transition">Career</a>
                                 </li>
                                 <li><a href="{{ route('contact') }}" class="hover:text-yellow-600 transition">Contact
@@ -353,7 +385,7 @@
             </div>
             <!-- Background rice texture -->
             {{-- <img src="@yield('rice-background')" alt="" class="relative w-full h-auto object-cover block"> --}}
-            <img src="@yield('img-background-contact')" alt="" class="w-full h-auto object-cover relative -z-40">
+            <img src="@yield('img-background-contact')" alt="" class="w-full h-[140vh] lg:h-auto object-cover relative -z-10">
 
             <!-- Center rice picture overlay -->
             {{-- <img src="@yield('picture-rice')" alt=""
