@@ -181,7 +181,7 @@
                     no-repeat;background-position: center;">
 
                     <!--  Mobile Menu Button (LEFT SIDE) -->
-                    <div class="absolute left-[20px] top-[90px] -translate-y-1/2 block lg:hidden z-99999">
+                    <div class="absolute left-[20px] top-[90px] -translate-y-1/2 block lg:hidden z-[99999999]">
                         <button id="menuButton"
                             class="text-[#1E3E0F] text-3xl focus:outline-none w-[50px] h-[50px] flex items-center justify-center">
                             <!-- Menu Icon -->
@@ -189,7 +189,7 @@
                                 class="w-[25px] h-[25px]" />
                             <!-- Close Icon -->
                             <img id="closeIcon" src="{{ asset('image/icon/close.png') }}" alt="close"
-                                class="w-[25px] h-[25px] hidden" />
+                                class="w-[25px] h-[25px] hidden z-[999999999]" />
                         </button>
                     </div>
 
@@ -248,7 +248,10 @@
 
                         <!--  Mobile Slide Menu -->
                         <div id="mobileMenu"
-                            class="fixed mt-[65px] h-[calc(100vh-65px)] left-0 w-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-9999 p-6 lg:hidden">
+                            class="fixed top-[65px] left-0 w-full h-[calc(100vh-65px)] 
+                                bg-white shadow-lg 
+                                transition-transform duration-300 ease-in-out 
+                                z-[99999] p-6 lg:hidden">
                             <ul
                                 class="relative left-[30px] top-[30px] flex flex-col gap-6 text-green-700 font-medium text-base">
                                 <li><a href="{{ route('home') }}" class="hover:text-yellow-600 transition">Home</a></li>
