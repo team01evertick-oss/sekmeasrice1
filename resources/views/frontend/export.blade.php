@@ -213,16 +213,15 @@
         <section class="flex justify-center bg-white py-[70px] px-4" id="section-products">
             <div class="flex flex-col lg:flex-row justify-between w-full max-w-[1200px] h-auto gap-8 lg:gap-4 pt-10 pb-10"
                 style="padding-left: 70px; padding-right: 70px;">
-                <div class="w-full lg:w-[25%] flex flex-col items-center p-4">
-                    <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Enquiry Form</h2>
-                    <form class="flex flex-col gap-4 items-center w-full">
-                        <input type="text" placeholder="Name"
-                            class="w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
-                        <input type="text" placeholder="Company Name "
-                            class="w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
-                        <input type="text" placeholder="Email"
-                            class="w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
-                        <div class="relative custom-select-container">
+                <form action="">
+                    <div class="flex md:flex-row flex-col justify-center items-center">
+                        <div class="">
+                            <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Enquiry Form</h2>
+                            <input type="text" placeholder="Full Name" name="name"
+                                class="w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                            <input type="text" placeholder="Company Name" name="company_name"
+                                class="w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                            <div class="relative custom-select-container">
                                 <input id="customer-country" list="country-list" name="country" placeholder="Country" required
                                 class="w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400">
                                 <datalist id="country-list" name="country" required
@@ -424,280 +423,137 @@
                                             fill="#cb9f10" />
                                     </svg>
                                 </span>                     
-                        </div>
-                    </form>
-                </div>
-
-                <div class="w-full lg:w-[45%] flex flex-col items-center p-4">
-                    <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Product Enquiry</h2>
-                    <form class="flex flex-col gap-4 items-center w-full">
-                        <input type="text" id="" placeholder="Name Product"
-                            class="hidden form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                            readonly />
-                        <!-- Product Multi Select -->
-                        <div 
-                            x-data="productSelector()" 
-                            x-ref="productSelector"
-                            class="relative w-80 lg:w-[90%]">
-
-                            <!-- Dropdown Button -->
-                            <div @click="open = !open" class="bg-[#FFF9E6] px-3 py-2 h-auto min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
-                            flex flex-wrap items-center gap-2 justify-between">
-
-                                <!-- Tags or Placeholder -->
-                                <div class="flex flex-wrap items-center gap-1 flex-1">
-                                    <template x-if="selected.length === 0">
-                                        <span class="text-gray-500">Products</span>
-                                    </template>
-
-                                    <template x-for="(item, index) in selected" :key="index">
-                                        <div
-                                            class="flex items-center bg-[#DDCC81] text-[#324A0A] px-2 py-1 rounded-full text-sm">
-                                            <span x-text="item"></span>
-                                            <button type="button" class="ml-1" 
-                                                    @click.stop="
-                                                        const parts = item.split('-');
-                                                        removeProduct(parts[0], parts[1]);
-                                                        selected.splice(index, 1);
-                                                    ">
-                                                <svg class="w-3 h-3 text-[#324A0A]" fill="none" stroke="currentColor"
-                                                    stroke-width="2" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M6 18L18 6M6 6l12 12" />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </template>
-                                </div>
-
-                                <!-- Dropdown Icon -->
-                                <svg x-bind:class="open ? 'rotate-180' : ''"
-                                    class="w-5 h-5 text-gray-600 transition-transform duration-300 ml-2" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                                </svg>
                             </div>
+                            <input type="email" placeholder="Email" name="email"
+                                class="w-80 lg:w-[80%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                            <div class="flex items-center">
+                                <select
+                                    id="country_code"
+                                    name="country_code"
+                                    class="form-select w-[45%] rounded-md bg-[#FFF9E6] h-[55px] text-gray-700 placeholder-gray-600"
+                                    style="margin-bottom: 10px;"
+                                    required>
+                                    <option value="" style="padding-left: 10px;">Country Code</option>
+                                    <option value="+93">Afghanistan (+93)</option>
+                                    <option value="+355">Albania (+355)</option>
+                                    <option value="+213">Algeria (+213)</option>
+                                    <option value="+376">Andorra (+376)</option>
+                                    <option value="+244">Angola (+244)</option>
+                                    <option value="+54">Argentina (+54)</option>
+                                    <option value="+374">Armenia (+374)</option>
+                                    <option value="+61">Australia (+61)</option>
+                                    <option value="+43">Austria (+43)</option>
+                                    <option value="+994">Azerbaijan (+994)</option>
+                                    <option value="+973">Bahrain (+973)</option>
+                                    <option value="+880">Bangladesh (+880)</option>
+                                    <option value="+375">Belarus (+375)</option>
+                                    <option value="+32">Belgium (+32)</option>
+                                    <option value="+501">Belize (+501)</option>
+                                    <option value="+229">Benin (+229)</option>
+                                    <option value="+975">Bhutan (+975)</option>
+                                    <option value="+591">Bolivia (+591)</option>
+                                    <option value="+387">Bosnia and Herzegovina (+387)</option>
+                                    <option value="+267">Botswana (+267)</option>
+                                    <option value="+55">Brazil (+55)</option>
+                                    <option value="+673">Brunei (+673)</option>
+                                    <option value="+359">Bulgaria (+359)</option>
+                                    <option value="+226">Burkina Faso (+226)</option>
+                                    <option value="+257">Burundi (+257)</option>
+                                    <option value="+855">Cambodia (+855)</option>
+                                    <option value="+237">Cameroon (+237)</option>
+                                    <option value="+1">Canada (+1)</option>
+                                    <option value="+238">Cape Verde (+238)</option>
+                                    <option value="+236">Central African Republic (+236)</option>
+                                    <option value="+235">Chad (+235)</option>
+                                    <option value="+56">Chile (+56)</option>
+                                    <option value="+86">China (+86)</option>
+                                    <option value="+57">Colombia (+57)</option>
+                                    <option value="+269">Comoros (+269)</option>
+                                    <option value="+242">Congo (+242)</option>
+                                    <option value="+506">Costa Rica (+506)</option>
+                                    <option value="+385">Croatia (+385)</option>
+                                    <option value="+53">Cuba (+53)</option>
+                                    <option value="+357">Cyprus (+357)</option>
+                                    <option value="+420">Czech Republic (+420)</option>
+                                    <option value="+45">Denmark (+45)</option>
+                                    <option value="+253">Djibouti (+253)</option>
+                                    <option value="+593">Ecuador (+593)</option>
+                                    <option value="+20">Egypt (+20)</option>
+                                    <option value="+503">El Salvador (+503)</option>
+                                    <option value="+240">Equatorial Guinea (+240)</option>
+                                    <option value="+291">Eritrea (+291)</option>
+                                    <option value="+372">Estonia (+372)</option>
+                                    <option value="+251">Ethiopia (+251)</option>
+                                    <option value="+358">Finland (+358)</option>
+                                    <option value="+33">France (+33)</option>
+                                    <option value="+995">Georgia (+995)</option>
+                                    <option value="+49">Germany (+49)</option>
+                                    <option value="+233">Ghana (+233)</option>
+                                    <option value="+30">Greece (+30)</option>
+                                    <option value="+502">Guatemala (+502)</option>
+                                    <option value="+852">Hong Kong (+852)</option>
+                                    <option value="+36">Hungary (+36)</option>
+                                    <option value="+354">Iceland (+354)</option>
+                                    <option value="+91">India (+91)</option>
+                                    <option value="+62">Indonesia (+62)</option>
+                                    <option value="+98">Iran (+98)</option>
+                                    <option value="+964">Iraq (+964)</option>
+                                    <option value="+353">Ireland (+353)</option>
+                                    <option value="+972">Israel (+972)</option>
+                                    <option value="+39">Italy (+39)</option>
+                                    <option value="+81">Japan (+81)</option>
+                                    <option value="+962">Jordan (+962)</option>
+                                    <option value="+7">Kazakhstan (+7)</option>
+                                    <option value="+254">Kenya (+254)</option>
+                                    <option value="+82">Korea, South (+82)</option>
+                                    <option value="+965">Kuwait (+965)</option>
+                                    <option value="+856">Laos (+856)</option>
+                                    <option value="+371">Latvia (+371)</option>
+                                    <option value="+961">Lebanon (+961)</option>
+                                    <option value="+370">Lithuania (+370)</option>
+                                    <option value="+60">Malaysia (+60)</option>
+                                    <option value="+960">Maldives (+960)</option>
+                                    <option value="+52">Mexico (+52)</option>
+                                    <option value="+95">Myanmar (+95)</option>
+                                    <option value="+31">Netherlands (+31)</option>
+                                    <option value="+64">New Zealand (+64)</option>
+                                    <option value="+234">Nigeria (+234)</option>
+                                    <option value="+47">Norway (+47)</option>
+                                    <option value="+92">Pakistan (+92)</option>
+                                    <option value="+63">Philippines (+63)</option>
+                                    <option value="+48">Poland (+48)</option>
+                                    <option value="+351">Portugal (+351)</option>
+                                    <option value="+974">Qatar (+974)</option>
+                                    <option value="+40">Romania (+40)</option>
+                                    <option value="+7">Russia (+7)</option>
+                                    <option value="+966">Saudi Arabia (+966)</option>
+                                    <option value="+65">Singapore (+65)</option>
+                                    <option value="+421">Slovakia (+421)</option>
+                                    <option value="+386">Slovenia (+386)</option>
+                                    <option value="+27">South Africa (+27)</option>
+                                    <option value="+34">Spain (+34)</option>
+                                    <option value="+94">Sri Lanka (+94)</option>
+                                    <option value="+46">Sweden (+46)</option>
+                                    <option value="+41">Switzerland (+41)</option>
+                                    <option value="+66">Thailand (+66)</option>
+                                    <option value="+90">Turkey (+90)</option>
+                                    <option value="+380">Ukraine (+380)</option>
+                                    <option value="+971">United Arab Emirates (+971)</option>
+                                    <option value="+44">United Kingdom (+44)</option>
+                                    <option value="+1">United States (+1)</option>
+                                    <option value="+598">Uruguay (+598)</option>
+                                    <option value="+998">Uzbekistan (+998)</option>
+                                    <option value="+84">Vietnam (+84)</option>
+                                    <option value="+263">Zimbabwe (+263)</option>
 
-                            <!-- Dropdown List -->
-                            <div x-show="open" @click.outside="open=false"
-                                class="absolute z-50 bg-white border rounded-md w-full mt-1 max-h-48 overflow-y-auto shadow">
-
-                                @foreach($showExport as $item)
-                                    <label class="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100">
-                                        <input type="checkbox"
-                                         value="{{ $item->name }}-{{ $item->capacity }}" @change="
-                                        if ($event.target.checked) {
-                                            selected.push($event.target.value);
-                                        } else {
-                                            selected = selected.filter(v => v !== $event.target.value);
-                                        }
-                                    " :checked="selected.includes('{{ $item->name }}-{{ $item->capacity }}')">
-                                        <span>{{ $item->name }}-{{ $item->capacity }}</span>
-                                    </label>
-                                @endforeach
+                                </select>
+                                <input type="text" placeholder="Phone Number" name="phone"
+                                    class="w-[90%] h-[55px] px-5 rounded-md text-gray-700 placeholder-gray-600  bg-[#FFF9E6] focus:outline-none focus:ring-2 focus:ring-yellow-400" style="padding: 10px; margin: 10px;" />
                             </div>
-
-                            <!-- Hidden input to submit -->
-                            <input type="hidden" class="form-input" id="input-name" name="products" :value="selected.join(', ')">
-
                         </div>
-
-                        <input type="text" id="input-capacity" placeholder="Quantity(KG)"
-                            class="form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                            readonly />
-
-                        <input type="number" id="input-quantity" placeholder="Quantity(KG)"
-                            class="hidden form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
-
-                        <input type="text" id="input-price" placeholder="Price"
-                            class="form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                            readonly />
-
-                        <input type="text" id="input-total" placeholder="Total"
-                        class="form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md"
-                        readonly />
-
-                          <div class="block lg:hidden w-80 flex flex-col justify-between items-center p-4">
-
-                   <div x-data="{
-                        open: false,
-                        items: ['Plastic Bag', 'Laminated PP', 'BOPP', 'Normal PP'],
-                        selected: []
-                    }" class="relative w-full">
-
-                    <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Bag Type</h2>
-
-                    <!-- Dropdown Button -->
-                    <div @click="open = !open"
-                        class="bg-[#FFF9E6] px-3 py-2 min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
-                            flex flex-wrap items-center gap-2 justify-between">
-
-                        <!-- Tags or Placeholder -->
-                        <div class="flex flex-wrap items-center gap-1 flex-1">
-
-                            <!-- Placeholder -->
-                            <template x-if="selected.length === 0">
-                                <span class="text-gray-500">Select Bag Types</span>
-                            </template>
-
-                            <!-- Selected Tags -->
-                            <template x-for="(item, index) in selected" :key="index">
-                                <div class="flex items-center bg-[#DDCC81] text-[#324A0A] px-2 py-1 rounded-full text-sm">
-                                    <span x-text="item"></span>
-
-                                    <!-- X Button -->
-                                    <button type="button" class="ml-1"
-                                            @click.stop="selected.splice(index, 1)">
-                                        <svg class="w-3 h-3 text-[#324A0A]" fill="none" stroke="currentColor"
-                                            stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </template>
-                        </div>
-
-                        <!-- Dropdown Icon -->
-                        <svg x-bind:class="open ? 'rotate-180' : ''"
-                            class="w-5 h-5 text-gray-600 transition-transform duration-300 ml-2"
-                            fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19 9l-7 7-7-7" />
-                        </svg>
+                        <div></div>
                     </div>
-
-                    <!-- Dropdown List -->
-                    <div x-show="open" @click.outside="open = false"
-                        class="absolute z-50 bg-white border rounded-md w-full mt-1 max-h-48 overflow-y-auto shadow">
-
-                        <template x-for="(item, index) in items" :key="index">
-                            <label class="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100">
-
-                                <!-- Checkbox -->
-                                <input type="checkbox"
-                                    :value="item"
-                                    @change="
-                                            if ($event.target.checked) {
-                                                selected.push(item)
-                                            } else {
-                                                selected = selected.filter(v => v !== item)
-                                            }
-                                            open = false
-                                    "
-                                    :checked="selected.includes(item)">
-
-                                <span x-text="item"></span>
-                            </label>
-                        </template>
-                    </div>
-
-                    <!-- Hidden input for form submit -->
-                    <input type="hidden" name="bag_types" :value="selected.join(',')">
-                </div>
-
-
-                {{-- <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script> --}}
-
-
-
-                    
-                </div>
-                        <div class="w-full flex justify-center mt-6">
-                        <button type="button" id="btn-send-telegram" class="w-[90%] h-[55px] bg-gradient-to-r from-[#DDCC81] to-[#B8A34E] 
-                                    text-[#324A0A] font-bold rounded-lg shadow-md 
-                                    hover:shadow-lg hover:scale-105 transition-all duration-300">
-                            Submit
-                        </button>
-                    </div>
-
-                    </form>
-                </div>
-
-                <div class="lg:block hidden w-full lg:w-[35%] flex flex-col justify-between items-center p-4">
-
-                   <div x-data="{
-                        open: false,
-                        items: ['Plastic Bag', 'Laminated PP', 'BOPP', 'Normal PP'],
-                        selected: []
-                    }" class="relative w-full">
-
-                    <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Bag Type</h2>
-
-                    <!-- Dropdown Button -->
-                    <div @click="open = !open"
-                        class="bg-[#FFF9E6] px-3 py-2 min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
-                            flex flex-wrap items-center gap-2 justify-between">
-
-                        <!-- Tags or Placeholder -->
-                        <div class="flex flex-wrap items-center gap-1 flex-1">
-
-                            <!-- Placeholder -->
-                            <template x-if="selected.length === 0">
-                                <span class="text-gray-500">Select Bag Types</span>
-                            </template>
-
-                            <!-- Selected Tags -->
-                            <template x-for="(item, index) in selected" :key="index">
-                                <div class="flex items-center bg-[#DDCC81] text-[#324A0A] px-2 py-1 rounded-full text-sm">
-                                    <span x-text="item"></span>
-
-                                    <!-- X Button -->
-                                    <button type="button" class="ml-1"
-                                            @click.stop="selected.splice(index, 1)">
-                                        <svg class="w-3 h-3 text-[#324A0A]" fill="none" stroke="currentColor"
-                                            stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </template>
-                        </div>
-
-                        <!-- Dropdown Icon -->
-                        <svg x-bind:class="open ? 'rotate-180' : ''"
-                            class="w-5 h-5 text-gray-600 transition-transform duration-300 ml-2"
-                            fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </div>
-
-                    <!-- Dropdown List -->
-                    <div x-show="open" @click.outside="open = false"
-                        class="absolute z-50 bg-white border rounded-md w-full mt-1 max-h-48 overflow-y-auto shadow">
-
-                        <template x-for="(item, index) in items" :key="index">
-                            <label class="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100">
-
-                                <!-- Checkbox -->
-                                <input type="checkbox"
-                                    :value="item"
-                                    @change="
-                                            if ($event.target.checked) {
-                                                selected.push(item)
-                                            } else {
-                                                selected = selected.filter(v => v !== item)
-                                            }
-                                            open = false
-                                    "
-                                    :checked="selected.includes(item)">
-
-                                <span x-text="item"></span>
-                            </label>
-                        </template>
-                    </div>
-
-                    <!-- Hidden input for form submit -->
-                    <input type="hidden" name="bag_types" :value="selected.join(',')">
-                </div>
-
-
-                <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    
-                </div>
-
+                </form>
             </div>
         </section>
         @section('section_footer')
@@ -850,7 +706,7 @@ if (alpineEl && alpineEl._x_dataStack) {
         message += `\n💰 *Grand Total:* $${formatNumber(grandTotal)}`;
         message += `\n🛍 Bag Types: ${bagTypes || "None"}`;
 
-        const telegramLink = `https://t.me/Sekmeas88?text=${encodeURIComponent(message)}`;
+        const telegramLink = `https://t.me/+85587686768?text=${encodeURIComponent(message)}`;
         window.open(telegramLink, "_blank");
 
     });
