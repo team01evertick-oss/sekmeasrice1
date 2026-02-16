@@ -59,7 +59,7 @@
                             <li><a href="{{ route('home') }}" class="hover:underline">Home</a></li>
                             <li><a href="{{ route('export') }}" class="hover:underline">Export</a></li>
                             <li><a href="{{ route('about') }}" class="hover:underline">About Us</a></li>
-                            <li><a href="{{ route('news') }}" class="hover:underline">Activities</a></li>
+                            <li><a href="{{ route('news') }}" class="hover:underline">Latest News</a></li>
                             <li><a href="{{ route('career') }}" class="hover:underline">Career</a></li>
                             <li><a href="{{ route('contact') }}" class="hover:underline">Contact Us</a></li>
                         </ul>
@@ -126,7 +126,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 3c4.97 0 9 4.03 9 9 0 1.74-.5 3.37-1.36 4.76L12 21l-7.64-4.24A8.97 8.97 0 0 1 3 12c0-4.97 4.03-9 9-9z" />
                         </svg>
-                        <a href="http://www.lehsekmeasrice.com" class="hover:underline">www.lehsekmeasrice.com</a>
+                        <a href="http://www.lehsekmeasrice.com" class="hover:underline">www.lehsekmeasrice.com.kh</a>
                     </p>
                 </div>
 

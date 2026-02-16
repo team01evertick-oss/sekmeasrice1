@@ -604,7 +604,7 @@
                     
                 </div>
                         <div class="w-full flex justify-center mt-6">
-                        <button type="submit" id="btn-send-telegram" class="w-[90%] h-[55px] bg-gradient-to-r from-[#DDCC81] to-[#B8A34E] 
+                        <button type="button" id="btn-send-telegram" class="w-[90%] h-[55px] bg-gradient-to-r from-[#DDCC81] to-[#B8A34E] 
                                     text-[#324A0A] font-bold rounded-lg shadow-md 
                                     hover:shadow-lg hover:scale-105 transition-all duration-300">
                             Submit
@@ -850,7 +850,7 @@ if (alpineEl && alpineEl._x_dataStack) {
         message += `\n💰 *Grand Total:* $${formatNumber(grandTotal)}`;
         message += `\n🛍 Bag Types: ${bagTypes || "None"}`;
 
-        const telegramLink = `https://t.me/+85587686768?text=${encodeURIComponent(message)}`;
+        const telegramLink = `https://t.me/Sekmeas88?text=${encodeURIComponent(message)}`;
         window.open(telegramLink, "_blank");
 
     });

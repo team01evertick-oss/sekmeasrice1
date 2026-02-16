@@ -7,8 +7,8 @@
 @endsection --}}
 {{-- @section('text-title', 'Contact Us') --}}
 @section('text-title')
-    <div class="relative -top-4 lg:top-40 xl:top-14 z-50 text-lg font-normal">
-        <h1 class="text-2xl md:text-4xl text-[#ffffff] text-center font-bold" data-aos="fade-right" data-aos-duration="1500">Contect Form</h1>
+    <div class="relative -top-4 lg:top-40 xl:top-14 z-[99999] text-lg font-normal">
+        <h1 class="text-2xl md:text-4xl text-[#ffffff] text-center font-bold" data-aos="fade-right" data-aos-duration="1500">Contact Form</h1>
         <form action="">
             <div class="max-w-7xl mx-auto flex md:flex-row flex-col justify-center space-x-4" data-aos="fade-left" data-aos-duration="1500">
                 <div class="space-y-4 md:w-[50%] w-full" style="margin: 10px; padding: 10px;">
