@@ -18,13 +18,13 @@
         </div>
 
         <!-- make sure Alpine is loaded in your layout -->
-        <script src="//unpkg.com/alpinejs" defer></script>
+        {{-- <script src="//unpkg.com/alpinejs" defer></script> --}}
 
         <!-- ONE Alpine root wrapping grid + modal -->
         <div x-data="{ openOrderModal: false, selectedProduct: { name:'', type:'', capacity:'', price: 0 }, quantity: 1 }"
             x-cloak>
 
-            <div class="relative top-[30px] flex justify-center" data-aos="fade-left" data-aos-duration="1500">
+            <div class="relative top-[30px] flex justify-center">
                 <div
                     class="grid grid-cols-1 gap-y-15 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center items-start ">
                     @foreach ($showExport as $items)
@@ -88,14 +88,14 @@
     </section>
     <div class="grid grid-cols-1 gap-y-15">
         {{-- Section: International Destination--}}
-        <section class="relative w-full xl:hidden block" data-aos="fade-left" data-aos-duration="1500">
+        <section class="relative w-full xl:hidden block">
             <!-- Background Image -->
             <div class="relative w-full h-full">
                 <img src="{{ asset('frontend/assets/imges/international.png') }}" alt="Background Image"
                     class="w-full h-full object-cover">
             </div>
         </section>
-        <section class="relative w-full xl:block hidden" data-aos="fade-left" data-aos-duration="1500">
+        <section class="relative w-full xl:block hidden">
             <!-- Background Image -->
             <div class="relative w-full h-full">
                 <img src="{{ asset('assets/image/bg-national.svg') }}" alt="Background Image"
@@ -210,7 +210,7 @@
         </section>
 
         {{-- Section: Input Information --}}
-        <section class="flex justify-center bg-white py-[70px] px-4" id="section-products" data-aos="fade-left" data-aos-duration="1500">
+        <section class="flex justify-center bg-white py-[70px] px-4" id="section-products">
             <div class="flex flex-col lg:flex-row justify-between w-full max-w-[1200px] h-auto gap-8 lg:gap-4 pt-10 pb-10"
                 style="padding-left: 70px; padding-right: 70px;">
                 <div class="w-full lg:w-[25%] flex flex-col items-center p-4">
@@ -435,7 +435,10 @@
                             class="hidden form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                             readonly />
                         <!-- Product Multi Select -->
-                        <div x-data="{ open:false, selected: [] }" class="relative w-80 lg:w-[90%]">
+                        <div 
+                            x-data="productSelector()" 
+                            x-ref="productSelector"
+                            class="relative w-80 lg:w-[90%]">
 
                             <!-- Dropdown Button -->
                             <div @click="open = !open" class="bg-[#FFF9E6] px-3 py-2 h-auto min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
@@ -451,7 +454,12 @@
                                         <div
                                             class="flex items-center bg-[#DDCC81] text-[#324A0A] px-2 py-1 rounded-full text-sm">
                                             <span x-text="item"></span>
-                                            <button type="button" class="ml-1" @click.stop="selected.splice(index, 1)">
+                                            <button type="button" class="ml-1" 
+                                                    @click.stop="
+                                                        const parts = item.split('-');
+                                                        removeProduct(parts[0], parts[1]);
+                                                        selected.splice(index, 1);
+                                                    ">
                                                 <svg class="w-3 h-3 text-[#324A0A]" fill="none" stroke="currentColor"
                                                     stroke-width="2" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -476,13 +484,14 @@
 
                                 @foreach($showExport as $item)
                                     <label class="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100">
-                                        <input type="checkbox" value="{{ $item->name }}-{{ $item->capacity }}" @change="
-                                                           if ($event.target.checked) {
-                                                               selected.push($event.target.value);
-                                                           } else {
-                                                               selected = selected.filter(v => v !== $event.target.value);
-                                                           }
-                                                       " :checked="selected.includes('{{ $item->name }}-{{ $item->capacity }}')">
+                                        <input type="checkbox"
+                                         value="{{ $item->name }}-{{ $item->capacity }}" @change="
+                                        if ($event.target.checked) {
+                                            selected.push($event.target.value);
+                                        } else {
+                                            selected = selected.filter(v => v !== $event.target.value);
+                                        }
+                                    " :checked="selected.includes('{{ $item->name }}-{{ $item->capacity }}')">
                                         <span>{{ $item->name }}-{{ $item->capacity }}</span>
                                     </label>
                                 @endforeach
@@ -504,9 +513,10 @@
                             class="form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                             readonly />
 
-                        <input type="text" id="input-grand-total" placeholder="Total"
-                            class="form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                            readonly />
+                        <input type="text" id="input-total" placeholder="Total"
+                        class="form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md"
+                        readonly />
+
                           <div class="block lg:hidden w-80 flex flex-col justify-between items-center p-4">
 
                    <div x-data="{
@@ -587,7 +597,7 @@
                 </div>
 
 
-                <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+                {{-- <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script> --}}
 
 
 
@@ -701,6 +711,20 @@
         @endsection
     </div>
 <script>
+function productSelector() {
+    return {
+        open: false,
+        selected: [],
+
+        addProduct(product) {
+            if (!this.selected.includes(product)) {
+                this.selected.push(product);
+            }
+        }
+    }
+}
+</script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
 
     const priceInput      = document.getElementById("input-price");
@@ -712,30 +736,60 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===============================
     // BUY NOW BUTTON
     // ===============================
-    document.querySelectorAll('.btn-buy-now').forEach(button => {
+   document.querySelectorAll('.btn-buy-now').forEach(button => {
 
-        button.addEventListener('click', () => {
+    button.addEventListener('click', () => {
 
-            document.getElementById('section-products')
-                .scrollIntoView({ behavior: 'smooth' });
+        // Scroll
+        document.getElementById('section-products')
+            .scrollIntoView({ behavior: 'smooth' });
 
-            const name     = button.dataset.name;
-            const price    = parseFloat(button.dataset.price) || 0;
-            const capacity = button.dataset.capacity;
+        const name     = button.dataset.name;
+        const price    = parseFloat(button.dataset.price) || 0;
+        const capacity = button.dataset.capacity;
 
-            document.getElementById('input-name').value     = name;
-            document.getElementById('input-capacity').value = capacity;
+        const productLabel = `${name}-${capacity}`;
 
-            priceInput.value = "$" + formatNumber(price);
-            qtyInput.value   = 1;
+        // ==============================
+        // Add to Alpine Multi Select UI
+        // ==============================
+        // const alpineComponent = document.querySelector('[x-ref="productSelector"]').__x.$data;
+        // alpineComponent.addProduct(productLabel);
+        function productSelector() {
+            return {
+                open: false,
+                selected: [],
 
-            updateSingleTotal(price, 1);
+                addProduct(product) {
+                    if (!this.selected.includes(product)) {
+                        this.selected.push(product);
+                    }
+                }
+            }
+        }
 
-            addOrUpdateProduct(name, capacity, price, 1);
-            updateGrandTotal();
-        });
 
+        // ==============================
+        // Fill single preview fields
+        // ==============================
+        document.getElementById('input-name').value     = name;
+        document.getElementById('input-capacity').value = capacity;
+        document.getElementById('input-price').value    = "$" + formatNumber(price);
+
+        qtyInput.value = 1;
+
+        updateSingleTotal(price, 1);
+
+        // ==============================
+        // Add hidden product
+        // ==============================
+        addOrUpdateProduct(name, capacity, price, 1);
+
+        updateGrandTotal();
     });
+
+});
+
 
     // ===============================
     // QUANTITY CHANGE
