@@ -341,7 +341,7 @@
         </div>
         {{-- Text Home, Export, About Us, Activity, and Contact Us --}}
         <div
-            class="absolute inset-0 flex flex-col justify-center items-center text-center lg:top-[-200px] sm:top-[20px] top-[30px]" data-aos="fade-up" data-aos-duration="1500">
+            class="absolute inset-0 flex flex-col justify-center items-center text-center lg:top-[-200px] sm:top-[20px] top-[30px] z-20" data-aos="fade-up" data-aos-duration="1500">
             <div class="bg-white/3">
                 <h4 class="text-3xl sm:text-4xl text-[#1E3E0F] font-semibold tracking-wide">
                     @yield('welcome')
