@@ -575,7 +575,7 @@
                                     <!-- Tags or Placeholder -->
                                     <div class="flex flex-wrap items-center gap-1 flex-1">
                                         <template x-if="selected.length === 0">
-                                            <span class="text-gray-500">Products</span>
+                                            <span class="text-gray-500" style="margin-left: 10px;">Products</span>
                                         </template>
 
                                         <template x-for="(item, index) in selected" :key="index">
@@ -835,31 +835,72 @@ window.dispatchEvent(new CustomEvent('add-product', {
 
         calculateTotals();
     });
+    function formatNumber(number) {
+    return number.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
 
     // Form submit
     document.querySelector("form").addEventListener("submit", function (e) {
-        e.preventDefault();
+    e.preventDefault();
 
-        const name = this.name.value;
+    const form = this;
 
-        let message = `New Enquiry:\nName: ${name}\n`;
+    const name = form.name.value;
+    const company = form.company_name.value;
+    const country = form.country.value;
+    const email = form.email.value;
+    const countryCode = form.country_code.value;
+    const phone = form.phone.value;
+    const address = form.address.value;
+    const messageText = form.message.value;
+    const bagTypes = form.bag_types.value;
+    const selectedProducts = form.products.value;
 
-        let totalPrice = 0;
-        let productList = [];
+    let totalPrice = 0;
+    let productList = [];
 
-        for (let key in productData) {
-            const p = productData[key];
-            const pTotal = p.price + p.price;
-            productList.push(`${key} (${p.quantity} KG)`);
-            totalPrice += pTotal;
-        }
+    for (let key in productData) {
+        const p = productData[key];
+        const blockCount = p.quantity / p.capacity;
+        const productTotal = blockCount * p.price;
 
-        message += `Products: ${productList.join(", ")}\n`;
-        message += `Total: $${totalPrice.toFixed(2)}`;
+        totalPrice += productTotal;
 
-        const telegramURL = "https://t.me/+85587686768?text=" + encodeURIComponent(message);
-        window.open(telegramURL, "_blank");
-    });
+        productList.push(
+            `${key} (${p.quantity} KG) - $${formatNumber(productTotal)}`
+        );
+    }
+
+    let message = `
+📦 *New Export Enquiry*
+
+ Name: ${name}
+ Company: ${company}
+ Country: ${country}
+ Email: ${email}
+ Phone: ${countryCode} ${phone}
+ Address: ${address}
+
+🛍 Bag Type: ${bagTypes}
+
+📦 Products:
+${productList.join("\n")}
+
+💰 Total Price: $${formatNumber(totalPrice)}
+
+📝 Message:
+${messageText}
+`;
+
+    const telegramURL =
+        "https://t.me/+85587686768?text=" + encodeURIComponent(message);
+
+    window.open(telegramURL, "_blank");
+});
+
 
     // Initial total update
     calculateTotals();
@@ -901,20 +942,6 @@ window.dispatchEvent(new CustomEvent('add-product', {
 
 
 });
-</script>
-<script>
-    const qtyInput = document.getElementById("input-quantity");
-
-qtyInput.addEventListener("input", function () {
-
-    let price = 1200; // product price
-    let qty = parseFloat(this.value) || 0;
-
-    let total = price * qty;
-
-    updatePrice(total);
-});
-
 </script>
 
 

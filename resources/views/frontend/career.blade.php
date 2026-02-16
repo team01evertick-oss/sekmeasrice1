@@ -1,6 +1,12 @@
 @extends('frontend.header')
 @section('title', 'Career')
-@section('background-career', asset('frontend/assets/imges/career.png'))
+@section('background-career')
+<div class="relative w-full h-screen">
+    <div class="absolute inset-0 -top-4 bg-black/50 bg-opacity-50 z-0"></div>
+    <img src="{{ asset('assets/image/bg-career.jpg') }}" alt="" class="w-full h-full object-cover">
+</div>
+@endsection
+
 @section('rice-background', asset('frontend/assets/imges/rice-background.png'))
 @section('title-career', 'Join Our Team')
 @section('gmail-career')
@@ -139,20 +145,22 @@
                 @foreach($jobs as $job)
                 <div class="group w-[380px] max-w-[450px] h-[50vh] bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 flex flex-col justify-between items-center text-center">
                     
-                    <div class="w-32 h-32 mb-8 bg-gray-50 rounded-full flex items-center justify-center group-hover:bg-green-50 transition-colors duration-500">
-                        <img src="{{ $job['image'] }}" alt="{{ $job['title'] }}" class="w-full h-full object-cover rounded-full">
+                    <div class="w-32 h-32 mb-8 rounded-full flex items-center justify-center transition-colors duration-500">
+                        <img src="{{ $job['image'] }}" alt="{{ $job['title'] }}" class="w-full h-full object-cover rounded-full" style="margin-top: 20px;">
                     </div>
 
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ $job['title'] }}</h3>
+                   <div>
+                     <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ $job['title'] }}</h3>
                     <p class="text-gray-400 font-medium mb-10">Full-time • Head Office</p>
+                   </div>
                     <button 
                         @click="
                             open = true;
                             title = '{{ $job['title'] }}';
                             description = `{!! $job['description'] !!}`;
                         "
-                        class="w-full h-12 py-4 px-8 -mt-4 rounded-2xl border-2 cursor-pointer border-[#53A557] text-[#53A557] font-bold group-hover:bg-[#53A557] group-hover:text-white transition-all duration-300" style="padding: 5px;">
-                        View Description
+                        class="w-full h-12 py-4 px-8 -mt-4 cursor-pointer" style="padding: 5px;">
+                        <img src="{{ asset('assets/logo/btn-view-desc.png') }}" alt="" class="w-full h-full object-contain">
                     </button>
 
 
@@ -166,8 +174,7 @@
            x-show="open"
             x-transition
             x-cloak
-            class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
-        >
+            class="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50" style="position: absolute; z-index: 99999;">
             <div 
                   @click.outside="open = false"
                 class="bg-white w-5xl max-w-6xl rounded-2xl px-12 relative" style="padding: 30px;"
@@ -179,7 +186,7 @@
 
                 <!-- Render HTML content -->
                 <div x-html="description"
-                    class="text-gray-600 space-y-4 lg:text-lg md:text-sm text-xs
+                    class="text-gray-600 space-y-4 lg:text-sm md:text-sm text-xs
                             [&_h4]:text-lg [&_h4]:font-bold [&_h4]:mt-4
                             [&_ul]:list-disc [&_ul]:pl-6
                             [&_li]:mb-2">
@@ -224,28 +231,28 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
                         
                         <div class="space-y-3">
-                            <label class="text-sm font-bold text-gray-700 ml-2">Full Name</label>
+                            <label class="text-sm font-bold text-gray-700 ml-2" style="margin-left: 10px;">Full Name</label>
                             <input type="text" name="name" placeholder="Your Name" required
-                                class="w-full h-12 placeholder:px-2 px-7 py-5 rounded-2xl bg-gray-50 border-none focus:bg-white focus:ring-2 focus:ring-green-400 outline-none transition-all shadow-inner">
+                                class="w-full h-12 placeholder:px-2 px-7 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
                         </div>
 
                         <div class="space-y-3">
-                            <label class="text-sm font-bold text-gray-700 ml-2">Email Address</label>
+                            <label class="text-sm font-bold text-gray-700 ml-2" style="margin-left: 10px;">Email Address</label>
                             <input type="email" name="email" placeholder="example@mail.com" required
-                                class="w-full h-12 placeholder:px-2 px-7 py-5 rounded-2xl bg-gray-50 border-none focus:bg-white focus:ring-2 focus:ring-green-400 outline-none transition-all shadow-inner">
+                                class="w-full h-12 placeholder:px-2 px-7 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
                         </div>
 
                         <div class="space-y-3">
-                            <label class="text-sm font-bold text-gray-700 ml-2">Phone Number</label>
+                            <label class="text-sm font-bold text-gray-700 ml-2" style="margin-left: 10px;">Phone Number</label>
                             <input type="text" name="phone" placeholder="Your phone Number" required
-                                class="w-full h-12 placeholder:px-2 px-7 py-5 rounded-2xl bg-gray-50 border-none focus:bg-white focus:ring-2 focus:ring-green-400 outline-none transition-all shadow-inner">
+                                class="w-full h-12 placeholder:px-2 px-7 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
                         </div>
 
                         <div class="space-y-3">
-                            <label class="text-sm font-bold text-gray-700 ml-2">Position</label>
+                            <label class="text-sm font-bold text-gray-700 ml-2" style="margin-left: 10px;">Position</label>
                             <div class="relative">
                                 <select name="position" required
-                                    class="w-full h-12 placeholder:px-2 px-7 py-5 rounded-2xl bg-gray-50 border-none focus:bg-white focus:ring-2 focus:ring-green-400 outline-none transition-all appearance-none shadow-inner">
+                                    class="w-full h-12 placeholder:px-2 px-7 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
                                     <option value="">Select a position</option>
                                     <option>Sales Executive</option>
                                     <option>Sales Supervisor</option>
@@ -258,22 +265,22 @@
                         </div>
 
                         <div class="space-y-3">
-                            <label class="text-sm font-bold text-gray-700 ml-2">Upload CV (PDF)</label>
+                            <label class="text-sm font-bold text-gray-700 ml-2" style="margin-left: 15px;">Upload CV (PDF)</label>
                             <input type="file" name="cv" required
-                                class="block h-12 placeholder:px-2 w-full text-sm text-gray-500 file:mr-4 file:py-4 file:px-6 file:rounded-2xl file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100 cursor-pointer transition-all">
+                                class="block h-12 placeholder:px-2 w-full text-sm text-gray-500 file:mr-4 file:py-4 file:px-6 file:rounded-2xl file:border-0 file:text-sm file:font-semibold file:bg-[#fff9e6] file:text-gray-500 cursor-pointer transition-all">
                         </div>
 
                         <div class="space-y-3">
-                            <label class="text-sm font-bold text-gray-700 ml-2">Cover Letter</label>
+                            <label class="text-sm font-bold text-gray-700 ml-2" style="margin-left: 15px;">Cover Letter</label>
                             <input type="file" name="cover_letter" required
-                                class="block h-12 placeholder:px-2 w-full text-sm text-gray-500 file:mr-4 file:py-4 file:px-6 file:rounded-2xl file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100 cursor-pointer transition-all">
+                                class="block h-12 placeholder:px-2 w-full text-sm text-gray-500 file:mr-4 file:py-4 file:px-6 file:rounded-2xl file:border-0 file:text-sm file:font-semibold file:bg-[#fff9e6] file:text-gray-500 cursor-pointer transition-all">
                         </div>
                     </div>
 
                     <div class="relative top-4 pt-12 flex justify-center py-12">
                         <button type="submit"
-                            class="w-64 px-16 h-12 py-5 font-bold text-white bg-[#53A557] rounded-2xl hover:bg-[#468e4a] hover:shadow-xl hover:shadow-green-200 transition-all duration-300">
-                            Submit Application
+                            class="w-64 px-16 h-12 py-5 transition-all duration-300">
+                            <img src="{{ asset('assets/logo/btn-application.png') }}" alt="">
                         </button>
                     </div>
                     </div>

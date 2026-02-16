@@ -51,7 +51,8 @@
         </div>
         @if(View::hasSection('background-career'))
             <div class="absolute inset-0 w-full">
-                <img src="@yield('background-career')" alt="Career" class="w-full h-full max-w-full object-cover">
+                {{-- <img src="@yield('background-career')" alt="Career" class="w-full h-full max-w-full object-cover"> --}}
+                @yield('background-career')
             </div>
         @endif
         <!-- HEADER -->
@@ -401,7 +402,7 @@
             <div class="" >
                 <!-- Title -->
                 <h1 data-aos="fade-right" data-aos-duration="1500"
-                    class="text-3xl sm:text-3xl md:text-5xl lg:text-[100px] font-extrabold text-white leading-tight mb-6">
+                    class="text-3xl sm:text-3xl md:text-5xl lg:text-[100px] font-extrabold text-white leading-tight mb-6" style="display: flex; justify-content: center; text-align: center;">
                     @yield('title-career')
                 </h1>
 
