@@ -741,10 +741,14 @@ function productSelector() {
         open: false,
         selected: [],
 
-        addProduct(product) {
-            if (!this.selected.includes(product)) {
-                this.selected.push(product);
-            }
+        init() {
+            window.addEventListener('add-product', (e) => {
+                const value = e.detail;
+
+                if (!this.selected.includes(value)) {
+                    this.selected.push(value);
+                }
+            });
         },
 
         removeProduct(name, capacity) {
@@ -753,6 +757,7 @@ function productSelector() {
         }
     }
 }
+
 </script>
 
 <script>
@@ -787,13 +792,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 .scrollIntoView({ behavior: "smooth" });
 
             // Add product to Alpine selector if needed
-            const selector = document.querySelector('[x-ref="productSelector"]');
-            if (selector && selector.__x) {
-                const value = `${name}-${capacity}`;
-                if (!selector.__x.$data.selected.includes(value)) {
-                    selector.__x.$data.selected.push(value);
-                }
-            }
+const value = `${name}-${capacity}KG`;
+window.dispatchEvent(new CustomEvent('add-product', {
+    detail: value
+}));
+
+
 
             // Initialize product data
             if (!productData[name]) {
@@ -898,7 +902,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+<script>
+    const qtyInput = document.getElementById("input-quantity");
 
+qtyInput.addEventListener("input", function () {
+
+    let price = 1200; // product price
+    let qty = parseFloat(this.value) || 0;
+
+    let total = price * qty;
+
+    updatePrice(total);
+});
+
+</script>
 
 
 
