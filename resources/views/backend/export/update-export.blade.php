@@ -56,7 +56,7 @@
                                     {{-- Capacity --}}
                                     <div class="mb-3 col-12">
                                         <label class="form-label text-[#0F4634]">Capacity (KG, g)</label>
-                                        <input class="form-control" type="text" min="1" name="update_capacity"
+                                        <input class="form-control" type="number" min="1" name="update_capacity"
                                             value="{{ old('capacity'). $row->capacity  }}">
                                         @error('capacity')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
                                     </div>

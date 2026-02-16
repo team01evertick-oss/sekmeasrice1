@@ -520,55 +520,55 @@
                           <div class="block lg:hidden w-80 flex flex-col justify-between items-center p-4">
 
                    <div x-data="{
-                        open: false,
-                        items: ['Plastic Bag', 'Laminated PP', 'BOPP', 'Normal PP'],
-                        selected: []
-                    }" class="relative w-full">
+                            open: false,
+                            items: ['Plastic Bag', 'Laminated PP', 'BOPP', 'Normal PP'],
+                            selected: []
+                        }" class="relative w-full">
 
-                    <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Bag Type</h2>
+                        <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Bag Type</h2>
 
-                    <!-- Dropdown Button -->
-                    <div @click="open = !open"
-                        class="bg-[#FFF9E6] px-3 py-2 min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
-                            flex flex-wrap items-center gap-2 justify-between">
+                        <!-- Dropdown Button -->
+                        <div @click="open = !open"
+                            class="bg-[#FFF9E6] px-3 py-2 min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
+                                flex flex-wrap items-center gap-2 justify-between">
 
-                        <!-- Tags or Placeholder -->
-                        <div class="flex flex-wrap items-center gap-1 flex-1">
+                            <!-- Tags or Placeholder -->
+                            <div class="flex flex-wrap items-center gap-1 flex-1">
 
-                            <!-- Placeholder -->
-                            <template x-if="selected.length === 0">
-                                <span class="text-gray-500">Select Bag Types</span>
-                            </template>
+                                <!-- Placeholder -->
+                                <template x-if="selected.length === 0">
+                                    <span class="text-gray-500">Select Bag Types</span>
+                                </template>
 
-                            <!-- Selected Tags -->
-                            <template x-for="(item, index) in selected" :key="index">
-                                <div class="flex items-center bg-[#DDCC81] text-[#324A0A] px-2 py-1 rounded-full text-sm">
-                                    <span x-text="item"></span>
+                                <!-- Selected Tags -->
+                                <template x-for="(item, index) in selected" :key="index">
+                                    <div class="flex items-center bg-[#DDCC81] text-[#324A0A] px-2 py-1 rounded-full text-sm">
+                                        <span x-text="item"></span>
 
-                                    <!-- X Button -->
-                                    <button type="button" class="ml-1"
-                                            @click.stop="selected.splice(index, 1)">
-                                        <svg class="w-3 h-3 text-[#324A0A]" fill="none" stroke="currentColor"
-                                            stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </template>
+                                        <!-- X Button -->
+                                        <button type="button" class="ml-1"
+                                                @click.stop="selected.splice(index, 1)">
+                                            <svg class="w-3 h-3 text-[#324A0A]" fill="none" stroke="currentColor"
+                                                stroke-width="2" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </template>
+                            </div>
+
+                            <!-- Dropdown Icon -->
+                            <svg x-bind:class="open ? 'rotate-180' : ''"
+                                class="w-5 h-5 text-gray-600 transition-transform duration-300 ml-2"
+                                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
                         </div>
 
-                        <!-- Dropdown Icon -->
-                        <svg x-bind:class="open ? 'rotate-180' : ''"
-                            class="w-5 h-5 text-gray-600 transition-transform duration-300 ml-2"
-                            fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </div>
-
-                    <!-- Dropdown List -->
-                    <div x-show="open" @click.outside="open = false"
+                     <!-- Dropdown List -->
+                      <div x-show="open" @click.outside="open = false"
                         class="absolute z-50 bg-white border rounded-md w-full mt-1 max-h-48 overflow-y-auto shadow">
 
                         <template x-for="(item, index) in items" :key="index">

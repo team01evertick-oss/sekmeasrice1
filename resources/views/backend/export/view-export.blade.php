@@ -44,7 +44,7 @@
                                     </td>
                                     <td>{{ $item->type }}</td>
                                     <td>${{ $item->price }}</td>
-                                    <td>{{ $item->capacity }}</td>
+                                    <td>{{ $item->capacity }}KG</td>
                                     <td>
                                         <div class="dropdown position-static">
                                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow"

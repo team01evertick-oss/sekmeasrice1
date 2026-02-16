@@ -57,7 +57,7 @@
                         </svg>
                         <div>
                             <h1 class="font-semibold">Factory Address: </h1> <br>
-                            <span class="relative -top-4">National Road 6, Skun Village, Sotep Commune, Cheung Prey District, Kompong Cham Province Our Factory is located in Kompong Cham Province.</span>
+                            <span class="relative -top-4">National Road 6, Skun Village, Sotep Commune, Cheung Prey District, Kompong Cham Province.</span>
                         </div>
                     </div>
 

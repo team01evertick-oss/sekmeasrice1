@@ -21,7 +21,7 @@ class ProductForExportController extends Controller
         'name'        => 'required|string|max:255',
         'type'        => 'nullable|string|max:255',
         'price'       => 'required|numeric|min:0',
-        'capacity'    => 'required|string|max:255',
+        'capacity'    =>  'required|numeric|min:0',
         'image_export' => 'required|image|mimes:jpg,jpeg,png,gif,webp|max:20480',
         ]);
 
@@ -58,7 +58,7 @@ class ProductForExportController extends Controller
         'update_name'      => 'required|string|max:255',
         'update_type'      => 'nullable|string|max:255',
         'update_price'     => 'required|numeric|min:0',
-        'update_capacity'  => 'required|string|max:255',
+        'update_capacity'  =>  'required|numeric|min:0',
         'update_image_export' => 'nullable|image|mimes:jpg,jpeg,png,gif,webp|max:20480',
         'old_image_export' => 'nullable|string|max:255',
         ]);
