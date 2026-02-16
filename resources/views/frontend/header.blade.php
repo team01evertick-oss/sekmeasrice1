@@ -181,7 +181,7 @@
                     no-repeat;background-position: center;">
 
                     <!--  Mobile Menu Button (LEFT SIDE) -->
-                    <div class="absolute left-[20px] top-[90px] -translate-y-1/2 block lg:hidden z-[99999999]">
+                    <div class="absolute left-[20px] top-[90px] -translate-y-1/2 block lg:hidden z-50">
                         <button id="menuButton"
                             class="text-[#1E3E0F] text-3xl focus:outline-none w-[50px] h-[50px] flex items-center justify-center">
                             <!-- Menu Icon -->
@@ -189,7 +189,7 @@
                                 class="w-[25px] h-[25px]" />
                             <!-- Close Icon -->
                             <img id="closeIcon" src="{{ asset('image/icon/close.png') }}" alt="close"
-                                class="w-[25px] h-[25px] hidden z-[999999999]" />
+                                class="w-[25px] h-[25px] hidden" />
                         </button>
                     </div>
 
@@ -246,12 +246,12 @@
                         </ul>
 
 
-                        <!--  Mobile Slide Menu -->
+                      
+                    </nav>
+                </div>
+                  <!--  Mobile Slide Menu -->
                         <div id="mobileMenu"
-                            class="fixed top-[65px] left-0 w-full h-[calc(100vh-65px)] 
-                                bg-white shadow-lg 
-                                transition-transform duration-300 ease-in-out 
-                                z-[99999] p-6 lg:hidden">
+                            class="fixed h-screen top-[120px] left-0 w-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-20 p-6 lg:hidden">
                             <ul
                                 class="relative left-[30px] top-[30px] flex flex-col gap-6 text-green-700 font-medium text-base">
                                 <li><a href="{{ route('home') }}" class="hover:text-yellow-600 transition">Home</a></li>
@@ -318,9 +318,6 @@
                                 </li>
                             </ul>
                         </div>
-                    </nav>
-                </div>
-
             </div>
         </header>
 
@@ -344,7 +341,7 @@
         </div>
         {{-- Text Home, Export, About Us, Activity, and Contact Us --}}
         <div
-            class="absolute inset-0 flex flex-col justify-center items-center text-center lg:top-[-200px] sm:top-[20px] z-10 top-[30px]" data-aos="fade-up" data-aos-duration="1500">
+            class="absolute inset-0 flex flex-col justify-center items-center text-center lg:top-[-200px] sm:top-[20px] top-[30px]" data-aos="fade-up" data-aos-duration="1500">
             <div class="bg-white/3">
                 <h4 class="text-3xl sm:text-4xl text-[#1E3E0F] font-semibold tracking-wide">
                     @yield('welcome')
