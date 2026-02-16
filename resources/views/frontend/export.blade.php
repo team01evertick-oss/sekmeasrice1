@@ -431,7 +431,7 @@
                 <div class="w-full lg:w-[45%] flex flex-col items-center p-4">
                     <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Product Enquiry</h2>
                     <form class="flex flex-col gap-4 items-center w-full">
-                        <input type="text" id="input-name" placeholder="Name Product"
+                        <input type="text" id="" placeholder="Name Product"
                             class="hidden form-input w-80 lg:w-[90%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                             readonly />
                         <!-- Product Multi Select -->
@@ -604,7 +604,7 @@
                     
                 </div>
                         <div class="w-full flex justify-center mt-6">
-                        <button id="btn-send-telegram" class="w-[90%] h-[55px] bg-gradient-to-r from-[#DDCC81] to-[#B8A34E] 
+                        <button type="submit" id="btn-send-telegram" class="w-[90%] h-[55px] bg-gradient-to-r from-[#DDCC81] to-[#B8A34E] 
                                     text-[#324A0A] font-bold rounded-lg shadow-md 
                                     hover:shadow-lg hover:scale-105 transition-all duration-300">
                             Submit
@@ -695,10 +695,7 @@
 
 
                 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
-
-
-                    
+    
                 </div>
 
             </div>
@@ -755,6 +752,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // ==============================
         // const alpineComponent = document.querySelector('[x-ref="productSelector"]').__x.$data;
         // alpineComponent.addProduct(productLabel);
+        const alpineEl = document.querySelector('[x-ref="productSelector"]');
+if (alpineEl && alpineEl._x_dataStack) {
+    alpineEl._x_dataStack[0].selected.push(productLabel);
+}
+
         function productSelector() {
             return {
                 open: false,
@@ -811,7 +813,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===============================
     // TELEGRAM SEND
     // ===============================
-    document.getElementById("btn-send-telegram").addEventListener("click", () => {
+    document.getElementById("btn-send-telegram").addEventListener("click", (e) => {
+         e.preventDefault();
 
         const customerName  = document.querySelector("input[placeholder='Name']").value.trim();
         const companyName   = document.querySelector("input[placeholder='Company Name']").value.trim();
@@ -849,6 +852,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const telegramLink = `https://t.me/+85587686768?text=${encodeURIComponent(message)}`;
         window.open(telegramLink, "_blank");
+
     });
 
 });
