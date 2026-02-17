@@ -30,10 +30,10 @@
 
 {{-- Main Wrapper: Removed the flex-center here to allow sections to behave like blocks --}}
 <div class="relative w-full bg-white overflow-hidden z-50">
-    
+  
     {{-- ================= OPEN POSITIONS ================= --}}
     {{-- Added w-full and clear vertical padding --}}
-    <section data-aos="fade-right" data-aos-duration="1500" class="w-full min-h-[60vh] flex items-center justify-center bg-gray-50/50" 
+    <section data-aos="fade-right" data-aos-duration="1500" class="relative z-50 w-full flex items-center justify-center bg-gray-50/50" 
             x-data="{ open: false, title: '', description: '' }">
         <div class="max-w-7xl mx-auto px-6">
         
@@ -46,7 +46,7 @@
                         'description' => '
                              <h4>Job Summary</h4>
                                 <p>
-                                    The Sales Executive is responsible for generating new business, maintaining client relationships,
+                                    The Sales Executive is responsible for generating new business, maintaining client relationships, <br/>
                                     and achieving sales targets through effective product promotion and customer engagement.
                                 </p>
 
@@ -78,7 +78,7 @@
                         'description' => '
                                 <h4>Job Summary</h4>
                                 <p>
-                                    The Sales Supervisor supports the Sales Manager by supervising daily sales activities,
+                                    The Sales Supervisor supports the Sales Manager by supervising daily sales activities, <br/>
                                     guiding the sales team, and ensuring targets and performance standards are met.
                                 </p>
 
@@ -110,7 +110,7 @@
                         'description' => '
                                  <h4>Job Summary</h4>
                                 <p>
-                                    The Sales Manager leads the sales department, develops sales strategies,
+                                    The Sales Manager leads the sales department, develops sales strategies, <br/>
                                     drives revenue growth, and expands market presence for RSL Trading Company.
                                 </p>
 
@@ -174,10 +174,10 @@
            x-show="open"
             x-transition
             x-cloak
-            class="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50" style="position: absolute; z-index: 99999;">
+            class="h-auto md:h-[95vh] fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50">
             <div 
                   @click.outside="open = false"
-                class="bg-white w-5xl max-w-6xl rounded-2xl px-12 relative" style="padding: 30px;"
+                class="bg-white w-4xl max-w-6xl rounded-2xl px-12 relative" style="padding: 30px;"
             >
                 <!-- Close Button -->
                 <button @click="open = false" class="absolute top-5 right-5 text-gray-400 hover:text-red-500 text-2xl font-bold">&times;</button>
@@ -200,92 +200,95 @@
 
     {{-- ================= APPLICATION FORM ================= --}}
     {{-- Added a distinct background or separator space --}}
-    <section data-aos="fade-left" data-aos-duration="1500" class="w-full h-[120vh] md:h-[70vh] lg:min-h-[70vh] flex items-center justify-center bg-gray-50/50 py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="lg:w-7xl rounded-xl border border-gray-50 p-8 md:p-20">
-                
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-gray-800 mt-4">Application Form</h2>
+    <section data-aos="fade-left" data-aos-duration="1500" class="relative -z-50">
+        <div class="max-w-7xl mx-auto rounded-xl border border-gray-50">
+            
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mt-4">Application Form</h2>
+            </div>
+            @if (session('successfully'))
+                <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 3000)" x-show="show" x-transition
+                    class="fixed top-6 right-6 z-50 bg-green-600 text-white h-32 px-6 py-4 rounded-xl shadow-lg">
+                    {{ session('successfully') }}
                 </div>
-                @if (session('successfully'))
-                    <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 3000)" x-show="show" x-transition
-                        class="fixed top-6 right-6 z-50 bg-green-600 text-white h-32 px-6 py-4 rounded-xl shadow-lg">
-                        {{ session('successfully') }}
+            @endif
+
+            @if ($errors->any())
+                    <div class="mb-6 rounded-xl bg-red-50 border border-red-200 p-4 text-red-600">
+                        <ul class="list-disc pl-5 space-y-1">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
                 @endif
 
-                @if ($errors->any())
-                        <div class="mb-6 rounded-xl bg-red-50 border border-red-200 p-4 text-red-600">
-                            <ul class="list-disc pl-5 space-y-1">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+            <form action="{{ route('application.send') }}" method="POST" enctype="multipart/form-data" class="space-y-10">
+                @csrf
 
-                <form action="{{ route('application.send') }}" method="POST" enctype="multipart/form-data" class="space-y-10">
-                    @csrf
+                <div class="flex flex-col space-y-4 px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                    
+                    <div class="space-y-3">
+                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">Full Name</label>
+                        <input type="text" name="name" placeholder="Your Name" required
+                            class="w-full h-12 placeholder:px-2 px-2 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
+                    </div>
 
-                    <div class="flex flex-col space-y-4">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-                        
-                        <div class="space-y-3">
-                            <label class="text-sm font-bold text-gray-700 ml-2" style="margin-left: 10px;">Full Name</label>
-                            <input type="text" name="name" placeholder="Your Name" required
-                                class="w-full h-12 placeholder:px-2 px-7 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
-                        </div>
+                    <div class="space-y-3">
+                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">Email Address</label>
+                        <input type="email" name="email" placeholder="example@mail.com" required
+                            class="w-full h-12 placeholder:px-2 px-2 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
+                    </div>
 
-                        <div class="space-y-3">
-                            <label class="text-sm font-bold text-gray-700 ml-2" style="margin-left: 10px;">Email Address</label>
-                            <input type="email" name="email" placeholder="example@mail.com" required
-                                class="w-full h-12 placeholder:px-2 px-7 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
-                        </div>
+                    <div class="space-y-3">
+                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">Phone Number</label>
+                        <input type="text" name="phone" placeholder="Your phone Number" required
+                            class="w-full h-12 placeholder:px-2 px-2 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
+                    </div>
 
-                        <div class="space-y-3">
-                            <label class="text-sm font-bold text-gray-700 ml-2" style="margin-left: 10px;">Phone Number</label>
-                            <input type="text" name="phone" placeholder="Your phone Number" required
-                                class="w-full h-12 placeholder:px-2 px-7 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
-                        </div>
+                    <div class="space-y-3">
+                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">Position</label>
+                        <div class="relative">
+                            <select id="position" name="position" required
+                                class="w-full h-12 px-4 rounded-md bg-[#fff9e6] 
+                                    text-gray-700
+                                    border-none focus:bg-white focus:ring-2 
+                                    focus:ring-yellow-400 outline-none 
+                                    transition-all shadow-inner appearance-none">
+                                <option value="" disabled selected>Select a position</option>
+                                <option value="Sales Executive">Sales Executive</option>
+                                <option value="Sales Supervisor">Sales Supervisor</option>
+                                <option value="Sales Manager">Sales Manager</option>
+                            </select>
 
-                        <div class="space-y-3">
-                            <label class="text-sm font-bold text-gray-700 ml-2" style="margin-left: 10px;">Position</label>
-                            <div class="relative">
-                                <select name="position" required
-                                    class="w-full h-12 placeholder:px-2 px-7 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
-                                    <option value="">Select a position</option>
-                                    <option>Sales Executive</option>
-                                    <option>Sales Supervisor</option>
-                                    <option>Sales Manager</option>
-                                </select>
-                                <div class="absolute inset-y-0 right-5 flex items-center pointer-events-none">
-                                    <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path d="M7 7l3-3 3 3m0 6l-3 3-3-3"></path></svg>
-                                </div>
+                            <div class="absolute inset-y-0 right-5 flex items-center pointer-events-none">
+                                <svg class="w-7 h-7 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path d="M7 7l3-3 3 3m0 6l-3 3-3-3"></path></svg>
                             </div>
                         </div>
-
-                        <div class="space-y-3">
-                            <label class="text-sm font-bold text-gray-700 ml-2" style="margin-left: 15px;">Upload CV (PDF)</label>
-                            <input type="file" name="cv" required
-                                class="block h-12 placeholder:px-2 w-full text-sm text-gray-500 file:mr-4 file:py-4 file:px-6 file:rounded-2xl file:border-0 file:text-sm file:font-semibold file:bg-[#fff9e6] file:text-gray-500 cursor-pointer transition-all">
-                        </div>
-
-                        <div class="space-y-3">
-                            <label class="text-sm font-bold text-gray-700 ml-2" style="margin-left: 15px;">Cover Letter</label>
-                            <input type="file" name="cover_letter" required
-                                class="block h-12 placeholder:px-2 w-full text-sm text-gray-500 file:mr-4 file:py-4 file:px-6 file:rounded-2xl file:border-0 file:text-sm file:font-semibold file:bg-[#fff9e6] file:text-gray-500 cursor-pointer transition-all">
-                        </div>
                     </div>
 
-                    <div class="relative top-4 pt-12 flex justify-center py-12">
-                        <button type="submit"
-                            class="w-64 px-16 h-12 py-5 transition-all duration-300">
-                            <img src="{{ asset('assets/logo/btn-application.png') }}" alt="">
-                        </button>
+                    <div class="space-y-3">
+                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">Upload CV (PDF)</label>
+                        <input type="file" name="cv" required
+                            class="block h-12 placeholder:px-2 w-full text-sm text-gray-500 file:mr-4 file:py-4 file:px-6 file:rounded-2xl file:border-0 file:text-sm file:font-semibold file:bg-[#fff9e6] file:text-gray-500 cursor-pointer transition-all">
                     </div>
+
+                    <div class="space-y-3">
+                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">Cover Letter</label>
+                        <input type="file" name="cover_letter" required
+                            class="block h-12 placeholder:px-2 w-full text-sm text-gray-500 file:mr-4 file:py-4 file:px-6 file:rounded-2xl file:border-0 file:text-sm file:font-semibold file:bg-[#fff9e6] file:text-gray-500 cursor-pointer transition-all">
                     </div>
-                </form>
-            </div>
+                </div>
+
+                <div class="relative flex justify-center py-10">
+                    <button type="submit"
+                        class="w-52 h-14 transition-all duration-300">
+                        <img src="{{ asset('assets/logo/btn-application.png') }}" alt="" class="w-full h-full">
+                    </button>
+                </div>
+                </div>
+            </form>
         </div>
     </section>
 

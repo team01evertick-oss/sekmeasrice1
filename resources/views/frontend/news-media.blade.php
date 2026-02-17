@@ -10,15 +10,15 @@
 @section('section_content')
 <section class="flex justify-center items-center">
     {{-- Section: Media --}}
-    <section class="section-media relative h-auto bg-[#FFFFFF] py-24 mt-24" x-data="lightbox()">
+    <section class="section-media relative h-auto bg-[#FFFFFF]" x-data="lightbox()">
 
-        <div class="flex flex-col justify-center items-center text-center px-6 mb-12 py-12" style="padding-bottom: 25px;" data-aos="fade-right" data-aos-duration="1500">
+        <div class="flex flex-col justify-center items-center text-center px-6 mb-12 py-8" data-aos="fade-right" data-aos-duration="1500">
             <h2 class="text-3xl md:text-5xl font-extrabold text-[#4DA358] tracking-wide">
                 Latest News
             </h2>
         </div>
 
-        <div class="flex flex-col justify-center items-center px-4 sm:px-10 md:px-20 py-12">
+        <div class="flex flex-col justify-center items-center px-4 sm:px-10 md:px-20">
             <div class="max-w-7xl w-full">
                 <div class="grid grid-cols-1 gap-x-20 gap-y-16" data-aos="fade-left" data-aos-duration="1500">
                     @foreach($showMedia as $media)
@@ -70,7 +70,7 @@
 
         <!-- Lightbox Modal -->
         <div x-show="isOpen" x-cloak
-             class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 overflow-hidden">
+             class="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-90 overflow-hidden">
             <!-- Close -->
             <button @click="close()" class="absolute top-4 right-4 text-white text-4xl font-bold">×</button>
 
@@ -81,7 +81,7 @@
             <button @click="next()" class="absolute right-4 text-white text-4xl font-bold">›</button>
 
             <!-- Image -->
-            <div class="w-[70%] h-[70%]">
+            <div class="w-[60%] h-[60%]">
                 <template x-for="(img, idx) in images[current]" :key="idx">
                     <img :src="img" x-show="idx === currentIndex"
                          class="w-full h-full object-cover rounded-lg">
@@ -144,7 +144,7 @@ function lightbox() {
 @endsection
 
 @section('section_footer')
-<div class="relative top-20 -z-50">
+<div class="relative top-20 -z-[99999]">
     @include('frontend.footer')
 </div>
 @endsection

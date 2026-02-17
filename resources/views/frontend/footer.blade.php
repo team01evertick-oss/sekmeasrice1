@@ -1,5 +1,5 @@
 <!-- Footer Background Image -->
-<div class="relative w-full -mt-10 sm:-mt-14 md:-mt-[50px] lg:-mt-[70px] xl:-mt-[80px] z-0">
+<div class="relative w-full -z-50">
     <img 
         src="{{ asset('frontend/assets/imges/image_footerr.png') }}" 
         alt="Footer Background"
@@ -15,7 +15,7 @@
         </p>
     </div>
 </div>
-<div class="relative w-full xl:h-[600px] lg:h-[600px] h-[1200px] sm:h-[750px]">
+<div class="relative w-full xl:h-[600px] lg:h-[600px] h-[1300px] sm:h-[800px]">
 
     <!-- Footer Content -->
     <footer class="absolute inset-0 text-black flex flex-col justify-between overflow-hidden"
@@ -23,19 +23,19 @@
         <!-- Main Footer -->
         <div class="flex-grow flex items-center justify-center">
             <div
-                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-7xl px-6 sm:px-10 lg:px-20 py-10">
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl px-6 sm:px-10 lg:px-20 py-10">
                 <!-- Column 1: About -->
-                <div class="relative left-[10px] grid grid-cols-1 gap-3">
-                    <h4 class="font-bold text-sm mb-1">Lor Eak Heng Sek Meas Rice Co., Ltd</h4>
-                    <p class="text-sm leading-relaxed">
+                <div class="relative left-[10px] grid grid-cols-1">
+                    <h4 class="font-bold text-sm">Lor Eak Heng Sek Meas Rice Co., Ltd</h4>
+                    <p class="text-sm leading-relaxed mt-0 lg:-mt-6">
                         Lor Eak Heng Sek Meas Rice Co., Ltd is one of the leading rice mill production factories
                         and rice exporters in Cambodia. We have operated this business since 1994, from a small
                         rice mill with a traditional rice machine to a state-of-the-art rice production system.
                         This technology enables exports to over 16 countries globally.
                     </p>
 
-                    <h5 class="font-bold mt-5 mb-2 text-sm">Follow Us</h5>
-                    <div class="flex items-center gap-4 mt-2">
+                    <h5 class="font-bold text-sm">Follow Us</h5>
+                    <div class="flex items-center space-x-2 mt-0 lg:-mt-8">
                         <!-- Social Icons -->
                         <a href="https://www.facebook.com/sekmeasrice" class="hover:scale-110 transition-transform" target="_blank">
                             <img src="{{ asset('frontend/assets/icon/f.png') }}" alt="Facebook" class="w-6 h-6">
@@ -50,12 +50,12 @@
                 </div>
 
                 <!-- Column 2: Information -->
-                <div class="relative left-[10px] gap-y-4">
+                <div class="relative left-[10px] space-y-4">
                     <div>
                         <h4 class="font-bold text-sm">Information</h4>
                     </div>
-                    <div class="grid grid-cols-1 gap-10">
-                        <ul class="text-sm space-y-10">
+                    <div class="grid grid-cols-1">
+                        <ul class="text-sm space-y-2">
                             <li><a href="{{ route('home') }}" class="hover:underline">Home</a></li>
                             <li><a href="{{ route('export') }}" class="hover:underline">Export</a></li>
                             <li><a href="{{ route('about') }}" class="hover:underline">About Us</a></li>
@@ -138,7 +138,7 @@
                     <p class="text-sm mb-3">8am – 5pm</p>
 
                     <h4 class="font-bold text-sm mb-2">Map</h4>
-                     <div class="w-full h-64 bg-gray-300 rounded-md overflow-hidden">
+                     <div class="w-full h-52 lg:h-64 bg-gray-300 rounded-md overflow-hidden">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.089502260989!2d104.9132125!3d11.5854499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31095160523ca91b%3A0xd9c51e2d57b148ad!2sLor%20Eak%20Heng%20Sek%20Meas%20Rice%20Co.%2CLtd!5e0!3m2!1sen!2skh!4v1698325030000!5m2!1sen!2skh"
                             width="100%"
@@ -155,7 +155,7 @@
         </div>
 
         <!-- Copyright Bar -->
-        <div class="w-full bg-[#4DA358] h-[50px] flex items-center justify-center">
+        <div class="w-full bg-[#4DA358] h-[50px] flex items-center justify-center lg:py-0 py-4">
             <p class="text-white text-sm sm:text-base font-semibold">
                 All rights reserved © <span id="year"></span>
             </p>

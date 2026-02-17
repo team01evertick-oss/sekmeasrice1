@@ -108,7 +108,7 @@
                     class="absolute inset-0 flex flex-col justify-center items-center text-white px-6 overflow-y-auto text-center">
 
                     <!-- Destination Details -->
-                    <div class="relative right-[450px] top-[200px] max-w-4xl space-y-2 mb-10 text-left justify-start items-start"
+                    <div class="relative right-[450px] top-[300px] max-w-4xl space-y-2 mb-10 text-left justify-start items-start"
                         data-aos="fade-right" data-aos-duration="1500">
                         <p class="text-[#D6B157] text-[14px] font-semibold">International Destination</p>
 
@@ -218,26 +218,22 @@
         </section>
 
         {{-- Section: Input Information --}}
-        <section class="flex justify-center bg-white py-[70px] px-4" id="enquiry-form">
-            <div class="flex flex-col lg:flex-row justify-between w-full max-w-[1200px] h-auto gap-8 lg:gap-4 pt-10 pb-10"
-                style="padding-left: 70px; padding-right: 70px;">
-                <form action="">
-                    <div class="flex md:flex-row flex-col justify-center space-x-8">
-                        <div class="">
+        <section class="flex justify-center items-center bg-white px-4" id="enquiry-form">
+            <div class="">
+                <form action="" class="space-y-2">
+                    <div class="flex flex-col md:flex-row justify-center space-x-0 md:space-x-8">
+                        <div class="space-y-2">
                             <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Enquiry Form</h2>
                             <input type="text" placeholder="Name" name="name"
-                                class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                                style="padding: 10px; margin: 10px;" />
+                                class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
                             <input type="text" placeholder="Company Name" name="company_name"
-                                class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                                style="padding: 10px; margin: 10px;" />
+                                class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
                             <div class="relative custom-select-container">
                                 <input id="customer-country" list="country-list" name="country" placeholder="Country"
                                     required
-                                    class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                                    style="padding: 10px; margin: 10px;">
+                                    class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400">
                                 <datalist id="country-list" name="country" required
-                                    class="w-full h-14 px-6 pr-12 rounded-full bg-[#F1F1F1] text-[#03254B] outline-none appearance-none">
+                                    class="h-14 px-6 pr-12 rounded-full bg-[#F1F1F1] text-[#03254B] outline-none appearance-none">
                                     {{-- <option>Country of Origin</option> --}}
                                     <option value="Afghanistan">Afghanistan</option>
                                     <option value="Albania">Albania</option>
@@ -438,13 +434,11 @@
                                 </span>
                             </div>
                             <input type="email" placeholder="Email" name="email"
-                                class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                                style="padding: 10px; margin: 10px;" />
-                            <div class="flex items-center">
+                                class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                            <div class="flex md:flex-row items-center space-x-2">
                                 <select id="country_code" name="country_code"
-                                    class="form-select w-[45%] rounded-md bg-[#FFF9E6] h-[55px] text-gray-700 placeholder-gray-600"
-                                    style="padding: 10px; margin: 10px;" required>
-                                    <option value="" style="padding-left: 10px;">Country Code</option>
+                                    class="form-select w-[50%] px-4 md:w-[30%] rounded-md bg-[#FFF9E6] h-[55px] text-gray-700 placeholder-gray-600" required>
+                                    <option value="">Country Code</option>
                                     <option value="+93">Afghanistan (+93)</option>
                                     <option value="+355">Albania (+355)</option>
                                     <option value="+213">Algeria (+213)</option>
@@ -559,14 +553,13 @@
 
                                 </select>
                                 <input type="text" placeholder="Phone Number" name="phone"
-                                    class="w-full h-[55px] px-5 rounded-md text-gray-700 placeholder-gray-600  bg-[#FFF9E6] focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                                    style="padding: 10px; margin: 10px;" />
+                                    class="w-full lg:w-[65%] h-[55px] px-5 rounded-md text-gray-700 placeholder-gray-600  bg-[#FFF9E6] focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
                             </div>
                         </div>
-                        <div class="">
+                        <div class="space-y-2">
                             <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Product Enquiry</h2>
                             <!-- Product Multi Select -->
-                            <div x-data="productSelector()" x-ref="productSelector" class="relative w-[310px] lg:w-[32rem]" style="padding: 10px;">
+                            <div x-data="productSelector()" x-ref="productSelector" class="relative w-full lg:w-[99%]">
 
                                 <!-- Dropdown Button -->
                                 <div @click="open = !open" class="bg-[#FFF9E6] px-3 py-2 h-auto  min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
@@ -629,11 +622,9 @@
 
                             </div>
                             <input type="number" id="input-quantity" placeholder="Quantity (KG)" name="input-quantity" min="1"
-                                class="form-input w-[290px] lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                                style="padding: 10px; margin: 10px;"/>
+                                class="form-input w-full lg:w-[99%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
                             <input type="number" id="input-price" placeholder="Price" name="price"
-                                class="form-input w-[290px] lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                                readonly style="padding: 10px; margin: 10px;"/>
+                                class="form-input w-full lg:w-[99%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"readonly/>
                             <div x-data="{
                                     open: false,
                                     items: ['Plastic Bag', 'Laminated PP', 'BOPP', 'Normal PP'],
@@ -644,8 +635,8 @@
 
                                 <!-- Dropdown Button -->
                                 <div @click="open = !open"
-                                        class="bg-[#FFF9E6] px-3 py-2 w-[290px] lg:w-[96%] min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
-                                            flex flex-wrap items-center gap-2 justify-between"  style="padding: 10px; margin: 10px;">
+                                        class="bg-[#FFF9E6] px-3 py-2 w-full lg:w-[32rem] min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
+                                            flex flex-wrap items-center gap-2 justify-between" >
 
                                         <!-- Tags or Placeholder -->
                                         <div class="flex flex-wrap items-center gap-1 flex-1">
@@ -714,11 +705,11 @@
 
                         </div>
                     </div>
-                    <input type="text" placeholder="Address" name="address"
-                            class="w-full lg:w-[98%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                            style="padding: 10px; margin: 10px;" />
-                    <textarea name="message" id="message" rows="4" placeholder="Message" class="w-full lg:w-[98%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" style="padding: 10px; margin: 10px;"></textarea>
-                    
+                    <div class="space-y-2">
+                        <input type="text" placeholder="Address" name="address"
+                            class="w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                        <textarea name="message" id="message" rows="4" placeholder="Message" class="py-2 w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+                    </div>
                     <div class="flex justify-center items-center">    
                         <button class="cursor-pointer">
                              <img src="{{ asset('assets/logo/btn-submit.png') }}" alt="" class="w-64 h-40 object-contain">

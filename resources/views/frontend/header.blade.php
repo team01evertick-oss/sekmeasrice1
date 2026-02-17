@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -18,8 +18,8 @@
     {{-- Icon --}}
     <link rel="stylesheet" href="{{asset('vendor/fonts/boxicons.css')}}" />
     {{-- Custom CSS --}}
-    <link rel="stylesheet" href="{{ asset('frontend/css/theme.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('frontend/css/theme.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
     {{-- Font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,14 +32,15 @@
             display: none !important;
         }
 
-        body {
+        html, body {
             /* Applies Inter to all text in the <body>, with fallbacks */
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden !important;
         }
     </style>
 </head>
 
-<body class="font-[Battambang] overflow-hidden p-0 m-0">
+<body class="font-[Battambang] overflow-y-hidden p-0 m-0">
 
     <!-- HERO SECTION -->
     <section class="relative w-full max-w-full">
@@ -97,7 +98,7 @@
                     </div>
                     <!-- Right: Social Icons -->
                     <div class="relative -left-10 flex items-center gap-2">
-                        <div class="hidden md:flex gap-3">
+                        <div class="hidden md:flex gap-3 justify-center items-center">
                             <a href="https://www.facebook.com/sekmeasrice" class="hover:scale-110 transition-transform" target="_blank"> <svg width="21" height="21"
                                     viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -159,7 +160,7 @@
                                         <rect y="208" width="640" height="64" fill="#cf142b"/>
                                         </svg> --}}
                                         <div class="w-11 h-5">
-                                            <img src="{{ asset('assets/logo/usa-flag.png') }}" alt="" class="w-full h-full object-cover">
+                                            <img src="{{ asset('assets/logo/icons8-usa-96.png') }}" alt="" class="w-full h-full object-cover">
                                         </div>
                                     @endif
                                     </span>
@@ -180,7 +181,7 @@
                                     <button data-lang="en" data-url=""
                                     class="item w-full flex items-center gap-3 px-3 py-2 hover:bg-gray-100 cursor-pointer" style="margin: 5px;">
                                     <div class="w-11 h-6">
-                                        <img src="{{ asset('assets/logo/usa-flag.png') }}" alt="" class="w-full h-full object-cover">
+                                        <img src="{{ asset('assets/logo/icons8-usa-96.png') }}" alt="" class="w-full h-full object-cover">
                                     </div>
 
                                     <span>English</span>
@@ -267,7 +268,7 @@
                     <!--  Navbar -->
                     <nav class="relative">
                         <ul
-                            class="relative top-[20px] sm:top-[25px] lg:top-[30px] flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 text-green-700 font-medium text-sm sm:text-base mt-4 sm:mt-8">
+                            class="relative top-4 flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 text-green-700 font-medium text-sm sm:text-base mt-4 sm:mt-8">
 
                             <div class="hidden lg:flex gap-6">
 
@@ -398,11 +399,11 @@
         <!-- @@@ HERO TEXT (Centered on screen) -->
         {{-- Text Career --}}
         <div
-            class="absolute xl:top-[-180px] left-[20px] lg:top-[-100px] inset-0 flex justify-start items-center pl-10 md:pl-20 lg:pl-32 ">
-            <div class="" >
+            class="absolute xl:top-[-180px] lg:top-[-100px] inset-0 flex justify-center items-center">
+            <div class="flex flex-col justify-center items-center">
                 <!-- Title -->
                 <h1 data-aos="fade-right" data-aos-duration="1500"
-                    class="text-3xl sm:text-3xl md:text-5xl lg:text-[100px] font-extrabold text-white leading-tight mb-6" style="display: flex; justify-content: center; text-align: center;">
+                    class="text-3xl sm:text-3xl md:text-5xl lg:text-[100px] font-extrabold text-white leading-tight mb-6">
                     @yield('title-career')
                 </h1>
 
@@ -412,9 +413,9 @@
         </div>
         {{-- Text Home, Export, About Us, Activity, and Contact Us --}}
         <div
-            class="absolute inset-0 flex flex-col justify-center items-center text-center lg:top-[-200px] sm:top-[20px] top-[30px] z-20" data-aos="fade-up" data-aos-duration="1500">
+            class="absolute inset-0 top-8 lg:-top-24 xl:-top-60 flex flex-col justify-center items-center text-center z-20" data-aos="fade-up" data-aos-duration="1500">
             <div class="bg-white/3">
-                <h4 class="text-3xl sm:text-4xl text-[#1E3E0F] font-semibold tracking-wide">
+                <h4 class="text-lg sm:text-3xl text-[#1E3E0F] font-semibold tracking-wide">
                     @yield('welcome')
                 </h4>
 
@@ -423,7 +424,7 @@
                     @yield('white-line')
                 </div>
                 <h1
-                    class="text-5xl sm:text-6xl md:text-7xl lg:text-[100px] font-extrabold text-[#1E3E0F] leading-tight">
+                    class="text-3xl sm:text-4xl md:text-5xl lg:text-[100px] font-extrabold text-[#1E3E0F] leading-tight">
                     @yield('sek-meas')
                 </h1>
                 <h1
@@ -434,7 +435,7 @@
 
 
                 <p
-                    class="text-lg sm:text-xl md:text-2xl lg:text-[20px] leading-relaxed text-[#F1C119] mt-4 font-bold tracking-wide">
+                    class="text-lg md:text-2xl lg:text-[20px] leading-relaxed text-[#F1C119] mt-4 font-bold tracking-wide">
                     @yield('rice-mall')
                 </p>
 

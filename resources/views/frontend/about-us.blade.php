@@ -14,15 +14,15 @@
      <section class="about-use relative top-[40px] md:top-[60px]">
         <img src="{{ asset('frontend/assets/imges/about__us.png') }}" alt="About Us Background" class="w-full object-cover">
         <div
-            class="absolute xl:top-[-50px] sm:top-[-30px] inset-0 flex flex-col justify-center items-center text-center px-6">
-            <div class="relative top-[-35px] md:top-[-90px] lg:top-[-100px] px-4 sm:px-6 md:px-10 py-8 sm:py-10 w-full md:max-w-7xl">
+            class="absolute xl:top-[-50px] sm:top-[90px] inset-0 flex flex-col justify-center items-center text-center px-6">
+            <div class="relative top-[-50px] md:top-[-90px] lg:top-[-100px] px-4 sm:px-6 md:px-10 lg:px-32 py-8 sm:py-10 max-w-8xl">
                 <h2 data-aos="fade-right" data-aos-duration="1500"
-                    class="relative top-0 xl:-top-14 md:py-0 py-4 text-[25px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg">
+                    class="relative top-8 xl:-top-14 md:py-0 py-4 text-[14px] sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg">
                     About Us
                 </h2>
 
                 <p data-aos="fade-left" data-aos-duration="1500"
-                    class="text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl xl:text-[22px] leading-relaxed text-[#000000] text-left px-2">
+                    class="text-[8px] md:text-[15px] lg:text-xl xl:text-[22px] leading-relaxed text-[#000000] text-left">
                     Lor Eak Heng Sek Meas Rice Co., Ltd is one of the leading rice mill production factories and rice
                     exporters
                     in Cambodia. We have operated this business since 1994, starting from a small rice mill using
@@ -33,7 +33,7 @@
                 </p>
 
                 <p data-aos="fade-left" data-aos-duration="1500"
-                    class="mt-4 text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl xl:text-[22px] leading-relaxed text-[#000000] text-left px-2">
+                    class="mt-4 text-[8px] md:text-[15px] lg:text-xl xl:text-[22px] leading-relaxed text-[#000000] text-left">
                     With this advanced technology, our production capacity has significantly increased, allowing us to
                     export
                     high-quality rice to more than 16 countries across the European Union, Africa, and the ASEAN region.
@@ -42,7 +42,7 @@
 
         </div>
     </section>
-    <div class="grid grid-cols-1 gap-y-20">
+    <div class="grid grid-cols-1 gap-y-10">
         
         {{-- Section: Vision And Mission --}}
         <section class="vision-mission relative top-[50px] w-full px-4 py-10 bg-white">
@@ -55,7 +55,7 @@
                                                 w-[350px] sm:w-[530px] md:w-[600px] max-w-[600px] md:h-[500px] h-[200px] rounded-tl-[80px] rounded-br-[80px] 
                                                 flex flex-col justify-start items-center" data-aos="fade-right" data-aos-duration="1500">
                         <div
-                            class="relative top-[50px] left-[50px] w-full max-w-[450px] flex flex-col gap-4 pt-[40px] pl-[40px] pr-8 pb-8">
+                            class="relative top-0 md:top-[50px] left-[50px] w-full max-w-[450px] flex flex-col gap-4 pt-[40px] pl-[40px] pr-8 pb-8">
                             <h1 class="text-2xl sm:text-3xl font-bold text-black">Vision</h1>
                             <p class="text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl text-[#1A1A1A] leading-relaxed">
                                 Become the leading company in supplying <br> high-quality rice for export
@@ -150,7 +150,7 @@
 
             <div class="absolute inset-0 -top-12 flex flex-col justify-center items-center text-center px-6 text-white">
                 <h1 class="text-[#4DA358] text-3xl py-6">Messages From CEO</h1>
-                <div class="text-black max-w-7xl mx-auto text-left text-md space-y-2">
+                <div class="text-black max-w-7xl mx-auto text-left text-sm space-y-2 -mt-4">
                     <p>
                     Rice is an important factor in daily life for both the local and international markets. Rice consumption has been the most important choice for rice-consuming customers. We have selected the best rice variety from the original source of supply in Cambodia to deliver the most component rice variety. The agricultural factor played an important role in the government's standard of living improvement strategy. By 2025, 
                     the target of 1 million tons of exports is strategized by the government, aiming to improve the overall Cambodia Standard.

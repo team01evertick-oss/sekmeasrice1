@@ -4,7 +4,7 @@
 @section('rice-background', asset('frontend/assets/imges/rice-background.png'))
 @section('picture-rice', asset('frontend/assets/imges/rice.png'))
 @section('white-line')
-    <div class="w-24 sm:w-32 md:w-40 lg:w-[154px] h-1 bg-white mt-8 mb-6 mt-5"></div>
+    <div class="w-24 sm:w-32 md:w-40 lg:w-[154px] h-1 bg-white"></div>
 @endsection
 @section('welcome', 'WELCOME TO')
 @section('sek-meas', 'SEK MEAS RICE')
@@ -13,37 +13,14 @@
 @section('section_content')
 
     <section class="about-use relative top-[40px] md:top-[60px]">
-        {{-- <img src="{{ asset('frontend/assets/imges/about-text.png') }}" alt="About Us Background"
-            class="w-full object-cover"> --}}
-        <img src="{{ asset('frontend/assets/imges/about__us.png') }}" alt="About Us Background" class="w-full object-cover" data-aos="fade-right" data-aos-duration="1500">
-        {{-- <div class="relative w-full mt-[50px]"> --}}
-            <!-- Background image -->
-
+        <img src="{{ asset('frontend/assets/imges/about__us.png') }}" alt="About Us Background" class="w-full object-cover">
 
             <!-- Overlay text -->
             <div
-                class="absolute xl:top-[-50px] sm:top-[90px] inset-0 flex flex-col justify-center items-center text-center px-6" data-aos="fade-left" data-aos-duration="1500">
-                {{-- <div class="p-8 md:p-10 max-w-3xl">
+                class="absolute xl:top-[-50px] sm:top-[90px] inset-0 flex flex-col justify-center items-center text-center px-6">
+                <div class="relative top-[-50px] md:top-[-90px] lg:top-[-100px] px-4 sm:px-6 md:px-10 lg:px-32 py-8 sm:py-10 max-w-8xl">
                     <h2
-                        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg">
-                        About Us
-                    </h2>
-                    <p class="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-[#000000] text-left">
-                        Lor Eak Heng Sek Meas Rice Co., Ltd is one of the leading rice mill production factories and rice
-                        exporters
-                        in Cambodia. We have operated this business since 1994, from a small rice mill with a traditional
-                        rice
-                        machine to a state-of-the-art rice production with a 2-processing-line system that produces 20 tons
-                        per
-                        hour.
-                        This superb technology led to an increase in quantity and the ability to export to 16 countries,
-                        ranging
-                        from the European Union, the African continent, to the ASEAN Region.
-                    </p>
-                </div> --}}
-                <div class="relative top-[-20px] md:top-[-90px] lg:top-[-100px] px-4 sm:px-6 md:px-10 py-8 sm:py-10 max-w-7xl">
-                    <h2
-                        class="relative top-0 xl:-top-14 md:py-0 py-4 text-[10px] sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg">
+                        class="relative top-8 xl:-top-14 md:py-0 py-4 text-[14px] sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg">
                         About Us
                     </h2>
 
@@ -70,12 +47,13 @@
         </div>
     </section>
 
+
     <div class="flex flex-col gap-y-[50px]">
         {{-- Section prodcut for selling --}}
         <section class="section-products relative top-[20px] grid grid-cols-1 gap-10" id="section-products">
-            <div class="relative inset-0 flex flex-col justify-center items-center text-center px-6">
-                <h2
-                    class="text-[10px] sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg" data-aos="fade-right" data-aos-duration="1500">
+            <div class="relative lg:top-8 top-6 flex flex-col justify-center items-center text-center px-6 py-0 lg:py-8">
+                <h2 id="local-products"
+                    class="text-[14px] sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg" data-aos="fade-right" data-aos-duration="1500">
                     For Local Sale
                 </h2>
             </div>
@@ -140,7 +118,7 @@
                                                     image: '{{ asset('storage/local_product/' . $items->image_local) }}'
                                                 };
                                                 quantity = 1;"
-                                            class="mt-3 hover:scale-110 transition-transform">
+                                            class="mt-3 hover:scale-110 transition-transform cursor-pointer">
                                             <img src="{{ asset('frontend/assets/imges/btn-buy.png') }}" alt="Buy Now Button"
                                                 class="w-[140px] h-auto">
                                         </button>
@@ -158,7 +136,7 @@
                     x-transition:leave-end="opacity-0 scale-95"
                     class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
                     <div
-                        class="relative bg-white rounded-2xl shadow-2xl w-full sm:w-[600px] max-h-[90vh] h-[600px] overflow-y-auto overflow-x-hidden p-5 sm:p-8">
+                        class="relative bg-white rounded-2xl shadow-2xl w-full sm:w-[600px] max-h-[90vh] h-[600px] overflow-y-auto overflow-x-hidden p-2">
                         <!-- Header -->
                         <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
                             <h2 class="text-2xl font-bold text-[#324A0A]">🛒 Checkout</h2>
@@ -169,12 +147,12 @@
                         </div>
 
                         <!-- Body -->
-                        <div class="p-10 space-y-10">
+                        <div class="space-y-10">
                             <form id="checkoutForm" class="space-y-10 space-x-10" @submit.prevent>
                                 <div class="relative left-5 bg-white rounded-2xl flex flex-col md:flex-row gap-8">
                                     <!-- Left: Customer Info -->
-                                    <div class="flex-1 space-y-4 m-8">
-                                        <h3 class="text-xl font-semibold text-[#4DA358] mb-2">Customer Information</h3>
+                                    <div class="flex-1 space-y-4">
+                                        <h3 class="text-xl font-semibold text-[#4DA358] w-60">Customer Information</h3>
 
                                         <div>
                                             <label class="block text-sm font-semibold text-gray-700 mb-1">Your Name</label>
@@ -198,11 +176,11 @@
 
                                     <!-- Right: Product Image -->
                                     <div class="flex flex-col items-center justify-center">
-                                        <div class="rounded-xl overflow-hidden p-4 transition">
+                                        <div class="rounded-xl overflow-hidden transition">
                                             <img :src="selectedProduct.image" alt="Product Image"
                                                 class="w-60 h-60 object-contain rounded-lg transition-transform duration-300 group-hover:scale-105">
                                         </div>
-                                        <p class="mt-3 text-gray-800 font-semibold text-center text-lg"
+                                        <p class="text-gray-800 font-semibold text-center text-lg"
                                             x-text="selectedProduct.name"></p>
                                     </div>
                                 </div>
@@ -277,7 +255,7 @@
         confirmButtonColor: '#B8A34E'
     });
 "
-class="flex justify-center relative left-[60px] top-[25px] mx-auto items-center w-[80%] h-[45px] bg-gradient-to-r from-[#DDCC81] to-[#B8A34E] text-[#324A0A] font-bold py-3 rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-200">
+class="flex justify-center relative py-6 mx-auto items-center w-[80%] h-[45px] bg-gradient-to-r from-[#DDCC81] to-[#B8A34E] text-[#324A0A] font-bold rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-200">
     Confirm Checkout
 </button>
 
@@ -298,11 +276,10 @@ class="flex justify-center relative left-[60px] top-[25px] mx-auto items-center 
                     <img src="{{ asset('frontend/assets/imges/21.png') }}" alt="Background Image"
                         class="w-full h-full object-cover">
                 </div>
-
                 <div class="relative w-full min-h-[600px] sm:min-h-[700px] md:min-h-[800px] lg:min-h-[900px]">
                     <!-- Overlay: Awards + Certificates -->
                     <div
-                        class="flex flex-col items-center justify-end text-center pb-10 sm:pb-16 md:pb-20 px-4 sm:px-8 md:px-12 lg:px-20 gap-y-35">
+                        class="flex flex-col items-center justify-end text-center pb-10 sm:pb-16 md:pb-20 px-4 sm:px-8 md:px-12">
 
                         <!-- Awards Section -->
                         <div
@@ -324,7 +301,7 @@ class="flex justify-center relative left-[60px] top-[25px] mx-auto items-center 
 
 
                         <!-- Certificates Section -->
-                        <div class="relative flex flex-col items-center text-center gap-y-10 mb-10 sm:mb-14 md:mb-16">
+                        <div class="relative flex flex-col items-center text-center gap-y-10">
                             <!-- Title -->
                             <h1 class="text-[#D6B157] font-bold text-2xl sm:text-3xl md:text-4xl drop-shadow-lg" data-aos="fade-right" data-aos-duration="1500">
                                 Credibility Certificates
@@ -349,7 +326,7 @@ class="flex justify-center relative left-[60px] top-[25px] mx-auto items-center 
     </div>
     {{-- Section: Why Us --}}
     <section
-        class="relative bg-[#4DA358] w-full h-[500px] flex flex-col items-center justify-between py-10 sm:py-14 md:py-16 lg:py-20 mt-5 md:mt-10">
+        class="relative bg-[#4DA358] w-full h-[500px] flex flex-col items-center justify-between">
         <!-- Title -->
         <div class="flex justify-center mb-8 sm:mb-10">
             <h1 class="relative top-[30px] text-white text-center text-2xl sm:text-3xl md:text-4xl font-bold" data-aos="fade-right" data-aos-duration="1500">Why Choose Our Products?</h1>
@@ -386,13 +363,15 @@ class="flex justify-center relative left-[60px] top-[25px] mx-auto items-center 
         </div>
 
         <!-- Buy Now Button -->
-        <div
-            class="btn-buy-now relative top-[30px] md:top-[45px] sm:top-[40px] xl:top-[50px] lg:to-[50px] mt-10 sm:mt-12 md:mt-14">
-            <button class="focus:outline-none hover:scale-105 transition-transform" id="btn-buy-now">
+        <a href="{{ route('home') }}#local-products">
+            <div
+            class="relative top-[30px] md:top-[45px] sm:top-[40px] xl:top-[50px] lg:to-[50px] mt-10 sm:mt-12 md:mt-14">
+            <button class="cursor-pointer focus:outline-none hover:scale-105 transition-transform" id="btn-buy-now">
                 <img src="{{ asset('frontend/assets/certificate/8.png') }}" alt="Buy Now Button"
                     class="w-[220px] sm:w-[280px] md:w-[340px] lg:w-[380px] h-auto object-contain">
             </button>
         </div>
+        </a>
     </section>
 
 
