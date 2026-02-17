@@ -443,7 +443,7 @@
                                             flex flex-wrap items-center gap-2 justify-between" >
 
                                         <!-- Tags or Placeholder -->
-                                        <div class="flex flex-wrap items-center gap-1 flex-1">
+                                        <div class="flex flex-wrap items-center gap-1 flex-1 text-[#324A0A]">
 
                                             <!-- Placeholder -->
                                             <template x-if="selected.length === 0">
@@ -482,7 +482,7 @@
                                     class="absolute z-50 bg-white border rounded-md w-full mt-1 max-h-48 overflow-y-auto shadow">
 
                                     <template x-for="(item, index) in items" :key="index">
-                                        <label class="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100">
+                                        <label class="text-[#324A0A] flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100">
 
                                             <!-- Checkbox -->
                                             <input type="checkbox"
