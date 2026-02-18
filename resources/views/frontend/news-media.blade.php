@@ -8,6 +8,14 @@
 @section('text-title', app()->getLocale() == 'en' ? 'Latest News' : 'ព្រឹត្តិការណ៍ថ្មីៗ')
 
 @section('section_content')
+<style>
+    /* in your CSS or Tailwind @layer utilities */
+.no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+
+</style>
 <section class="flex flex-col justify-center items-center space-y-0 md:space-y-10">
     {{-- Section: Media --}}
     <section class="section-media relative h-auto bg-[#FFFFFF]" x-data="lightbox()">
@@ -145,7 +153,7 @@
 
                     @endforeach
                     <!-- Modal -->
-<div id="imageModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+<div id="imageModal" class="fixed inset-0 bg-black hidden items-center justify-center z-[99999]">
 
     <div class="relative w-[90%] max-w-5xl">
 
@@ -161,13 +169,13 @@
 
         <!-- Left Button -->
         <button onclick="prevImage()"
-            class="absolute left-[-40px] top-1/2 transform -translate-y-1/2 text-white text-4xl">
+            class="absolute left-2 md:left-[-40px] top-1/2 transform -translate-y-1/2 text-white text-4xl">
             ❮
         </button>
 
         <!-- Right Button -->
         <button onclick="nextImage()"
-            class="absolute right-[-40px] top-1/2 transform -translate-y-1/2 text-white text-4xl">
+            class="absolute right-2 md:right-[-40px] top-1/2 transform -translate-y-1/2 text-white text-4xl">
             ❯
         </button>
 
@@ -233,7 +241,7 @@ function lightbox() {
 <script>
 let currentImages = [];
 let currentIndex = 0;
-
+let originalOverflow = '';
 function openModal(newsId) {
 
     const data = document.getElementById('news-images-' + newsId).textContent;
@@ -242,35 +250,47 @@ function openModal(newsId) {
     if (currentImages.length === 0) return;
 
     currentIndex = 0;
-    document.getElementById('modalImage').src = '/storage/news/' + currentImages[currentIndex];
+    document.getElementById('modalImage').src =
+        '/storage/news/' + currentImages[currentIndex];
 
     const modal = document.getElementById('imageModal');
     modal.classList.remove('hidden');
     modal.classList.add('flex');
+
+    // 🔥 Lock full page scroll
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
 }
 
 function closeModal() {
+
     const modal = document.getElementById('imageModal');
     modal.classList.add('hidden');
     modal.classList.remove('flex');
+
+    // 🔥 Restore scroll properly
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
 }
 
+
+
 function nextImage() {
-    currentIndex++;
-    if (currentIndex >= currentImages.length) {
-        currentIndex = 0;
-    }
-    document.getElementById('modalImage').src = '/storage/news/' + currentImages[currentIndex];
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    document.getElementById('modalImage').src =
+        '/storage/news/' + currentImages[currentIndex];
 }
 
 function prevImage() {
-    currentIndex--;
-    if (currentIndex < 0) {
-        currentIndex = currentImages.length - 1;
-    }
-    document.getElementById('modalImage').src = '/storage/news/' + currentImages[currentIndex];
+    currentIndex =
+        (currentIndex - 1 + currentImages.length) % currentImages.length;
+
+    document.getElementById('modalImage').src =
+        '/storage/news/' + currentImages[currentIndex];
 }
 </script>
+
+
 
 @endsection
 

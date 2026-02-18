@@ -1,5 +1,5 @@
 <header
-            class="relative w-full flex flex-col items-center fixed top-0 left-0 z-30 p-0 m-0 sm:p-0 sm:m-0 md:p-0 md:m-0 lg:p-4 lg:mt-2" data-aos="fade-down" data-aos-duration="1500">
+            class="relative w-full flex flex-col items-center fixed top-0 left-0 z-20 p-0 m-0 sm:p-0 sm:m-0 md:p-0 md:m-0 lg:p-4 lg:mt-2" data-aos="fade-down" data-aos-duration="1500">
             <!-- WRAPPER to control overlap -->
             <div class="relative w-full flex flex-col items-center"> <!-- TOP GOLD BAR -->
                 <div class="relative xl:top-[34px] lg:top-[34px] sm:top-0 w-[80%] h-[65px] flex items-center justify-between px-0 md:px-4 z-20"

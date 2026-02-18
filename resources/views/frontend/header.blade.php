@@ -92,7 +92,7 @@
         </div>
         {{-- Text Home, Export, About Us, Activity, and Contact Us --}}
         <div
-            class="absolute inset-0 top-8 lg:-top-24 xl:-top-60 flex flex-col justify-center items-center text-center z-20" data-aos="fade-up" data-aos-duration="1500">
+            class="absolute inset-0 top-8 lg:-top-24 xl:-top-60 flex flex-col justify-center items-center text-center z-10" data-aos="fade-up" data-aos-duration="1500">
             <div class="bg-white/3">
                 <h4 class="text-lg sm:text-3xl text-[#1E3E0F] font-semibold tracking-wide">
                     @yield('welcome')
