@@ -231,7 +231,7 @@
                                 class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
                             <div class="flex md:flex-row items-center space-x-2 ml-2">
                                 <select id="country_code" name="country_code"
-                                    class="form-select w-[50%] px-4 md:w-[28%] rounded-md bg-[#FFF9E6] h-[55px] text-gray-700 placeholder-gray-600" required>
+                                    class="form-select w-[50%] px-4 md:w-[28%] lg:ml-0 -ml-2 rounded-md bg-[#FFF9E6] h-[55px] text-gray-700 placeholder-gray-600" required>
                                     <option value="">{{ app()->getLocale() == 'en' ? 'Country Code' : 'លេខកូដប្រទេស' }}</option>
                                     <option value="+93">Afghanistan (+93)</option>
                                     <option value="+355">Albania (+355)</option>
@@ -529,10 +529,10 @@
 
                         </div>
                     </div>
-                    <div class="space-y-2 ml-1">
+                    <div class="space-y-2 ml-0 lg:ml-1">
                         <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Address' : 'អាសយដ្ឋាន ' }}" name="address" required
                             class="w-full lg:w-[99%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
-                        <textarea name="message" id="message" rows="4" placeholder="{{ app()->getLocale() == 'en' ? 'Message' : 'សារ' }}" required class="py-2 w-full lg:w-[99%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+                        <textarea name="message" id="message" rows="4" placeholder="{{ app()->getLocale() == 'en' ? 'Message' : 'សារ' }}" required class="w-full lg:w-[99%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
                     </div>
                     <div class="flex justify-center items-center md:mt-0 -mt-6">    
                         <button type="submit" class="cursor-pointer" onclick="submitAndRefresh()" >
