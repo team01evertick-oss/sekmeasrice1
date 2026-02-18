@@ -256,7 +256,7 @@
         'Total: $' + (((Number(selectedProduct.price)||0) * (quantity||1)).toFixed(2));
 
     // Replace 'yourusername' with your Telegram username (NOT phone)
-    window.open('https://t.me/+85587686768?text=' + message, '_blank');
+    window.open('https://t.me/Sekmeas88?text=' + message, '_blank');
 
     Swal.fire({
         title: 'Thank You!',

@@ -622,7 +622,7 @@ ${productText}`
             let encoded = encodeURIComponent(message)
 
             // Replace with your Telegram username or bot link
-            let telegramUrl = `https://t.me/+85587686768?text=${encoded}`
+            let telegramUrl = `https://t.me/Sekmeas88?text=${encoded}`
 
             window.open(telegramUrl, "_blank")
         }
