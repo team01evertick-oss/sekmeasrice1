@@ -73,7 +73,7 @@
                             <li><a href="{{ route('news') }}" class="hover:underline">
                                  {{ app()->getLocale() == 'en' ? 'Latest News' : 'ព្រឹត្តិការណ៍ថ្មីៗ' }}</a></li>
                             <li><a href="{{ route('news') }}#activities" class="hover:underline">
-                                {{ app()->getLocale() == 'en' ? 'Activity' : 'សកម្មភាព' }}</a></li>
+                                {{ app()->getLocale() == 'en' ? 'Activities' : 'សកម្មភាព' }}</a></li>
                             <li><a href="{{ route('career') }}" class="hover:underline">
                                 {{ app()->getLocale() == 'en' ? 'Career' : 'ឱកាសការងារ' }}</a></li>
                             <li><a href="{{ route('contact') }}" class="hover:underline"> {{ app()->getLocale() == 'en' ? 'Contact Us' : 'ការទំនាក់ទំនង' }}</a></li>
