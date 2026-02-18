@@ -193,17 +193,17 @@
           </li>
 
           <!-- News Blog -->
-          <li class="menu-item d-none">
+          <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon tf-icons bx bx-news text-xl"></i>
-              <div data-i18n="Layouts">News Blog</div>
+              <div data-i18n="Layouts">Activities</div>
             </a>
             <ul class="menu-sub">
               <li class="menu-item"><a href="{{ route('view.news') }}" class="menu-link">
-                  <div>View News</div>
+                  <div>View Activity</div>
                 </a></li>
               <li class="menu-item"><a href="{{ route('add.news') }}" class="menu-link">
-                  <div>Add News</div>
+                  <div>Add Activity</div>
                 </a></li>
             </ul>
           </li>

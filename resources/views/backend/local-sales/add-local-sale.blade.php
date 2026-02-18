@@ -26,6 +26,7 @@
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                                 <div>
+                                    <h1 class="text-xl text-[#0F4634]">English</h1>
                                     {{-- Product Brand Name --}}
                                     <div class="mb-3 col-12">
                                         <label class="form-label text-[#0F4634]">Brand Name</label>
@@ -58,6 +59,42 @@
                                         <input class="form-control" type="text" min="1" name="capacity"
                                             value="{{ old('capacity') }}">
                                         @error('capacity')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
+                                    </div>
+                                </div>
+                                <div>
+                                    <h1 class="text-xl text-[#0F4634]">Khmer</h1>
+                                    {{-- Product Brand Name --}}
+                                    <div class="mb-3 col-12">
+                                        <label class="form-label text-[#0F4634]">Brand Name</label>
+                                        <input class="form-control" type="text" name="brand_km" value="{{ old('brand_km') }}">
+                                        @error('brand_km')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
+                                    </div>
+                                    {{-- Product Name --}}
+                                    <div class="mb-3 col-12">
+                                        <label class="form-label text-[#0F4634]">Name</label>
+                                        <input class="form-control" type="text" name="name_km" value="{{ old('name_km') }}">
+                                        @error('name_km')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
+                                    </div>
+                                    {{-- Type of Product --}}
+                                    <div class="mb-3 col-12">
+                                        <label class="form-label text-[#0F4634]">Type of crop (New or Old)</label>
+                                        <input class="form-control" type="text" min="1" name="type_km"
+                                            value="{{ old('type_km') }}">
+                                        @error('type_km')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
+                                    </div>
+                                    {{-- Price --}}
+                                    <div class="mb-3 col-12">
+                                        <label class="form-label text-[#0F4634]">Price</label>
+                                        <input class="form-control" type="number" step="0.01" min="0" name="price_km"
+                                            value="{{ old('price_km') }}">
+                                        @error('price_km')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
+                                    </div>
+                                    {{-- Capacity --}}
+                                    <div class="mb-3 col-12">
+                                        <label class="form-label text-[#0F4634]">Packing Size (KG, g)</label>
+                                        <input class="form-control" type="text" min="1" name="capacity_km"
+                                            value="{{ old('capacity_km') }}">
+                                        @error('capacity_km')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
                                     </div>
                                 </div>
                                 <div>

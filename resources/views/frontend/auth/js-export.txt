@@ -1,0 +1,202 @@
+<script>
+function productSelector() {
+    return {
+        open: false,
+        selected: [],
+
+        init() {
+            window.addEventListener('add-product', (e) => {
+                const value = e.detail;
+
+                if (!this.selected.includes(value)) {
+                    this.selected.push(value);
+                }
+            });
+        },
+
+        removeProduct(name, capacity) {
+            const value = `${name}-${capacity}`;
+            this.selected = this.selected.filter(v => v !== value);
+        }
+    }
+}
+
+</script>
+
+
+
+<script>
+let productData = {}; // Stores all selected products
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const buttons = document.querySelectorAll(".btn-buy-now");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+
+            const name = this.dataset.name;
+            const capacityText = this.dataset.capacity; // e.g., "5KG"
+            const price = parseFloat(this.dataset.price);
+
+            const capacity = parseInt(capacityText);
+
+            // Scroll to form
+            document.getElementById("enquiry-form")
+                .scrollIntoView({ behavior: "smooth" });
+
+            // Add product to Alpine selector if needed
+const value = `${name}-${capacity}KG`;
+window.dispatchEvent(new CustomEvent('add-product', {
+    detail: value
+}));
+
+
+
+            // Initialize product data
+            if (!productData[name]) {
+                productData[name] = {
+                    capacity: capacity,
+                    price: price,
+                    quantity: capacity, // default quantity = capacity
+                };
+            }
+
+            // Update form inputs (for last clicked product)
+            updateFormFields();
+        });
+    });
+
+    // Quantity input
+    const qtyInput = document.getElementById("input-quantity");
+    qtyInput.addEventListener("input", function () {
+        const productName = this.dataset.productName;
+        if (!productName || !productData[productName]) return;
+
+        const capacity = productData[productName].capacity;
+        let value = parseInt(this.value) || 0;
+
+        // Round quantity to nearest multiple of capacity
+        if (value < capacity) value = capacity;
+        else if (value % capacity !== 0) {
+            value = Math.ceil(value / capacity) * capacity;
+        }
+
+        this.value = value;
+
+        // Update product data
+        productData[productName].quantity = value;
+
+        calculateTotals();
+    });
+    function formatNumber(number) {
+    return number.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
+
+    // Form submit
+    document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = this;
+
+    const name = form.name.value;
+    const company = form.company_name.value;
+    const country = form.country.value;
+    const email = form.email.value;
+    const countryCode = form.country_code.value;
+    const phone = form.phone.value;
+    const address = form.address.value;
+    const messageText = form.message.value;
+    const bagTypes = form.bag_types.value;
+    const selectedProducts = form.products.value;
+
+    let totalPrice = 0;
+    let productList = [];
+
+    for (let key in productData) {
+        const p = productData[key];
+        const blockCount = p.quantity / p.capacity;
+        const productTotal = blockCount * p.price;
+
+        totalPrice += productTotal;
+
+        productList.push(
+            `${key} (${p.quantity} KG) - $${formatNumber(productTotal)}`
+        );
+    }
+
+    let message = `
+📦 *New Export Enquiry*
+
+ Name: ${name}
+ Company: ${company}
+ Country: ${country}
+ Email: ${email}
+ Phone: ${countryCode} ${phone}
+ Address: ${address}
+
+🛍 Bag Type: ${bagTypes}
+
+📦 Products:
+${productList.join("\n")}
+
+💰 Total Price: $${formatNumber(totalPrice)}
+
+📝 Message:
+${messageText}
+`;
+
+    const telegramURL =
+        "https://t.me/+85587686768?text=" + encodeURIComponent(message);
+
+    window.open(telegramURL, "_blank");
+});
+
+
+    // Initial total update
+    calculateTotals();
+
+    // Functions
+    function updateFormFields() {
+        const lastProduct = Object.keys(productData).slice(-1)[0];
+        if (!lastProduct) return;
+
+        const p = productData[lastProduct];
+        const qtyInput = document.getElementById("input-quantity");
+        const priceInput = document.getElementById("input-price");
+
+        qtyInput.dataset.productName = lastProduct;
+        qtyInput.value = p.quantity;
+
+        // ❌ REMOVE multiply
+        // priceInput.value = (p.price * p.quantity).toFixed(2);
+
+        // ✅ SHOW ONLY PRODUCT PRICE
+        priceInput.value = p.price.toFixed(2);
+    }
+
+
+    function calculateTotals() {
+    const priceInput = document.getElementById("input-price");
+    let total = 0;
+
+    for (let key in productData) {
+        const p = productData[key];
+
+        const blockCount = p.quantity / p.capacity;
+
+        total += blockCount * p.price;
+    }
+
+    priceInput.value = total.toFixed(2);
+}
+
+
+});
+</script>
+

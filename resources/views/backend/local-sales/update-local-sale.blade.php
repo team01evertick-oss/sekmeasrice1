@@ -30,6 +30,7 @@
                                 <input type="hidden" name="update_id" value="{{  $localSale->id }}">
                                 <div class="grid grid-cols-2 gap-10">
                                     <div>
+                                         <h1 class="text-xl text-[#0F4634]">English</h1>
                                         {{-- Product Brand Name --}}
                                         <div class="mb-3 col-12">
                                             <label class="form-label text-[#0F4634]">Brand Name</label>
@@ -63,6 +64,45 @@
                                             <label class="form-label text-[#0F4634]">Packing Size (KG, g)</label>
                                             <input class="form-control" type="text" min="1" name="update_capacity"
                                                 value="{{ old('capacity') . $localSale->capacity }}">
+                                            @error('capacity')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                     <div>
+                                         <h1 class="text-xl text-[#0F4634]">Khmer</h1>
+                                        {{-- Product Brand Name --}}
+                                        <div class="mb-3 col-12">
+                                            <label class="form-label text-[#0F4634]">Brand Name</label>
+                                            <input class="form-control" type="text" name="update_brand_km"
+                                                value="{{ old('brand') . $localSale->brand_km }}">
+                                            @error('brand')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
+                                        </div>
+                                        {{-- Product Name --}}
+                                        <div class="mb-3 col-12">
+                                            <label class="form-label text-[#0F4634]">Name</label>
+                                            <input class="form-control" type="text" name="update_name_km"
+                                                value="{{ old('name') . $localSale->name_km }}">
+                                            @error('name')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
+                                        </div>
+                                        {{-- Type of Product --}}
+                                        <div class="mb-3 col-12">
+                                            <label class="form-label text-[#0F4634]">Type of crop (New or Old)</label>
+                                            <input class="form-control" type="text" min="1" name="update_type_km"
+                                                value="{{ old('type') . $localSale->type_km }}">
+                                            @error('type')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
+                                        </div>
+                                        {{-- Price --}}
+                                        <div class="mb-3 col-12">
+                                            <label class="form-label text-[#0F4634]">Price</label>
+                                            <input class="form-control" type="number" step="0.01" min="0"
+                                                name="update_price_km" value="{{ old('price') . $localSale->price_km }}">
+                                            @error('price')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
+                                        </div>
+                                        {{-- Capacity --}}
+                                        <div class="mb-3 col-12">
+                                            <label class="form-label text-[#0F4634]">Packing Size (KG, g)</label>
+                                            <input class="form-control" type="text" min="1" name="update_capacity_km"
+                                                value="{{ old('capacity') . $localSale->capacity_km }}">
                                             @error('capacity')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                             @enderror
                                         </div>

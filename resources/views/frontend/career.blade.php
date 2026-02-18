@@ -8,7 +8,7 @@
 @endsection
 
 @section('rice-background', asset('frontend/assets/imges/rice-background.png'))
-@section('title-career', 'Join Our Team')
+@section('title-career', app()->getLocale() == 'en' ? 'Join Our Team' : 'ចូលរួមជាមួយក្រុមរបស់យើង')
 @section('gmail-career')
 
     <div class="flex items-center justify-center gap-4 bg-white rounded-full w-[300px] h-[64px] mx-auto" data-aos="fade-left" data-aos-duration="1500">
@@ -42,6 +42,7 @@
                 $jobs = [
                     [
                         'title' => 'Sales Executive',
+                        'title_km' => 'អ្នកប្រត្តិបត្តិផ្នែកលក់',
                         'image' => asset('assets/image/image.png'),
                         'description' => '
                              <h4>Job Summary</h4>
@@ -70,10 +71,40 @@
                                     <li>Good command of English; Khmer required (additional languages are an advantage)</li>
                                     <li>Willingness to travel when required</li>
                                 </ul>
+                        ',
+                        'description_km' => '
+                            <h4>សេចក្តីសង្ខេបពីការងារ</h4>
+                            <p>
+                                មុខតំណែងអ្នកលក់ (Sales Executive) មានភារកិច្ចក្នុងការស្វែងរកអាជីវកម្មថ្មី
+                                ថែរក្សាទំនាក់ទំនងជាមួយអតិថិជន និងសម្រេចគោលដៅលក់
+                                តាមរយៈការផ្សព្វផ្សាយផលិតផល និងការបម្រើអតិថិជនប្រកបដោយប្រសិទ្ធភាព។
+                            </p>
+
+                            <h4>ភារកិច្ចសំខាន់ៗ</h4>
+                            <ul>
+                                <li>ស្វែងរក និងអភិវឌ្ឍអតិថិជនថ្មីទាំងក្នុងស្រុក និងអន្តរជាតិ</li>
+                                <li>ផ្សព្វផ្សាយ និងលក់ផលិតផលរបស់ក្រុមហ៊ុនទៅកាន់អ្នកលក់ដុំ អ្នកចែកចាយ និងដៃគូ</li>
+                                <li>រៀបចំសម្រង់តម្លៃ តាមដានសំណើ និងបិទកិច្ចព្រមព្រៀងលក់</li>
+                                <li>ថែរក្សាទំនាក់ទំនងល្អជាមួយអតិថិជនដែលមានស្រាប់</li>
+                                <li>ប្រមូលព័ត៌មានទីផ្សារ និងព័ត៌មានគូប្រកួត</li>
+                                <li>រៀបចំរបាយការណ៍លក់ និងធ្វើបច្ចុប្បន្នភាពទិន្នន័យអតិថិជន</li>
+                                <li>សហការជាមួយក្រុមប្រតិបត្តិការ និងដឹកជញ្ជូន ដើម្បីធានាការដឹកជញ្ជូនរលូន</li>
+                            </ul>
+
+                            <h4>លក្ខខណ្ឌតម្រូវការ</h4>
+                            <ul>
+                                <li>មានបរិញ្ញាបត្រផ្នែកធុរកិច្ច ទីផ្សារ ឬជំនាញដែលពាក់ព័ន្ធ</li>
+                                <li>មានបទពិសោធន៍ការងារផ្នែកលក់យ៉ាងតិច ១–២ ឆ្នាំ (ពាណិជ្ជកម្ម ឬ FMCG នឹងផ្តល់អាទិភាព)</li>
+                                <li>មានជំនាញទំនាក់ទំនង និងចរចាល្អ</li>
+                                <li>មានការលើកទឹកចិត្តខ្លួនឯង និងផ្តោតលើគោលដៅ</li>
+                                <li>ប្រើប្រាស់ភាសាអង់គ្លេសបានល្អ ត្រូវការភាសាខ្មែរ (ភាសាបន្ថែមគឺជាប្រយោជន៍)</li>
+                                <li>អាចធ្វើដំណើរតាមការចាំបាច់</li>
+                            </ul>
                         '
                     ],
                     [
                         'title' => 'Sales Supervisor',
+                        'title_km' => 'អ្នកត្រួតពិនិត្យផ្នែកលក់',
                         'image' => asset('assets/image/image.png'),
                         'description' => '
                                 <h4>Job Summary</h4>
@@ -102,16 +133,46 @@
                                     <li>Excellent communication and problem-solving abilities</li>
                                     <li>Proficient in Microsoft Office and CRM systems</li>
                                 </ul>
+                        ',
+                        'description_km' => '
+                                <h4>សេចក្តីសង្ខេបពីការងារ</h4>
+                                <p>
+                                    មុខតំណែងអ្នកគ្រប់គ្រងការលក់ (Sales Supervisor) ជួយគាំទ្រអ្នកគ្រប់គ្រងការលក់
+                                    ដោយត្រួតពិនិត្យសកម្មភាពលក់ប្រចាំថ្ងៃ ដឹកនាំក្រុមលក់
+                                    និងធានាថាគោលដៅ និងស្តង់ដារការងារត្រូវបានសម្រេច។
+                                </p>
+
+                                <h4>ភារកិច្ចសំខាន់ៗ</h4>
+                                <ul>
+                                    <li>ត្រួតពិនិត្យ និងគាំទ្រអ្នកលក់ក្នុងការងារប្រចាំថ្ងៃ</li>
+                                    <li>តាមដានលទ្ធផលការលក់ និងធានាការសម្រេចគោលដៅ</li>
+                                    <li>ជួយអនុវត្តយុទ្ធសាស្ត្រលក់ និងផែនការផ្សព្វផ្សាយ</li>
+                                    <li>បណ្តុះបណ្តាល ណែនាំ និងលើកទឹកចិត្តបុគ្គលិកលក់</li>
+                                    <li>ធានាការរាយការណ៍ត្រឹមត្រូវអំពីសកម្មភាពលក់ និងមតិយោបល់អតិថិជន</li>
+                                    <li>ថែរក្សាទំនាក់ទំនងល្អជាមួយអតិថិជនសំខាន់ៗ</li>
+                                    <li>សម្របសម្រួលរវាងក្រុមលក់ និងអ្នកគ្រប់គ្រង</li>
+                                </ul>
+
+                                <h4>លក្ខខណ្ឌតម្រូវការ</h4>
+                                <ul>
+                                    <li>មានបរិញ្ញាបត្រផ្នែកធុរកិច្ច ទីផ្សារ ឬជំនាញដែលពាក់ព័ន្ធ</li>
+                                    <li>មានបទពិសោធន៍ការងារផ្នែកលក់យ៉ាងតិច ៣ ឆ្នាំ (មានបទពិសោធន៍គ្រប់គ្រងនឹងផ្តល់អាទិភាព)</li>
+                                    <li>មានជំនាញដឹកនាំ និងគ្រប់គ្រងក្រុមបានល្អ</li>
+                                    <li>មានជំនាញវិភាគ និងរៀបចំរបាយការណ៍</li>
+                                    <li>មានជំនាញទំនាក់ទំនង និងដោះស្រាយបញ្ហាបានល្អ</li>
+                                    <li>អាចប្រើប្រាស់ Microsoft Office និងប្រព័ន្ធ CRM បានល្អ</li>
+                                </ul>
                         '
                     ],
                     [
                         'title' => 'Sales Manager',
+                        'title_km' => 'ប្រធានផ្នែកលក់',
                         'image' => asset('assets/image/image.png'),
                         'description' => '
-                                 <h4>Job Summary</h4>
+                                <h4>Job Summary</h4>
                                 <p>
                                     The Sales Manager leads the sales department, develops sales strategies, <br/>
-                                    drives revenue growth, and expands market presence for RSL Trading Company.
+                                    drives revenue growth, and expands market presence for Sek Meas Rice Company.
                                 </p>
 
                                 <h4>Key Responsibilities</h4>
@@ -135,6 +196,36 @@
                                     <li>Excellent communication and presentation skills</li>
                                     <li>Experience in trading, import/export, or commodities is a strong advantage</li>
                                 </ul>
+                        ',
+                        'description_km' => '
+                                 <h4>សេចក្តីសង្ខេបពីការងារ</h4>
+                                <p>
+                                    មុខតំណែងអ្នកគ្រប់គ្រងការលក់ (Sales Manager) ទទួលខុសត្រូវដឹកនាំនាយកដ្ឋានលក់
+                                    បង្កើតយុទ្ធសាស្ត្រលក់ ជំរុញការកើនឡើងនៃប្រាក់ចំណូល
+                                    និងពង្រីកទីផ្សាររបស់ក្រុមហ៊ុន Sek Meas Rice Company។
+                                </p>
+
+                                <h4>ភារកិច្ចសំខាន់ៗ</h4>
+                                <ul>
+                                    <li>រៀបចំ និងអនុវត្តយុទ្ធសាស្ត្រលក់រយៈពេលខ្លី និងរយៈពេលវែង</li>
+                                    <li>កំណត់គោលដៅលក់ និងតាមដានប្រសិទ្ធភាពក្រុមការងារ</li>
+                                    <li>ដឹកនាំ គ្រប់គ្រង និងអភិវឌ្ឍក្រុមលក់</li>
+                                    <li>ស្វែងរកទីផ្សារថ្មី ឱកាសអាជីវកម្ម និងដៃគូយុទ្ធសាស្ត្រ</li>
+                                    <li>គ្រប់គ្រងអតិថិជនសំខាន់ៗ និងអតិថិជនមានតម្លៃខ្ពស់</li>
+                                    <li>វិភាគទិន្នន័យលក់ និន្នាការទីផ្សារ និងសកម្មភាពគូប្រកួត</li>
+                                    <li>រៀបចំព្យាករណ៍លក់ ថវិកា និងរបាយការណ៍គ្រប់គ្រង</li>
+                                    <li>សហការជាមួយអ្នកគ្រប់គ្រងជាន់ខ្ពស់ ដើម្បីគាំទ្រការកើនឡើងរបស់ក្រុមហ៊ុន</li>
+                                </ul>
+
+                                <h4>លក្ខខណ្ឌតម្រូវការ</h4>
+                                <ul>
+                                    <li>មានបរិញ្ញាបត្រ ឬអនុបណ្ឌិតផ្នែកធុរកិច្ច ទីផ្សារ ឬជំនាញពាក់ព័ន្ធ</li>
+                                    <li>មានបទពិសោធន៍ការងារផ្នែកលក់យ៉ាងតិច ៥ ឆ្នាំ រួមទាំងកម្រិតគ្រប់គ្រង</li>
+                                    <li>មានប្រវត្តិជោគជ័យក្នុងការកើនឡើងលក់ និងដឹកនាំក្រុម</li>
+                                    <li>មានជំនាញគិតយុទ្ធសាស្ត្រ និងចរចាល្អ</li>
+                                    <li>មានជំនាញទំនាក់ទំនង និងបង្ហាញការងារល្អ</li>
+                                    <li>មានបទពិសោធន៍ផ្នែកពាណិជ្ជកម្ម នាំចូល/នាំចេញ ឬទំនិញ គឺជាប្រយោជន៍ខ្លាំង</li>
+                                </ul>
                         '
                     ],
                 ];
@@ -150,17 +241,17 @@
                     </div>
 
                    <div>
-                     <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ $job['title'] }}</h3>
-                    <p class="text-gray-400 font-medium mb-10">Full-time • Head Office</p>
+                     <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ app()->getLocale() == 'en' ? $job['title'] : $job['title_km'] }}</h3>
+                    <p class="text-gray-400 font-medium mb-10">{{ app()->getLocale() == 'en' ? 'Full-time • Head Office' : 'ការងារពេញម៉ោង • ការិយាល័យកណ្តាល' }}</p>
                    </div>
                     <button 
                         @click="
                             open = true;
-                            title = '{{ $job['title'] }}';
-                            description = `{!! $job['description'] !!}`;
+                            title = '{{ app()->getLocale() == 'en' ? $job['title'] : $job['title_km'] }}';
+                            description = `{!! app()->getLocale() == 'en' ? $job['description'] : $job['description_km'] !!}`;
                         "
                         class="w-full h-12 py-4 px-8 -mt-4 cursor-pointer" style="padding: 5px;">
-                        <img src="{{ asset('assets/logo/btn-view-desc.png') }}" alt="" class="w-full h-full object-contain">
+                        <img src="{{ app()->getLocale() == 'en' ? asset('assets/logo/view-more-en.svg') : asset('assets/logo/view-more-km.svg') }}" alt="" class="w-full h-full object-contain">
                     </button>
 
 
@@ -204,7 +295,7 @@
         <div class="max-w-7xl mx-auto rounded-xl border border-gray-50">
             
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mt-4">Application Form</h2>
+                <h2 class="text-4xl font-bold text-gray-800 mt-4">{{ app()->getLocale() == 'en' ? 'Application Form' : 'ទម្រង់បែបបទដាក់ពាក្យ' }}</h2>
             </div>
             @if (session('successfully'))
                 <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 3000)" x-show="show" x-transition
@@ -230,25 +321,25 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
                     
                     <div class="space-y-3">
-                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">Full Name</label>
-                        <input type="text" name="name" placeholder="Your Name" required
+                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">{{ app()->getLocale() === 'en' ? 'Full Name' : 'ឈ្មោះ' }}</label>
+                        <input type="text" name="name" placeholder="{{ app()->getLocale() === 'en' ? 'Your Name' : 'ឈ្មោះរបស់អ្នក' }}" required
                             class="w-full h-12 placeholder:px-2 px-2 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
                     </div>
 
                     <div class="space-y-3">
-                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">Email Address</label>
+                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">{{ app()->getLocale() === 'en' ? 'Email' : 'អ៊ីម៉ែល' }}</label>
                         <input type="email" name="email" placeholder="example@mail.com" required
                             class="w-full h-12 placeholder:px-2 px-2 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
                     </div>
 
                     <div class="space-y-3">
-                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">Phone Number</label>
-                        <input type="text" name="phone" placeholder="Your phone Number" required
+                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">{{ app()->getLocale() === 'en' ? 'Phone Number' : 'លេខទូរស័ព្ទ' }}</label>
+                        <input type="text" name="phone" placeholder="{{ app()->getLocale() === 'en' ? 'Phone Number' : 'លេខទូរស័ព្ទរបស់អ្នក' }}" required
                             class="w-full h-12 placeholder:px-2 px-2 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
                     </div>
 
                     <div class="space-y-3">
-                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">Position</label>
+                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">{{ app()->getLocale() === 'en' ? 'Position' : 'មុខតំណែង' }}</label>
                         <div class="relative">
                             <select id="position" name="position" required
                                 class="w-full h-12 px-4 rounded-md bg-[#fff9e6] 
@@ -256,10 +347,10 @@
                                     border-none focus:bg-white focus:ring-2 
                                     focus:ring-yellow-400 outline-none 
                                     transition-all shadow-inner appearance-none">
-                                <option value="" disabled selected>Select a position</option>
-                                <option value="Sales Executive">Sales Executive</option>
-                                <option value="Sales Supervisor">Sales Supervisor</option>
-                                <option value="Sales Manager">Sales Manager</option>
+                                <option value="" disabled selected>{{ app()->getLocale() === 'en' ? 'Select a position' :  'បំពេញមុខតំណែង' }}</option>
+                                <option value="Sales Executive">{{ app()->getLocale() === 'en' ? 'Sales Executive' :  'អ្នកប្រត្តិបត្តិផ្នែកលក់' }}</option>
+                                <option value="Sales Supervisor">{{ app()->getLocale() === 'en' ? 'Sales Supervisor' :  'អ្នកត្រួតពិនិត្យផ្នែកលក់'}}</option>
+                                <option value="Sales Manager"> {{ app()->getLocale() === 'en' ? 'Sales Manager' :  ' ប្រធានផ្នែកលក់' }}</option>
                             </select>
 
                             <div class="absolute inset-y-0 right-5 flex items-center pointer-events-none">
@@ -269,13 +360,13 @@
                     </div>
 
                     <div class="space-y-3">
-                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">Upload CV (PDF)</label>
+                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">{{ app()->getLocale() === 'en' ? 'Upload CV (PDF)' : 'អាប់ឡូត CV' }}</label>
                         <input type="file" name="cv" required
                             class="block h-12 placeholder:px-2 w-full text-sm text-gray-500 file:mr-4 file:py-4 file:px-6 file:rounded-2xl file:border-0 file:text-sm file:font-semibold file:bg-[#fff9e6] file:text-gray-500 cursor-pointer transition-all">
                     </div>
 
                     <div class="space-y-3">
-                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">Cover Letter</label>
+                        <label class="text-sm font-bold text-gray-700 ml-2 px-2">{{ app()->getLocale() === 'en' ? 'Upload Cover Letter' : 'អាប់ឡូត Cover Letter'}}</label>
                         <input type="file" name="cover_letter" required
                             class="block h-12 placeholder:px-2 w-full text-sm text-gray-500 file:mr-4 file:py-4 file:px-6 file:rounded-2xl file:border-0 file:text-sm file:font-semibold file:bg-[#fff9e6] file:text-gray-500 cursor-pointer transition-all">
                     </div>
@@ -283,8 +374,8 @@
 
                 <div class="relative flex justify-center py-10">
                     <button type="submit"
-                        class="w-52 h-14 transition-all duration-300">
-                        <img src="{{ asset('assets/logo/btn-application.png') }}" alt="" class="w-full h-full">
+                        class="w-52 h-10 transition-all duration-300">
+                        <img src="{{ app()->getLocale() == 'en' ? asset('assets/logo/btn-application.png') : asset('assets/logo/btn-submit-km.svg') }}" alt="" class="w-full h-full">
                     </button>
                 </div>
                 </div>

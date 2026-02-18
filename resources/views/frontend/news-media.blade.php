@@ -5,16 +5,16 @@
 @section('white-line')
     <div class="w-24 sm:w-32 md:w-40 lg:w-[154px] h-1 bg-white mt-8 mb-6 mt-5"></div>
 @endsection
-@section('text-title', 'Latest News')
+@section('text-title', app()->getLocale() == 'en' ? 'Latest News' : 'ព្រឹត្តិការណ៍ថ្មីៗ')
 
 @section('section_content')
-<section class="flex justify-center items-center">
+<section class="flex flex-col justify-center items-center space-y-0 md:space-y-10">
     {{-- Section: Media --}}
     <section class="section-media relative h-auto bg-[#FFFFFF]" x-data="lightbox()">
 
         <div class="flex flex-col justify-center items-center text-center px-6 mb-12 py-8" data-aos="fade-right" data-aos-duration="1500">
             <h2 class="text-3xl md:text-5xl font-extrabold text-[#4DA358] tracking-wide">
-                Latest News
+               {{ app()->getLocale() == 'en' ? 'Latest News' : 'ព្រឹត្តិការណ៍ថ្មីៗ' }}
             </h2>
         </div>
 
@@ -22,7 +22,7 @@
             <div class="max-w-7xl w-full">
                 <div class="grid grid-cols-1 gap-x-20 gap-y-16" data-aos="fade-left" data-aos-duration="1500">
                     @foreach($showMedia as $media)
-                        <div class="flex flex-col md:flex-row items-center gap-10 justify-center
+                            <div class="flex flex-col md:flex-row items-center gap-10 justify-center
                                     {{ $loop->iteration % 2 == 0 ? 'md:flex-row-reverse' : '' }}">
                             <!-- Image -->
                             <div class="relative w-[90%] sm:w-[90%] md:w-[420px] lg:w-[450px] flex-shrink-0 mx-auto">
@@ -52,12 +52,13 @@
                                 </h3>
 
                                 <p class="text-[#1E1E1E] text-lg">
-                                    {{ $media->description }}
+                                    {{ app()->getLocale() == 'en' ? $media->description : $media->description_km }}
                                 </p>
                                 
-                                <div class="flex justify-center items-center text-white py-3 bg-[#4DA358] w-32 h-12 rounded-xl cursor-pointer"
+                                <div class="flex justify-center items-center w-32 h-12 rounded-xl cursor-pointer"
                                     @click="open({{ $loop->index }})">
-                                    Details
+                                     <img src="{{ app()->getLocale() == 'en' ? asset('assets/logo/btn-details.svg') : asset('assets/logo/btn-details-km.svg') }}" alt=""
+                                        class="w-full h-full">
                                 </div>
 
                             </div>
@@ -90,6 +91,94 @@
         </div>
 
     </section>
+    {{-- Section: News --}}
+    <section class="section-news relative bg-[#F4ECC8] py-10" id="activity">
+        <div class="flex flex-col justify-center items-center text-center px-6 mb-12">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-[#4DA358] tracking-wide">
+                {{ app()->getLocale() == 'en' ? 'Activities ' : 'សកម្មភាព' }}
+            </h2>
+        </div>
+
+        <div class="flex justify-center items-center px-4 sm:px-10 md:px-20">
+            <div class="max-w-7xl w-full">
+                <div class="grid grid-cols-1 gap-y-12 md:gap-y-16 gap-x-8 md:grid-cols-2">
+                    @foreach ($showNews as $news)
+                        @php
+    $images = json_decode($news->image_news ?? '[]', true);
+@endphp
+
+<div class="block-news flex flex-col lg:flex-row gap-6 md:gap-8 items-center md:items-start">
+    
+    <!-- First Image -->
+    <div class="image-news w-[90%] md:w-[420px] lg:w-[450px] mx-auto">
+        <div class="w-full h-64 sm:h-72 lg:h-80 overflow-hidden rounded-lg">
+            @if(!empty($images))
+                <img src="{{ asset('storage/news/'.$images[0]) }}"
+                     class="w-full h-full object-cover hover:scale-105 transition duration-500">
+            @endif
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content w-full md:max-w-[550px] flex flex-col justify-between gap-4 px-1">
+        <h3 class="text-[#1E1E1E] font-semibold text-2xl sm:text-3xl hidden">
+            {{ app()->getLocale() == 'km' ? $news->title_km : $news->title }}
+        </h3>
+
+        <p class="text-[#1E1E1E] text-base sm:text-lg h-auto md:h-[32vh]">
+            {!! nl2br(e(app()->getLocale() == 'km' ? $news->description_km : $news->description)) !!}
+        </p>
+
+        <button onclick="openModal({{ $news->id }})"
+            class="w-[125px] h-[35px] mt-4 mx-auto md:mx-0">
+            <img src="{{ app()->getLocale() == 'en' 
+                ? asset('assets/logo/btn-details.svg') 
+                : asset('assets/logo/btn-details-km.svg') }}">
+        </button>
+    </div>
+</div>
+
+<!-- Hidden JSON Images -->
+<script type="application/json" id="news-images-{{ $news->id }}">
+    {!! json_encode($images) !!}
+</script>
+
+                    @endforeach
+                    <!-- Modal -->
+<div id="imageModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+
+    <div class="relative w-[90%] max-w-5xl">
+
+        <!-- Close Button -->
+        <button onclick="closeModal()" 
+            class="absolute top-[-40px] right-0 text-white text-3xl">
+            ✕
+        </button>
+
+        <div class="max-w-5xl mx-auto w-5xl h-[500px]">
+            <img id="modalImage" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Left Button -->
+        <button onclick="prevImage()"
+            class="absolute left-[-40px] top-1/2 transform -translate-y-1/2 text-white text-4xl">
+            ❮
+        </button>
+
+        <!-- Right Button -->
+        <button onclick="nextImage()"
+            class="absolute right-[-40px] top-1/2 transform -translate-y-1/2 text-white text-4xl">
+            ❯
+        </button>
+
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
 </section>
 
 {{-- Alpine.js Lightbox --}}
@@ -141,6 +230,48 @@ function lightbox() {
 }
 
 </script>
+<script>
+let currentImages = [];
+let currentIndex = 0;
+
+function openModal(newsId) {
+
+    const data = document.getElementById('news-images-' + newsId).textContent;
+    currentImages = JSON.parse(data);
+
+    if (currentImages.length === 0) return;
+
+    currentIndex = 0;
+    document.getElementById('modalImage').src = '/storage/news/' + currentImages[currentIndex];
+
+    const modal = document.getElementById('imageModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+}
+
+function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+}
+
+function nextImage() {
+    currentIndex++;
+    if (currentIndex >= currentImages.length) {
+        currentIndex = 0;
+    }
+    document.getElementById('modalImage').src = '/storage/news/' + currentImages[currentIndex];
+}
+
+function prevImage() {
+    currentIndex--;
+    if (currentIndex < 0) {
+        currentIndex = currentImages.length - 1;
+    }
+    document.getElementById('modalImage').src = '/storage/news/' + currentImages[currentIndex];
+}
+</script>
+
 @endsection
 
 @section('section_footer')

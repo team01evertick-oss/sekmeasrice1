@@ -6,7 +6,7 @@
 @section('white-line')
     <div class="w-24 sm:w-32 md:w-40 lg:w-[154px] h-1 bg-white mt-8 mb-6 mt-5"></div>
 @endsection
-@section('text-title', 'About Us')
+@section('text-title', app()->getLocale() == 'en' ? 'About Us' : 'អំពីក្រុមហ៊ុន')
 
 @section('section_content')
 
@@ -18,25 +18,24 @@
             <div class="relative top-[-50px] md:top-[-90px] lg:top-[-100px] px-4 sm:px-6 md:px-10 lg:px-32 py-8 sm:py-10 max-w-8xl">
                 <h2 data-aos="fade-right" data-aos-duration="1500"
                     class="relative top-8 xl:-top-14 md:py-0 py-4 text-[14px] sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg">
-                    About Us
+                    {{ app()->getLocale() == 'en' ? 'About Us' : 'អំពីក្រុមហ៊ុន' }}
                 </h2>
 
-                <p data-aos="fade-left" data-aos-duration="1500"
+                <p
                     class="text-[8px] md:text-[15px] lg:text-xl xl:text-[22px] leading-relaxed text-[#000000] text-left">
-                    Lor Eak Heng Sek Meas Rice Co., Ltd is one of the leading rice mill production factories and rice
+                    {{ app()->getLocale() == 'en' ? 'Lor Eak Heng Sek Meas Rice Co., Ltd is one of the leading rice mill production factories and rice
                     exporters
                     in Cambodia. We have operated this business since 1994, starting from a small rice mill using
                     traditional
                     rice machines to a state-of-the-art production line with a two-processing-line system capable of
                     producing
                     20 tons per hour.
-                </p>
-
-                <p data-aos="fade-left" data-aos-duration="1500"
-                    class="mt-4 text-[8px] md:text-[15px] lg:text-xl xl:text-[22px] leading-relaxed text-[#000000] text-left">
                     With this advanced technology, our production capacity has significantly increased, allowing us to
                     export
-                    high-quality rice to more than 16 countries across the European Union, Africa, and the ASEAN region.
+                    high-quality rice to more than 16 countries across the European Union, Africa, and the ASEAN region.' 
+                    : 'ក្រុមហ៊ុន ឡអៀកហេងសេកមាសរាយស៍ គឺជារោងចក្រកិនស្រូវ និងនាំចេញអង្ករឈានមុខគេនៅក្នុងប្រទេសកម្ពុជា។ យើង ខ្ញុំបានបង្កើតអាជីវកម្មនេះចាប់តាំងពីឆ្នាំ១៩៩៤ ដោយផ្តើមពីម៉ាស៊ីនកិនស្រូវខ្នាតតូច និងកិនដោយដៃ។ បច្ចុប្បន្នយើងខ្ញុំបាន វិវដ្តដោយប្រើម៉ាស៊ីនកិនស្រូវទំនើបដែលអាចកិនបានរហូតដល់ ២០តោន ក្នុង១ម៉ោង បង្កើនបរិមាណច្រើនជាងមុន
+                    ជម្រុញការនាំចេញទៅកាន់ ១៦ប្រទេសរួមមានសហភាពអឺរ៉ុប ទ្វីបអាហ្វ្រិក និងតំបន់អាស៊ាន។
+                    ' }}
                 </p>
             </div>
 
@@ -52,38 +51,42 @@
 
                     <!-- Vision -->
                     <div class="bg-[#4DA358] hover:bg-[#F1C119] transition-colors duration-500 ease-in-out 
-                                                w-[350px] sm:w-[530px] md:w-[600px] max-w-[600px] md:h-[500px] h-[200px] rounded-tl-[80px] rounded-br-[80px] 
+                                                w-[350px] sm:w-[400px] md:w-[600px] max-w-[600px] md:h-[500px] h-[200px] rounded-tl-[80px] rounded-br-[80px] 
                                                 flex flex-col justify-start items-center" data-aos="fade-right" data-aos-duration="1500">
                         <div
-                            class="relative top-0 md:top-[50px] left-[50px] w-full max-w-[450px] flex flex-col gap-4 pt-[40px] pl-[40px] pr-8 pb-8">
-                            <h1 class="text-2xl sm:text-3xl font-bold text-black">Vision</h1>
-                            <p class="text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl text-[#1A1A1A] leading-relaxed">
-                                Become the leading company in supplying <br> high-quality rice for export
-                                to all the rice <br> markets around the world.
+                            class="relative top-0 md:top-[50px] w-full max-w-[450px] flex flex-col gap-4 pt-[40px] pl-[40px] pr-8 pb-8">
+                            <h1 class="text-2xl sm:text-3xl font-bold text-black">
+                                {{ app()->getLocale() == 'en' ? 'Vision' : 'ចក្ខុវិស័យ' }}
+                            </h1>
+                            <p class="max-w-lg mx-auto text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl text-[#1A1A1A] leading-relaxed">
+                                {{ app()->getLocale() == 'en' ? 'Become the leading company in supplying high-quality rice for export to all the rice markets around the world.' 
+                                : 'ក្លាយជាក្រុមហ៊ុនឈានមុខគេក្នុងការនាំចេញអង្ករប្រកបដោយគុណភាពខ្ពស់ទៅគ្រប់ទីកន្លែងនៅលើសកលលោក ។' }}
                             </p>
                         </div>
                     </div>
 
                     <!-- Mission -->
                     <div class="bg-[#4DA358] hover:bg-[#F1C119] transition-colors duration-500 ease-in-out 
-                                                                w-[350px] sm:w-[530px] md:w-[600px] max-w-[600px] md:h-[500px] h-[380px] rounded-tr-[80px] rounded-bl-[80px] 
+                                                                w-[350px] sm:w-[400px] md:w-[600px] max-w-[600px] md:h-[500px] h-[300px] rounded-tr-[80px] rounded-bl-[80px] 
                                                                 flex flex-col justify-start items-center p-8" data-aos="fade-left" data-aos-duration="1500">
-                        <div class="relative top-[50px] left-[50px] w-full max-w-[500px] flex flex-col gap-4">
-                            <h1 class="text-2xl sm:text-3xl font-bold text-black">Mission</h1>
-                            <p class="text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl text-[#1A1A1A] leading-relaxed">
-                                Go on business trips to explore new <br> potential customers.
+                        <div class="relative top-[10px] md:top-[50px] w-full max-w-[400px] mx-auto flex flex-col gap-4">
+                            <h1 class="text-2xl sm:text-3xl font-bold text-black">
+                                {{ app()->getLocale() == 'en' ? 'Mission' : 'បេសកកម្ម' }}
+                            </h1>
+                            <div class="">
+                                <p class="text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl text-[#1A1A1A] leading-relaxed">
+                                {{ app()->getLocale() == 'en' ? 'Go on business trips to explore new potential customers.' : 'ធ្វើទស្សនកិច្ចនៅបរទេសដើម្បីកសាងទំនាក់ទំនង និងស្វែងរកទីផ្សារថ្មីបន្ថែម។' }}
                             </p>
                             <p class="text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl text-[#1A1A1A] leading-relaxed">
-                                Conduct continual research to improve and <br> renovate new rice mill technologies.
+                                {{ app()->getLocale() == 'en' ? 'Conduct continual research to improve and renovate new rice mill technologies.' : 'ធ្វើការស្រាវជ្រាវបន្ថែមដើម្បីការស្ថាបនា និងអភិវឌ្ឍផលិតផលថ្មីៗ។' }}
                             </p>
                             <p class="text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl text-[#1A1A1A] leading-relaxed">
-                                Enhance quality control to meet higher standards <br> across continents.
+                                {{ app()->getLocale() == 'en' ? 'Enhance quality control to meet higher standards across continents.' : 'បង្កើនការត្រួតពិនិត្យនៅលើគុណភាពអោយស្របទៅតាមស្តង់ដារកំណត់ដោយប្រទេសនីមួយៗ។' }}
                             </p>
                             <p class="text-[10px] md:text-[15px] sm:text-[15px] lg:text-xl text-[#1A1A1A] leading-relaxed">
-                                Get work done by an automated replacement <br /> method, while nurturing the team members
-                                <br>
-                                to acquire advanced rice-milling skills.
+                                {{ app()->getLocale() == 'en' ? 'Get work done by an automated replacement method, while nurturing the team members to acquire advanced rice-milling skills.' : 'រកវិធីសាស្ត្រសម្រេចការងារដោយស្វ័យប្រវត្តិកម្ម និងបណ្តុះបណ្តាលក្រុមការងារអោយមានជំនាញបច្ចេកទេស បន្ថែមទៅលើការផលិតអង្ករ។' }}
                             </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -149,7 +152,7 @@
             <img src="{{ asset('assets/image/bg-ms.svg') }}" alt="" class="w-full h-full object-cover">
 
             <div class="absolute inset-0 -top-12 flex flex-col justify-center items-center text-center px-6 text-white">
-                <h1 class="text-[#4DA358] text-3xl py-6">Messages From CEO</h1>
+                <h1 class="text-[#4DA358] text-3xl py-6 font-semibold">Messages From CEO</h1>
                 <div class="text-black max-w-7xl mx-auto text-left text-sm space-y-2 -mt-4">
                     <p>
                     Rice is an important factor in daily life for both the local and international markets. Rice consumption has been the most important choice for rice-consuming customers. We have selected the best rice variety from the original source of supply in Cambodia to deliver the most component rice variety. The agricultural factor played an important role in the government's standard of living improvement strategy. By 2025, 
@@ -180,13 +183,15 @@
         </section>
     </div>
     {{-- Section: Business Registration --}}
-    <section id="business" class="relative px-4 py-12 md:px-10 lg:px-20">
+    <section id="business" class="relative px-4 py-2 md:py-12 md:px-10 lg:px-20">
         <div class="grid grid-cols-1 gap-10 business">
             <div class="text-center text-[#4DA358] font-bold mb-8" data-aos="fade-right" data-aos-duration="1500">
-                <h1 class="text-2xl sm:text-3xl md:text-4xl">Business Registration Certificates</h1>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl">
+                    {{ app()->getLocale() == 'en' ? 'Business Registration Certificates' : 'ឯកសារចុះបញ្ជិកាសហគ្រាស ' }}
+                </h1>
             </div>
 
-            <div class="flex flex-col md:flex-row flex-wrap justify-center gap-6 m-10" data-aos="fade-left" data-aos-duration="1500">
+            <div class="flex flex-col md:flex-row flex-wrap justify-center gap-6" data-aos="fade-left" data-aos-duration="1500">
                 @foreach ($showAboutBusiness as $items)
                     <div
                         class="mx-auto transform transition-transform duration-300 hover:scale-110
@@ -205,7 +210,7 @@
             <!-- Section Title -->
             <div class="text-center text-[#4DA358] font-bold mb-8">
                 <h1 class="relative top-[10px] text-2xl sm:text-3xl md:text-4xl" data-aos="fade-right" data-aos-duration="1500">
-                    FDA Approved Certificate
+                    {{ app()->getLocale() == 'en' ? 'FDA Approved Certificate' : 'វិញ្ញាណបណ្ណបត្របញ្ជាក់ដោយរដ្ឋបាលចំណីអាហារ និងឱសថសហរដ្ឋអាមេរិក' }}
                 </h1>
             </div>
 

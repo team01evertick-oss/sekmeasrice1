@@ -20,6 +20,8 @@ class MediaController extends Controller
         $request->validate([
             'title'        => 'required|string|max:255',
             'description'  => 'required|string|max:5000',
+            'title_km'        => 'nullable|string|max:255',
+            'description_km'  => 'nullable|string|max:5000',
             'image_media'  => 'required|image|mimes:jpg,jpeg,png,gif,webp|max:20480',
             'images.*' => 'image|mimes:jpg,jpeg,png,webp|max:10240',
         ]);
@@ -43,7 +45,9 @@ class MediaController extends Controller
         // Insert into database
         $result = DB::table('media')->insert([
             'title'     => $request->title,
-            'description'        => $request->description,
+            'description'    => $request->description,
+            'title_km'     => $request->title_km,
+            'description_km'    => $request->description_km,
             'image_media' => $image,
             'images' => json_encode($images)
         ]);
@@ -63,6 +67,8 @@ class MediaController extends Controller
         'update_id'          => 'required|numeric|min:1',
         'update_title'       => 'required|string|max:255',
         'update_description' => 'required|string|max:5000',
+        'update_title_km'       => 'nullable|string|max:255',
+        'update_description_km' => 'nullable|string|max:5000',
         'update_image_media' => 'nullable|image|mimes:jpg,jpeg,png,gif,webp|max:20480',
         'old_image_media'    => 'nullable|string|max:255',
         'edit_images.*' => 'image|mimes:jpg,jpeg,png,webp|max:10240',
@@ -107,6 +113,8 @@ class MediaController extends Controller
         $result = DB::table('media')->where('id', $update_id)->update([
             'title'        => $request->update_title,
             'description'  => $request->update_description,
+             'title_km'        => $request->update_title_km,
+            'description_km'  => $request->update_description_km,
             'image_media'  => $image,
             'images' => json_encode($newImages),
             'updated_at'   => now(),

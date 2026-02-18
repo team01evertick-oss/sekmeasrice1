@@ -6,9 +6,9 @@
 @section('white-line')
     <div class="w-24 sm:w-32 md:w-40 lg:w-[154px] h-1 bg-white"></div>
 @endsection
-@section('welcome', 'WELCOME TO')
-@section('sek-meas', 'SEK MEAS RICE')
-@section('rice-mall', 'RICE MILL PRODUCTION FACTORY')
+@section('welcome', app()->getLocale() == 'en' ? 'WELCOME TO' : 'សូមស្វាគមន៍មកកាន់')
+@section('sek-meas', app()->getLocale() == 'en' ? 'SEK MEAS RICE' : 'សេកមាសរាយស៍ ')
+@section('rice-mall', app()->getLocale() == 'en' ? 'RICE MILL PRODUCTION FACTORY' : 'រោងចក្រកិនស្រូវ និងនាំចេញអង្ករ')
 
 @section('section_content')
 
@@ -21,25 +21,24 @@
                 <div class="relative top-[-50px] md:top-[-90px] lg:top-[-100px] px-4 sm:px-6 md:px-10 lg:px-32 py-8 sm:py-10 max-w-8xl">
                     <h2
                         class="relative top-8 xl:-top-14 md:py-0 py-4 text-[14px] sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg">
-                        About Us
+                       {{ app()->getLocale() == 'en' ? 'About Us' : 'អំពីក្រុមហ៊ុន' }}
                     </h2>
 
                     <p
                         class="text-[8px] md:text-[15px] lg:text-xl xl:text-[22px] leading-relaxed text-[#000000] text-left">
-                        Lor Eak Heng Sek Meas Rice Co., Ltd is one of the leading rice mill production factories and rice
-                        exporters
-                        in Cambodia. We have operated this business since 1994, starting from a small rice mill using
-                        traditional
-                        rice machines to a state-of-the-art production line with a two-processing-line system capable of
-                        producing
-                        20 tons per hour.
-                    </p>
-
-                    <p
-                        class="mt-4 text-[8px] md:text-[15px] lg:text-xl xl:text-[22px] leading-relaxed text-[#000000] text-left">
-                        With this advanced technology, our production capacity has significantly increased, allowing us to
-                        export
-                        high-quality rice to more than 16 countries across the European Union, Africa, and the ASEAN region.
+                          {{ app()->getLocale() == 'en' ? 'Lor Eak Heng Sek Meas Rice Co., Ltd is one of the leading rice mill production factories and rice
+                            exporters
+                            in Cambodia. We have operated this business since 1994, starting from a small rice mill using
+                            traditional
+                            rice machines to a state-of-the-art production line with a two-processing-line system capable of
+                            producing
+                            20 tons per hour.
+                            With this advanced technology, our production capacity has significantly increased, allowing us to
+                            export
+                            high-quality rice to more than 16 countries across the European Union, Africa, and the ASEAN region.' 
+                          : 'ក្រុមហ៊ុន ឡអៀកហេងសេកមាសរាយស៍ គឺជារោងចក្រកិនស្រូវ និងនាំចេញអង្ករឈានមុខគេនៅក្នុងប្រទេសកម្ពុជា។ យើង ខ្ញុំបានបង្កើតអាជីវកម្មនេះចាប់តាំងពីឆ្នាំ១៩៩៤ ដោយផ្តើមពីម៉ាស៊ីនកិនស្រូវខ្នាតតូច និងកិនដោយដៃ។ បច្ចុប្បន្នយើងខ្ញុំបាន វិវដ្តដោយប្រើម៉ាស៊ីនកិនស្រូវទំនើបដែលអាចកិនបានរហូតដល់ ២០តោន ក្នុង១ម៉ោង បង្កើនបរិមាណច្រើនជាងមុន
+                            ជម្រុញការនាំចេញទៅកាន់ ១៦ប្រទេសរួមមានសហភាពអឺរ៉ុប ទ្វីបអាហ្វ្រិក និងតំបន់អាស៊ាន។
+                            ' }}
                     </p>
                 </div>
 
@@ -54,7 +53,8 @@
             <div class="relative lg:top-8 top-6 flex flex-col justify-center items-center text-center px-6 py-0 lg:py-8">
                 <h2 id="local-products"
                     class="text-[14px] sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#4DA358] mb-4 sm:mb-6 tracking-wide drop-shadow-lg" data-aos="fade-right" data-aos-duration="1500">
-                    For Local Sale
+                    
+                    {{ app()->getLocale() == 'en' ? 'For Local Sale' : 'ផលិតផលលក់ក្នុងស្រុក' }}
                 </h2>
             </div>
             <!-- make sure Alpine is loaded in your layout -->
@@ -85,43 +85,57 @@
                                     <!-- Middle: Brand + Name + Type -->
                                     <div class="relative top-[-50px] flex flex-col items-center text-center">
                                         <h2 class="text-[#324A0A] font-bold text-lg md:text-xl leading-snug">
-                                            {{ $items->brand }}
+                                          
+                                            {{ app()->getLocale() == 'en' ? $items->brand : $items->brand_km }}
                                         </h2>
 
                                         <h2
                                             class="text-[#324A0A] font-semibold text-lg md:text-xl leading-snug max-w-[230px] break-words">
-                                            {{ $items->name }}
+                                            
+                                            {{ app()->getLocale() == 'en' ? $items->name : $items->name_km }}
                                             <br>
                                         </h2>
                                     </div>
 
                                     <!-- Bottom: Price, Capacity, Button -->
                                     <div class="relative top-[-90px] flex flex-col items-center">
-                                        <span class="text-[#324A0A] font-medium text-base">{{ $items->type }}</span>
+                                        <span class="text-[#324A0A] font-medium text-base">
+                                               {{ app()->getLocale() == 'en' ? $items->type : $items->type_km }}
+                                        </span>
                                         <div class="w-full flex justify-center my-2">
                                             <div class="w-[100px] h-[2px] bg-[#DDCC81]"></div>
                                         </div>
 
                                         <p class="text-[#EF0104] text-xl font-bold">
-                                            ${{ number_format($items->price, 2) }}
+                                            {{ app()->isLocale('en') 
+                                                ? '$' . number_format($items->price, 2) 
+                                                : number_format($items->price_km, 0) . ' ដុល្លារ' 
+                                            }}
                                         </p>
-                                        <p class="text-[#324A0A] text-sm font-medium">{{ $items->capacity }}</p>
+                                        <p class="text-[#324A0A] text-sm font-medium">
+                                            {{ app()->getLocale() == 'en' ? $items->capacity : $items->capacity_km }}
+                                        </p>
 
                                         {{-- @auth('customer') --}}
                                         <button
-                                            @click="openOrderModal = true;
+                                            @click="
+                                                openOrderModal = true;
                                                 selectedProduct = {
-                                                    name: '{{ $items->name }}',
-                                                    type: '{{ $items->type }}',
-                                                    capacity: '{{ $items->capacity }}',
-                                                    price: {{ $items->price }},
+                                                    name: '{{ app()->isLocale('en') ? $items->name : $items->name_km }}',
+                                                    type: '{{ app()->isLocale('en') ? $items->type : $items->type_km }}',
+                                                    capacity: '{{ app()->isLocale('en') ? $items->capacity : $items->capacity_km }}',
+                                                    price: {{ app()->isLocale('en') ? $items->price : $items->price_km }},
                                                     image: '{{ asset('storage/local_product/' . $items->image_local) }}'
                                                 };
-                                                quantity = 1;"
+                                                quantity = 1;
+                                            "
                                             class="mt-3 hover:scale-110 transition-transform cursor-pointer">
-                                            <img src="{{ asset('frontend/assets/imges/btn-buy.png') }}" alt="Buy Now Button"
-                                                class="w-[140px] h-auto">
+                                            <img src="{{ app()->isLocale('en') 
+                                                ? asset('frontend/assets/imges/btn-buy.png') 
+                                                : asset('assets/logo/btn_buy_km.svg') }}" 
+                                                alt="Buy Now Button" class="w-[140px] h-auto">
                                         </button>
+
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +153,7 @@
                         class="relative bg-white rounded-2xl shadow-2xl w-full sm:w-[600px] max-h-[90vh] h-[600px] overflow-y-auto overflow-x-hidden p-2">
                         <!-- Header -->
                         <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
-                            <h2 class="text-2xl font-bold text-[#324A0A]">🛒 Checkout</h2>
+                            <h2 class="text-2xl font-bold text-[#324A0A]">🛒 {{ app()->getLocale() == 'en' ? 'Checkout' : 'ទូទាត់ប្រាក់' }}</h2>
                             <button @click="openOrderModal = false"
                                 class="relative right-[10px] text-gray-500 hover:text-red-500 transition text-2xl font-bold">
                                 &times;
@@ -152,23 +166,22 @@
                                 <div class="relative left-5 bg-white rounded-2xl flex flex-col md:flex-row gap-8">
                                     <!-- Left: Customer Info -->
                                     <div class="flex-1 space-y-4">
-                                        <h3 class="text-xl font-semibold text-[#4DA358] w-60">Customer Information</h3>
+                                        <h3 class="text-xl font-semibold text-[#4DA358] w-60">{{ app()->getLocale() == 'en' ? 'Customer Information' : 'ព័ត៌មានរបស់អតិថិជន' }}</h3>
 
                                         <div>
-                                            <label class="block text-sm font-semibold text-gray-700 mb-1">Your Name</label>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-1">{{ app()->getLocale() == 'en' ? 'Your Name' : 'ឈ្មោះរបស់អ្នក' }}</label>
                                             <input type="text" name="customer_name" required
                                                 class="w-full border border-gray-300 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-[#4DA358] transition">
                                         </div>
 
                                         <div>
-                                            <label class="block text-sm font-semibold text-gray-700 mb-1">Phone
-                                                Number</label>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-1">{{ app()->getLocale() == 'en' ? 'Phone Number' : 'លេខទូរស័ព្ទ' }}</label>
                                             <input type="text" name="customer_phone" required
                                                 class="w-full border border-gray-300 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-[#4DA358] transition">
                                         </div>
 
                                         <div>
-                                            <label class="block text-sm font-semibold text-gray-700 mb-1">Address</label>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-1">{{ app()->getLocale() == 'en' ? 'Address' : 'អាសយដ្ឋាន' }}</label>
                                             <textarea name="customer_address" required rows="3"
                                                 class="w-full border border-gray-300 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-[#4DA358] transition"></textarea>
                                         </div>
@@ -187,31 +200,31 @@
 
                                 <!-- Product Details -->
                                 <div class="relative left-5 border-t border-gray-200 mt-6 pt-4">
-                                    <h3 class="font-semibold text-xl text-[#4DA358] mb-3">Product Details</h3>
+                                    <h3 class="font-semibold text-xl text-[#4DA358] mb-3">{{ app()->getLocale() == 'en' ? 'Product Details' : 'ព័ត៌មានលម្អិតពីផលិតផល' }}</h3>
 
                                     <div class="space-y-1 text-gray-700 text-sm md:text-base">
-                                        <p><strong class="text-[#324A0A]">Name:</strong> <span
+                                        <p><strong class="text-[#324A0A]">{{ app()->getLocale() == 'en' ? 'Name' : 'ឈ្មោះ' }}:</strong> <span
                                                 x-text="selectedProduct.name"></span></p>
-                                        <p><strong class="text-[#324A0A]">Type:</strong> <span
+                                        <p><strong class="text-[#324A0A]">{{ app()->getLocale() == 'en' ? 'Type' : 'ប្រភេទ' }}:</strong> <span
                                                 x-text="selectedProduct.type"></span></p>
-                                        <p><strong class="text-[#324A0A]">Capacity:</strong> <span
+                                        <p><strong class="text-[#324A0A]">{{ app()->getLocale() == 'en' ? 'Package Size' : 'ទំហំបាវ' }}:</strong> <span
                                                 x-text="selectedProduct.capacity"></span></p>
-                                        <p><strong class="text-[#324A0A]">Price:</strong> $<span
-                                                x-text="(Number(selectedProduct.price) || 0).toFixed(2)"></span></p>
+                                        <p><strong class="text-[#324A0A]">{{ app()->getLocale() == 'en' ? 'Price' : 'តម្លៃ' }}:</strong> {{ app()->getLocale() == 'en' ? '$' : '' }}<span
+                                                x-text="(Number(selectedProduct.price) || 0).toFixed(2)"></span>{{ app()->getLocale() == 'en' ? '' : 'ដុល្លារ' }}</p>
                                     </div>
 
                                     <div class="mt-4 flex items-center gap-3">
-                                        <label class="font-semibold text-[#324A0A]">Quantity:</label>
+                                        <label class="font-semibold text-[#324A0A]">{{ app()->getLocale() == 'en' ? 'Quantity' : 'ចំនួន' }}:</label>
                                         <input type="number" x-model.number="quantity" min="1"
                                             class="w-24 border border-gray-300 rounded-lg px-2 py-1 text-center focus:ring-2 focus:ring-[#DDCC81] shadow-sm transition">
                                     </div>
 
                                     <p class="mt-3 font-bold text-[#B91C1C] text-lg">
-                                        Total: $
+                                        {{ app()->getLocale() == 'en' ? 'Total' : 'សរុប' }}: {{ app()->getLocale() == 'en' ? '$' : '' }}
                                         <span
                                             x-text="((Number(selectedProduct.price)||0) * (quantity||1))
                                             .toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })">
-                                        </span>
+                                        </span>{{ app()->getLocale() == 'en' ? '' : 'ដុល្លារ' }}
                                     </p>
                                 </div>
 
@@ -256,7 +269,7 @@
     });
 "
 class="flex justify-center relative py-6 mx-auto items-center w-[80%] h-[45px] bg-gradient-to-r from-[#DDCC81] to-[#B8A34E] text-[#324A0A] font-bold rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-200">
-    Confirm Checkout
+    {{ app()->getLocale() == 'en' ? 'Confirm Checkout' : 'បញ្ជាក់ការទូទាត់ប្រាក់' }}
 </button>
 
                             </form>
@@ -285,7 +298,8 @@ class="flex justify-center relative py-6 mx-auto items-center w-[80%] h-[45px] b
                         <div
                             class="mb-10 sm:mb-14 md:mb-16 relative top-[-20px] sm:top-[-30px] flex flex-col items-center gap-y-10">
                             <h1 class="text-[#D6B157] font-bold text-2xl sm:text-3xl md:text-4xl drop-shadow-lg" data-aos="fade-right" data-aos-duration="1500">
-                                Awards Winning
+                                
+                                {{ app()->getLocale() == 'en' ? 'Awards Winning' : 'ពានរង្វាន់' }}
                             </h1>
 
                             <!-- Responsive grid layout -->
@@ -304,7 +318,8 @@ class="flex justify-center relative py-6 mx-auto items-center w-[80%] h-[45px] b
                         <div class="relative flex flex-col items-center text-center gap-y-10">
                             <!-- Title -->
                             <h1 class="text-[#D6B157] font-bold text-2xl sm:text-3xl md:text-4xl drop-shadow-lg" data-aos="fade-right" data-aos-duration="1500">
-                                Credibility Certificates
+                                
+                                 {{ app()->getLocale() == 'en' ? 'Credibility Certificates' : 'វិញ្ញាណបណ្ណបត្របញ្ជាក់អំពីគុណភាព' }}
                             </h1>
 
                             <!-- Responsive Images Grid -->
@@ -329,7 +344,9 @@ class="flex justify-center relative py-6 mx-auto items-center w-[80%] h-[45px] b
         class="relative bg-[#4DA358] w-full h-[500px] flex flex-col items-center justify-between">
         <!-- Title -->
         <div class="flex justify-center mb-8 sm:mb-10">
-            <h1 class="relative top-[30px] text-white text-center text-2xl sm:text-3xl md:text-4xl font-bold" data-aos="fade-right" data-aos-duration="1500">Why Choose Our Products?</h1>
+            <h1 class="relative top-[30px] text-white text-center text-2xl sm:text-3xl md:text-4xl font-bold" data-aos="fade-right" data-aos-duration="1500">
+                 {{ app()->getLocale() == 'en' ? 'Why Choose Our Products?' : 'លក្ខណៈពិសេសរបស់ផលិតផលអង្ករ' }}
+            </h1>
         </div>
 
         <!-- Certificate Icons -->
@@ -338,24 +355,24 @@ class="flex justify-center relative py-6 mx-auto items-center w-[80%] h-[45px] b
                 class="grid grid-cols-2 sm:grid-cols-4 gap-10 sm:gap-8 px-6 sm:px-10 lg:px-20 w-full max-w-6xl relative top-[40px]">
                 <!-- Item 1 -->
                 <div class="flex flex-col items-center text-center">
-                    <img src="{{ asset('frontend/assets/certificate/6.png') }}" alt="20 Years on the Market"
+                    <img src="{{ app()->getLocale() == 'en' ? asset('frontend/assets/certificate/6.png') : asset('assets/logo/why-1-km.svg')}}" alt="20 Years on the Market"
                         class="w-[120px] sm:w-[80px] md:w-[130px] lg:w-[220px] h-auto object-contain transition-transform duration-300 hover:scale-105">
                     {{-- <p class="text-white text-sm mt-3 sm:text-base font-medium">20 Years Experience</p> --}}
                 </div>
                 <div class="flex flex-col items-center text-center">
-                    <img src="{{ asset('frontend/assets/certificate/7.png') }}" alt="Affordable Price"
+                    <img src="{{ app()->getLocale() == 'en' ?  asset('frontend/assets/certificate/7.png') : asset('assets/logo/why-2-km.svg') }}" alt="Affordable Price"
                         class="w-[120px] sm:w-120] md:w-[130px] lg:w-[220px] object-contain transition-transform duration-300 hover:scale-105">
                     {{-- <p class="text-white text-sm mt-3 sm:text-base font-medium">Affordable Price</p> --}}
                 </div>
                 <div class="flex flex-col items-center text-center">
-                    <img src="{{ asset('frontend/assets/certificate/4.png') }}" alt="Free Delivery"
+                    <img src="{{ app()->getLocale() == 'en' ? asset('assets/logo/why-3-en.svg') : asset('assets/logo/why-3-km.svg') }}" alt="Free Delivery"
                         class="w-[120px] sm:w-[80px] md:w-[130px] lg:w-[220px] object-contain transition-transform duration-300 hover:scale-105">
                     {{-- <p class="text-white text-sm mt-3 sm:text-base font-medium">Free Delivery</p> --}}
                 </div>
 
                 <!-- Item 2 -->
                 <div class="flex flex-col items-center text-center">
-                    <img src="{{ asset('frontend/assets/certificate/5.png') }}" alt="Home Grown Rice"
+                    <img src="{{ app()->getLocale() == 'en' ? asset('frontend/assets/certificate/5.png') : asset('assets/logo/why-4-km.svg') }}" alt="Home Grown Rice"
                         class="w-[120px] sm:w-[80px] md:w-[130px] lg:w-[220px] object-contain transition-transform duration-300 hover:scale-105">
                     {{-- <p class="text-white text-sm mt-3 sm:text-base font-medium">Home Grown Rice</p> --}}
                 </div>
@@ -367,7 +384,7 @@ class="flex justify-center relative py-6 mx-auto items-center w-[80%] h-[45px] b
             <div
             class="relative top-[30px] md:top-[45px] sm:top-[40px] xl:top-[50px] lg:to-[50px] mt-10 sm:mt-12 md:mt-14">
             <button class="cursor-pointer focus:outline-none hover:scale-105 transition-transform" id="btn-buy-now">
-                <img src="{{ asset('frontend/assets/certificate/8.png') }}" alt="Buy Now Button"
+                <img src="{{ app()->getLocale() == 'en' ? asset('frontend/assets/certificate/8.png') : asset('assets/logo/btn-buy-km.svg') }}" alt="Buy Now Button"
                     class="w-[220px] sm:w-[280px] md:w-[340px] lg:w-[380px] h-auto object-contain">
             </button>
         </div>

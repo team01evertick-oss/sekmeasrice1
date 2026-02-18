@@ -10,16 +10,19 @@
      {{-- Section: Input Information --}}
         <section class="relative top-0 md:-top-6 lg:top-52 font-normal text-[14px] flex justify-center px-4" id="enquiry-form">
             <div class="">
-                <form action="" class="space-y-2">
+               <form action="" class="space-y-2" x-data="productSelector()" @submit.prevent="submitForm()" id="myForm">
+                    @csrf
                     <div class="flex flex-col md:flex-row justify-center space-x-0 md:space-x-8">
                         <div class="space-y-2">
-                            <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Enquiry Form</h2>
-                            <input type="text" placeholder="Name" name="name"
+                            <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">
+                                {{ app()->getLocale() == 'en' ? 'Enquiry Form' : 'ទម្រង់បែបបទបំពេញព័ត៌មាន' }}
+                            </h2>
+                            <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Name' : 'ឈ្មោះ' }}" name="name" required
                                 class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
-                            <input type="text" placeholder="Company Name" name="company_name"
+                            <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Company Name' : 'ក្រុមហ៊ុន' }}" name="company_name" required
                                 class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
                             <div class="relative custom-select-container">
-                                <input id="customer-country" list="country-list" name="country" placeholder="Country"
+                                <input id="customer-country" list="country-list" name="country" placeholder="{{ app()->getLocale() == 'en' ? 'Country' : 'ប្រទេស' }}"
                                     required
                                     class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400">
                                 <datalist id="country-list" name="country" required
@@ -214,6 +217,7 @@
                                     <option value="Yemen">Yemen</option>
                                     <option value="Zambia">Zambia</option>
                                     <option value="Zimbabwe">Zimbabwe</option>
+                                   
                                 </datalist>
                                 <span class="absolute right-6 top-1/2 -translate-y-1/2">
                                     <svg width="12" height="13" viewBox="0 0 12 13" fill="none">
@@ -223,12 +227,12 @@
                                     </svg>
                                 </span>
                             </div>
-                            <input type="email" placeholder="Email" name="email"
+                            <input type="email" placeholder="{{ app()->getLocale() == 'en' ? 'Email' : 'អ៊ីម៉ែល ' }}" name="email" required
                                 class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
-                            <div class="flex md:flex-row justify-center space-x-2">
+                            <div class="flex md:flex-row items-center space-x-2 ml-2">
                                 <select id="country_code" name="country_code"
-                                    class="form-select px-4 w-[50%] md:w-[30%] rounded-md bg-[#FFF9E6] h-[55px] text-gray-700 placeholder-gray-600" required>
-                                    <option value="" >Country Code</option>
+                                    class="form-select w-[50%] px-4 md:w-[28%] rounded-md bg-[#FFF9E6] h-[55px] text-gray-700 placeholder-gray-600" required>
+                                    <option value="">{{ app()->getLocale() == 'en' ? 'Country Code' : 'លេខកូដប្រទេស' }}</option>
                                     <option value="+93">Afghanistan (+93)</option>
                                     <option value="+355">Albania (+355)</option>
                                     <option value="+213">Algeria (+213)</option>
@@ -340,41 +344,36 @@
                                     <option value="+998">Uzbekistan (+998)</option>
                                     <option value="+84">Vietnam (+84)</option>
                                     <option value="+263">Zimbabwe (+263)</option>
-
                                 </select>
-                                <input type="text" placeholder="Phone Number" name="phone"
-                                    class="w-full lg:w-[65%] h-[55px] px-5 rounded-md text-gray-700 placeholder-gray-600  bg-[#FFF9E6] focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                                <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Phone Number' : ' លេខទូរស័ព្ទ' }}" name="phone" required
+                                    class="w-full lg:w-[68%] h-[55px] px-5 rounded-md text-gray-700 placeholder-gray-600  bg-[#FFF9E6] focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Product Enquiry</h2>
+                            <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">{{ app()->getLocale() == 'en' ? 'Product Enquiry' : 'ផលិតផល' }}</h2>
                             <!-- Product Multi Select -->
-                            <div x-data="productSelector()" x-ref="productSelector" class="relative w-full lg:w-[99%]">
+                            <div class="relative w-full lg:w-[99%]">
 
                                 <!-- Dropdown Button -->
-                                <div @click="open = !open" class="bg-[#FFF9E6] px-3 py-2 h-auto  min-h-[55px] rounded-md cursor-pointer border border-gray-300
+                                <div @click="open = !open" class="bg-[#FFF9E6] px-3 py-2 h-auto  min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
                                     flex flex-wrap items-center gap-2 justify-between">
 
                                     <!-- Tags or Placeholder -->
                                     <div class="flex flex-wrap items-center gap-1 flex-1">
-                                        <template x-if="selected.length === 0">
-                                            <span class="text-gray-500" style="margin-left: 10px;">Products</span>
+                                        <template x-if="products.length === 0">
+                                            <span class="text-gray-500 ml-2">
+                                                {{ app()->getLocale() == 'en' ? 'Products' : 'ផលិតផល' }}
+                                            </span>
                                         </template>
 
-                                        <template x-for="(item, index) in selected" :key="index">
-                                            <div
-                                                class="flex items-center bg-[#DDCC81] text-[#324A0A] px-2 py-1 rounded-full text-sm">
-                                                <span x-text="item"></span>
-                                                <button type="button" class="ml-1" @click.stop="
-                                                                const parts = item.split('-');
-                                                                removeProduct(parts[0], parts[1]);
-                                                                selected.splice(index, 1);
-                                                            ">
-                                                    <svg class="w-3 h-3 text-[#324A0A]" fill="none" stroke="currentColor"
-                                                        stroke-width="2" viewBox="0 0 24 24">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="M6 18L18 6M6 6l12 12" />
-                                                    </svg>
+                                         <template x-for="(product, index) in products" :key="index">
+                                            <div class="flex items-center bg-[#DDCC81] text-[#324A0A] px-2 py-1 rounded-full text-sm">
+                                                <span x-text="product.name + ' - ' + product.capacity + 'KG'"></span>
+
+                                                <button type="button"
+                                                    class="ml-2"
+                                                    @click.stop="products.splice(index,1)">
+                                                    ✕
                                                 </button>
                                             </div>
                                         </template>
@@ -393,31 +392,10 @@
                                     class="absolute z-50 bg-white border rounded-md w-full mt-1 max-h-48 overflow-y-auto shadow">
 
                                     @foreach($showExport as $item)
-                                        <label class="text-[#324A0A] flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100">
-                                            <input type="checkbox" value="{{ $item->name }}-{{ $item->capacity }}KG-{{ $item->price }}$" 
-                                            @change="
-                                                if ($event.target.checked) {
-
-                                                    selected.push($event.target.value);
-
-                                                    productData[$event.target.value] = {
-                                                        name: '{{ $item->name }}',
-                                                        capacity: '{{ $item->capacity }}KG',
-                                                        price: {{ $item->price }}
-                                                    };
-
-                                                } else {
-
-                                                    selected = selected.filter(v => v !== $event.target.value);
-
-                                                    delete productData[$event.target.value];
-                                                }
-
-                                                calculateTotal();
-                                                "
-
-                                            :checked="selected.includes('{{ $item->name }}-{{ $item->capacity }}')">
-                                            <span>{{ $item->name }}-{{ $item->capacity }}KG-{{ $item->price }}$</span>
+                                        <label class="text-[#4DA358] flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100">
+                                            <input type="checkbox"
+                                                @change="toggleProduct('{{ $item->name }}', '{{ $item->capacity }}')">
+                                            <span>{{ $item->name }} - {{ $item->capacity }}KG</span>
                                         </label>
                                     @endforeach
                                 </div>
@@ -425,17 +403,59 @@
                                 <!-- Hidden input to submit -->
                                 <input type="hidden" class="form-input" id="input-name" name="products"
                                     :value="selected.join(', ')">
+                                <input type="hidden" name="products_data"
+                                    :value="JSON.stringify(products)">
+                                <div class="mt-4 space-y-3">
+
+                                    <!-- Show only if products exist -->
+                                    <div class="bg-[#FFF9E6] p-4 cursor-pointer rounded-md"
+                                        @click="if(products.length === 0){ alert('Please select product first') }">
+
+                                        <h3 class="bg-[#FFF9E6] px-2 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                                            {{ app()->getLocale() == 'en' ? 'Quantity (KG)' : 'បរិមាណ (គីឡូ)' }}
+                                        </h3>
+                                    </div>
+
+                                    <template x-for="(product, index) in products" :key="index">
+                                        <div class="bg-[#FFF9E6] p-3 rounded-md border">
+
+                                            <div class="flex justify-between items-center">
+                                                <span class="font-semibold text-[#324A0A]">
+                                                    <span x-text="product.name"></span>
+                                                    (<span x-text="product.capacity"></span> KG)
+                                                </span>
+                                            </div>
+
+                                            <div class="flex items-center gap-3 mt-2">
+                                                <button type="button"
+                                                    @click="decrease(index)"
+                                                    class="bg-[#decd81] px-3 py-1 rounded">-</button>
+
+                                                <span x-text="product.quantity"
+                                                    class="font-bold text-lg text-[#324A0A]"></span>
+
+                                                <button type="button"
+                                                    @click="increase(index)"
+                                                    class="bg-[#decd81] px-3 py-1 rounded">+</button>
+                                            </div>
+
+                                        </div>
+                                    </template>
+
+                                </div>
+
 
                             </div>
-                            <input type="text" id="input-price" placeholder="Price" name="price"
-                                class="form-input w-full lg:w-[99%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"readonly/>
+                            {{-- <input type="number" id="input-quantity" placeholder="{{ app()->getLocale() == 'en' ? 'Quantity (KG)' : 'បរិមាណ (គីឡូ)' }}" name="input-quantity" min="1"
+                                class="form-input h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"/> --}}
+                           
                             <div x-data="{
                                     open: false,
                                     items: ['Plastic Bag', 'Laminated PP', 'BOPP', 'Normal PP'],
                                     selected: []
                                 }" class="relative w-full">
 
-                                <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Bag Type</h2>
+                                <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">{{ app()->getLocale() == 'en' ? 'Bag Type' : 'ប្រភេទវេចខ្ចប់ ' }}</h2>
 
                                 <!-- Dropdown Button -->
                                 <div @click="open = !open"
@@ -443,11 +463,11 @@
                                             flex flex-wrap items-center gap-2 justify-between" >
 
                                         <!-- Tags or Placeholder -->
-                                        <div class="flex flex-wrap items-center gap-1 flex-1 text-[#324A0A]">
+                                        <div class="flex flex-wrap items-center gap-1 flex-1">
 
                                             <!-- Placeholder -->
                                             <template x-if="selected.length === 0">
-                                                <span class="text-gray-500">Select Bag Types</span>
+                                                <span class="text-gray-500">{{ app()->getLocale() == 'en' ? 'Select Bag Types' : 'ជ្រើសរើសប្រភេទវេចខ្ចប់ ' }}</span>
                                             </template>
 
                                             <!-- Selected Tags -->
@@ -482,7 +502,7 @@
                                     class="absolute z-50 bg-white border rounded-md w-full mt-1 max-h-48 overflow-y-auto shadow">
 
                                     <template x-for="(item, index) in items" :key="index">
-                                        <label class="text-[#324A0A] flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100">
+                                        <label class="text-[#4DA358] flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100">
 
                                             <!-- Checkbox -->
                                             <input type="checkbox"
@@ -509,14 +529,14 @@
 
                         </div>
                     </div>
-                    <div class="space-y-2">
-                        <input type="text" placeholder="Address" name="address"
+                    <div class="space-y-2 ml-1">
+                        <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Address' : 'អាសយដ្ឋាន ' }}" name="address" required
                             class="w-full lg:w-[99%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
-                        <textarea name="message" id="message" rows="4" placeholder="Message" class="py-2 w-full lg:w-[99%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+                        <textarea name="message" id="message" rows="4" placeholder="{{ app()->getLocale() == 'en' ? 'Message' : 'សារ' }}" required class="py-2 w-full lg:w-[99%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
                     </div>
-                    <div class="flex justify-center items-center">    
-                        <button class="cursor-pointer">
-                             <img src="{{ asset('assets/logo/btn-submit.png') }}" alt="" class="w-64 h-40 object-contain">
+                    <div class="flex justify-center items-center md:mt-0 -mt-6">    
+                        <button type="submit" class="cursor-pointer" onclick="submitAndRefresh()" >
+                             <img src="{{ app()->getLocale() == 'en' ? asset('assets/logo/btn-submit.png') : asset('assets/logo/btn-submit-km.svg') }}" alt="" class="w-64 h-40 object-contain">
                         </button>
                     </div>
                 </form>
@@ -525,22 +545,86 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
 <script>
 function productSelector() {
     return {
         open: false,
-        selected: [],
+        products: [],
 
-        removeProduct(value) {
+        toggleProduct(name, capacity) {
+            capacity = parseInt(capacity)
 
-            // remove from selected
-            this.selected = this.selected.filter(v => v !== value);
+            let existing = this.products.find(p => p.name === name)
 
-            // remove from productData
-            delete productData[value];
+            if (!existing) {
+                this.products.push({
+                    name: name,
+                    capacity: capacity,
+                    quantity: capacity // start with its own capacity
+                })
+            } else {
+                this.products = this.products.filter(p => p.name !== name)
+            }
+        },
 
-            calculateTotal();
+        increase(index) {
+            let product = this.products[index]
+            product.quantity += product.capacity
+        },
+
+        decrease(index) {
+            let product = this.products[index]
+            if (product.quantity > product.capacity) {
+                product.quantity -= product.capacity
+            }
+        },
+
+        submitForm() {
+
+            if(this.products.length === 0){
+                alert("Please select at least one product")
+                return
+            }
+
+            let name = document.querySelector('[name="name"]').value
+            let company = document.querySelector('[name="company_name"]').value
+            let email = document.querySelector('[name="email"]').value
+            let address = document.querySelector('[name="address"]').value
+            let country = document.querySelector('[name="country"]').value
+            let countryCode = document.querySelector('[name="country_code"]').value
+            let phone = document.querySelector('[name="phone"]').value
+            let bagTypes = document.querySelector('[name="bag_types"]').value
+            let userMessage = document.querySelector('[name="message"]').value
+
+            let productText = ""
+
+            this.products.forEach(p => {
+                productText += `${p.name} (${p.capacity}KG) - Qty: ${p.quantity}\n`
+            })
+
+            let message =
+`New Enquiry:
+
+Name: ${name}
+Company: ${company}
+Email: ${email}
+Phone: ${countryCode} ${phone}
+Country: ${country}
+Address: ${address}
+Bag Types: ${bagTypes}
+
+Customer Message:
+${userMessage}
+
+Products:
+${productText}`
+
+            let encoded = encodeURIComponent(message)
+
+            // Replace with your Telegram username or bot link
+            let telegramUrl = `https://t.me/+85587686768?text=${encoded}`
+
+            window.open(telegramUrl, "_blank")
         }
     }
 }
@@ -558,96 +642,21 @@ function productSelector() {
 </script>
 
 <script>
-let productData = {}; // Stores all selected products
-</script>
-<script>
-function formatNumber(number) {
-    return number.toLocaleString("en-US", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
-}
-</script>
-<script>
-function calculateTotal() {
+document.getElementById("myForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-    let total = 0;
-
-    for (let key in productData) {
-        total += parseFloat(productData[key].price);
-    }
-
-    document.getElementById("input-price").value =
-        total.toLocaleString("en-US", {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
-}
-
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    document.querySelector("form").addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const form = this;
-
-        const name = form.name.value;
-        const company = form.company_name.value;
-        const country = form.country.value;
-        const email = form.email.value;
-        const countryCode = form.country_code.value;
-        const phone = form.phone.value;
-        const address = form.address.value;
-        const bagTypes = form.bag_types.value;
-        const messageText = form.message.value;
-
-        let totalPrice = 0;
-        let productList = [];
-
-        for (let key in productData) {
-            const p = productData[key];
-
-            totalPrice += p.price;
-
-            productList.push(
-                `${p.name} (${p.capacity}) - $${formatNumber(p.price)}`
-            );
+    fetch(this.action, {
+        method: "POST",
+        body: new FormData(this),
+        headers: {
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'
         }
-
-        const formattedTotal = formatNumber(totalPrice);
-
-        let message = `
-📦 *New Export Enquiry*
-
-👤 Name: ${name}
-🏢 Company: ${company}
-🌍 Country: ${country}
-📧 Email: ${email}
-📞 Phone: ${countryCode} ${phone}
-📍 Address: ${address}
-
-🛍 Bag Type: ${bagTypes}
-
-📦 Products:
-${productList.join("\n")}
-
-💰 Total Price: $${formattedTotal}
-
-📝 Message:
-${messageText}
-`;
-
-        const telegramURL =
-            "https://t.me/+85587686768?text=" + encodeURIComponent(message);
-
-        window.open(telegramURL, "_blank");
+    })
+    .then(response => {
+        location.reload();
     });
-
 });
 </script>
-
 
 @endsection
 

@@ -7,14 +7,17 @@
 
             <!-- Column 1: About -->
             <div class="flex flex-col gap-3">
-                <h4 class="font-bold text-sm text-[#499D56]">Lor Eak Heng Sek Meas Rice Co., Ltd</h4>
+                <h4 class="font-bold text-sm text-[#499D56]"> {{ app()->getLocale() == 'en' ? 'Lor Eak Heng Sek Meas Rice Co., Ltd' : 'ក្រុមហ៊ុន ឡអៀកហេងសេកមាសរាយស៍ ឯ.ក' }}</h4>
                 <p class="text-sm leading-relaxed">
-                    is one of the leading rice mill production factories and rice exporters in Cambodia. We have
-                    operated this business since 1994, from a small rice mill with a traditional rice machine to a
-                    state-of-the-art rice production system producing 20 tons per hour and exporting to 16 countries.
+                     {{ app()->getLocale() == 'en' ? 'is one of the leading rice mill production factories
+                        and rice exporters in Cambodia. We have operated this business since 1994, from a small
+                        rice mill with a traditional rice machine to a state-of-the-art rice production system.
+                        This technology enables exports to over 16 countries globally.' 
+                            : 'គឺជារោងចក្រកិនស្រូវ និងជាអ្នកនាំចេញអង្ករឈានមុខគេមួយនៅក្នុងប្រទេសកម្ពុជា។ យើងខ្ញុំបានដំណើរការអាជីវកម្មនេះតាំងពីឆ្នាំ 1994 ចាប់ពីរោងម៉ាស៊ីនកិនស្រូវតូចមួយដែលមានម៉ាស៊ីនកិនស្រូវបែបប្រពៃណី រហូតដល់ប្រព័ន្ធគ្រឿងចក្រកិនស្រូវទំនើបៗ។ ប្រព័ន្ធគ្រឿងចក្រនេះជម្រុញឱ្យមានការនាំចេញទៅកាន់ប្រទេសជាង 16 នៅទូទាំងពិភពលោក។' 
+                        }}
                 </p>
 
-                <h5 class="font-bold mt-5 text-sm">Follow Us</h5>
+                <h5 class="font-bold mt-5 text-sm">{{ app()->getLocale() == 'en' ? 'Follow Us' : 'បណ្តាញសង្គម ' }}</h5>
                 <div class="flex items-center gap-4 mt-2">
                     <!-- Social Icons -->
                     <a href="https://www.facebook.com/sekmeasrice" class="hover:scale-110 transition-transform" target="_blank">
@@ -31,20 +34,21 @@
 
             <!-- Column 2: Information -->
             <div class="sm:pl-5">
-                <h4 class="font-bold text-sm text-[#499D56] mb-2">Information</h4>
+                <h4 class="font-bold text-sm text-[#499D56] mb-2">{{ app()->getLocale() == 'en' ? 'Information' : 'ព័ត៌មាន' }}</h4>
                 <ul class="text-sm space-y-2">
-                    <li><a href="{{ route('home') }}" class="hover:underline">Home</a></li>
-                    <li><a href="{{ route('export') }}" class="hover:underline">Export</a></li>
-                    <li><a href="{{ route('about') }}" class="hover:underline">About Us</a></li>
-                    <li><a href="{{ route('news') }}" class="hover:underline">Latest News</a></li>
-                    <li><a href="{{ route('career') }}" class="hover:underline">Career</a></li>
-                    <li><a href="{{ route('contact') }}" class="hover:underline">Contact Us</a></li>
+                    <li><a href="{{ route('home') }}" class="hover:underline"> {{ app()->getLocale() == 'en' ? 'Home' : 'ទំព័រដើម' }}</a></li>
+                    <li><a href="{{ route('export') }}" class="hover:underline">{{ app()->getLocale() == 'en' ? 'Export' : 'ការនាំចេញ' }}</a></li>
+                    <li><a href="{{ route('about') }}" class="hover:underline">{{ app()->getLocale() == 'en' ? 'About Us' : 'អំពីក្រុមហ៊ុន' }}</a></li>
+                    <li><a href="{{ route('news') }}" class="hover:underline"> {{ app()->getLocale() == 'en' ? 'Latest News' : 'ព្រឹត្តិការណ៍ថ្មីៗ' }}</a></li>
+                    <li><a href="{{ route('news') }}#activities" class="hover:underline"> {{ app()->getLocale() == 'en' ? 'Activity' : 'សកម្មភាព' }}</a></li>
+                    <li><a href="{{ route('career') }}" class="hover:underline">{{ app()->getLocale() == 'en' ? 'Career' : 'ឱកាសការងារ' }}</a></li>
+                    <li><a href="{{ route('contact') }}" class="hover:underline">{{ app()->getLocale() == 'en' ? 'Contact Us' : 'ការទំនាក់ទំនង' }}</a></li>
                 </ul>
             </div>
 
             <!-- Column 3: Contact -->
             <div class="grid grid-cols-1 gap-2">
-                <h4 class="font-bold text-sm mb-1 text-[#499D56]">Lor Eak Heng Sek Meas Rice Co., Ltd</h4>
+                <h4 class="font-bold text-sm mb-1 text-[#499D56]">{{ app()->getLocale() == 'en' ? 'Lor Eak Heng Sek Meas Rice Co., Ltd' : 'ក្រុមហ៊ុន ឡអៀកហេងសេកមាសរាយស៍ ឯ.ក' }}</h4>
 
                 <!-- Factory Location -->
                 <div class="text-sm leading-relaxed flex items-start gap-2">
@@ -56,8 +60,8 @@
                                 d="M12 12.75a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5z" />
                         </svg>
                         <div>
-                            <h1 class="font-semibold">Factory Address: </h1> <br>
-                            <span class="relative -top-4">National Road 6, Skun Village, Sotep Commune, Cheung Prey District, Kompong Cham Province.</span>
+                            <h1 class="font-semibold">{{ app()->getLocale() == 'en' ? 'Factory Address' : 'អាស័យដ្ឋានរោងចក្រ' }}: </h1> <br>
+                            <span class="relative -top-4"> {{ app()->getLocale() == 'en' ? 'National Road 6, Skun Village, Sotep Commune, Cheung Prey District, Kompong Cham Province.' : 'ផ្លូវជាតិលេខ6, ភូមិស្គន់ ឃុំសូទិព ស្រុកជើងព្រៃ ខេត្តកំពង់ចាម ប្រទេសកម្ពុជា។' }}</span>
                         </div>
                     </div>
 
@@ -69,9 +73,8 @@
                             d="M2.25 12l8.954-8.955c.44-.44 1.152-.44 1.592 0L21.75 12M4.5 9.75v9.75A1.5 1.5 0 0 0 6 21h12a1.5 1.5 0 0 0 1.5-1.5V9.75" />
                     </svg>
                     <span>
-                        <strong>Office Address:</strong> #70, St.70,<br>
-                        Sangkat Srah Chrok, Khan Daun Penh,<br>
-                        Phnom Penh, Cambodia
+                        <strong>{{ app()->getLocale() == 'en' ? 'Office Address' : 'អាស័យដ្ឋានការិយាល័យ' }}:</strong>
+                        {!! app()->getLocale() == 'en' ? '#70, St.70,<br>Sangkat Srah Chrok, Khan Daun Penh, <br> Phnom Penh, Cambodia.' : 'ផ្ទះលេខ 70, ផ្លូវលេខ 70, សង្កាត់ស្រះចក, ខណ្ឌដូនពេញ, រាជធានីភ្នំពេញ ប្រទេសកម្ពុជា។ ' !!}
                     </span>
                 </p>
 
@@ -82,7 +85,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M2.25 3.75l5.25 1.5L9 8.25l-3 3a15.75 15.75 0 0 0 6.75 6.75l3-3 3 1.5 1.5 5.25a.75.75 0 0 1-.75.75A18.75 18.75 0 0 1 2.25 4.5a.75.75 0 0 1 .75-.75z" />
                     </svg>
-                    <strong>Tel:</strong> 855 (0) 87 68 67 68
+                    <strong>{{ app()->getLocale() == 'en' ? 'Tel' : 'លេខទូរស័ព្ទ ' }}:</strong> 855 (0) 87 68 67 68
                 </p>
 
                 <!-- Email -->
@@ -108,11 +111,11 @@
 
             <!-- Column 4: Working Time -->
             <div class="relative xl:top-0 top-[-30px]">
-                <h4 class="font-bold text-sm text-[#499D56] mb-2">Working Time</h4>
-                <p class="text-sm mb-1">Monday - Friday</p>
-                <p class="text-sm mb-4">8am – 5pm</p>
+                <h4 class="font-bold text-sm text-[#499D56] mb-2">{{ app()->getLocale() == 'en' ? 'Working Time' : 'ម៉ោងធ្វើការ' }}</h4>
+                <p class="text-sm mb-1"> {{ app()->getLocale() == 'en' ? 'Monday - Friday' : 'ច័ន្ទ ដល់ សុក្រ' }}</p>
+                <p class="text-sm mb-4">{{ app()->getLocale() == 'en' ? '8am – 5pm' : '8 ព្រឹក ដល់ 5 ល្ងាច' }}</p>
 
-                <h4 class="font-bold text-sm text-[#499D56] mb-2">Map</h4>
+                <h4 class="font-bold text-sm text-[#499D56] mb-2">{{ app()->getLocale() == 'en' ? 'Map' : 'ទីតាំង' }}</h4>
                 <div class="w-full h-64 bg-gray-300 rounded-md overflow-hidden">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.089502260989!2d104.9132125!3d11.5854499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31095160523ca91b%3A0xd9c51e2d57b148ad!2sLor%20Eak%20Heng%20Sek%20Meas%20Rice%20Co.%2CLtd!5e0!3m2!1sen!2skh!4v1698325030000!5m2!1sen!2skh"
@@ -139,7 +142,7 @@
                 <!-- Overlay Text -->
                 <div
                     class="relative z-10 top-[-40px] xl:top-[-40px] sm:top-[-40px] text-center text-[#1E3E0F] text-xs sm:text-sm md:text-base font-bold">
-                    All rights reserved 2025
+                    {{ app()->getLocale() == 'en' ? 'All rights reserved ©' : 'រក្សាសិទ្ធគ្រប់បែបយ៉ាង' }} 
                 </div>
             </div>
         </div>

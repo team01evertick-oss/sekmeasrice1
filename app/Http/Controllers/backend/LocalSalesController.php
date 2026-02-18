@@ -24,6 +24,12 @@ class LocalSalesController extends Controller
         'price'       => 'required|numeric|min:0',
         'capacity'    => 'required|string|max:255',
         'image_local' => 'required|image|mimes:jpg,jpeg,png,gif,webp|max:20480',
+         'brand_km'        => 'nullable|string|max:255',
+        'name_km'        => 'nullable|string|max:255',
+        'type_km'        => 'nullable|string|max:255',
+        'price_km'       => 'nullable|string|max:255',
+        'capacity_km'    => 'nullable|string|max:255',
+        'image_local_km' => 'nullable|image|mimes:jpg,jpeg,png,gif,webp|max:20480',
     ]);
 
     // Handle file upload image
@@ -40,6 +46,11 @@ class LocalSalesController extends Controller
         'type'        => $request->type,
         'price'       => $request->price,
         'capacity'    => $request->capacity,
+        'brand_km'        => $request->brand_km,
+        'name_km'        => $request->name_km,
+        'type_km'        => $request->type_km,
+        'price_km'       => $request->price_km,
+        'capacity_km'    => $request->capacity_km,
         'image_local' => $image,
     ]);
 
@@ -62,6 +73,11 @@ class LocalSalesController extends Controller
         'update_type'      => 'nullable|string|max:255',
         'update_price'     => 'required|numeric|min:0',
         'update_capacity'  => 'required|string|max:255',
+        'update_brand_km'      => 'nullable|string|max:255',
+        'update_name_km'      => 'nullable|string|max:255',
+        'update_type_km'      => 'nullable|string|max:255',
+        'update_price_km'     => 'nullable|string|max:255',
+        'update_capacity_km'  => 'nullable|string|max:255',
         'update_image_local' => 'nullable|image|mimes:jpg,jpeg,png,gif,webp|max:20480',
         'old_image_local'  => 'nullable|string|max:255',
         ]);
@@ -93,6 +109,11 @@ class LocalSalesController extends Controller
             'type'        => $request->update_type,
             'price'       => $request->update_price,
             'capacity'    => $request->update_capacity,
+            'brand_km'      => $request->update_brand_km,
+            'name_km'        => $request->update_name_km,
+            'type_km'        => $request->update_type_km,
+            'price_km'       => $request->update_price_km,
+            'capacity_km'    => $request->update_capacity_km,
             'image_local' => $image,
             'updated_at'  => now(),
         ]);

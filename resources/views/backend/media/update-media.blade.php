@@ -2,10 +2,10 @@
 @section('content')
 
     @section('site-title')
-        Admin | edit media
+        Admin | Edit
     @endsection
     @section('page-main-title')
-        EDIT MEDIA
+        EDIT LATEST NEWS
     @endsection
 
     <!-- Content wrapper -->
@@ -20,6 +20,7 @@
 
                     <div class="grid grid-cols-2 gap-10">
                         <div>
+                            <h1 class="font-bold text-lg">English</h1>
                             <div class="mb-3">
                                 <label for="update_title" class="form-label text-[#0F4634]">Title</label>
                                 <input type="text" name="update_title" id="update_title" class="form-control"
@@ -30,6 +31,21 @@
                                 <label for="update_description" class="form-label text-[#0F4634]">Description</label>
                                 <textarea name="update_description" class="form-control" cols="50"
                                     rows="9">{{ $row->description }}</textarea>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h1 class="font-bold text-lg">Khmer</h1>
+                            <div class="mb-3">
+                                <label for="update_title" class="form-label text-[#0F4634]">Title</label>
+                                <input type="text" name="update_title_km" id="update_title_km" class="form-control"
+                                    value="{{ $row->title_km }}">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="update_description_km" class="form-label text-[#0F4634]">Description</label>
+                                <textarea name="update_description_km" class="form-control" cols="50"
+                                    rows="9">{{ $row->description_km }}</textarea>
                             </div>
                         </div>
 
@@ -155,4 +171,17 @@
 });
 
     </script>
+    <script>
+document.getElementById('thumbnailFile').addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    if (!file || !file.type.startsWith("image/")) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        document.getElementById('thumbnailPreview').src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+});
+</script>
+
 @endsection

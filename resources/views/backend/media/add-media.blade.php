@@ -22,6 +22,7 @@
                         <div class="card-body grid grid-cols-1 md:grid-cols-2 gap-10">
 
                             <div>
+                                <h1 class="font-bold text-lg">English</h1>
                                 <div class="row col-12">
                                     <div class="mb-3 col-12">
                                         <label for="formFile" class="form-label text-[#0F4634]">Title</label>
@@ -32,6 +33,21 @@
                                     <div class="mb-3 col-12">
                                         <label for="formFile" class="form-label text-[#0F4634]">Description</label>
                                         <textarea name="description" class="form-control" cols="50" rows="9"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h1 class="font-bold text-lg">Khmer</h1>
+                                <div class="row col-12">
+                                    <div class="mb-3 col-12">
+                                        <label for="formFile" class="form-label text-[#0F4634]">Title</label>
+                                        <input type="text" name="title_km" id="title" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row col-12">
+                                    <div class="mb-3 col-12">
+                                        <label for="formFile" class="form-label text-[#0F4634]">Description</label>
+                                        <textarea name="description_km" class="form-control" cols="50" rows="9"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +97,9 @@
                             </div>
                             </div>
 
-                            <div class="flex gap-3">
+                            
+                        </div>
+                        <div class="flex gap-3">
                                 <a href=""
                                     class="px-6 py-3 border-2 border-[#0F4634] text-[#0F4634] font-semibold rounded-xl hover:bg-[#0F4634] hover:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition duration-200">
                                     Cancel
@@ -90,7 +108,6 @@
                                     class="px-6 py-3 border-2 border-[#0F4634] text-[#0F4634] font-semibold rounded-xl hover:bg-[#0F4634] hover:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition duration-200"
                                     value="Add Media">
                             </div>
-                        </div>
                     </div>
                 </form>
             </div>

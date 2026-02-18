@@ -5,7 +5,7 @@
 @section('white-line')
     <div class="w-24 sm:w-32 md:w-40 lg:w-[154px] h-1 bg-white mt-8 mb-6 mt-5"></div>
 @endsection
-@section('text-title', 'Export')
+@section('text-title', app()->getLocale() == 'en' ? 'Export' : 'ផលិតផលនាំចេញ')
 
 @section('section_content')
 
@@ -15,7 +15,8 @@
             data-aos-duration="1500">
             <h2
                 class="relative top-0 md:-top-14 md:py-0 py-4 text-3xl md:text-5xl font-extrabold text-[#4DA358] mb-6 tracking-wide drop-shadow-lg">
-                For Export
+               
+                {{ app()->getLocale() == 'en' ? ' For Export' : 'ទិសដៅនាំចេញ' }}
             </h2>
         </div>
 
@@ -74,12 +75,18 @@
                                         <img src="{{ asset('frontend/assets/imges/quotation_request.png') }}"
                                             alt="Buy Now Button" class="w-[140px] h-auto">
                                     </button> --}}
-                                    <button class="btn-buy-now mt-3 hover:scale-110 transition-transform"
-                                        data-name="{{ $items->name }}" data-type="{{ $items->type }}"
-                                        data-price="{{ $items->price }}" data-capacity="{{ $items->capacity }}">
+                                   <button type="button"
+                                        class="btn-buy-now mt-3 hover:scale-110 transition-transform"
+                                        @click="$dispatch('add-product', {
+                                            name: '{{ $items->name }}',
+                                            capacity: '{{ $items->capacity }}'
+                                        })">
+
                                         <img src="{{ asset('frontend/assets/imges/quotation_request.png') }}"
-                                            alt="Quotation Request Button" class="w-[140px] h-auto">
+                                            alt="Quotation Request Button"
+                                            class="w-[140px] h-auto">
                                     </button>
+
                                 </div>
                             </div>
                         </div>
@@ -94,7 +101,7 @@
         <section class="relative w-full xl:hidden block">
             <!-- Background Image -->
             <div class="relative w-full h-full">
-                <img src="{{ asset('frontend/assets/imges/international.png') }}" alt="Background Image"
+                <img src="{{ asset('assets/image/bg-national-text.svg') }}" alt="Background Image"
                     class="w-full h-full object-cover">
             </div>
         </section>
@@ -108,38 +115,47 @@
                     class="absolute inset-0 flex flex-col justify-center items-center text-white px-6 overflow-y-auto text-center">
 
                     <!-- Destination Details -->
-                    <div class="relative right-[450px] top-[300px] max-w-4xl space-y-2 mb-10 text-left justify-start items-start"
+                    <div class="relative right-[450px] top-[300px] max-w-xl space-y-2 mb-10 text-left justify-start items-start"
                         data-aos="fade-right" data-aos-duration="1500">
                         <p class="text-[#D6B157] text-[14px] font-semibold">International Destination</p>
 
                         <p>
-                            <strong class="text-[#D6B157] text-[14px] font-semibold">Europe:</strong>
-                            <span class="text-[#1E1E1E] text-[14px]"> Germany, Sweden, France, United Kingdom, Italy, <br>
-                                Switzerland,
-                                Hungary, Lithuania, The Netherlands, Poland, Norway, <br> Reunion Island, etc.</span>
+                            <strong class="text-[#D6B157] text-[14px] font-semibold"> {{ app()->getLocale() == 'en' ? 'Europe:' : 'ទ្វីបអឺរ៉ុប៖' }}</strong>
+                            <span class="text-[#1E1E1E] text-[14px]"> 
+                                 {{ app()->getLocale() == 'en' ? 'Germany, Sweden, France, United Kingdom, Italy, Switzerland, Hungary, Lithuania, The Netherlands, Poland, Norway, Reunion Island, etc.' 
+                                 : 'អាល្លឺម៉ង់ ស៊ុយអែត បារាំង ចក្រភពអង់គ្លេស អ៉ីតាលី ស្វីស ហុងគ្រី លីទុយអានី ហូឡង់ ប៉ូឡូញ ន័រវែស កោះរ៉េអ៊ុយនីញ៉ុង ជាដើម។' }}
+                            </span>
                         </p>
 
                         <p>
-                            <strong class="text-[#D6B157] text-[14px] font-semibold">Asian Market:</strong>
-                            <span class="text-[#1E1E1E] text-[14px]">China, Hong Kong SAR, Singapore, Malaysia, Thailand,
-                                <br> Vietnam,
-                                etc.</span>
+                            <strong class="text-[#D6B157] text-[14px] font-semibold">
+                                 {{ app()->getLocale() == 'en' ? 'Asian Market:' : 'ទ្វីបអាស៊ី៖ ' }}
+                            </strong>
+                            <span class="text-[#1E1E1E] text-[14px]">
+                                 {{ app()->getLocale() == 'en' ? 'China, Hong Kong SAR, Singapore, Malaysia, Thailand, Vietnam, etc.' : 'ចិន ហុងកុង សិង្ហបុរី ម៉ាឡេស៊ី ថៃ វៀតណាម ជាដើម។' }}
+                            </span>
                         </p>
 
                         <p>
-                            <strong class="text-[#D6B157] text-[14px] font-semibold">Oceanian Markets:</strong>
-                            <span class="text-[#1E1E1E] text-[14px]">Australia, New Zealand, Republic of Maldives,
-                                etc.</span><br>
-                            <span class="text-[#1E1E1E] text-[14px]">Middle East: Israel, United Arab Emirates, etc.</span>
+                            <strong class="text-[#D6B157] text-[14px] font-semibold">
+                                 {{ app()->getLocale() == 'en' ? 'Oceanian Markets:' : 'ទ្វីបអូស្ត្រាលី៖ ' }}
+                            </strong>
+                            <span class="text-[#1E1E1E] text-[14px]">
+                                 {{ app()->getLocale() == 'en' ? 'Australia, New Zealand, Republic of Maldives, etc.' : 'អូស្ត្រាលី នូវែលសេឡង់ សាធារណរដ្ឋម៉ាល់ឌីវ ជាដើម។' }}</span><br>
+                            <span class="text-[#1E1E1E] text-[14px]"> {{ app()->getLocale() == 'en' ? 'Middle East: Israel, United Arab Emirates, etc.' : 'តំបន់មជ្ឈិមបូព៌ា៖ អ៉ីស្រាអែល អារ៉ាប់រួម ជាដើម។' }}</span>
                         </p>
 
-                        <p><strong class="text-[#D6B157] text-[14px] font-semibold">Other</strong></p>
-                        <p class="text-[#1E1E1E] text-[14px]">Russian Federation</p>
+                        <p><strong class="text-[#D6B157] text-[14px] font-semibold"> {{ app()->getLocale() == 'en' ? 'Other' : 'ផ្សេងៗ' }}</strong></p>
+                        <p class="text-[#1E1E1E] text-[14px]">
+                             {{ app()->getLocale() == 'en' ? 'Russian Federation' : 'សហព័ន្ធរុស្ស៊ី' }}
+                        </p>
                     </div>
 
                     <!-- Why Partner With Us -->
                     <div class="relative top-64 max-w-6xl mx-auto w-full" data-aos="fade-left" data-aos-duration="1500">
-                        <h2 class="text-3xl font-bold mb-6 text-[#4DA358]">Why Partner With Us?</h2>
+                        <h2 class="text-3xl font-bold mb-6 text-[#4DA358]">
+                             {{ app()->getLocale() == 'en' ? 'Why Partner With Us?' : 'ហេតុអ្វីបានជាត្រូវសហការជាមួយក្រុមហ៊ុនយើងខ្ញុំ?' }}
+                        </h2>
 
                         <div class="relative top-32 text-left">
                             <!-- Icon Block 1 -->
@@ -148,10 +164,13 @@
                                     <div class="flex justify-center">
                                         <img src="{{ asset('assets/image/icon/1.svg') }}" class="mx-auto mb-3" alt="">
                                     </div>
-                                    <h2 class="text-xl font-semibold text-[#324A0A]">Letter of Credit (LC) Expertise</h2>
+                                    <h2 class="text-xl font-semibold text-[#324A0A]">
+                                         {{ app()->getLocale() == 'en' ? 'Letter of Credit (LC) Expertise' : 'មានលិខិតធានាការទូទាត់ (LC)' }}
+                                    </h2>
                                     <span class="text-sm block mt-2 text-[#1E1E1E]">
-                                        With decades of export experience, we handle LC transactions with accuracy
-                                        and efficiency—ensuring smooth documentation, full compliance, and timely shipments.
+                                        {{ app()->getLocale() == 'en' ? 'With decades of export experience, we handle LC transactions with accuracy
+                                        and efficiency—ensuring smooth documentation, full compliance, and timely shipments.' 
+                                        : 'យើងខ្ញុំមានបទពិសោធន៍នាំចេញរាប់ទសវត្សរ៍ដោយមាននូវលិខិតធានាការទូទាត់លើការដោះស្រាយបញ្ហាប្រតិបត្តិការទិញលក់ប្រកបដោយភាពត្រឹមត្រូវ និងប្រសិទ្ធភាព — ធានាបាននូវការរត់ឯកសារដោយរលូន ការអនុលោមពេញលេញ និងការដឹកជញ្ជូនទាន់ពេលវេលា។' }}
                                     </span>
                                 </div>
 
@@ -160,11 +179,13 @@
                                         <img src="{{ asset('assets/image/icon/2.svg') }}" class="mx-auto mb-3" alt="">
                                     </div>
 
-                                    <h2 class="text-xl font-semibold text-[#324A0A]">Lower Tariff Export Advantage</h2>
+                                    <h2 class="text-xl font-semibold text-[#324A0A]">
+                                        {{ app()->getLocale() == 'en' ? 'Lower Tariff Export Advantage' : 'អត្ថប្រយោជន៍នាំចេញក្នុងអត្រាពន្ធទាប' }}
+                                    </h2>
                                     <span class="text-sm block mt-2 text-[#1E1E1E]">
-                                        We help partners access lower or preferential export tariffs,
-                                        reducing costs and strengthening your competitiveness in Cambodia and regional
-                                        markets.
+                                       {{ app()->getLocale() == 'en' ? ' We help partners access lower or preferential export tariffs,
+                                        reducing costs and strengthening your competitive in the regional markets. ' : 'យើងខ្ញុំជួយដៃគូទទួលបានពន្ធនាំចេញទាប ឬអនុគ្រោះ កាត់បន្ថយថ្លៃដើម និងពង្រឹងភាពប្រកួតប្រជែងរបស់អ្នកនៅក្នុងទីផ្សារក្នុងតំបន់។ 
+' }}
                                     </span>
                                 </div>
 
@@ -173,12 +194,14 @@
                                         <img src="{{ asset('assets/image/icon/3.svg') }}" class="mx-auto mb-3" alt="">
                                     </div>
 
-                                    <h2 class="text-xl font-semibold text-[#324A0A]">Decades of Export Experience</h2>
+                                    <h2 class="text-xl font-semibold text-[#324A0A]">
+                                        {{ app()->getLocale() == 'en' ? 'Decades of Export Experience' : 'បទពិសោធន៍នាំចេញរាប់ទសវត្សរ៍' }}
+                                    </h2>
                                     <span class="text-sm block mt-2 text-[#1E1E1E]">
-                                        With over 30 years of experience since 1995, we offer deep industry expertise and a
+                                        {{ app()->getLocale() == 'en' ? 'With over 30 years of experience since 1994, we offer deep industry expertise and a
                                         proven track record of
                                         exporting to Europe and global markets—ensuring reliability, stability, and
-                                        professional service.
+                                        professional service.' : 'យើងខ្ញុំបទពិសោធន៍ជាង 30 ឆ្នាំចាប់តាំងពីឆ្នាំ 1994 ផ្តល់ជូននូវជំនាញនាំចេញនៅក្នុងវិស័យនេះយ៉ាងមុតមាំ ស្តែង ឃើញនូវលទ្ធផលនៃការនាំចេញទៅកាន់ទីផ្សារអឺរ៉ុប និងទីផ្សារសកល — ធានានូវភាពជឿជាក់ ស្ថិរភាព និងការផ្តល់សេវាកម្មប្រកបដោយវិជ្ជាជីវៈ។' }}
                                     </span>
                                 </div>
                             </div>
@@ -190,10 +213,12 @@
                                         <img src="{{ asset('assets/image/icon/4.svg') }}" alt="">
                                     </div>
 
-                                    <h2 class="text-xl font-semibold text-[#324A0A]">Capable Production Output</h2>
+                                    <h2 class="text-xl font-semibold text-[#324A0A]">
+                                        {{ app()->getLocale() == 'en' ? 'Capable Production Output' : 'សមត្ថភាពក្នុងការផលិត' }}
+                                    </h2>
                                     <span class="text-sm block mt-2 text-[#1E1E1E]">
-                                        With advanced machinery, we can meet any production volume—scaling smoothly from
-                                        small batches to large orders.
+                                        {{ app()->getLocale() == 'en' ? 'With advanced machinery, we can meet any production volume—scaling smoothly from
+                                        small batches to large orders.' : 'ជាមួយនឹងគ្រឿងចក្រទំនើបៗរោងចក្រកិនស្រូវរបស់យើងខ្ញ៉ំអាចបំពេញតាមបរិមាណផលិតកម្មបញ្ជាទិញចាប់តាំងពីការបញ្ជាទិញក្នុងបរិមាណតិចរហូតដល់បរិមាណធំ។' }}
                                     </span>
                                 </div>
 
@@ -202,11 +227,13 @@
                                         <img src="{{ asset('assets/image/icon/5.svg') }}" class="mx-auto mb-3" alt="">
                                     </div>
 
-                                    <h2 class="text-xl font-semibold text-[#324A0A]">FDA Approval & Certified Quality</h2>
+                                    <h2 class="text-xl font-semibold text-[#324A0A]">
+                                        {{ app()->getLocale() == 'en' ? 'FDA Approval & Certified Quality' : 'ការអនុម័ត និងគុណភាពដែលមានការបញ្ជាក់ដោយរដ្ឋបាលចំណីអាហារ និងឱសថសហរដ្ឋអាមេរិក' }}
+                                    </h2>
                                     <span class="text-sm block mt-2 text-[#1E1E1E]">
-                                        Our rice is FDA-approved and certified to
+                                        {{ app()->getLocale() == 'en' ? 'Our rice is FDA-approved and certified to
                                         international standards, ensuring trusted quality, safety, and compliance in every
-                                        shipment.
+                                        shipment.' : 'អង្កររបស់យើងខ្ញ៉ំត្រូវបានអនុម័តដោយរដ្ឋបាលចំណីអាហារ និងឱសថសហរដ្ឋអាមេរិក អនុលោមតាមស្តង់ដាអន្តរជាតិ ដោយធានាបាននូវគុណភាព សុវត្ថិភាព និងទំនុកចិត្តនៅក្នុងរាល់ការដឹកជញ្ជូន។' }}
                                     </span>
                                 </div>
                             </div>
@@ -220,16 +247,19 @@
         {{-- Section: Input Information --}}
         <section class="flex justify-center items-center bg-white px-4" id="enquiry-form">
             <div class="">
-                <form action="" class="space-y-2">
+                <form action="" class="space-y-2" x-data="productSelector()" @submit.prevent="submitForm()" id="myForm">
+                    @csrf
                     <div class="flex flex-col md:flex-row justify-center space-x-0 md:space-x-8">
                         <div class="space-y-2">
-                            <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Enquiry Form</h2>
-                            <input type="text" placeholder="Name" name="name"
+                            <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">
+                                {{ app()->getLocale() == 'en' ? 'Enquiry Form' : 'ទម្រង់បែបបទបំពេញព័ត៌មាន' }}
+                            </h2>
+                            <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Name' : 'ឈ្មោះ' }}" name="name" required
                                 class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
-                            <input type="text" placeholder="Company Name" name="company_name"
+                            <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Company Name' : 'ក្រុមហ៊ុន' }}" name="company_name" required
                                 class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
                             <div class="relative custom-select-container">
-                                <input id="customer-country" list="country-list" name="country" placeholder="Country"
+                                <input id="customer-country" list="country-list" name="country" placeholder="{{ app()->getLocale() == 'en' ? 'Country' : 'ប្រទេស' }}"
                                     required
                                     class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400">
                                 <datalist id="country-list" name="country" required
@@ -424,6 +454,7 @@
                                     <option value="Yemen">Yemen</option>
                                     <option value="Zambia">Zambia</option>
                                     <option value="Zimbabwe">Zimbabwe</option>
+                                   
                                 </datalist>
                                 <span class="absolute right-6 top-1/2 -translate-y-1/2">
                                     <svg width="12" height="13" viewBox="0 0 12 13" fill="none">
@@ -433,12 +464,12 @@
                                     </svg>
                                 </span>
                             </div>
-                            <input type="email" placeholder="Email" name="email"
+                            <input type="email" placeholder="{{ app()->getLocale() == 'en' ? 'Email' : 'អ៊ីម៉ែល ' }}" name="email" required
                                 class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
                             <div class="flex md:flex-row items-center space-x-2">
                                 <select id="country_code" name="country_code"
                                     class="form-select w-[50%] px-4 md:w-[30%] rounded-md bg-[#FFF9E6] h-[55px] text-gray-700 placeholder-gray-600" required>
-                                    <option value="">Country Code</option>
+                                    <option value="">{{ app()->getLocale() == 'en' ? 'Country Code' : 'លេខកូដប្រទេស' }}</option>
                                     <option value="+93">Afghanistan (+93)</option>
                                     <option value="+355">Albania (+355)</option>
                                     <option value="+213">Algeria (+213)</option>
@@ -550,16 +581,15 @@
                                     <option value="+998">Uzbekistan (+998)</option>
                                     <option value="+84">Vietnam (+84)</option>
                                     <option value="+263">Zimbabwe (+263)</option>
-
                                 </select>
-                                <input type="text" placeholder="Phone Number" name="phone"
+                                <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Phone Number' : ' លេខទូរស័ព្ទ' }}" name="phone" required
                                     class="w-full lg:w-[65%] h-[55px] px-5 rounded-md text-gray-700 placeholder-gray-600  bg-[#FFF9E6] focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Product Enquiry</h2>
+                            <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">{{ app()->getLocale() == 'en' ? 'Product Enquiry' : 'ផលិតផល' }}</h2>
                             <!-- Product Multi Select -->
-                            <div x-data="productSelector()" x-ref="productSelector" class="relative w-full lg:w-[99%]">
+                            <div class="relative w-full lg:w-[99%]">
 
                                 <!-- Dropdown Button -->
                                 <div @click="open = !open" class="bg-[#FFF9E6] px-3 py-2 h-auto  min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
@@ -567,24 +597,20 @@
 
                                     <!-- Tags or Placeholder -->
                                     <div class="flex flex-wrap items-center gap-1 flex-1">
-                                        <template x-if="selected.length === 0">
-                                            <span class="text-gray-500" style="margin-left: 10px;">Products</span>
+                                        <template x-if="products.length === 0">
+                                            <span class="text-gray-500 ml-2">
+                                                {{ app()->getLocale() == 'en' ? 'Products' : 'ផលិតផល' }}
+                                            </span>
                                         </template>
 
-                                        <template x-for="(item, index) in selected" :key="index">
-                                            <div
-                                                class="flex items-center bg-[#DDCC81] text-[#324A0A] px-2 py-1 rounded-full text-sm">
-                                                <span x-text="item"></span>
-                                                <button type="button" class="ml-1" @click.stop="
-                                                                const parts = item.split('-');
-                                                                removeProduct(parts[0], parts[1]);
-                                                                selected.splice(index, 1);
-                                                            ">
-                                                    <svg class="w-3 h-3 text-[#324A0A]" fill="none" stroke="currentColor"
-                                                        stroke-width="2" viewBox="0 0 24 24">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="M6 18L18 6M6 6l12 12" />
-                                                    </svg>
+                                         <template x-for="(product, index) in products" :key="index">
+                                            <div class="flex items-center bg-[#DDCC81] text-[#324A0A] px-2 py-1 rounded-full text-sm">
+                                                <span x-text="product.name + ' - ' + product.capacity + 'KG'"></span>
+
+                                                <button type="button"
+                                                    class="ml-2"
+                                                    @click.stop="products.splice(index,1)">
+                                                    ✕
                                                 </button>
                                             </div>
                                         </template>
@@ -604,14 +630,9 @@
 
                                     @foreach($showExport as $item)
                                         <label class="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100">
-                                            <input type="checkbox" value="{{ $item->name }}-{{ $item->capacity }}KG" @change="
-                                                    if ($event.target.checked) {
-                                                        selected.push($event.target.value);
-                                                    } else {
-                                                        selected = selected.filter(v => v !== $event.target.value);
-                                                    }
-                                                " :checked="selected.includes('{{ $item->name }}-{{ $item->capacity }}')">
-                                            <span>{{ $item->name }}-{{ $item->capacity }}KG</span>
+                                            <input type="checkbox"
+                                                @change="toggleProduct('{{ $item->name }}', '{{ $item->capacity }}')">
+                                            <span>{{ $item->name }} - {{ $item->capacity }}KG</span>
                                         </label>
                                     @endforeach
                                 </div>
@@ -619,19 +640,59 @@
                                 <!-- Hidden input to submit -->
                                 <input type="hidden" class="form-input" id="input-name" name="products"
                                     :value="selected.join(', ')">
+                                <input type="hidden" name="products_data"
+                                    :value="JSON.stringify(products)">
+                                <div class="mt-4 space-y-3">
+
+                                    <!-- Show only if products exist -->
+                                  <div class="bg-[#FFF9E6] p-4 cursor-pointer rounded-md"
+                                        @click="if(products.length === 0){ alert('Please select product first') }">
+
+                                        <h3 class="bg-[#FFF9E6] px-2 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                                            {{ app()->getLocale() == 'en' ? 'Quantity (KG)' : 'បរិមាណ (គីឡូ)' }}
+                                        </h3>
+                                    </div>
+
+                                    <template x-for="(product, index) in products" :key="index">
+                                        <div class="bg-[#FFF9E6] p-3 rounded-md border">
+
+                                            <div class="flex justify-between items-center">
+                                                <span class="font-semibold text-[#324A0A]">
+                                                    <span x-text="product.name"></span>
+                                                    (<span x-text="product.capacity"></span> KG)
+                                                </span>
+                                            </div>
+
+                                            <div class="flex items-center gap-3 mt-2">
+                                                <button type="button"
+                                                    @click="decrease(index)"
+                                                    class="bg-[#decd81] px-3 py-1 rounded">-</button>
+
+                                                <span x-text="product.quantity"
+                                                    class="font-bold text-lg text-[#324A0A]"></span>
+
+                                                <button type="button"
+                                                    @click="increase(index)"
+                                                    class="bg-[#decd81] px-3 py-1 rounded">+</button>
+                                            </div>
+
+                                        </div>
+                                    </template>
+
+                                </div>
+
 
                             </div>
-                            <input type="number" id="input-quantity" placeholder="Quantity (KG)" name="input-quantity" min="1"
-                                class="form-input w-full lg:w-[99%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
-                            <input type="number" id="input-price" placeholder="Price" name="price"
-                                class="form-input w-full lg:w-[99%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"readonly/>
+                            {{-- <input type="number" id="input-quantity" placeholder="{{ app()->getLocale() == 'en' ? 'Quantity (KG)' : 'បរិមាណ (គីឡូ)' }}" name="input-quantity" min="1"
+                                class="form-input h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"/> --}}
+                           
                             <div x-data="{
                                     open: false,
                                     items: ['Plastic Bag', 'Laminated PP', 'BOPP', 'Normal PP'],
                                     selected: []
                                 }" class="relative w-full">
 
-                                <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">Bag Type</h2>
+                                <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">{{ app()->getLocale() == 'en' ? 'Bag Type' : 'ប្រភេទវេចខ្ចប់ ' }}</h2>
 
                                 <!-- Dropdown Button -->
                                 <div @click="open = !open"
@@ -643,7 +704,7 @@
 
                                             <!-- Placeholder -->
                                             <template x-if="selected.length === 0">
-                                                <span class="text-gray-500">Select Bag Types</span>
+                                                <span class="text-gray-500">{{ app()->getLocale() == 'en' ? 'Select Bag Types' : 'ជ្រើសរើសប្រភេទវេចខ្ចប់ ' }}</span>
                                             </template>
 
                                             <!-- Selected Tags -->
@@ -706,13 +767,13 @@
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <input type="text" placeholder="Address" name="address"
+                        <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Address' : 'អាសយដ្ឋាន ' }}" name="address" required
                             class="w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
-                        <textarea name="message" id="message" rows="4" placeholder="Message" class="py-2 w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+                        <textarea name="message" id="message" rows="4" placeholder="{{ app()->getLocale() == 'en' ? 'Message' : 'សារ' }}" required class="py-2 w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
                     </div>
                     <div class="flex justify-center items-center">    
-                        <button class="cursor-pointer">
-                             <img src="{{ asset('assets/logo/btn-submit.png') }}" alt="" class="w-64 h-40 object-contain">
+                        <button type="submit" class="cursor-pointer" onclick="submitAndRefresh()" >
+                             <img src="{{ app()->getLocale() == 'en' ? asset('assets/logo/btn-submit.png') : asset('assets/logo/btn-submit-km.svg') }}" alt="" class="w-64 h-40 object-contain">
                         </button>
                     </div>
                 </form>
@@ -725,31 +786,114 @@
             </section>
         @endsection
     </div>
- <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 <script>
 function productSelector() {
     return {
         open: false,
-        selected: [],
+        products: [],
 
         init() {
-            window.addEventListener('add-product', (e) => {
-                const value = e.detail;
+            window.addEventListener('add-product', (event) => {
+                let name = event.detail.name
+                let capacity = parseInt(event.detail.capacity)
 
-                if (!this.selected.includes(value)) {
-                    this.selected.push(value);
+                // check if already exists
+                let existing = this.products.find(p => p.name === name)
+
+                if (!existing) {
+                    this.products.push({
+                        name: name,
+                        capacity: capacity,
+                        quantity: capacity
+                    })
+                } else {
+                    existing.quantity += existing.capacity
                 }
-            });
+
+                // Scroll to form smoothly
+                document.getElementById('enquiry-form')
+                    .scrollIntoView({ behavior: 'smooth' })
+            })
         },
 
-        removeProduct(name, capacity) {
-            const value = `${name}-${capacity}`;
-            this.selected = this.selected.filter(v => v !== value);
+        toggleProduct(name, capacity) {
+            capacity = parseInt(capacity)
+
+            let existing = this.products.find(p => p.name === name)
+
+            if (!existing) {
+                this.products.push({
+                    name: name,
+                    capacity: capacity,
+                    quantity: capacity
+                })
+            } else {
+                this.products = this.products.filter(p => p.name !== name)
+            }
+        },
+
+        increase(index) {
+            this.products[index].quantity += this.products[index].capacity
+        },
+
+        decrease(index) {
+            if (this.products[index].quantity > this.products[index].capacity) {
+                this.products[index].quantity -= this.products[index].capacity
+            }
+        },
+
+        submitForm() {
+            if(this.products.length === 0){
+                alert("Please select at least one product")
+                return
+            }
+
+            let name = document.querySelector('[name="name"]').value
+            let company = document.querySelector('[name="company_name"]').value
+            let email = document.querySelector('[name="email"]').value
+            let address = document.querySelector('[name="address"]').value
+            let country = document.querySelector('[name="country"]').value
+            let countryCode = document.querySelector('[name="country_code"]').value
+            let phone = document.querySelector('[name="phone"]').value
+            let bagTypes = document.querySelector('[name="bag_types"]').value
+            let userMessage = document.querySelector('[name="message"]').value
+
+            let productText = ""
+
+            this.products.forEach(p => {
+                productText += `${p.name} (${p.capacity}KG) - Qty: ${p.quantity}\n`
+            })
+
+            let message =
+`New Enquiry:
+
+Name: ${name}
+Company: ${company}
+Email: ${email}
+Phone: ${countryCode} ${phone}
+Country: ${country}
+Address: ${address}
+Bag Types: ${bagTypes}
+
+Customer Message:
+${userMessage}
+
+Products:
+${productText}`
+
+            let encoded = encodeURIComponent(message)
+
+            let telegramUrl = `https://t.me/YOUR_USERNAME?text=${encoded}`
+
+            window.open(telegramUrl, "_blank")
         }
     }
 }
 
 </script>
+
+
 
 <script>
     const countrySelect = new Choices('#country-select', {
@@ -761,181 +905,25 @@ function productSelector() {
 </script>
 
 <script>
-let productData = {}; // Stores all selected products
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const buttons = document.querySelectorAll(".btn-buy-now");
-
-    buttons.forEach(button => {
-        button.addEventListener("click", function () {
-
-            const name = this.dataset.name;
-            const capacityText = this.dataset.capacity; // e.g., "5KG"
-            const price = parseFloat(this.dataset.price);
-
-            const capacity = parseInt(capacityText);
-
-            // Scroll to form
-            document.getElementById("enquiry-form")
-                .scrollIntoView({ behavior: "smooth" });
-
-            // Add product to Alpine selector if needed
-const value = `${name}-${capacity}KG`;
-window.dispatchEvent(new CustomEvent('add-product', {
-    detail: value
-}));
-
-
-
-            // Initialize product data
-            if (!productData[name]) {
-                productData[name] = {
-                    capacity: capacity,
-                    price: price,
-                    quantity: capacity, // default quantity = capacity
-                };
-            }
-
-            // Update form inputs (for last clicked product)
-            updateFormFields();
-        });
-    });
-
-    // Quantity input
-    const qtyInput = document.getElementById("input-quantity");
-    qtyInput.addEventListener("input", function () {
-        const productName = this.dataset.productName;
-        if (!productName || !productData[productName]) return;
-
-        const capacity = productData[productName].capacity;
-        let value = parseInt(this.value) || 0;
-
-        // Round quantity to nearest multiple of capacity
-        if (value < capacity) value = capacity;
-        else if (value % capacity !== 0) {
-            value = Math.ceil(value / capacity) * capacity;
-        }
-
-        this.value = value;
-
-        // Update product data
-        productData[productName].quantity = value;
-
-        calculateTotals();
-    });
-    function formatNumber(number) {
-    return number.toLocaleString("en-US", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
-}
-
-    // Form submit
-    document.querySelector("form").addEventListener("submit", function (e) {
+document.getElementById("myForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const form = this;
-
-    const name = form.name.value;
-    const company = form.company_name.value;
-    const country = form.country.value;
-    const email = form.email.value;
-    const countryCode = form.country_code.value;
-    const phone = form.phone.value;
-    const address = form.address.value;
-    const messageText = form.message.value;
-    const bagTypes = form.bag_types.value;
-    const selectedProducts = form.products.value;
-
-    let totalPrice = 0;
-    let productList = [];
-
-    for (let key in productData) {
-        const p = productData[key];
-        const blockCount = p.quantity / p.capacity;
-        const productTotal = blockCount * p.price;
-
-        totalPrice += productTotal;
-
-        productList.push(
-            `${key} (${p.quantity} KG) - $${formatNumber(productTotal)}`
-        );
-    }
-
-    let message = `
-📦 *New Export Enquiry*
-
- Name: ${name}
- Company: ${company}
- Country: ${country}
- Email: ${email}
- Phone: ${countryCode} ${phone}
- Address: ${address}
-
-🛍 Bag Type: ${bagTypes}
-
-📦 Products:
-${productList.join("\n")}
-
-💰 Total Price: $${formatNumber(totalPrice)}
-
-📝 Message:
-${messageText}
-`;
-
-    const telegramURL =
-        "https://t.me/+85587686768?text=" + encodeURIComponent(message);
-
-    window.open(telegramURL, "_blank");
-});
-
-
-    // Initial total update
-    calculateTotals();
-
-    // Functions
-    function updateFormFields() {
-        const lastProduct = Object.keys(productData).slice(-1)[0];
-        if (!lastProduct) return;
-
-        const p = productData[lastProduct];
-        const qtyInput = document.getElementById("input-quantity");
-        const priceInput = document.getElementById("input-price");
-
-        qtyInput.dataset.productName = lastProduct;
-        qtyInput.value = p.quantity;
-
-        // ❌ REMOVE multiply
-        // priceInput.value = (p.price * p.quantity).toFixed(2);
-
-        // ✅ SHOW ONLY PRODUCT PRICE
-        priceInput.value = p.price.toFixed(2);
-    }
-
-
-    function calculateTotals() {
-    const priceInput = document.getElementById("input-price");
-    let total = 0;
-
-    for (let key in productData) {
-        const p = productData[key];
-
-        const blockCount = p.quantity / p.capacity;
-
-        total += blockCount * p.price;
-    }
-
-    priceInput.value = total.toFixed(2);
-}
-
-
+    fetch(this.action, {
+        method: "POST",
+        body: new FormData(this),
+        headers: {
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        }
+    })
+    .then(response => {
+        location.reload();
+    });
 });
 </script>
-
-
 
 
 @endsection
+
+
+ {{-- <input type="number" id="input-price" placeholder="Price" name="price"
+                                class="form-input w-full lg:w-[99%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"readonly/> --}}

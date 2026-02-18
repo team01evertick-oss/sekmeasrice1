@@ -14,6 +14,7 @@ use App\Http\Controllers\backend\NewsController;
 use App\Http\Controllers\backend\ProductForExportController;
 use App\Http\Controllers\frontend\ClientContrller;
 use App\Http\Controllers\frontend\TelegramController;
+use App\Http\Controllers\LocalLangController;
 use App\Http\Controllers\Send\ApplicationController;
 use App\Http\Controllers\Send\EnquiryController;
 use Illuminate\Support\Facades\Http;
@@ -55,6 +56,9 @@ Route::get('/test-telegram', function () {
 
     return $response->json();
 });
+
+// Local for switch language
+Route::get('locale/{locale}', [LocalLangController::class, 'setLocale'])->name('locale');
 
 Route::post('/application-send', [ApplicationController::class, 'send'])->name('application.send');
 
