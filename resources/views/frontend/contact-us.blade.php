@@ -411,7 +411,7 @@
                                     <div class="bg-[#FFF9E6] p-4 cursor-pointer rounded-md"
                                         @click="if(products.length === 0){ alert('Please select product first') }">
 
-                                        <h3 class="bg-[#FFF9E6] px-2 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                                        <h3 class="flex justify-start bg-[#FFF9E6] px-2 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400">
                                             {{ app()->getLocale() == 'en' ? 'Quantity (KG)' : 'បរិមាណ (គីឡូ)' }}
                                         </h3>
                                     </div>
