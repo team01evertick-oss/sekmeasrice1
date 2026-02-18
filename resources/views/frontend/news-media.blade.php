@@ -257,7 +257,7 @@ function openModal(newsId) {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
 
-    // 🔥 Lock full page scroll
+    //  Lock full page scroll
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
 }
@@ -268,7 +268,7 @@ function closeModal() {
     modal.classList.add('hidden');
     modal.classList.remove('flex');
 
-    // 🔥 Restore scroll properly
+    //  Restore scroll properly
     document.body.style.overflow = '';
     document.documentElement.style.overflow = '';
 }
@@ -295,7 +295,7 @@ function prevImage() {
 @endsection
 
 @section('section_footer')
-<div class="relative top-20 -z-[99999]">
+<div class="relative top-20">
     @include('frontend.footer')
 </div>
 @endsection
