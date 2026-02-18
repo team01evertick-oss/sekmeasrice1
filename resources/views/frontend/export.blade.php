@@ -101,14 +101,14 @@
         <section class="relative w-full xl:hidden block">
             <!-- Background Image -->
             <div class="relative w-full h-full">
-                <img src="{{ asset('assets/image/bg-national-text.svg') }}" alt="Background Image"
+                <img src="{{ app()->getLocale() == 'en' ? asset('assets/image/bg-national-text.svg') : asset('assets/image/bg-nation-txt_km.svg') }}" alt="Background Image"
                     class="w-full h-full object-cover">
             </div>
         </section>
         <section class="relative w-full xl:block hidden">
             <!-- Background Image -->
             <div class="relative w-full h-full">
-                <img src="{{ asset('assets/image/bg-national.svg') }}" alt="Background Image"
+                <img src="{{ app()->getLocale() == 'en' ? asset('assets/image/bg-national.svg') : asset('assets/image/bg-nation-not-txt_km.svg') }}" alt="Background Image"
                     class="w-full h-full object-cover">
                 <!-- Overlay Content -->
                 <div
@@ -117,13 +117,13 @@
                     <!-- Destination Details -->
                     <div class="relative right-[450px] top-[300px] max-w-xl space-y-2 mb-10 text-left justify-start items-start"
                         data-aos="fade-right" data-aos-duration="1500">
-                        <p class="text-[#D6B157] text-[14px] font-semibold">International Destination</p>
+                        <p class="text-[#D6B157] text-[14px] font-semibold">{{ app()->getLocale() == 'en' ? 'International Destination' : 'គោលដៅអន្តរជាតិ' }}</p>
 
                         <p>
                             <strong class="text-[#D6B157] text-[14px] font-semibold"> {{ app()->getLocale() == 'en' ? 'Europe:' : 'ទ្វីបអឺរ៉ុប៖' }}</strong>
                             <span class="text-[#1E1E1E] text-[14px]"> 
                                  {{ app()->getLocale() == 'en' ? 'Germany, Sweden, France, United Kingdom, Italy, Switzerland, Hungary, Lithuania, The Netherlands, Poland, Norway, Reunion Island, etc.' 
-                                 : 'អាល្លឺម៉ង់ ស៊ុយអែត បារាំង ចក្រភពអង់គ្លេស អ៉ីតាលី ស្វីស ហុងគ្រី លីទុយអានី ហូឡង់ ប៉ូឡូញ ន័រវែស កោះរ៉េអ៊ុយនីញ៉ុង ជាដើម។' }}
+                                 : 'អាល្លឺម៉ង់ ស៊ុយអែត បារាំង ចក្រភពអង់គ្លេស អ៊ីតាលី ស្វីស ហុងគ្រី លីទុយអានី ហូឡង់ ប៉ូឡូញ ន័រវែស កោះរ៉េអ៊ុយនីញ៉ុង ជាដើម។' }}
                             </span>
                         </p>
 
