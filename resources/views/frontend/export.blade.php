@@ -862,7 +862,7 @@ function productSelector() {
             let productText = ""
 
             this.products.forEach(p => {
-                productText += `${p.name} (${p.capacity}KG) - Qty: ${p.quantity}\n`
+                productText += `${p.name} (${p.capacity}KG) - Quantity: ${p.quantity}KG`
             })
 
             let message =
