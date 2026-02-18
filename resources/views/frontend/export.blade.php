@@ -884,7 +884,7 @@ ${productText}`
 
             let encoded = encodeURIComponent(message)
 
-            let telegramUrl = `https://t.me/YOUR_USERNAME?text=${encoded}`
+            let telegramUrl = `https://t.me/+85587686768?text=${encoded}`
 
             window.open(telegramUrl, "_blank")
         }
