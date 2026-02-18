@@ -17,14 +17,25 @@
                             <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">
                                 {{ app()->getLocale() == 'en' ? 'Enquiry Form' : 'ទម្រង់បែបបទបំពេញព័ត៌មាន' }}
                             </h2>
-                            <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Name' : 'ឈ្មោះ' }}" name="name" required
-                                class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
-                            <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Company Name' : 'ក្រុមហ៊ុន' }}" name="company_name" required
-                                class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
-                            <div class="relative custom-select-container">
+                            
+                            <div class="relative w-full lg:w-[96%] ">
+                                <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Name' : 'ឈ្មោះ' }}" name="name" required
+                                class="w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                                 <!-- Red Star -->
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                            </div>
+
+                            <div class="relative w-full lg:w-[96%]">
+                                <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Company Name' : 'ក្រុមហ៊ុន' }}" name="company_name" required
+                                class="w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                                 <!-- Red Star -->
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                            </div>
+
+                            <div class="relative w-full lg:w-[96%] custom-select-container">
                                 <input id="customer-country" list="country-list" name="country" placeholder="{{ app()->getLocale() == 'en' ? 'Country' : 'ប្រទេស' }}"
                                     required
-                                    class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                                    class="w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400">
                                 <datalist id="country-list" name="country" required
                                     class="h-14 px-6 pr-12 rounded-full bg-[#F1F1F1] text-[#03254B] outline-none appearance-none">
                                     {{-- <option>Country of Origin</option> --}}
@@ -219,19 +230,21 @@
                                     <option value="Zimbabwe">Zimbabwe</option>
                                    
                                 </datalist>
-                                <span class="absolute right-6 top-1/2 -translate-y-1/2">
-                                    <svg width="12" height="13" viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M10.5 4.60096C11.8333 5.37076 11.8333 7.29526 10.5 8.06506L3 12.3952C1.66666 13.165 0 12.2027 0 10.6631L0 2.00288C0 0.463276 1.66667 -0.498971 3 0.27083L10.5 4.60096Z"
-                                            fill="#cb9f10" />
-                                    </svg>
-                                </span>
+                                <!-- Red Star -->
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
                             </div>
-                            <input type="email" placeholder="{{ app()->getLocale() == 'en' ? 'Email' : 'អ៊ីម៉ែល ' }}" name="email" required
-                                class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
-                            <div class="flex md:flex-row items-center space-x-2 ml-2">
-                                <select id="country_code" name="country_code"
-                                    class="form-select w-[50%] px-4 md:w-[28%] lg:ml-0 -ml-2 rounded-md bg-[#FFF9E6] h-[55px] text-gray-700 placeholder-gray-600" required>
+                            
+                            <div class="relative w-full lg:w-[96%]">
+                                <input type="email" placeholder="{{ app()->getLocale() == 'en' ? 'Email' : 'អ៊ីម៉ែល ' }}" name="email" required
+                                class="w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                                 <!-- Red Star -->
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                            </div>
+                            
+                            <div class="flex md:flex-row items-center space-x-2">
+                                <div class="relative w-[50%] md:w-[30%]">
+                                    <select id="country_code" name="country_code"
+                                    class="form-select w-full px-4 lg:ml-0 -ml-2 rounded-md bg-[#FFF9E6] h-[55px] text-gray-700 placeholder-gray-600" required>
                                     <option value="">{{ app()->getLocale() == 'en' ? 'Country Code' : 'លេខកូដប្រទេស' }}</option>
                                     <option value="+93">Afghanistan (+93)</option>
                                     <option value="+355">Albania (+355)</option>
@@ -344,9 +357,18 @@
                                     <option value="+998">Uzbekistan (+998)</option>
                                     <option value="+84">Vietnam (+84)</option>
                                     <option value="+263">Zimbabwe (+263)</option>
-                                </select>
-                                <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Phone Number' : ' លេខទូរស័ព្ទ' }}" name="phone" required
-                                    class="w-full lg:w-[68%] h-[55px] px-5 rounded-md text-gray-700 placeholder-gray-600  bg-[#FFF9E6] focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                                    </select>
+                                    <!-- Red Star -->
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                                </div>
+                                
+                                <div class="relative w-full lg:w-[65%] ">
+                                    <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Phone Number' : ' លេខទូរស័ព្ទ' }}" name="phone" required
+                                    class="w-full h-[55px] px-5 rounded-md text-gray-700 placeholder-gray-600  bg-[#FFF9E6] focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                                    <!-- Red Star -->
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                                </div>
+
                             </div>
                         </div>
                         <div class="space-y-2">
@@ -386,6 +408,8 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                                     </svg>
                                 </div>
+                                <!-- Red Star -->
+                                <span class="absolute right-4 top-1/5 -translate-y-1/2 text-red-500 text-xl">*</span>
 
                                 <!-- Dropdown List -->
                                 <div x-show="open" @click.outside="open=false"
@@ -408,12 +432,14 @@
                                 <div class="mt-4 space-y-3">
 
                                     <!-- Show only if products exist -->
-                                    <div class="bg-[#FFF9E6] p-4 cursor-pointer rounded-md"
+                                    <div class="relative bg-[#FFF9E6] p-4 cursor-pointer rounded-md"
                                         @click="if(products.length === 0){ alert('Please select product first') }">
 
                                         <h3 class="flex justify-start bg-[#FFF9E6] px-2 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400">
                                             {{ app()->getLocale() == 'en' ? 'Quantity (KG)' : 'បរិមាណ (គីឡូ)' }}
                                         </h3>
+                                        <!-- Red Star -->
+                                        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
                                     </div>
 
                                     <template x-for="(product, index) in products" :key="index">
@@ -459,7 +485,7 @@
 
                                 <!-- Dropdown Button -->
                                 <div @click="open = !open"
-                                        class="bg-[#FFF9E6] px-3 py-2 w-full lg:w-[32rem] min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
+                                        class="bg-[#FFF9E6] px-3 py-2 w-full lg:w-[510px] min-h-[55px] rounded-md text-gray-700 cursor-pointer border border-gray-300
                                             flex flex-wrap items-center gap-2 justify-between" >
 
                                         <!-- Tags or Placeholder -->
@@ -497,6 +523,9 @@
                                         </svg>
                                 </div>
 
+                                <!-- Red Star -->
+                                <span class="absolute right-4 top-20 -translate-y-1/2 text-red-500 text-xl">*</span>
+
                                 <!-- Dropdown List -->
                                 <div x-show="open" @click.outside="open = false"
                                     class="absolute z-50 bg-white border rounded-md w-full mt-1 max-h-48 overflow-y-auto shadow">
@@ -530,9 +559,17 @@
                         </div>
                     </div>
                     <div class="space-y-2 ml-0 lg:ml-1">
-                        <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Address' : 'អាសយដ្ឋាន ' }}" name="address" required
-                            class="w-full lg:w-[99%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
-                        <textarea name="message" id="message" rows="4" placeholder="{{ app()->getLocale() == 'en' ? 'Message' : 'សារ' }}" required class="w-full lg:w-[99%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+                        <div class="relative">
+                            <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Address' : 'អាសយដ្ឋាន ' }}" name="address" required
+                            class="w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                             <!-- Red Star -->
+                            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                        </div>
+                        <div class="relative">
+                            <textarea name="message" id="message" rows="4" placeholder="{{ app()->getLocale() == 'en' ? 'Message' : 'សារ' }}" required class="py-2 w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+                             <!-- Red Star -->
+                            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                        </div>
                     </div>
                     <div class="flex justify-center items-center md:mt-0 -mt-6">    
                         <button type="submit" class="cursor-pointer" onclick="submitAndRefresh()" >
@@ -599,7 +636,7 @@ function productSelector() {
             let productText = ""
 
             this.products.forEach(p => {
-                productText += `${p.name} (${p.capacity}KG) - Quantity: ${p.quantity}KG`
+                productText += `${p.name} (${p.capacity}KG) - Quantity: ${p.quantity}KG\n`
             })
 
             let message =

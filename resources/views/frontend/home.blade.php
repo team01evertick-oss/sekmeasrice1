@@ -303,35 +303,67 @@ class="flex justify-center relative py-6 mx-auto items-center w-[80%] h-[45px] b
                             </h1>
 
                             <!-- Responsive grid layout -->
-                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 
-                                                                gap-4 sm:gap-6 md:gap-8 justify-items-center items-end" data-aos="fade-left" data-aos-duration="1500">
-                                @foreach ($showWining as $items)
-                                    <img src="../../storage/local_product/{{ $items->thumbnail }}"
-                                        class="w-[100px] sm:w-[120px] md:w-[140px] lg:w-[160px] xl:w-[180px]
-                                                                                            h-auto object-contain transition-transform duration-300 hover:scale-105">
-                                @endforeach
-                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
+                            @foreach ($showWining as $items)
+                                <div class="rounded-lg">
+                                    <div class="w-[250px] h-[230px] flex items-center justify-center">
+                                        <img 
+                                            src="{{ asset('storage/local_product/' . $items->thumbnail) }}"
+                                            class="w-full h-full object-fill"
+                                            alt="Winning Product"
+                                        >
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
 
-
-                        <!-- Certificates Section -->
-                        <div class="relative flex flex-col items-center text-center gap-y-10">
-                            <!-- Title -->
-                            <h1 class="text-[#D6B157] font-bold text-2xl sm:text-3xl md:text-4xl drop-shadow-lg" data-aos="fade-right" data-aos-duration="1500">
-                                
-                                 {{ app()->getLocale() == 'en' ? 'Credibility Certificates' : 'វិញ្ញាណបណ្ណបត្របញ្ជាក់អំពីគុណភាព' }}
-                            </h1>
-
-                            <!-- Responsive Images Grid -->
-                            <div
-                                class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 justify-items-center items-start" data-aos="fade-left" data-aos-duration="1500">
-                                @foreach ($showCredibility as $items)
-                                    <img src="../../storage/local_product/{{ $items->thumbnail }}"
-                                        class="w-[140px] sm:w-[180px] md:w-[200px] lg:w-[220px] h-[200px] sm:h-[240px] md:h-[260px] lg:h-[300px] 
-                                                                                            object-contain transition-transform duration-300 hover:scale-105">
-                                @endforeach
-                            </div>
                         </div>
+
+                        {{-- Section: FDA Approved Certificate --}}
+                        <section id="business" class="px-4 md:px-10 lg:px-20">
+                            <!-- Certificates Section -->
+                            <div class="relative flex flex-col items-center text-center gap-y-10">
+                                <!-- Title -->
+                                <h1 class="text-[#D6B157] font-bold text-2xl sm:text-3xl md:text-4xl drop-shadow-lg" data-aos="fade-right" data-aos-duration="1500">
+                                    
+                                        {{ app()->getLocale() == 'en' ? 'Credibility Certificates' : 'វិញ្ញាណបណ្ណបត្របញ្ជាក់អំពីគុណភាព' }}
+                                </h1>
+
+                                <!-- Responsive Images Grid -->
+                                <div
+                                    class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 justify-items-center items-start" data-aos="fade-left" data-aos-duration="1500">
+                                    @foreach ($showCredibility as $items)
+                                        
+                                        <div class="w-full flex justify-center">
+                                            <img src="../../storage/local_product/{{ $items->thumbnail }}"
+                                            class="relative top-[-10px] w-auto max-w-full max-h-[400px] rounded-lg object-contain mx-auto transform transition-transform duration-300 hover:scale-110">
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </section>
+
+                         {{-- Section: FDA Approved Certificate --}}
+                        <section id="business" class="px-4 md:px-10 lg:px-20">
+                            <div class="grid grid-cols-1 gap-10">
+                                <!-- Section Title -->
+                                <div class="text-center text-[#D6B157] font-bold mt-2 py-4">
+                                    <h1 class="relative top-[10px] text-2xl sm:text-3xl md:text-4xl" data-aos="fade-right" data-aos-duration="1500">
+                                        {{ app()->getLocale() == 'en' ? 'FDA Approved Certificate' : 'វិញ្ញាណបណ្ណបត្របញ្ជាក់ដោយរដ្ឋបាលចំណីអាហារ និងឱសថសហរដ្ឋអាមេរិក' }}
+                                    </h1>
+                                </div>
+
+                                <!-- Image Container -->
+                                <div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-y-6 md:gap-x-6" data-aos="fade-left" data-aos-duration="1500">
+                                    @foreach ($showAboutApproved as $items)
+                                        <div class="w-full flex justify-center">
+                                            <img src="../../storage/local_product/{{ $items->thumbnail }}" alt="Certificate"
+                                                class="relative top-[-10px] w-auto max-w-full max-h-[400px] rounded-lg object-contain mx-auto transform transition-transform duration-300 hover:scale-110" />
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </section>
 
                     </div>
                 </div>
@@ -345,7 +377,7 @@ class="flex justify-center relative py-6 mx-auto items-center w-[80%] h-[45px] b
         <!-- Title -->
         <div class="flex justify-center mb-8 sm:mb-10">
             <h1 class="relative top-[30px] text-white text-center text-2xl sm:text-3xl md:text-4xl font-bold" data-aos="fade-right" data-aos-duration="1500">
-                 {{ app()->getLocale() == 'en' ? 'Why Choose Our Products?' : 'លក្ខណៈពិសេសរបស់ផលិតផលអង្ករ' }}
+                 {{ app()->getLocale() == 'en' ? 'Why Choose Our Products?' : 'ហេតុអ្វីត្រូវជ្រើសទិញផលិតផលអង្ករពីយើងខ្ញុំ? ' }}
             </h1>
         </div>
 
@@ -360,7 +392,7 @@ class="flex justify-center relative py-6 mx-auto items-center w-[80%] h-[45px] b
                     {{-- <p class="text-white text-sm mt-3 sm:text-base font-medium">20 Years Experience</p> --}}
                 </div>
                 <div class="flex flex-col items-center text-center">
-                    <img src="{{ app()->getLocale() == 'en' ?  asset('frontend/assets/certificate/7.png') : asset('assets/logo/why-2-km.svg') }}" alt="Affordable Price"
+                    <img src="{{ app()->getLocale() == 'en' ?  asset('assets/image/icon/2-en.svg') : asset('assets/image/icon/2-km.svg') }}" alt="Affordable Price"
                         class="w-[120px] sm:w-120] md:w-[130px] lg:w-[220px] object-contain transition-transform duration-300 hover:scale-105">
                     {{-- <p class="text-white text-sm mt-3 sm:text-base font-medium">Affordable Price</p> --}}
                 </div>

@@ -108,79 +108,79 @@
         </div>
 
         <div class="flex justify-center items-center px-4 sm:px-10 md:px-20">
-            <div class="max-w-7xl w-full">
+            <div class="w-full">
                 <div class="grid grid-cols-1 gap-y-12 md:gap-y-16 gap-x-8 md:grid-cols-2">
                     @foreach ($showNews as $news)
                         @php
-    $images = json_decode($news->image_news ?? '[]', true);
-@endphp
+                            $images = json_decode($news->image_news ?? '[]', true);
+                        @endphp
 
-<div class="block-news flex flex-col lg:flex-row gap-6 md:gap-8 items-center md:items-start">
-    
-    <!-- First Image -->
-    <div class="image-news w-[90%] md:w-[420px] lg:w-[450px] mx-auto">
-        <div class="w-full h-64 sm:h-72 lg:h-80 overflow-hidden rounded-lg">
-            @if(!empty($images))
-                <img src="{{ asset('storage/news/'.$images[0]) }}"
-                     class="w-full h-full object-cover hover:scale-105 transition duration-500">
-            @endif
-        </div>
-    </div>
+                        <div class="block-news flex flex-col lg:flex-row gap-6 md:gap-8 items-center md:items-start">
+                            
+                            <!-- First Image -->
+                            <div class="image-news w-[90%] md:w-[420px] lg:w-[600px] mx-auto">
+                                <div class="w-full h-64 sm:h-72 lg:h-80 overflow-hidden rounded-lg">
+                                    @if(!empty($images))
+                                        <img src="{{ asset('storage/news/'.$images[0]) }}"
+                                            class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                                    @endif
+                                </div>
+                            </div>
 
-    <!-- Content -->
-    <div class="content w-full md:max-w-[550px] flex flex-col justify-between gap-4 px-1">
-        <h3 class="text-[#1E1E1E] font-semibold text-2xl sm:text-3xl hidden">
-            {{ app()->getLocale() == 'km' ? $news->title_km : $news->title }}
-        </h3>
+                            <!-- Content -->
+                            <div class="content w-full md:max-w-[550px] flex flex-col justify-between gap-4 px-1">
+                                <h3 class="text-[#1E1E1E] font-semibold text-2xl sm:text-3xl hidden">
+                                    {{ app()->getLocale() == 'km' ? $news->title_km : $news->title }}
+                                </h3>
 
-        <p class="text-[#1E1E1E] text-base sm:text-lg h-auto md:h-[32vh]">
-            {!! nl2br(e(app()->getLocale() == 'km' ? $news->description_km : $news->description)) !!}
-        </p>
+                                <p class="text-[#1E1E1E] text-base sm:text-lg h-auto md:h-[32vh]">
+                                    {!! nl2br(e(app()->getLocale() == 'km' ? $news->description_km : $news->description)) !!}
+                                </p>
 
-        <button onclick="openModal({{ $news->id }})"
-            class="w-[125px] h-[35px] mt-4 mx-auto md:mx-0">
-            <img src="{{ app()->getLocale() == 'en' 
-                ? asset('assets/logo/btn-details.svg') 
-                : asset('assets/logo/btn-details-km.svg') }}">
-        </button>
-    </div>
-</div>
+                                <button onclick="openModal({{ $news->id }})"
+                                    class="w-[125px] h-[35px] mt-4 mx-auto md:mx-0">
+                                    <img src="{{ app()->getLocale() == 'en' 
+                                        ? asset('assets/logo/btn-details.svg') 
+                                        : asset('assets/logo/btn-details-km.svg') }}">
+                                </button>
+                            </div>
+                        </div>
 
-<!-- Hidden JSON Images -->
-<script type="application/json" id="news-images-{{ $news->id }}">
-    {!! json_encode($images) !!}
-</script>
+                        <!-- Hidden JSON Images -->
+                        <script type="application/json" id="news-images-{{ $news->id }}">
+                            {!! json_encode($images) !!}
+                        </script>
 
                     @endforeach
-                    <!-- Modal -->
-<div id="imageModal" class="fixed inset-0 bg-black hidden items-center justify-center z-[99999]">
+                                        <!-- Modal -->
+                    <div id="imageModal" class="fixed inset-0 bg-black hidden items-center justify-center z-[99999]">
 
-    <div class="relative w-[90%] max-w-5xl">
+                        <div class="relative w-[90%] max-w-5xl">
 
-        <!-- Close Button -->
-        <button onclick="closeModal()" 
-            class="absolute top-[-40px] right-0 text-white text-3xl">
-            ✕
-        </button>
+                            <!-- Close Button -->
+                            <button onclick="closeModal()" 
+                                class="absolute top-[-40px] right-0 text-white text-3xl">
+                                ✕
+                            </button>
 
-        <div class="max-w-5xl mx-auto w-5xl h-[500px]">
-            <img id="modalImage" class="w-full h-full object-cover">
-        </div>
+                            <div class="max-w-5xl mx-auto w-5xl h-[500px]">
+                                <img id="modalImage" class="w-full h-full object-cover">
+                            </div>
 
-        <!-- Left Button -->
-        <button onclick="prevImage()"
-            class="absolute left-2 md:left-[-40px] top-1/2 transform -translate-y-1/2 text-white text-4xl">
-            ❮
-        </button>
+                            <!-- Left Button -->
+                            <button onclick="prevImage()"
+                                class="absolute left-2 md:left-[-40px] top-1/2 transform -translate-y-1/2 text-white text-4xl">
+                                ❮
+                            </button>
 
-        <!-- Right Button -->
-        <button onclick="nextImage()"
-            class="absolute right-2 md:right-[-40px] top-1/2 transform -translate-y-1/2 text-white text-4xl">
-            ❯
-        </button>
+                            <!-- Right Button -->
+                            <button onclick="nextImage()"
+                                class="absolute right-2 md:right-[-40px] top-1/2 transform -translate-y-1/2 text-white text-4xl">
+                                ❯
+                            </button>
 
-    </div>
-</div>
+                        </div>
+                    </div>
 
                 </div>
             </div>

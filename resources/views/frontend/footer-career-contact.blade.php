@@ -17,7 +17,7 @@
                         }}
                 </p>
 
-                <h5 class="font-bold mt-5 text-sm">{{ app()->getLocale() == 'en' ? 'Follow Us' : 'បណ្តាញសង្គម ' }}</h5>
+                <h5 class="font-bold mt-5 text-sm">{{ app()->getLocale() == 'en' ? 'Follow Us' : 'តាមដានបណ្តាញសង្គម' }}</h5>
                 <div class="flex items-center gap-4 mt-2">
                     <!-- Social Icons -->
                     <a href="https://www.facebook.com/sekmeasrice" class="hover:scale-110 transition-transform" target="_blank">
@@ -73,7 +73,7 @@
                             d="M2.25 12l8.954-8.955c.44-.44 1.152-.44 1.592 0L21.75 12M4.5 9.75v9.75A1.5 1.5 0 0 0 6 21h12a1.5 1.5 0 0 0 1.5-1.5V9.75" />
                     </svg>
                     <span>
-                        <strong>{{ app()->getLocale() == 'en' ? 'Office Address' : 'អាស័យដ្ឋានការិយាល័យ' }}:</strong>
+                        <strong>{{ app()->getLocale() == 'en' ? 'Office Address' : 'អាស័យដ្ឋានការិយាល័យ' }}:</strong> <br>
                         {!! app()->getLocale() == 'en' ? '#70, St.70,<br>Sangkat Srah Chrok, Khan Daun Penh, <br> Phnom Penh, Cambodia.' : 'ផ្ទះលេខ 70, ផ្លូវលេខ 70, សង្កាត់ស្រះចក, ខណ្ឌដូនពេញ, រាជធានីភ្នំពេញ ប្រទេសកម្ពុជា។ ' !!}
                     </span>
                 </p>
@@ -115,7 +115,7 @@
                 <p class="text-sm mb-1"> {{ app()->getLocale() == 'en' ? 'Monday - Friday' : 'ច័ន្ទ ដល់ សុក្រ' }}</p>
                 <p class="text-sm mb-4">{{ app()->getLocale() == 'en' ? '8am – 5pm' : '8 ព្រឹក ដល់ 5 ល្ងាច' }}</p>
 
-                <h4 class="font-bold text-sm text-[#499D56] mb-2">{{ app()->getLocale() == 'en' ? 'Map' : 'ទីតាំង' }}</h4>
+                <h4 class="font-bold text-sm text-[#499D56] mb-2">{{ app()->getLocale() == 'en' ? 'Map' : 'ទីតាំងការិយាល័យ' }}</h4>
                 <div class="w-full h-64 bg-gray-300 rounded-md overflow-hidden">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.089502260989!2d104.9132125!3d11.5854499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31095160523ca91b%3A0xd9c51e2d57b148ad!2sLor%20Eak%20Heng%20Sek%20Meas%20Rice%20Co.%2CLtd!5e0!3m2!1sen!2skh!4v1698325030000!5m2!1sen!2skh"

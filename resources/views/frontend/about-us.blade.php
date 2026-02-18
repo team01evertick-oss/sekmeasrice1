@@ -204,27 +204,6 @@
             </div>
         </div>
     </section>
-    {{-- Section: FDA Approved Certificate --}}
-    <section id="business" class="px-4 py-12 md:px-10 lg:px-20">
-        <div class="grid grid-cols-1 gap-10">
-            <!-- Section Title -->
-            <div class="text-center text-[#4DA358] font-bold mb-8">
-                <h1 class="relative top-[10px] text-2xl sm:text-3xl md:text-4xl" data-aos="fade-right" data-aos-duration="1500">
-                    {{ app()->getLocale() == 'en' ? 'FDA Approved Certificate' : 'វិញ្ញាណបណ្ណបត្របញ្ជាក់ដោយរដ្ឋបាលចំណីអាហារ និងឱសថសហរដ្ឋអាមេរិក' }}
-                </h1>
-            </div>
-
-            <!-- Image Container -->
-            <div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-y-6 md:gap-x-6 m-10" data-aos="fade-left" data-aos-duration="1500">
-                @foreach ($showAboutApproved as $items)
-                    <div class="w-full sm:w-[80%] md:w-[45%] lg:w-[30%] flex justify-center">
-                        <img src="../../storage/local_product/{{ $items->thumbnail }}" alt="Certificate"
-                            class="relative top-[-10px] w-auto max-w-full max-h-[400px] rounded-lg object-contain mx-auto transform transition-transform duration-300 hover:scale-110" />
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
 
 @endsection
 @section('section_footer')

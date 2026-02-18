@@ -322,20 +322,32 @@
                     
                     <div class="space-y-3">
                         <label class="text-sm font-bold text-gray-700 ml-2 px-2">{{ app()->getLocale() === 'en' ? 'Full Name' : 'ឈ្មោះ' }}</label>
-                        <input type="text" name="name" placeholder="{{ app()->getLocale() === 'en' ? 'Your Name' : 'ឈ្មោះរបស់អ្នក' }}" required
+                        <div class="relative">
+                            <input type="text" name="name" placeholder="{{ app()->getLocale() === 'en' ? 'Your Name' : 'ឈ្មោះរបស់អ្នក' }}" required
                             class="w-full h-12 placeholder:px-2 px-2 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
+                            <!-- Red Star -->
+                            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                        </div>
                     </div>
 
                     <div class="space-y-3">
                         <label class="text-sm font-bold text-gray-700 ml-2 px-2">{{ app()->getLocale() === 'en' ? 'Email' : 'អ៊ីម៉ែល' }}</label>
-                        <input type="email" name="email" placeholder="example@mail.com" required
+                        <div class="relative">
+                            <input type="email" name="email" placeholder="example@mail.com" required
                             class="w-full h-12 placeholder:px-2 px-2 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
+                            <!-- Red Star -->
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                        </div>
                     </div>
 
                     <div class="space-y-3">
                         <label class="text-sm font-bold text-gray-700 ml-2 px-2">{{ app()->getLocale() === 'en' ? 'Phone Number' : 'លេខទូរស័ព្ទ' }}</label>
-                        <input type="text" name="phone" placeholder="{{ app()->getLocale() === 'en' ? 'Phone Number' : 'លេខទូរស័ព្ទរបស់អ្នក' }}" required
+                        <div class="relative">
+                             <input type="text" name="phone" placeholder="{{ app()->getLocale() === 'en' ? 'Phone Number' : 'លេខទូរស័ព្ទរបស់អ្នក' }}" required
                             class="w-full h-12 placeholder:px-2 px-2 py-5 rounded-md bg-[#fff9e6] border-none focus:bg-white focus:ring-2 focus:ring-yellow-400 outline-none transition-all shadow-inner">
+                            <!-- Red Star -->
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                        </div>
                     </div>
 
                     <div class="space-y-3">
@@ -356,19 +368,29 @@
                             <div class="absolute inset-y-0 right-5 flex items-center pointer-events-none">
                                 <svg class="w-7 h-7 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path d="M7 7l3-3 3 3m0 6l-3 3-3-3"></path></svg>
                             </div>
+                            <!-- Red Star -->
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
                         </div>
                     </div>
 
                     <div class="space-y-3">
                         <label class="text-sm font-bold text-gray-700 ml-2 px-2">{{ app()->getLocale() === 'en' ? 'Upload CV (PDF)' : 'អាប់ឡូត CV' }}</label>
-                        <input type="file" name="cv" required
+                        <div class="relative">
+                            <input type="file" name="cv" required
                             class="block h-12 placeholder:px-2 w-full text-sm text-gray-500 file:mr-4 file:py-4 file:px-6 file:rounded-2xl file:border-0 file:text-sm file:font-semibold file:bg-[#fff9e6] file:text-gray-500 cursor-pointer transition-all">
+                            <!-- Red Star -->
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                        </div>
                     </div>
 
                     <div class="space-y-3">
                         <label class="text-sm font-bold text-gray-700 ml-2 px-2">{{ app()->getLocale() === 'en' ? 'Upload Cover Letter' : 'អាប់ឡូត Cover Letter'}}</label>
-                        <input type="file" name="cover_letter" required
+                        <div class="relative">
+                            <input type="file" name="cover_letter" required
                             class="block h-12 placeholder:px-2 w-full text-sm text-gray-500 file:mr-4 file:py-4 file:px-6 file:rounded-2xl file:border-0 file:text-sm file:font-semibold file:bg-[#fff9e6] file:text-gray-500 cursor-pointer transition-all">
+                            <!-- Red Star -->
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                        </div>
                     </div>
                 </div>
 

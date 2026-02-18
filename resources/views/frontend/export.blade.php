@@ -16,7 +16,7 @@
             <h2
                 class="relative top-0 md:-top-14 md:py-0 py-4 text-3xl md:text-5xl font-extrabold text-[#4DA358] mb-6 tracking-wide drop-shadow-lg">
                
-                {{ app()->getLocale() == 'en' ? ' For Export' : 'ទិសដៅនាំចេញ' }}
+                {{ app()->getLocale() == 'en' ? ' For Export' : 'ផលិតផលនាំចេញ' }}
             </h2>
         </div>
 
@@ -101,29 +101,28 @@
         <section class="relative w-full xl:hidden block">
             <!-- Background Image -->
             <div class="relative w-full h-full">
-                <img src="{{ app()->getLocale() == 'en' ? asset('assets/image/bg-national-text.svg') : asset('assets/image/bg-nation-txt_km.svg') }}" alt="Background Image"
+                <img src="{{ app()->getLocale() == 'en' ? asset('assets/image/bg-have-text-en.svg') : asset('assets/image/bg-have-text-km.svg') }}" alt="Background Image"
                     class="w-full h-full object-cover">
             </div>
         </section>
         <section class="relative w-full xl:block hidden">
             <!-- Background Image -->
             <div class="relative w-full h-full">
-                <img src="{{ app()->getLocale() == 'en' ? asset('assets/image/bg-national.svg') : asset('assets/image/bg-nation-not-txt_km.svg') }}" alt="Background Image"
+                <img src="{{ app()->getLocale() == 'en' ? asset('assets/image/bg-not-text-en.svg') : asset('assets/image/bg-not-text-km.svg') }}" alt="Background Image"
                     class="w-full h-full object-cover">
                 <!-- Overlay Content -->
                 <div
                     class="absolute inset-0 flex flex-col justify-center items-center text-white px-6 overflow-y-auto text-center">
-
                     <!-- Destination Details -->
-                    <div class="relative right-[450px] top-[300px] max-w-xl space-y-2 mb-10 text-left justify-start items-start"
+                    <div class="relative right-[450px] top-[300px] max-w-md space-y-2 mb-10 text-left justify-start items-start"
                         data-aos="fade-right" data-aos-duration="1500">
                         <p class="text-[#D6B157] text-[14px] font-semibold">{{ app()->getLocale() == 'en' ? 'International Destination' : 'គោលដៅអន្តរជាតិ' }}</p>
 
                         <p>
                             <strong class="text-[#D6B157] text-[14px] font-semibold"> {{ app()->getLocale() == 'en' ? 'Europe:' : 'ទ្វីបអឺរ៉ុប៖' }}</strong>
-                            <span class="text-[#1E1E1E] text-[14px]"> 
-                                 {{ app()->getLocale() == 'en' ? 'Germany, Sweden, France, United Kingdom, Italy, Switzerland, Hungary, Lithuania, The Netherlands, Poland, Norway, Reunion Island, etc.' 
-                                 : 'អាល្លឺម៉ង់ ស៊ុយអែត បារាំង ចក្រភពអង់គ្លេស អ៊ីតាលី ស្វីស ហុងគ្រី លីទុយអានី ហូឡង់ ប៉ូឡូញ ន័រវែស កោះរ៉េអ៊ុយនីញ៉ុង ជាដើម។' }}
+                            <span class="text-[#1E1E1E] text-[14px] max-w-md"> 
+                                 {!! app()->getLocale() == 'en' ? 'Germany, Sweden, France, United Kingdom, <br/> Italy, Switzerland, Hungary, Lithuania, The Netherlands, Poland, Norway, Reunion Island, etc.' 
+                                 : 'អាល្លឺម៉ង់ ស៊ុយអែត បារាំង ចក្រភពអង់គ្លេស អ៊ីតាលី ស្វីស <br/> ហុងគ្រី លីទុយអានី ហូឡង់ ប៉ូឡូញ ន័រវែស កោះរ៉េអ៊ុយនីញ៉ុង ជាដើម។' !!}
                             </span>
                         </p>
 
@@ -132,7 +131,7 @@
                                  {{ app()->getLocale() == 'en' ? 'Asian Market:' : 'ទ្វីបអាស៊ី៖ ' }}
                             </strong>
                             <span class="text-[#1E1E1E] text-[14px]">
-                                 {{ app()->getLocale() == 'en' ? 'China, Hong Kong SAR, Singapore, Malaysia, Thailand, Vietnam, etc.' : 'ចិន ហុងកុង សិង្ហបុរី ម៉ាឡេស៊ី ថៃ វៀតណាម ជាដើម។' }}
+                                 {!! app()->getLocale() == 'en' ? 'China, Hong Kong SAR, Singapore, Malaysia, <br/> Thailand, Vietnam, etc.' : 'ចិន ហុងកុង សិង្ហបុរី ម៉ាឡេស៊ី ថៃ វៀតណាម ជាដើម។' !!}
                             </span>
                         </p>
 
@@ -153,21 +152,21 @@
 
                     <!-- Why Partner With Us -->
                     <div class="relative top-64 max-w-6xl mx-auto w-full" data-aos="fade-left" data-aos-duration="1500">
-                        <h2 class="text-3xl font-bold mb-6 text-[#4DA358]">
+                        <h2 class="relative top-32 text-3xl font-bold mb-6 text-[#4DA358]">
                              {{ app()->getLocale() == 'en' ? 'Why Partner With Us?' : 'ហេតុអ្វីបានជាត្រូវសហការជាមួយក្រុមហ៊ុនយើងខ្ញុំ?' }}
                         </h2>
 
                         <div class="relative top-32 text-left">
                             <!-- Icon Block 1 -->
-                            <div class=" flex flex-wrap justify-center items-start gap-10 mb-10">
+                            <div class="flex flex-wrap justify-center gap-10 mb-10">
                                 <div class="w-80">
                                     <div class="flex justify-center">
-                                        <img src="{{ asset('assets/image/icon/1.svg') }}" class="mx-auto mb-3" alt="">
+                                        <img src="{{ asset('assets/image/icon/1.svg') }}" class="w-24 h-20 mx-auto mb-3" alt="">
                                     </div>
-                                    <h2 class="text-xl font-semibold text-[#324A0A]">
+                                    <h2 class="text-xl font-semibold text-[#324A0A] text-center">
                                          {{ app()->getLocale() == 'en' ? 'Letter of Credit (LC) Expertise' : 'មានលិខិតធានាការទូទាត់ (LC)' }}
                                     </h2>
-                                    <span class="text-sm block mt-2 text-[#1E1E1E]">
+                                    <span class="text-sm block mt-2 text-[#1E1E1E] h-[8vh]">
                                         {{ app()->getLocale() == 'en' ? 'With decades of export experience, we handle LC transactions with accuracy
                                         and efficiency—ensuring smooth documentation, full compliance, and timely shipments.' 
                                         : 'យើងខ្ញុំមានបទពិសោធន៍នាំចេញរាប់ទសវត្សរ៍ដោយមាននូវលិខិតធានាការទូទាត់លើការដោះស្រាយបញ្ហាប្រតិបត្តិការទិញលក់ប្រកបដោយភាពត្រឹមត្រូវ និងប្រសិទ្ធភាព — ធានាបាននូវការរត់ឯកសារដោយរលូន ការអនុលោមពេញលេញ និងការដឹកជញ្ជូនទាន់ពេលវេលា។' }}
@@ -176,28 +175,27 @@
 
                                 <div class="w-80">
                                     <div class="flex justify-center">
-                                        <img src="{{ asset('assets/image/icon/2.svg') }}" class="mx-auto mb-3" alt="">
+                                        <img src="{{ asset('assets/image/icon/2.svg') }}" class="w-24 h-20 mx-auto mb-3" alt="">
                                     </div>
 
-                                    <h2 class="text-xl font-semibold text-[#324A0A]">
+                                    <h2 class="text-xl font-semibold text-[#324A0A] text-center">
                                         {{ app()->getLocale() == 'en' ? 'Lower Tariff Export Advantage' : 'អត្ថប្រយោជន៍នាំចេញក្នុងអត្រាពន្ធទាប' }}
                                     </h2>
-                                    <span class="text-sm block mt-2 text-[#1E1E1E]">
+                                    <span class="text-sm block mt-2 text-[#1E1E1E] h-[8vh]">
                                        {{ app()->getLocale() == 'en' ? ' We help partners access lower or preferential export tariffs,
-                                        reducing costs and strengthening your competitive in the regional markets. ' : 'យើងខ្ញុំជួយដៃគូទទួលបានពន្ធនាំចេញទាប ឬអនុគ្រោះ កាត់បន្ថយថ្លៃដើម និងពង្រឹងភាពប្រកួតប្រជែងរបស់អ្នកនៅក្នុងទីផ្សារក្នុងតំបន់។ 
-' }}
+                                        reducing costs and strengthening your competitive in the regional markets. ' : 'យើងខ្ញុំជួយដៃគូទទួលបានពន្ធនាំចេញទាប ឬអនុគ្រោះ កាត់បន្ថយថ្លៃដើម និងពង្រឹងភាពប្រកួតប្រជែងរបស់អ្នកនៅក្នុងទីផ្សារក្នុងតំបន់។' }}
                                     </span>
                                 </div>
 
-                                <div class="w-80">
+                                <div class="w-100">
                                     <div class="flex justify-center">
-                                        <img src="{{ asset('assets/image/icon/3.svg') }}" class="mx-auto mb-3" alt="">
+                                        <img src="{{ asset('assets/image/icon/3.svg') }}" class="w-24 h-20 mx-auto mb-3" alt="">
                                     </div>
 
-                                    <h2 class="text-xl font-semibold text-[#324A0A]">
+                                    <h2 class="text-xl font-semibold text-[#324A0A] text-center">
                                         {{ app()->getLocale() == 'en' ? 'Decades of Export Experience' : 'បទពិសោធន៍នាំចេញរាប់ទសវត្សរ៍' }}
                                     </h2>
-                                    <span class="text-sm block mt-2 text-[#1E1E1E]">
+                                    <span class="text-sm block mt-2 text-[#1E1E1E] h-[8vh]">
                                         {{ app()->getLocale() == 'en' ? 'With over 30 years of experience since 1994, we offer deep industry expertise and a
                                         proven track record of
                                         exporting to Europe and global markets—ensuring reliability, stability, and
@@ -207,33 +205,33 @@
                             </div>
 
                             <!-- Icon Block 2 -->
-                            <div class="relative top-12 flex flex-wrap justify-center items-start gap-10">
+                            <div class="relative top-12 flex flex-wrap justify-center items-center gap-10">
                                 <div class="w-80">
-                                    <div class="flex justify-center">
-                                        <img src="{{ asset('assets/image/icon/4.svg') }}" alt="">
+                                    <div class="flex justify-center items-center">
+                                        <img src="{{ asset('assets/image/icon/4.svg') }}" alt="" class="w-24 h-20 mx-auto mb-3">
                                     </div>
 
-                                    <h2 class="text-xl font-semibold text-[#324A0A]">
+                                    <h2 class="text-xl font-semibold text-[#324A0A] text-center {{ app()->getLocale() == 'km' ? 'h-[8vh] text-center' : '' }}">
                                         {{ app()->getLocale() == 'en' ? 'Capable Production Output' : 'សមត្ថភាពក្នុងការផលិត' }}
                                     </h2>
                                     <span class="text-sm block mt-2 text-[#1E1E1E]">
                                         {{ app()->getLocale() == 'en' ? 'With advanced machinery, we can meet any production volume—scaling smoothly from
-                                        small batches to large orders.' : 'ជាមួយនឹងគ្រឿងចក្រទំនើបៗរោងចក្រកិនស្រូវរបស់យើងខ្ញ៉ំអាចបំពេញតាមបរិមាណផលិតកម្មបញ្ជាទិញចាប់តាំងពីការបញ្ជាទិញក្នុងបរិមាណតិចរហូតដល់បរិមាណធំ។' }}
+                                        small batches to large orders.' : 'ជាមួយនឹងគ្រឿងចក្រទំនើបៗរោងចក្រកិនស្រូវរបស់យើងខ្ញុំអាចបំពេញតាមបរិមាណផលិតកម្មបញ្ជាទិញចាប់តាំងពីការបញ្ជាទិញក្នុងបរិមាណតិចរហូតដល់បរិមាណធំ។' }}
                                     </span>
                                 </div>
 
                                 <div class="w-80">
-                                    <div class="flex justify-center">
-                                        <img src="{{ asset('assets/image/icon/5.svg') }}" class="mx-auto mb-3" alt="">
+                                    <div class="flex justify-center items-center">
+                                        <img src="{{ asset('assets/image/icon/5.png') }}" class="w-24 h-20 mx-auto mb-3" alt="">
                                     </div>
 
-                                    <h2 class="text-xl font-semibold text-[#324A0A]">
+                                    <h2 class="text-xl font-semibold text-[#324A0A] {{ app()->getLocale() == 'km' ? 'w-100 h-[8vh]' : '' }}">
                                         {{ app()->getLocale() == 'en' ? 'FDA Approval & Certified Quality' : 'ការអនុម័ត និងគុណភាពដែលមានការបញ្ជាក់ដោយរដ្ឋបាលចំណីអាហារ និងឱសថសហរដ្ឋអាមេរិក' }}
                                     </h2>
                                     <span class="text-sm block mt-2 text-[#1E1E1E]">
                                         {{ app()->getLocale() == 'en' ? 'Our rice is FDA-approved and certified to
                                         international standards, ensuring trusted quality, safety, and compliance in every
-                                        shipment.' : 'អង្កររបស់យើងខ្ញ៉ំត្រូវបានអនុម័តដោយរដ្ឋបាលចំណីអាហារ និងឱសថសហរដ្ឋអាមេរិក អនុលោមតាមស្តង់ដាអន្តរជាតិ ដោយធានាបាននូវគុណភាព សុវត្ថិភាព និងទំនុកចិត្តនៅក្នុងរាល់ការដឹកជញ្ជូន។' }}
+                                        shipment.' : 'អង្កររបស់យើងខ្ញុំត្រូវបានអនុម័តដោយរដ្ឋបាលចំណីអាហារ និងឱសថសហរដ្ឋអាមេរិក អនុលោមតាមស្តង់ដាអន្តរជាតិ ដោយធានាបាននូវគុណភាព សុវត្ថិភាព និងទំនុកចិត្តនៅក្នុងរាល់ការដឹកជញ្ជូន។' }}
                                     </span>
                                 </div>
                             </div>
@@ -254,10 +252,26 @@
                             <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">
                                 {{ app()->getLocale() == 'en' ? 'Enquiry Form' : 'ទម្រង់បែបបទបំពេញព័ត៌មាន' }}
                             </h2>
-                            <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Name' : 'ឈ្មោះ' }}" name="name" required
-                                class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
-                            <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Company Name' : 'ក្រុមហ៊ុន' }}" name="company_name" required
-                                class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                            <div class="relative w-full lg:w-[96%]">
+                                <input 
+                                    type="text"
+                                    name="name"
+                                    required
+                                    placeholder="{{ app()->getLocale() == 'en' ? 'Name' : 'ឈ្មោះ' }}"
+                                    class="w-full h-[55px] bg-[#FFF9E6] px-5 pr-10 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                                >
+
+                                <!-- Red Star -->
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                            </div>
+                            
+                            <div class="relative w-full lg:w-[96%]">
+                                <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Company Name' : 'ក្រុមហ៊ុន' }}" name="company_name" required
+                                 class="w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                                <!-- Red Star -->
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                            </div>
+
                             <div class="relative custom-select-container">
                                 <input id="customer-country" list="country-list" name="country" placeholder="{{ app()->getLocale() == 'en' ? 'Country' : 'ប្រទេស' }}"
                                     required
@@ -463,12 +477,21 @@
                                             fill="#cb9f10" />
                                     </svg>
                                 </span>
+                                <!-- Red Star -->
+                                <span class="absolute right-9 top-1/3 -translate-y-1/2 text-red-500 text-xl">*</span>
                             </div>
-                            <input type="email" placeholder="{{ app()->getLocale() == 'en' ? 'Email' : 'អ៊ីម៉ែល ' }}" name="email" required
-                                class="w-full lg:w-[96%] h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                            
+                            <div class="relative w-full lg:w-[96%]">
+                                <input type="email" placeholder="{{ app()->getLocale() == 'en' ? 'Email' : 'អ៊ីម៉ែល ' }}" name="email" required
+                                class="w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                                <!-- Red Star -->
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                            </div>
+
                             <div class="flex md:flex-row items-center space-x-2">
-                                <select id="country_code" name="country_code"
-                                    class="form-select w-[50%] px-4 md:w-[30%] rounded-md bg-[#FFF9E6] h-[55px] text-gray-700 placeholder-gray-600" required>
+                                <div class="relative w-[50%] md:w-[30%]">
+                                    <select id="country_code" name="country_code"
+                                    class="form-select w-full px-4 lg:ml-0 -ml-2 rounded-md bg-[#FFF9E6] h-[55px] text-gray-700 placeholder-gray-600" required>
                                     <option value="">{{ app()->getLocale() == 'en' ? 'Country Code' : 'លេខកូដប្រទេស' }}</option>
                                     <option value="+93">Afghanistan (+93)</option>
                                     <option value="+355">Albania (+355)</option>
@@ -581,10 +604,20 @@
                                     <option value="+998">Uzbekistan (+998)</option>
                                     <option value="+84">Vietnam (+84)</option>
                                     <option value="+263">Zimbabwe (+263)</option>
-                                </select>
-                                <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Phone Number' : ' លេខទូរស័ព្ទ' }}" name="phone" required
-                                    class="w-full lg:w-[65%] h-[55px] px-5 rounded-md text-gray-700 placeholder-gray-600  bg-[#FFF9E6] focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                                    </select>
+                                    <!-- Red Star -->
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                                </div>
+                                
+                                <div class="relative w-full lg:w-[65%] ">
+                                    <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Phone Number' : ' លេខទូរស័ព្ទ' }}" name="phone" required
+                                    class="w-full h-[55px] px-5 rounded-md text-gray-700 placeholder-gray-600  bg-[#FFF9E6] focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
+                                    <!-- Red Star -->
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                                </div>
+
                             </div>
+
                         </div>
                         <div class="space-y-2">
                             <h2 class="text-[#4DA358] font-bold text-2xl mb-6 text-center">{{ app()->getLocale() == 'en' ? 'Product Enquiry' : 'ផលិតផល' }}</h2>
@@ -624,6 +657,9 @@
                                     </svg>
                                 </div>
 
+                                <!-- Red Star -->
+                                <span class="absolute right-4 top-1/5 -translate-y-1/2 text-red-500 text-xl">*</span>
+
                                 <!-- Dropdown List -->
                                 <div x-show="open" @click.outside="open=false"
                                     class="absolute z-50 bg-white border rounded-md w-full mt-1 max-h-48 overflow-y-auto shadow">
@@ -645,12 +681,16 @@
                                 <div class="mt-4 space-y-3">
 
                                     <!-- Show only if products exist -->
-                                  <div class="bg-[#FFF9E6] p-4 cursor-pointer rounded-md"
+                                    <div class="relative">
+                                        <div class="bg-[#FFF9E6] p-4 cursor-pointer rounded-md"
                                         @click="if(products.length === 0){ alert('Please select product first') }">
 
                                         <h3 class="bg-[#FFF9E6] px-2 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400">
                                             {{ app()->getLocale() == 'en' ? 'Quantity (KG)' : 'បរិមាណ (គីឡូ)' }}
                                         </h3>
+                                    </div>
+                                     <!-- Red Star -->
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
                                     </div>
 
                                     <template x-for="(product, index) in products" :key="index">
@@ -733,6 +773,8 @@
                                                 d="M19 9l-7 7-7-7" />
                                         </svg>
                                 </div>
+                                <!-- Red Star -->
+                                <span class="absolute right-4 top-20 -translate-y-1/2 text-red-500 text-xl">*</span>
 
                                 <!-- Dropdown List -->
                                 <div x-show="open" @click.outside="open = false"
@@ -767,9 +809,17 @@
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Address' : 'អាសយដ្ឋាន ' }}" name="address" required
+                        <div class="relative">
+                             <input type="text" placeholder="{{ app()->getLocale() == 'en' ? 'Address' : 'អាសយដ្ឋាន ' }}" name="address" required
                             class="w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"/>
-                        <textarea name="message" id="message" rows="4" placeholder="{{ app()->getLocale() == 'en' ? 'Message' : 'សារ' }}" required class="py-2 w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+                            <!-- Red Star -->
+                            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                        </div>
+                        <div class="relative">
+                            <textarea name="message" id="message" rows="4" placeholder="{{ app()->getLocale() == 'en' ? 'Message' : 'សារ' }}" required class="py-2 w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+                             <!-- Red Star -->
+                            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                        </div>
                     </div>
                     <div class="flex justify-center items-center">    
                         <button type="submit" class="cursor-pointer" onclick="submitAndRefresh()" >
@@ -862,7 +912,7 @@ function productSelector() {
             let productText = ""
 
             this.products.forEach(p => {
-                productText += `${p.name} (${p.capacity}KG) - Quantity: ${p.quantity}KG`
+                productText += `${p.name} (${p.capacity}KG) - Quantity: ${p.quantity}KG\n`
             })
 
             let message =

@@ -16,7 +16,8 @@ class ClientContrller extends Controller
         $showWining = DB::table("award_wining")->limit(8)->get();
         $showCredibility = DB::table("credibility_certificate")->limit(5)->get();
         $showComment = DB::table('comments')->limit(15)->get();
-        return view("frontend.home", compact("showProducrLocal","showWining","showCredibility", "showComment"));
+        $showAboutApproved = DB::table("approved_certificate")->limit(3)->get();
+        return view("frontend.home", compact("showProducrLocal","showWining","showCredibility", "showComment", "showAboutApproved"));
     }
     // Add Comment of Customer or Users
     // public function submitComment(Request $request) {
@@ -41,9 +42,10 @@ class ClientContrller extends Controller
         return view("frontend.export", compact("showExport"));
     }
     public function aboutUs(){
+        $showCredibility = DB::table("credibility_certificate")->limit(5)->get();
         $showAboutBusiness = DB::table("business_register")->limit(3)->get();
         $showAboutApproved = DB::table("approved_certificate")->limit(3)->get();
-        return view("frontend.about-us", compact("showAboutBusiness", "showAboutApproved"));
+        return view("frontend.about-us", compact("showAboutBusiness", "showAboutApproved", "showCredibility"));
     }
     public function newsMedia(){
         $showMedia = DB::table("media")->get();
