@@ -700,7 +700,7 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
 @section('section_content')
 
     <div class="">
-        @include('frontend.footer')
+        @include('frontend.footer-career-contact')
     </div>
 @endsection
 

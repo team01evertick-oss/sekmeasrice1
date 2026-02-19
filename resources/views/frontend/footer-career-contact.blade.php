@@ -1,43 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Footer Background Image -->
-<div class="relative w-full -z-50">
-    <img 
-        src="{{ asset('frontend/assets/imges/image_footerr.png') }}" 
-        alt="Footer Background"
-        class="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[800px] xl:h-[700px] object-cover object-center"
-    >
-    
-    {{-- Absolute positioning to center the text over the image --}}
-    <div class="absolute inset-0 flex items-center justify-center p-4">
-        <p class="text-white text-center 
-                  text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 
-                leading-tight drop-shadow-lg max-w-4xl">
-           
-             {{ app()->getLocale() == 'en' ? ' Lor Eak Heng Sek Meas Rice is one of the leading rice mill production factories and rice exporters in Cambodia.' 
-             : 'ក្រុមហ៊ុន ឡអៀកហេងសេកមាសរាយស៍ គឺជារោងចក្រកិនស្រូវ និងនាំចេញអង្ករឈានមុខគេនៅក្នុងប្រទេសកម្ពុជា។' }}
-        </p>
-    </div>
-</div>
 <div class="relative w-full xl:h-[600px] lg:h-[600px] h-[1300px] sm:h-[800px]">
 
     <!-- Footer Content -->

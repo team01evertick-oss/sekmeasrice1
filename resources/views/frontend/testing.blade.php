@@ -252,3 +252,10 @@
         </div>
     </div>
 </header>
+
+<li><a href="{{ route('home') }}" class="hover:text-yellow-600 transition">Home</a> </li>
+                <li><a href="{{ route('export') }}" class="hover:text-yellow-600 transition">Export</a></li>
+                <li><a href="{{ route('about') }}" class="hover:text-yellow-600 transition">About Us</a></li>
+                <li><a href="{{ route('news') }}" class="hover:text-yellow-600 transition">Activities</a></li>
+                <li><a href="{{ route('career') }}" class="hover:text-yellow-600 transition">Career</a></li>
+                <li><a href="{{ route('contact') }}" class="hover:text-yellow-600 transition">Contact Us</a>
