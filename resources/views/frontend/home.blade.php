@@ -387,24 +387,24 @@ class="flex justify-center relative py-6 mx-auto items-center w-[80%] h-[45px] b
                 class="grid grid-cols-2 sm:grid-cols-4 gap-10 sm:gap-8 px-6 sm:px-10 lg:px-20 w-full max-w-6xl relative top-[40px]">
                 <!-- Item 1 -->
                 <div class="flex flex-col items-center text-center">
-                    <img src="{{ app()->getLocale() == 'en' ? asset('frontend/assets/certificate/6.png') : asset('assets/logo/why-1-km.svg')}}" alt="20 Years on the Market"
+                    <img src="{{ app()->getLocale() == 'en' ? asset('assets/logo/why-choes/free_en.svg') : asset('assets/logo/why-1-km.svg')}}" alt="20 Years on the Market"
                         class="w-[120px] sm:w-[80px] md:w-[130px] lg:w-[220px] h-auto object-contain transition-transform duration-300 hover:scale-105">
                     {{-- <p class="text-white text-sm mt-3 sm:text-base font-medium">20 Years Experience</p> --}}
                 </div>
                 <div class="flex flex-col items-center text-center">
-                    <img src="{{ app()->getLocale() == 'en' ?  asset('assets/image/icon/2-en.svg') : asset('assets/image/icon/2-km.svg') }}" alt="Affordable Price"
+                    <img src="{{ app()->getLocale() == 'en' ?  asset('assets/logo/why-choes/home_en.svg') : asset('assets/image/icon/2-km.svg') }}" alt="Affordable Price"
                         class="w-[120px] sm:w-120] md:w-[130px] lg:w-[220px] object-contain transition-transform duration-300 hover:scale-105">
                     {{-- <p class="text-white text-sm mt-3 sm:text-base font-medium">Affordable Price</p> --}}
                 </div>
                 <div class="flex flex-col items-center text-center">
-                    <img src="{{ app()->getLocale() == 'en' ? asset('assets/logo/why-3-en.svg') : asset('assets/logo/why-3-km.svg') }}" alt="Free Delivery"
+                    <img src="{{ app()->getLocale() == 'en' ? asset('assets/logo/why-choes/30_en.svg') : asset('assets/logo/why-3-km.svg') }}" alt="Free Delivery"
                         class="w-[120px] sm:w-[80px] md:w-[130px] lg:w-[220px] object-contain transition-transform duration-300 hover:scale-105">
                     {{-- <p class="text-white text-sm mt-3 sm:text-base font-medium">Free Delivery</p> --}}
                 </div>
 
                 <!-- Item 2 -->
                 <div class="flex flex-col items-center text-center">
-                    <img src="{{ app()->getLocale() == 'en' ? asset('frontend/assets/certificate/5.png') : asset('assets/logo/why-4-km.svg') }}" alt="Home Grown Rice"
+                    <img src="{{ app()->getLocale() == 'en' ? asset('assets/logo/why-choes/price_en.svg') : asset('assets/logo/why-4-km.svg') }}" alt="Home Grown Rice"
                         class="w-[120px] sm:w-[80px] md:w-[130px] lg:w-[220px] object-contain transition-transform duration-300 hover:scale-105">
                     {{-- <p class="text-white text-sm mt-3 sm:text-base font-medium">Home Grown Rice</p> --}}
                 </div>

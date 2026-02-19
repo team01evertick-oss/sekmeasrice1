@@ -101,14 +101,14 @@
         <section class="relative w-full xl:hidden block">
             <!-- Background Image -->
             <div class="relative w-full h-full">
-                <img src="{{ app()->getLocale() == 'en' ? asset('assets/image/bg-have-text-en.svg') : asset('assets/image/bg-have-text-km.svg') }}" alt="Background Image"
+                <img src="{{ app()->getLocale() == 'en' ? asset('assets/logo/why-choes/bg-have-txt-en.svg') : asset('assets/logo/why-choes/bg-have-txt-km.svg') }}" alt="Background Image"
                     class="w-full h-full object-cover">
             </div>
         </section>
         <section class="relative w-full xl:block hidden">
             <!-- Background Image -->
             <div class="relative w-full h-full">
-                <img src="{{ app()->getLocale() == 'en' ? asset('assets/image/bg-not-text-en.svg') : asset('assets/image/bg-not-text-km.svg') }}" alt="Background Image"
+                <img src="{{ app()->getLocale() == 'en' ? asset('assets/logo/why-choes/bg-nation-en.svg') : asset('assets/logo/why-choes/bg-nation-km.svg') }}" alt="Background Image"
                     class="w-full h-full object-cover">
                 <!-- Overlay Content -->
                 <div
@@ -116,8 +116,11 @@
                     <!-- Destination Details -->
                     <div class="relative right-[450px] top-[300px] max-w-md space-y-2 mb-10 text-left justify-start items-start"
                         data-aos="fade-right" data-aos-duration="1500">
-                        <p class="text-[#D6B157] text-[14px] font-semibold">{{ app()->getLocale() == 'en' ? 'International Destination' : 'គោលដៅអន្តរជាតិ' }}</p>
+                        <p class="text-[#D6B157] text-[14px] font-semibold">{{ app()->getLocale() == 'en' ? 'International Destination' : 'ទិសដៅអន្តរជាតិនាំចេញ' }}</p>
 
+                         <p>
+                            <strong class="text-[#D6B157] text-[14px] font-semibold"> {{ app()->getLocale() == 'en' ? 'United State of America' : 'សហរដ្ឋអាមេរិក' }}</strong>
+                        </p>
                         <p>
                             <strong class="text-[#D6B157] text-[14px] font-semibold"> {{ app()->getLocale() == 'en' ? 'Europe:' : 'ទ្វីបអឺរ៉ុប៖' }}</strong>
                             <span class="text-[#1E1E1E] text-[14px] max-w-md"> 
