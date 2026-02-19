@@ -537,7 +537,7 @@ class="flex justify-center relative py-6 mx-auto items-center w-[80%] h-[45px] b
 @endsection
 @section('section_footer')
     {{-- Section: Footer --}}
-    <section class="relative top-20">
+    <section class="top-20">
         @include('frontend.footer')
     </section>
 @endsection

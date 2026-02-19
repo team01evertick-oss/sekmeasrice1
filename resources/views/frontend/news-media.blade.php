@@ -295,7 +295,7 @@ function prevImage() {
 @endsection
 
 @section('section_footer')
-<div class="relative top-20">
+<div class="top-20">
     @include('frontend.footer')
 </div>
 @endsection

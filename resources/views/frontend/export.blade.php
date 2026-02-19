@@ -819,9 +819,9 @@
                             <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
                         </div>
                         <div class="relative">
-                            <textarea name="message" id="message" rows="4" placeholder="{{ app()->getLocale() == 'en' ? 'Message' : 'សារ' }}" required class="py-2 w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+                            <textarea name="message" id="message" rows="4" placeholder="{{ app()->getLocale() == 'en' ? 'Message' : 'សារ' }}" class="py-2 w-full h-[55px] bg-[#FFF9E6] px-5 rounded-md text-gray-700 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
                              <!-- Red Star -->
-                            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span>
+                            {{-- <span class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-xl">*</span> --}}
                         </div>
                     </div>
                     <div class="flex justify-center items-center">    
@@ -834,7 +834,7 @@
         </section>
         @section('section_footer')
             {{-- Section: Footer --}}
-            <section class="relative top-[20px]">
+            <section class="top-[20px]">
                 @include('frontend.footer')
             </section>
         @endsection

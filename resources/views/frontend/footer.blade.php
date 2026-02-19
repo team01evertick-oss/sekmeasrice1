@@ -1,5 +1,5 @@
 <!-- Footer Background Image -->
-<div class="relative w-full -z-50">
+<div class="relative w-full">
     <img 
         src="{{ asset('frontend/assets/imges/image_footerr.png') }}" 
         alt="Footer Background"
@@ -175,7 +175,7 @@
         </div>
 
         <!-- Copyright Bar -->
-        <div class="relative w-full bg-[#4DA358] h-[50px] flex items-center justify-center z-50 -top-4">
+        <div class="relative w-full bg-[#4DA358] h-[50px] flex items-center justify-center z-50">
             <p class="text-white text-sm sm:text-base font-semibold">
                 {{ app()->getLocale() == 'en' ? 'All rights reserved ©' : 'រក្សាសិទ្ធគ្រប់បែបយ៉ាង' }} <span id="year"></span>
             </p>
