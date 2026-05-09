@@ -62,43 +62,43 @@
                                         @error('capacity')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
                                     </div>
                                 </div>
-                                  <div class="row">
+                                  {{-- <div class="row">
                                      <h1 class="text-xl text-[#0F4634]">Khmer</h1>
                                      <input type="hidden" name="update_id" value="{{  $row->id }}">
-                                    {{-- Product Country --}}
+                                    
                                     <div class="mb-3 col-12">
                                         <label class="form-label text-[#0F4634]">Brand Name</label>
                                         <input class="form-control" type="text" name="update_brand_km" value="{{ old('brand'). $row->brand_km }}">
                                         @error('brand')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
                                     </div>
-                                    {{-- Product Name --}}
+                                    
                                     <div class="mb-3 col-12">
                                         <label class="form-label text-[#0F4634]">Name</label>
                                         <input class="form-control" type="text" name="update_name_km" value="{{ old('name'). $row->name_km  }}">
                                         @error('name')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
                                     </div>
-                                    {{-- Type of Product --}}
+                                   
                                     <div class="mb-3 col-12">
                                         <label class="form-label text-[#0F4634]">Type of crop (New or Old)</label>
                                         <input class="form-control" type="text" min="1" name="update_type_km"
                                             value="{{ old('type'). $row->type  }}">
                                         @error('type')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
                                     </div>
-                                    {{-- Price --}}
+                                    
                                     <div class="mb-3 col-12">
                                         <label class="form-label text-[#0F4634]">Price</label>
                                         <input class="form-control" type="number" step="0.01" min="0" name="update_price_km"
                                             value="{{ old('price') . $row->price }}">
                                         @error('price')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
                                     </div>
-                                    {{-- Capacity --}}
+                                   
                                     <div class="mb-3 col-12">
                                         <label class="form-label text-[#0F4634]">Capacity (KG, g)</label>
                                         <input class="form-control" type="number" min="1" name="update_capacity_km"
                                             value="{{ old('capacity'). $row->capacity  }}">
                                         @error('capacity')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="row">
                                     {{-- Upload image --}}
                                     <div class="flex gap-4">
