@@ -1,7 +1,7 @@
 <!-- Footer Background Image -->
 <div class="relative w-full">
     <img 
-        src="{{ asset('frontend/assets/imges/image_footerr.png') }}" 
+        src="{{ asset('frontend/assets/imges/footer_banner.png') }}" 
         alt="Footer Background"
         class="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[800px] xl:h-[700px] object-cover object-center"
     >

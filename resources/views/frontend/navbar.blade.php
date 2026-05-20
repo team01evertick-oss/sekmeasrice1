@@ -14,7 +14,7 @@
                                     <path
                                         d="M20 4H4C2.89 4 2 4.9 2 6v12c0 1.09.89 2 2 2h16c1.1 0 2-.91 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 7 8-7v10H4z" />
                                 </svg>
-                                info@lehsekmeasrice.com
+                                info@sekmeasrice.com.kh
                             </span>
 
                             <span class="hidden xl:flex items-center gap-2">
@@ -28,14 +28,14 @@
 
                         <!-- This logo only shows on tablets and mobile -->
                         <div class="lg:hidden relative top-[20px] transform -translate-y-1/2">
-                            <img src="{{ asset('frontend/assets/logo/logo_rice.png') }}" alt="Logo" class="h-12 w-auto">
+                            <img src="{{ asset('frontend/assets/logo/logo_rice1.png') }}" alt="Logo" class="h-12 w-auto">
                         </div>
                     </div>
 
                     <!-- Centered Logo (show on desktop only) -->
                     <div
                         class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[50%] hidden lg:block">
-                        <img src="{{ asset('frontend/assets/logo/logo_rice.png') }}" alt="Logo" class="h-14" />
+                        <img src="{{ asset('frontend/assets/logo/logo_rice1.png') }}" alt="Logo" class="h-14" />
                     </div>
                     <!-- Right: Social Icons -->
                     <div class="relative left-0 md:-left-10 flex items-center gap-2">
