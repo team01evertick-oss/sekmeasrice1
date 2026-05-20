@@ -136,7 +136,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25H4.5A2.25 2.25 0 0 1 2.25 17.25V6.75m19.5 0L12 12.75 2.25 6.75" />
                         </svg>
-                        <a href="mailto:info@lehsekmeasrice.com" class="underline">info@lehsekmeasrice.com</a>
+                        <a href="mailto:info@sekmeasrice.com.kh" class="underline">info@sekmeasrice.com.kh</a>
                     </p>
 
                     <!-- Website -->
@@ -146,7 +146,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 3c4.97 0 9 4.03 9 9 0 1.74-.5 3.37-1.36 4.76L12 21l-7.64-4.24A8.97 8.97 0 0 1 3 12c0-4.97 4.03-9 9-9z" />
                         </svg>
-                        <a href="http://www.lehsekmeasrice.com" class="hover:underline">www.lehsekmeasrice.com.kh</a>
+                        <a href="https://www.sekmeasrice.com.kh" class="hover:underline">www.sekmeasrice.com.kh</a>
                     </p>
                 </div>
 
